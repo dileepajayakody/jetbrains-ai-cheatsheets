@@ -1,0 +1,88 @@
+name: Build & publish cheat sheets
+
+on:
+  # Weekly refresh — Mondays 06:37 UTC (off-peak, off the :00 mark).
+  schedule:
+    - cron: "37 6 * * 1"
+  # Manual trigger from the Actions tab.
+  workflow_dispatch:
+    inputs:
+      skip_crawl:
+        description: "Reuse committed crawled-docs snapshots instead of re-crawling"
+        type: boolean
+        default: false
+
+# OIDC: request a token to assume the AWS deploy role. No long-lived AWS keys.
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: cheatsheets-publish
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: tooling/package-lock.json
+
+      - name: Install pipeline deps
+        working-directory: tooling
+        run: npm ci
+
+      - name: Install Playwright Chromium (crawler)
+        working-directory: tooling
+        run: npx playwright install --with-deps chromium
+
+      - name: Build cheat sheets (crawl → extract → render)
+        working-directory: tooling
+        env:
+          # Claude via Amazon Bedrock (extract stage). Bedrock API key (bearer
+          # token). Alternatively grant the OIDC role bedrock:InvokeModel and
+          # move the AWS credentials step above this one to use SigV4 instead.
+          AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.AWS_BEARER_TOKEN_BEDROCK }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        run: |
+          if [ "${{ inputs.skip_crawl }}" = "true" ]; then
+            npm run build -- --skip-crawl
+          else
+            npm run build
+          fi
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Sync to S3
+        run: aws s3 sync dist/ "s3://${{ vars.S3_BUCKET }}/" --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
+
+      - name: Open PR with refreshed data (optional)
+        # Keeps the committed snapshots/JSON in sync so future --skip-crawl runs
+        # and local builds reflect the latest docs. No-op if nothing changed.
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: |
+            crawled-docs/**
+            tooling/data/*.json
+          branch: chore/refresh-cheatsheet-data
+          title: "chore: refresh cheat-sheet data"
+          commit-message: "chore: refresh crawled docs and generated cheat-sheet JSON"
+          body: "Automated refresh from the scheduled cheat-sheet pipeline."
+          delete-branch: true

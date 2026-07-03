@@ -1,0 +1,655 @@
+{
+  "title": "<span class=\"hl\">JetBrains Air</span> — Agentic <span class=\"hl2\">Development</span> Cheat Sheet",
+  "brandName": "JetBrains Air",
+  "brandSub": "Agentic Dev Environment · Fleet Orchestration · Cloud Agents · Automations",
+  "badge": "JETBRAINS",
+  "docsUrl": "https://www.jetbrains.com/help/air/quick-start-with-air.html",
+  "docsLabel": "JetBrains Air Docs",
+  "generatedNote": "Built from docs scraped on 2026-07-01",
+  "sections": [
+    {
+      "icon": "⚡",
+      "title": "Getting Started",
+      "colorClass": "s1",
+      "column": 1,
+      "rows": [
+        {
+          "label": "What is Air",
+          "value": "Agentic Development Environment — delegate coding tasks to AI agents &amp; stay in control"
+        },
+        {
+          "label": "macOS install",
+          "value": "Download from <code>air.dev</code>"
+        },
+        {
+          "label": "Linux install",
+          "value": "Via <code>JetBrains Toolbox</code>"
+        },
+        {
+          "label": "Windows",
+          "value": "Support planned for 2026"
+        },
+        {
+          "label": "First launch",
+          "value": "Connect at least one AI provider before running tasks"
+        },
+        {
+          "label": "Open project",
+          "value": "<code>File | Open</code> for local; <code>Git | Clone</code> for remote repos"
+        },
+        {
+          "label": "Trust prompt",
+          "value": "Click <strong>Trust</strong> only for projects you own; use <strong>Preview</strong> to browse safely"
+        },
+        {
+          "label": "Requires",
+          "value": "<code>Git</code> (required); <code>Docker Desktop</code> (optional, for container runs)"
+        }
+      ]
+    },
+    {
+      "icon": "🌬️",
+      "title": "Agentic Workflow",
+      "colorClass": "s2",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Entry point",
+          "value": "<strong>Chat</strong> tool — describe goal, add context, press <code>↩ Enter</code> or Send"
+        },
+        {
+          "label": "State goal clearly",
+          "value": "Explain what <em>done</em> means, list constraints &amp; known errors"
+        },
+        {
+          "label": "Add context",
+          "value": "Type <code>@</code> or click <strong>Add context</strong>; attach files, folders, symbols, terminals"
+        },
+        {
+          "label": "Voice input",
+          "value": "Click microphone; uses local Whisper model — no audio sent to cloud"
+        },
+        {
+          "label": "Send task",
+          "value": "<code>↩ Enter</code> or click <strong>Send</strong>"
+        },
+        {
+          "label": "Follow-up",
+          "value": "Send additional messages in same chat to refine the result"
+        },
+        {
+          "label": "Parallel tasks",
+          "value": "Click <strong>New Task</strong> or press <code>⌘⇧N</code> to run tasks simultaneously"
+        },
+        {
+          "label": "Task states",
+          "value": "<code>Running</code>, <code>Input required</code>, <code>Suspended</code>, <code>Completed</code>"
+        }
+      ]
+    },
+    {
+      "icon": "🏃",
+      "title": "Run Environments",
+      "colorClass": "s3",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Local Workspace",
+          "value": "Runs on your machine; fastest startup; changes apply directly to working copy"
+        },
+        {
+          "label": "Git Worktree",
+          "value": "Separate branch &amp; working copy; isolates from <code>main</code>; still on your machine"
+        },
+        {
+          "label": "Docker",
+          "value": "Isolated container; requires Docker Desktop; complete filesystem isolation"
+        },
+        {
+          "label": "Cloud",
+          "value": "Remote environment; auto-commits result to task branch &amp; pushes to remote"
+        },
+        {
+          "label": "Select env",
+          "value": "Click the environment name in the task header before sending"
+        },
+        {
+          "label": "worktree.json",
+          "value": "Configure env vars &amp; setup in <code>.air/worktree.json</code>"
+        },
+        {
+          "label": "docker.json",
+          "value": "Configure image, user, env vars, setup commands in <code>.air/docker.json</code>"
+        },
+        {
+          "label": "Cloud lifetime",
+          "value": "Cloud environment available up to 24 h after task starts; then deleted"
+        }
+      ]
+    },
+    {
+      "icon": "🕹️",
+      "title": "Steering Agents",
+      "colorClass": "s5",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Permission: Plan",
+          "value": "Agent creates <code>.air/plans/</code> Markdown plan; you approve before implementation"
+        },
+        {
+          "label": "Permission: Ask",
+          "value": "Agent asks approval before each file edit or command run"
+        },
+        {
+          "label": "Permission: Edit",
+          "value": "Agent edits files automatically with moderate limits"
+        },
+        {
+          "label": "Permission: Full",
+          "value": "Fewest restrictions; use only when you trust the project fully"
+        },
+        {
+          "label": "Cycle modes",
+          "value": "Press <code>Shift+Tab</code> to cycle permission modes in the task toolbar"
+        },
+        {
+          "label": "Effort level",
+          "value": "Set Low / Medium / High / Max reasoning depth in the task toolbar"
+        },
+        {
+          "label": "Input required",
+          "value": "Task pauses; switch to it via <code>View | Tasks</code> or click notification"
+        },
+        {
+          "label": "Resume task",
+          "value": "<code>View | Tasks</code> → select Suspended task → click <strong>Resume</strong>"
+        }
+      ]
+    },
+    {
+      "icon": "🔍",
+      "title": "Review Changes",
+      "colorClass": "s4",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Open diff",
+          "value": "After task finishes, click <strong>Changes</strong> in Chat → opens <strong>Task Changes</strong> tab"
+        },
+        {
+          "label": "Diff modes",
+          "value": "Switch between <strong>Unified</strong> and <strong>Side-by-side</strong> views in the diff header"
+        },
+        {
+          "label": "Comment line",
+          "value": "Select line in diff → click <code>+</code> gutter icon → type feedback → <strong>Add Comment</strong>"
+        },
+        {
+          "label": "Send comments",
+          "value": "Collect comments → click <strong>Send Comments</strong> → agent uses them as follow-up"
+        },
+        {
+          "label": "Add to task",
+          "value": "Select code in diff → click <strong>Add to Task</strong> → attach as follow-up context"
+        },
+        {
+          "label": "Agent review",
+          "value": "Click <strong>Review with Agent</strong> button after task finishes for automated review pass"
+        },
+        {
+          "label": "Slash review",
+          "value": "Type <code>/</code> → <strong>Review with Agent</strong> → choose scope (task, local, files, branch)"
+        },
+        {
+          "label": "Review model",
+          "value": "<code>Settings | Global | AI | Review</code> → set a dedicated review model"
+        }
+      ]
+    },
+    {
+      "icon": "📁",
+      "title": "Worktrees &amp; Isolation",
+      "colorClass": "s6",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Branch naming",
+          "value": "Air creates <code>air/&lt;task&gt;</code> branch; local copy stays on original branch"
+        },
+        {
+          "label": "Cache path",
+          "value": "<code>~/Library/Caches/JetBrains/Air/tasks/air/&lt;task&gt;/</code> (macOS)"
+        },
+        {
+          "label": "Apply Locally",
+          "value": "Copies uncommitted changes from task worktree back to local working copy"
+        },
+        {
+          "label": "Checkout Branch",
+          "value": "<strong>Apply Locally</strong> dropdown → <strong>Checkout Branch Locally</strong> → creates <code>air/task-copy</code>"
+        },
+        {
+          "label": "Revert file",
+          "value": "<code>View | Changes</code> → Task Changes tab → <strong>Revert</strong> next to file name"
+        },
+        {
+          "label": "Revert all",
+          "value": "Task Changes tab → click <strong>Revert All</strong>"
+        },
+        {
+          "label": "Roll back",
+          "value": "History tool → right-click commit → <strong>Reset Current Branch To Here</strong>"
+        },
+        {
+          "label": "Reset modes",
+          "value": "<em>Mixed</em> (keep all), <em>Keep</em> (uncommitted only), <em>Hard</em> (discard all)"
+        }
+      ]
+    },
+    {
+      "icon": "📋",
+      "title": "Tasks &amp; Multitasking",
+      "colorClass": "s9",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Tasks tool",
+          "value": "<code>View | Tasks</code> or <code>⌘1</code> — lists all tasks with status &amp; progress"
+        },
+        {
+          "label": "New task",
+          "value": "<code>⌘⇧N</code> or <strong>New Task</strong> icon in Tasks tool"
+        },
+        {
+          "label": "Group tasks",
+          "value": "Tasks settings icon → group by <em>Date</em>, <em>Status</em>, or <em>Target</em>"
+        },
+        {
+          "label": "Plan files",
+          "value": "Plan mode writes plan to <code>.air/plans/</code> as Markdown"
+        },
+        {
+          "label": "Implement dialog",
+          "value": "After planning, choose agent, model &amp; environment before implementation starts"
+        },
+        {
+          "label": "Commit message",
+          "value": "Click <strong>Generate Commit Message</strong> icon in Changes tool for AI-drafted message"
+        },
+        {
+          "label": "Stage files",
+          "value": "Changes tool → select file checkboxes → only staged changes go into commit"
+        },
+        {
+          "label": "History",
+          "value": "<code>View | Tools | History</code> — shows Git commits + Before Request snapshots"
+        }
+      ]
+    },
+    {
+      "icon": "🔌",
+      "title": "Tools &amp; MCP",
+      "colorClass": "s7",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Enable MCP",
+          "value": "<code>Settings | AI | MCP Servers</code> → toggle <strong>Enable MCP support</strong>"
+        },
+        {
+          "label": "Add global MCP",
+          "value": "Click <strong>Add Global MCP Server</strong> → paste JSON config &amp; save"
+        },
+        {
+          "label": "Local MCP",
+          "value": "Stored in <code>.air/mcp.json</code> in project root — project-specific"
+        },
+        {
+          "label": "Workspace MCP",
+          "value": "Uses standard <code>.mcp.json</code> in project root; enable <strong>Launch workspace MCP servers</strong>"
+        },
+        {
+          "label": "OAuth MCP",
+          "value": "Server appears with <strong>Connect</strong> button; click to authorize via provider"
+        },
+        {
+          "label": "Bearer token",
+          "value": "Provide token directly in <code>mcp.json</code> <code>headers.Authorization</code> field"
+        },
+        {
+          "label": "Example",
+          "value": "<code>{ \"mcpServers\": { \"youtrack\": { \"url\": \"https://…/mcp\" } } }</code>"
+        },
+        {
+          "label": "Context type",
+          "value": "Type <code>@</code> in chat → MCP tools appear as context options when connected"
+        }
+      ]
+    },
+    {
+      "icon": "🧠",
+      "title": "Agents &amp; Models",
+      "colorClass": "s8",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Claude Agent",
+          "value": "Anthropic Console (API Billing); Claude Pro/Max/Team not permitted by ToS"
+        },
+        {
+          "label": "OpenAI Codex",
+          "value": "ChatGPT (Plus/Pro/Team) or OpenAI Platform (API billing)"
+        },
+        {
+          "label": "Gemini CLI",
+          "value": "Google Account (Personal/Workspace) or Google AI Studio (API Billing)"
+        },
+        {
+          "label": "Junie",
+          "value": "JetBrains Account with AI Pro or AI Ultimate subscription"
+        },
+        {
+          "label": "JetBrains AI",
+          "value": "Universal provider — all 4 agents under one subscription via AI credits"
+        },
+        {
+          "label": "Select model",
+          "value": "Click model selector in task toolbar (e.g., <code>Sonnet 4.5</code>) → choose agent &amp; model"
+        },
+        {
+          "label": "Switch model",
+          "value": "Can change model mid-task; cannot change agent provider after task starts"
+        },
+        {
+          "label": "Add provider",
+          "value": "<code>Settings | Account | AI Providers</code> → click <strong>Connect</strong>"
+        }
+      ]
+    },
+    {
+      "icon": "☁️",
+      "title": "Cloud Agents",
+      "colorClass": "s10",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Web UI",
+          "value": "Run tasks at <code>air.jetbrains.cloud</code> without installing the desktop app"
+        },
+        {
+          "label": "From IDE",
+          "value": "Use <strong>JetBrains Cloud</strong> agent in AI Assistant in IntelliJ-based IDEs"
+        },
+        {
+          "label": "Result push",
+          "value": "Agent commits to <code>air/&lt;task&gt;</code> branch &amp; pushes to remote automatically"
+        },
+        {
+          "label": "Apply cloud",
+          "value": "After review, create a pull request from the pushed task branch"
+        },
+        {
+          "label": "VM: Small",
+          "value": "2 CPUs / 8 GB RAM / 20 GB disk"
+        },
+        {
+          "label": "VM: Medium",
+          "value": "4 CPUs / 16 GB RAM / 30 GB disk"
+        },
+        {
+          "label": "VM: Large",
+          "value": "8 CPUs / 32 GB RAM / 50 GB disk"
+        },
+        {
+          "label": "VM: XL",
+          "value": "16 CPUs / 64 GB RAM / 100 GB disk"
+        },
+        {
+          "label": "Startup script",
+          "value": "Add <code>.air/cloud/startup.sh</code>; runs after clone, before agent; must be idempotent"
+        }
+      ]
+    },
+    {
+      "icon": "🔗",
+      "title": "Integrations &amp; VCS",
+      "colorClass": "s11",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Connect repos",
+          "value": "<code>air.jetbrains.cloud | Settings | Integrations</code> → click <strong>Connect</strong> for provider"
+        },
+        {
+          "label": "Providers",
+          "value": "GitHub, GitLab, Bitbucket — via JetBrains Air app installation"
+        },
+        {
+          "label": "Org repos",
+          "value": "Admin must install JetBrains Air app for the org before repos appear"
+        },
+        {
+          "label": "Push shortcut",
+          "value": "<code>⌃G ⌃P</code> — push local changes to remote tracked branch"
+        },
+        {
+          "label": "Pull shortcut",
+          "value": "<code>⌃G ⌃U</code> — pull remote changes into current branch"
+        },
+        {
+          "label": "Git Blame",
+          "value": "<code>⌃G ⌃A</code> — toggle blame gutter showing author per line"
+        },
+        {
+          "label": "Amend commit",
+          "value": "Git tool → settings icon → <strong>Amend Commit</strong> to modify latest commit"
+        },
+        {
+          "label": "Branches menu",
+          "value": "Click branch name in toolbar → create, checkout, push, fetch, delete branches"
+        }
+      ]
+    },
+    {
+      "icon": "🤖",
+      "title": "Automations",
+      "colorClass": "s12",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Manage",
+          "value": "Web UI → <code>air.jetbrains.cloud | Automations</code> page"
+        },
+        {
+          "label": "Triggers",
+          "value": "<em>Schedule</em> (At time), <em>Repeat every</em> (interval), <em>GitHub events</em>, <em>Webhook</em>"
+        },
+        {
+          "label": "GH events",
+          "value": "PR Opened/Updated/Merged/Review requested/Labeled; Issue Opened/Labeled"
+        },
+        {
+          "label": "Webhook trigger",
+          "value": "<code>POST</code> to auto-generated URL; include <code>Authorization: ApiKey &lt;token&gt;</code>"
+        },
+        {
+          "label": "Notifications",
+          "value": "Add outgoing webhook; Air sends <code>POST</code> on run success/failure"
+        },
+        {
+          "label": "Slack format",
+          "value": "Use <code>hooks.slack.com/triggers/…</code> URL for flattened Slack workflow payload"
+        },
+        {
+          "label": "Privacy",
+          "value": "<em>Private</em> = owner only; <em>Organization</em> = visible to org, editable by owner only"
+        },
+        {
+          "label": "Templates",
+          "value": "Click predefined template on New Automation page to pre-fill prompt"
+        }
+      ]
+    },
+    {
+      "icon": "📝",
+      "title": "Commands &amp; Skills",
+      "colorClass": "s2",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Slash menu",
+          "value": "Type <code>/</code> in task input to open commands &amp; skills list"
+        },
+        {
+          "label": "Review cmd",
+          "value": "<code>/</code> → <strong>Review with Agent</strong> → choose scope"
+        },
+        {
+          "label": "Upload file",
+          "value": "<code>/</code> → <strong>Upload File from Computer</strong>"
+        },
+        {
+          "label": "Claude cmds",
+          "value": "Custom commands in <code>.claude/commands/&lt;name&gt;.md</code>"
+        },
+        {
+          "label": "Gemini cmds",
+          "value": "Custom commands in <code>.gemini/commands/&lt;name&gt;.toml</code>"
+        },
+        {
+          "label": "Junie cmds",
+          "value": "Custom commands in <code>.junie/commands/&lt;name&gt;.md</code>"
+        },
+        {
+          "label": "Shared skills",
+          "value": "Reusable workflow modules in <code>.agents/skills/&lt;name&gt;/SKILL.md</code>"
+        },
+        {
+          "label": "Agent skills",
+          "value": "Per-agent overrides in <code>.claude/skills/</code>, <code>.codex/skills/</code>, etc."
+        }
+      ]
+    },
+    {
+      "icon": "🗂️",
+      "title": "Project Instructions",
+      "colorClass": "s3",
+      "column": 4,
+      "rows": [
+        {
+          "label": "CLAUDE.md",
+          "value": "Project instructions for Claude Agent; checked into version control"
+        },
+        {
+          "label": "AGENTS.md",
+          "value": "General agent guidance &amp; reusable instructions for all agents"
+        },
+        {
+          "label": "settings.json",
+          "value": "Claude shared settings in <code>.claude/settings.json</code>; personal in <code>.claude/settings.local.json</code>"
+        },
+        {
+          "label": "Review prompt",
+          "value": "Global or per-project in <code>.air/review/review-prompt.md</code>"
+        },
+        {
+          "label": "Air dir",
+          "value": "<code>.air/</code> directory in project root — commit to share config with team"
+        },
+        {
+          "label": "Init cmd",
+          "value": "Agent-specific <code>/init</code> command initializes project instruction files"
+        },
+        {
+          "label": "Docs context",
+          "value": "<code>Settings | &lt;Project&gt; | Documentation</code> → attach external API references"
+        },
+        {
+          "label": "Scope",
+          "value": "Global settings apply to all workspaces; project tab settings apply to current only"
+        }
+      ]
+    },
+    {
+      "icon": "🔎",
+      "title": "Navigation &amp; Search",
+      "colorClass": "s4",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Go to All",
+          "value": "<code>⌘K</code> or <code>Shift Shift</code> — search files, symbols, actions, tools"
+        },
+        {
+          "label": "Run action",
+          "value": "<code>⌘⇧K</code> — open Actions tab &amp; run any IDE action by name"
+        },
+        {
+          "label": "Text search",
+          "value": "<code>⌘⇧F</code> — full-text search across project with regex support"
+        },
+        {
+          "label": "Find usages",
+          "value": "<code>⌘U</code> — find all usages of symbol at caret"
+        },
+        {
+          "label": "Go to def",
+          "value": "<code>⌘B</code> — jump to definition of symbol at caret"
+        },
+        {
+          "label": "Go to impl",
+          "value": "<code>⌘⌥B</code> — navigate to implementations of interface/abstract symbol"
+        },
+        {
+          "label": "Next problem",
+          "value": "<code>⌘E</code> / <code>⌘⇧E</code> — jump to next / previous problem in file"
+        },
+        {
+          "label": "Symbols tool",
+          "value": "<code>View | Tools | Symbols</code> — browse types, fields, functions in current file"
+        }
+      ]
+    },
+    {
+      "icon": "💡",
+      "title": "Pro Tips",
+      "colorClass": "s1",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Fan out work",
+          "value": "Run independent tasks in parallel using multiple agents &amp; Git Worktrees"
+        },
+        {
+          "label": "Bound scope",
+          "value": "Keep each task small &amp; verifiable — one clear goal per task"
+        },
+        {
+          "label": "Context first",
+          "value": "Attach relevant files &amp; symbols upfront; avoid over-loading entire repo"
+        },
+        {
+          "label": "Plan for complex",
+          "value": "Use <strong>Plan</strong> mode for multi-file or constraint-heavy changes before coding starts"
+        },
+        {
+          "label": "Keep approvals",
+          "value": "Leave <strong>Ask</strong> mode on for sensitive actions; only use Full Access when you trust the project"
+        },
+        {
+          "label": "Steer, don't fire",
+          "value": "Review &amp; send comments back to agent rather than accepting everything blindly"
+        },
+        {
+          "label": "Idempotent scripts",
+          "value": "Make <code>startup.sh</code> &amp; <code>worktree.json</code> setup scripts safe to run repeatedly"
+        },
+        {
+          "label": "Docs updated",
+          "value": "Cheat sheet built from Air docs as of <strong>2026-07-01</strong>"
+        }
+      ]
+    }
+  ]
+}

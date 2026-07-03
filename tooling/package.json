@@ -1,0 +1,31 @@
+{
+  "name": "jetbrains-ai-cheatsheet-tooling",
+  "version": "1.0.0",
+  "description": "Automated JetBrains AI Cheat-Sheet Generation",
+  "type": "module",
+  "scripts": {
+    "crawl": "tsx src/stages/crawl.ts",
+    "extract": "tsx src/stages/extract.ts",
+    "render": "tsx src/stages/render.ts",
+    "build": "tsx src/index.ts",
+    "build:one": "tsx src/index.ts --product"
+  },
+  "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.31.0",
+    "@anthropic-ai/sdk": "^0.106.0",
+    "commander": "^12.0.0",
+    "nunjucks": "^3.2.4",
+    "playwright": "^1.61.1",
+    "sanitize-html": "^2.17.5",
+    "turndown": "^7.2.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/nunjucks": "^3.2.6",
+    "@types/sanitize-html": "^2.16.1",
+    "@types/turndown": "^5.0.6",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}

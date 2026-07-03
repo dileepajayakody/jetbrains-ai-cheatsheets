@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JetBrains AI Cheat Sheets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #fefcf9;
+            color: #1e293b;
+            font-family: 'Inter', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 48px 24px;
+        }
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        h1 .hl { background: linear-gradient(180deg, transparent 55%, #dbeafe 55%); padding: 0 6px; }
+        .sub { color: #94a3b8; font-size: 14px; font-weight: 500; margin-bottom: 32px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+            gap: 20px;
+            width: 100%;
+            max-width: 920px;
+            justify-content: center;
+        }
+        .card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform .12s ease, box-shadow .12s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15, 23, 42, .08); }
+        .card .icon { font-size: 32px; }
+        .card .name { font-size: 20px; font-weight: 700; margin: 8px 0 4px; }
+        .card .desc { font-size: 13px; color: #64748b; }
+        .card .go { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563eb; }
+        .foot { margin-top: 40px; font-size: 12px; color: #94a3b8; }
+        .jb {
+            display: inline-block;
+            background: #111827;
+            color: #67e8f9;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 <span class="hl">JetBrains AI</span> Cheat Sheets</h1>
+    <div class="sub">Quick references for JetBrains agentic & AI coding tools <span class="jb">JETBRAINS</span></div>
+    <div class="grid">
+{%- for product in products %}
+        <a class="card" href="{{ product.outputFile }}">
+            <div class="icon">{{ product.icon }}</div>
+            <div class="name">{{ product.displayName }}</div>
+            <div class="desc">{{ product.tagline }}</div>
+            <span class="go">Open cheat sheet →</span>
+        </a>
+{%- endfor %}
+    </div>
+    <div class="foot">Auto-generated from official JetBrains documentation{% if generatedNote %} · {{ generatedNote }}{% endif %}</div>
+</body>
+</html>

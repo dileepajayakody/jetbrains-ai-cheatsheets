@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1500">
+    <title>{{ displayName }} Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --synthetic-green: {{ accent.green | default('#48E054') }};
+            --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #000; }
+
+        .pg {
+            background: #000;
+            background-image: radial-gradient(rgba(72, 224, 84, .16) 1px, transparent 1.4px);
+            background-size: 22px 22px;
+            padding: 40px 36px 56px;
+            font-family: var(--font-mono);
+        }
+        .frame { max-width: 1432px; margin: 0 auto; }
+
+        /* ---- header band ---- */
+        .hd { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 1px solid rgba(255, 255, 255, .75); }
+        .hd-l { display: flex; align-items: flex-start; gap: 18px; }
+        .mark { width: 46px; height: 46px; flex: none; margin-top: 3px; }
+        .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--synthetic-green); margin: 0 0 6px; }
+        .title { font-family: var(--font-sans); font-weight: 500; font-size: 40px; line-height: 1; letter-spacing: -.01em; color: #fff; margin: 0; }
+        .title .hl, .title .hl2 { color: var(--synthetic-green); }
+        .sub { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, .7); margin: 9px 0 0; max-width: 560px; }
+        .hd-r { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 7px; flex: none; }
+        .ver { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: #000; background: var(--synthetic-green); padding: 4px 10px; }
+        .stamp { font-family: var(--font-mono); font-size: 11px; color: rgba(255, 255, 255, .55); letter-spacing: .02em; }
+        .stamp b { color: rgba(255, 255, 255, .85); font-weight: 600; }
+        .docs { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--synthetic-green); text-decoration: none; border: 1px solid var(--synthetic-green); padding: 5px 12px; letter-spacing: .02em; }
+        .docs:hover { background: var(--synthetic-green); color: #000; }
+
+        /* ---- sheet ---- */
+        .sheet { background: #fff; padding: 22px 22px 14px; }
+        .grid { column-count: 4; column-gap: 16px; }
+        @media (max-width: 1200px) { .grid { column-count: 3; } }
+        .card { break-inside: avoid; -webkit-column-break-inside: avoid; border: 1px solid #E5E5E0; margin: 0 0 16px; background: #fff; overflow: hidden; }
+        .bar { display: flex; align-items: center; gap: 8px; background: #000; color: #fff; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 7px 11px; }
+        .bar { overflow-wrap: anywhere; }
+        .mk { width: 8px; height: 8px; background: var(--synthetic-green); flex: none; }
+        /* fixed layout + wrapping keeps long URLs/commands inside the card */
+        table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        td { padding: 4px 11px; vertical-align: top; font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: #26262b; border-bottom: 1px solid #F1F1ED; overflow-wrap: anywhere; word-break: break-word; }
+        tr:last-child td { border-bottom: none; }
+        td.k { color: #0B7D29; font-weight: 600; width: 34%; font-size: 10.5px; letter-spacing: .01em; }
+        code { font-family: var(--font-mono); font-size: 10px; background: #ECFBEE; color: #0B7A26; padding: 1px 4px; overflow-wrap: anywhere; word-break: break-word; }
+        a { color: #0B7A26; overflow-wrap: anywhere; }
+
+        /* ---- footer ---- */
+        .ft { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 18px; font-family: var(--font-mono); font-size: 10.5px; color: rgba(255, 255, 255, .5); }
+        .ft a { color: var(--synthetic-green); text-decoration: none; }
+        .ft .dots { display: flex; gap: 3px; }
+        .ft .dots i { width: 5px; height: 5px; background: var(--synthetic-green); display: block; opacity: .5; }
+    </style>
+</head>
+<body>
+    <div class="pg">
+        <div class="frame">
+            <div class="hd">
+                <div class="hd-l">
+                    <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.986 234" fill="var(--synthetic-green)" aria-hidden="true">
+                        <path transform="translate(77.779 0)" d="M 77.852 0 L 0 0 L 0 78.036 L 77.852 78.036 L 77.852 0 Z"></path>
+                        <path transform="translate(0 77.976)" d="M 77.851 0 L 0 0 L 0 78.036 L 77.851 78.036 L 77.851 0 Z"></path>
+                        <path transform="translate(78.347 77.927)" d="M 77.788 0.064 L 155.64 0.064 L 155.64 13.07 C 155.64 104.112 116.714 156.073 12.975 156.073 L 0 156.073 L 0 78.037 L 12.975 78.037 C 58.357 78.037 77.851 58.559 77.851 13.006 L 77.851 0 L 77.788 0.064 Z"></path>
+                    </svg>
+                    <div>
+                        <p class="eyebrow">{{ brandName | safe }}</p>
+                        <h1 class="title">{{ title | safe }}</h1>
+                        <p class="sub">{{ brandSub | safe }}</p>
+                    </div>
+                </div>
+                <div class="hd-r">
+                    <span class="ver">{{ badge | safe }}</span>
+{%- if generatedNote %}
+                    <span class="stamp">{{ generatedNote }}</span>
+{%- endif %}
+                    <a class="docs" href="{{ docsUrl }}" target="_blank" rel="noopener">{{ docsLabel | safe }}</a>
+                </div>
+            </div>
+
+            <div class="sheet">
+                <div class="grid">
+{%- for section in sections %}
+                    <div class="card">
+                        <div class="bar"><span class="mk"></span>{{ section.title | safe }}</div>
+                        <table>
+                            <tbody>
+{%- for row in section.rows %}
+                            <tr><td class="k">{{ row.label | safe }}</td><td>{{ row.value | safe }}</td></tr>
+{%- endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+{%- endfor %}
+                </div>
+            </div>
+
+            <div class="ft">
+                <span>{{ displayName }} by JetBrains · auto-generated from public docs{% if generatedNote %} · {{ generatedNote }}{% endif %}. Details are version-sensitive — <a href="{{ docsUrl }}" target="_blank" rel="noopener">verify current docs</a> before production rollout.</span>
+                <span class="dots"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+/.idea/
+
+# Pipeline tooling
+tooling/node_modules/
+tooling/dist/
+
+# Secrets — never commit (.env.example is the committed template)
+.env
+**/.env
+!**/.env.example
+
+# Generated site output
+/dist/
+
+# AWS CDK
+infra/node_modules/
+infra/cdk.out/
+
+# OS noise
+.DS_Store

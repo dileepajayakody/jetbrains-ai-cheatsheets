@@ -1,0 +1,21 @@
+{
+  "name": "jetbrains-ai-cheatsheet-infra",
+  "version": "1.0.0",
+  "description": "AWS CDK app: private S3 + CloudFront (HTTPS) + GitHub OIDC role for the cheat-sheet site",
+  "bin": { "infra": "bin/infra.ts" },
+  "scripts": {
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.150.0",
+    "constructs": "^10.3.0"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.150.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.24"
+  }
+}
