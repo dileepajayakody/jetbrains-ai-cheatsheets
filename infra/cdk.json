@@ -4,7 +4,7 @@
     "@aws-cdk/aws-iam:minimizePolicies": true,
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": true,
-    "githubRepo": "dileepajayakody/AI_JetBrains_Playbook",
+    "githubRepo": "dileepajayakody/jetbrains-ai-cheatsheets",
     "githubBranch": "main"
   }
 }
