@@ -35,6 +35,7 @@ export async function render(product: ProductConfig): Promise<string> {
     // Authoritative docs link comes from config, never from model output.
     docsUrl: product.docsHubUrl,
     displayName: product.displayName,
+    productId: product.id,
     accent: product.accent,
   });
   await mkdir(DIST_DIR, { recursive: true });

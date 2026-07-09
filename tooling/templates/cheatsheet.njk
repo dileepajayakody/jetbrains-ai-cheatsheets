@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Modul Air';
+            src: url('https://air.dev/fonts/Modul_AirVF.ttf') format('truetype');
+            font-display: swap;
+        }
         :root {
             --synthetic-green: {{ accent.green | default('#48E054') }};
             --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
@@ -61,18 +66,165 @@
         .ft a { color: var(--synthetic-green); text-decoration: none; }
         .ft .dots { display: flex; gap: 3px; }
         .ft .dots i { width: 5px; height: 5px; background: var(--synthetic-green); display: block; opacity: .5; }
+
+        /* JetBrains Air theme, based on air.dev */
+        body.theme-air {
+            --air-bg: #292b2d;
+            --air-panel: #202325;
+            --air-panel-2: #181b1d;
+            --air-cyan: #00b2d6;
+            --air-teal: #2f9f83;
+            --air-mint: #6ee7c8;
+            --air-border: rgba(255, 255, 255, .13);
+            --air-text: #fff;
+            --air-muted: rgba(255, 255, 255, .72);
+            --synthetic-green: var(--air-cyan);
+            --font-sans: 'Modul Air', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .theme-air .pg {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 18% 10%, rgba(0, 178, 214, .42), transparent 34%),
+                radial-gradient(circle at 82% 18%, rgba(47, 159, 131, .34), transparent 31%),
+                linear-gradient(180deg, rgba(0, 178, 214, .28) 0%, rgba(0, 178, 214, 0) 34%),
+                var(--air-bg);
+            background-size: auto;
+            padding: 46px 40px 60px;
+            color: var(--air-text);
+        }
+        .theme-air .frame { max-width: 1388px; }
+        .theme-air .hd {
+            position: relative;
+            overflow: hidden;
+            align-items: center;
+            border: 1px solid var(--air-border);
+            border-radius: 22px;
+            padding: 24px 26px;
+            margin-bottom: 18px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .025)),
+                rgba(24, 27, 29, .72);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, .32);
+        }
+        .theme-air .hd::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -90px 42%;
+            height: 170px;
+            background: radial-gradient(circle, rgba(0, 178, 214, .38), transparent 68%);
+            pointer-events: none;
+        }
+        .theme-air .hd-l,
+        .theme-air .hd-r { position: relative; z-index: 1; }
+        .theme-air .mark {
+            width: 128px;
+            height: auto;
+            min-height: 56px;
+            padding: 12px 14px;
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .08);
+            object-fit: contain;
+            filter: drop-shadow(0 0 22px rgba(0, 178, 214, .38));
+        }
+        .theme-air .eyebrow {
+            color: var(--air-mint);
+            letter-spacing: .16em;
+        }
+        .theme-air .title {
+            max-width: 900px;
+            font-family: var(--font-sans);
+            font-size: 48px;
+            font-weight: 650;
+            letter-spacing: -.035em;
+        }
+        .theme-air .title .hl,
+        .theme-air .title .hl2 {
+            color: #fff;
+            text-shadow: 0 0 34px rgba(0, 178, 214, .55);
+        }
+        .theme-air .sub {
+            color: var(--air-muted);
+            max-width: 690px;
+        }
+        .theme-air .ver {
+            color: #061014;
+            background: linear-gradient(90deg, var(--air-cyan), var(--air-mint));
+            border-radius: 999px;
+            padding: 6px 13px;
+        }
+        .theme-air .stamp { color: rgba(255, 255, 255, .62); }
+        .theme-air .docs {
+            color: #fff;
+            border-color: rgba(255, 255, 255, .2);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .07);
+        }
+        .theme-air .docs:hover {
+            color: #061014;
+            background: var(--air-cyan);
+            border-color: var(--air-cyan);
+        }
+        .theme-air .sheet {
+            border: 1px solid var(--air-border);
+            border-radius: 22px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .025)),
+                rgba(24, 27, 29, .78);
+            box-shadow: 0 28px 90px rgba(0, 0, 0, .34);
+        }
+        .theme-air .card {
+            border-color: rgba(255, 255, 255, .12);
+            border-radius: 14px;
+            background: rgba(32, 35, 37, .92);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+        .theme-air .bar {
+            background: linear-gradient(90deg, rgba(0, 178, 214, .25), rgba(47, 159, 131, .12));
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+        .theme-air .mk {
+            border-radius: 999px;
+            background: var(--air-cyan);
+            box-shadow: 0 0 18px rgba(0, 178, 214, .8);
+        }
+        .theme-air td {
+            color: rgba(255, 255, 255, .84);
+            border-bottom-color: rgba(255, 255, 255, .08);
+        }
+        .theme-air td.k {
+            color: var(--air-mint);
+        }
+        .theme-air code {
+            color: #9af6df;
+            background: rgba(0, 178, 214, .14);
+            border: 1px solid rgba(0, 178, 214, .18);
+            border-radius: 5px;
+        }
+        .theme-air a { color: #7ee7ff; }
+        .theme-air .ft { color: rgba(255, 255, 255, .55); }
+        .theme-air .ft a { color: #7ee7ff; }
+        .theme-air .ft .dots i {
+            border-radius: 999px;
+            background: var(--air-cyan);
+        }
     </style>
 </head>
-<body>
+<body class="theme-{{ productId | default('default') }}">
     <div class="pg">
         <div class="frame">
             <div class="hd">
                 <div class="hd-l">
+{%- if productId == 'air' %}
+                    <img class="mark" src="https://air.dev/assets/air-logo-LD7eQ3qw.svg" alt="JetBrains Air">
+{%- else %}
                     <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.986 234" fill="var(--synthetic-green)" aria-hidden="true">
                         <path transform="translate(77.779 0)" d="M 77.852 0 L 0 0 L 0 78.036 L 77.852 78.036 L 77.852 0 Z"></path>
                         <path transform="translate(0 77.976)" d="M 77.851 0 L 0 0 L 0 78.036 L 77.851 78.036 L 77.851 0 Z"></path>
                         <path transform="translate(78.347 77.927)" d="M 77.788 0.064 L 155.64 0.064 L 155.64 13.07 C 155.64 104.112 116.714 156.073 12.975 156.073 L 0 156.073 L 0 78.037 L 12.975 78.037 C 58.357 78.037 77.851 58.559 77.851 13.006 L 77.851 0 L 77.788 0.064 Z"></path>
                     </svg>
+{%- endif %}
                     <div>
                         <p class="eyebrow">{{ brandName | safe }}</p>
                         <h1 class="title">{{ title | safe }}</h1>
