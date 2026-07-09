@@ -209,6 +209,136 @@
             border-radius: 999px;
             background: var(--air-cyan);
         }
+
+        /* JetBrains AI Assistant theme */
+        body.theme-aiassistant {
+            --ai-violet: #955ae0;
+            --ai-blue: #4d67f0;
+            --ai-pink: #d88cff;
+            --ai-bg: #090817;
+            --ai-panel: #141126;
+            --ai-border: rgba(216, 140, 255, .18);
+            --synthetic-green: var(--ai-violet);
+            --font-sans: 'Hanken Grotesk', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .theme-aiassistant .pg {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 16% 8%, rgba(149, 90, 224, .42), transparent 34%),
+                radial-gradient(circle at 86% 16%, rgba(77, 103, 240, .38), transparent 32%),
+                radial-gradient(circle at 50% 100%, rgba(216, 140, 255, .16), transparent 46%),
+                var(--ai-bg);
+            background-size: auto;
+            color: #fff;
+        }
+        .theme-aiassistant .hd {
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            border: 1px solid var(--ai-border);
+            border-radius: 24px;
+            padding: 24px 26px;
+            margin-bottom: 20px;
+            background:
+                linear-gradient(135deg, rgba(149, 90, 224, .2), rgba(77, 103, 240, .08)),
+                rgba(12, 10, 28, .78);
+            box-shadow: 0 24px 90px rgba(5, 4, 18, .42);
+        }
+        .theme-aiassistant .hd::after {
+            content: "";
+            position: absolute;
+            inset: -90px -60px auto auto;
+            width: 360px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(216, 140, 255, .32), transparent 68%);
+            pointer-events: none;
+        }
+        .theme-aiassistant .hd-l,
+        .theme-aiassistant .hd-r { position: relative; z-index: 1; }
+        .theme-aiassistant .mark {
+            width: 62px;
+            height: 62px;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .08);
+            object-fit: contain;
+            filter: drop-shadow(0 0 26px rgba(149, 90, 224, .55));
+        }
+        .theme-aiassistant .eyebrow { color: #d9c2ff; }
+        .theme-aiassistant .title {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -.035em;
+        }
+        .theme-aiassistant .title .hl,
+        .theme-aiassistant .title .hl2 {
+            background: linear-gradient(90deg, #fff, #d9c2ff 42%, #aeb8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .theme-aiassistant .sub { color: rgba(255, 255, 255, .72); }
+        .theme-aiassistant .ver {
+            color: #fff;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--ai-violet), var(--ai-blue));
+            box-shadow: 0 0 24px rgba(149, 90, 224, .32);
+        }
+        .theme-aiassistant .stamp { color: rgba(255, 255, 255, .6); }
+        .theme-aiassistant .docs {
+            color: #efe7ff;
+            border-color: rgba(216, 140, 255, .38);
+            border-radius: 999px;
+            background: rgba(149, 90, 224, .12);
+        }
+        .theme-aiassistant .docs:hover {
+            color: #fff;
+            background: var(--ai-violet);
+            border-color: var(--ai-violet);
+        }
+        .theme-aiassistant .sheet {
+            border: 1px solid var(--ai-border);
+            border-radius: 24px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .025)),
+                rgba(13, 11, 31, .82);
+            box-shadow: 0 28px 90px rgba(5, 4, 18, .42);
+        }
+        .theme-aiassistant .card {
+            border-color: rgba(216, 140, 255, .16);
+            border-radius: 16px;
+            background: rgba(20, 17, 38, .92);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+        .theme-aiassistant .bar {
+            background: linear-gradient(90deg, rgba(149, 90, 224, .38), rgba(77, 103, 240, .18));
+            border-bottom: 1px solid rgba(216, 140, 255, .14);
+            color: #fff;
+        }
+        .theme-aiassistant .mk {
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--ai-violet), var(--ai-blue));
+            box-shadow: 0 0 18px rgba(149, 90, 224, .8);
+        }
+        .theme-aiassistant td {
+            color: rgba(255, 255, 255, .84);
+            border-bottom-color: rgba(216, 140, 255, .1);
+        }
+        .theme-aiassistant td.k { color: #d9c2ff; }
+        .theme-aiassistant code {
+            color: #eadfff;
+            background: rgba(149, 90, 224, .18);
+            border: 1px solid rgba(216, 140, 255, .2);
+            border-radius: 5px;
+        }
+        .theme-aiassistant a { color: #bfc7ff; }
+        .theme-aiassistant .ft { color: rgba(255, 255, 255, .54); }
+        .theme-aiassistant .ft a { color: #d9c2ff; }
+        .theme-aiassistant .ft .dots i {
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--ai-violet), var(--ai-blue));
+        }
     </style>
 </head>
 <body class="theme-{{ productId | default('default') }}">
@@ -218,6 +348,8 @@
                 <div class="hd-l">
 {%- if productId == 'air' %}
                     <img class="mark" src="https://air.dev/assets/air-logo-LD7eQ3qw.svg" alt="JetBrains Air">
+{%- elif productId == 'aiassistant' %}
+                    <img class="mark" src="https://resources.jetbrains.com/storage/logos/web/ai/ai.svg" alt="JetBrains AI Assistant">
 {%- else %}
                     <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233.986 234" fill="var(--synthetic-green)" aria-hidden="true">
                         <path transform="translate(77.779 0)" d="M 77.852 0 L 0 0 L 0 78.036 L 77.852 78.036 L 77.852 0 Z"></path>

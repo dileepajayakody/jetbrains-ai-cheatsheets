@@ -6,76 +6,245 @@
     <title>JetBrains AI Cheat Sheets</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --junie-green: #48e054;
+            --bg: #070807;
+            --card: #111;
+            --card-2: #171a17;
+            --line: rgba(72, 224, 84, .18);
+            --text: #fff;
+            --muted: rgba(255, 255, 255, .68);
+            --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: #fefcf9;
-            color: #1e293b;
-            font-family: 'Inter', system-ui, sans-serif;
             min-height: 100vh;
+            color: var(--text);
+            font-family: var(--sans);
+            background:
+                radial-gradient(circle at 50% -10%, rgba(72, 224, 84, .25), transparent 36%),
+                radial-gradient(circle at 12% 22%, rgba(72, 224, 84, .12), transparent 24%),
+                linear-gradient(180deg, #101110 0%, var(--bg) 48%, #030403 100%);
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(rgba(72, 224, 84, .075) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(72, 224, 84, .075) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, .55) 48%, transparent 100%);
+        }
+        main {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 34px 0 42px;
+        }
+        .shell {
+            border: 1px solid var(--line);
+            border-radius: 42px;
+            background: rgba(17, 17, 17, .72);
+            box-shadow: 0 26px 90px rgba(0, 0, 0, .38), inset 0 1px 0 rgba(255, 255, 255, .05);
+            overflow: hidden;
+        }
+        .topbar {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 48px 24px;
+            justify-content: flex-end;
+            gap: 18px;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(8, 9, 8, .7);
         }
-        h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 48px;
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(72, 224, 84, .36);
+            border-radius: 999px;
+            color: var(--junie-green);
+            font-family: var(--mono);
+            font-size: 11px;
             font-weight: 700;
-            margin-bottom: 4px;
+            letter-spacing: .08em;
+            padding: 7px 12px;
+            text-transform: uppercase;
         }
-        h1 .hl { background: linear-gradient(180deg, transparent 55%, #dbeafe 55%); padding: 0 6px; }
-        .sub { color: #94a3b8; font-size: 14px; font-weight: 500; margin-bottom: 32px; }
+        .hero {
+            position: relative;
+            padding: 72px 34px 48px;
+            text-align: center;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 14% -80px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(72, 224, 84, .18), transparent 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: clamp(36px, 6.8vw, 76px);
+            font-weight: 800;
+            line-height: .96;
+            letter-spacing: -.06em;
+        }
+        .hero h1 span { color: var(--junie-green); }
+        .sub {
+            position: relative;
+            z-index: 1;
+            max-width: 690px;
+            margin: 22px auto 0;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 15px;
+            line-height: 1.7;
+        }
         .grid {
+            position: relative;
+            z-index: 1;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
-            gap: 20px;
-            width: 100%;
-            max-width: 920px;
-            justify-content: center;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            padding: 0 34px 36px;
         }
         .card {
-            display: block;
-            text-decoration: none;
+            position: relative;
+            display: flex;
+            min-height: 260px;
+            flex-direction: column;
             color: inherit;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 28px;
             padding: 24px;
-            transition: transform .12s ease, box-shadow .12s ease;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, .065), rgba(255, 255, 255, .025)),
+                var(--card);
+            overflow: hidden;
+            transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
         }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15, 23, 42, .08); }
-        .card .icon { font-size: 32px; }
-        .card .name { font-size: 20px; font-weight: 700; margin: 8px 0 4px; }
-        .card .desc { font-size: 13px; color: #64748b; }
-        .card .go { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: 600; color: #2563eb; }
-        .foot { margin-top: 40px; font-size: 12px; color: #94a3b8; }
-        .jb {
-            display: inline-block;
-            background: #111827;
-            color: #67e8f9;
-            font-size: 10px;
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            background: radial-gradient(circle at 26% 18%, var(--glow), transparent 38%);
+            opacity: .75;
+            pointer-events: none;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(72, 224, 84, .42);
+            box-shadow: 0 18px 54px rgba(0, 0, 0, .38);
+        }
+        .card.junie { --glow: rgba(72, 224, 84, .22); }
+        .card.aiassistant { --glow: rgba(149, 90, 224, .26); }
+        .card.air { --glow: rgba(0, 178, 214, .26); }
+        .logo-wrap {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            width: 68px;
+            height: 68px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, .24);
+        }
+        .logo {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+        }
+        .name {
+            position: relative;
+            z-index: 1;
+            margin-top: 26px;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -.035em;
+        }
+        .desc {
+            position: relative;
+            z-index: 1;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, .68);
+            font-family: var(--mono);
+            font-size: 13px;
+            line-height: 1.65;
+        }
+        .go {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            margin-top: auto;
+            color: var(--junie-green);
+            font-family: var(--mono);
+            font-size: 12px;
             font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
+            letter-spacing: .02em;
+        }
+        .go::after { content: "->"; }
+        .foot {
+            padding: 0 34px 30px;
+            color: rgba(255, 255, 255, .45);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-align: center;
+        }
+        @media (max-width: 860px) {
+            main { width: min(100% - 24px, 640px); padding-top: 16px; }
+            .shell { border-radius: 28px; }
+            .topbar { align-items: flex-start; flex-direction: column; }
+            .hero { padding: 50px 22px 34px; }
+            .grid { grid-template-columns: 1fr; padding: 0 18px 26px; }
+            .card { min-height: 220px; }
+            .foot { padding-inline: 18px; }
         }
     </style>
 </head>
 <body>
-    <h1>🚀 <span class="hl">JetBrains AI</span> Cheat Sheets</h1>
-    <div class="sub">Quick references for JetBrains agentic & AI coding tools <span class="jb">JETBRAINS</span></div>
-    <div class="grid">
+    <main>
+        <div class="shell">
+            <div class="topbar">
+                <span class="pill">Official docs digest</span>
+            </div>
+            <section class="hero">
+                <h1><span>JetBrains AI</span> cheat sheets for agentic coding.</h1>
+                <p class="sub">Fast references generated from official JetBrains docs for Junie, JetBrains Air, and AI Assistant.</p>
+            </section>
+            <div class="grid">
 {%- for product in products %}
-        <a class="card" href="{{ product.outputFile }}">
-            <div class="icon">{{ product.icon }}</div>
-            <div class="name">{{ product.displayName }}</div>
-            <div class="desc">{{ product.tagline }}</div>
-            <span class="go">Open cheat sheet →</span>
-        </a>
+                <a class="card {{ product.id }}" href="{{ product.outputFile }}">
+                    <div class="logo-wrap">
+{%- if product.id == 'junie' %}
+                        <img class="logo" src="https://resources.jetbrains.com/storage/logos/web/junie/junie.svg" alt="Junie logo">
+{%- elif product.id == 'air' %}
+                        <img class="logo" src="https://resources.jetbrains.com/storage/logos/web/air/air.svg" alt="JetBrains Air logo">
+{%- elif product.id == 'aiassistant' %}
+                        <img class="logo" src="https://resources.jetbrains.com/storage/logos/web/ai/ai.svg" alt="JetBrains AI Assistant logo">
+{%- endif %}
+                    </div>
+                    <div class="name">{{ product.displayName }}</div>
+                    <div class="desc">{{ product.tagline }}</div>
+                    <span class="go">Open cheat sheet</span>
+                </a>
 {%- endfor %}
-    </div>
-    <div class="foot">Auto-generated from official JetBrains documentation{% if generatedNote %} · {{ generatedNote }}{% endif %}</div>
+            </div>
+            <div class="foot">Auto-generated from official JetBrains documentation{% if generatedNote %} · {{ generatedNote }}{% endif %}</div>
+        </div>
+    </main>
 </body>
 </html>
