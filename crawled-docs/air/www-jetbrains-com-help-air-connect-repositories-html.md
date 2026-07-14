@@ -6,9 +6,9 @@ Limited EAP
 
 # Connect repositories
 
-Last modified: 24 June 2026
+Last modified: 03 July 2026
 
-Unlike local runs, cloud environments do not already have your project checked out. To make repositories available in JetBrains Air, configure integration with a supported VCS provider: [GitHub](/help/air/connect-repositories.html#github_access), [GitLab, or Bitbucket](/help/air/connect-repositories.html#gitlab_bitbucket_access).
+Unlike local runs, cloud environments do not already have your project checked out. To make repositories available in JetBrains Air, configure integration with a supported VCS provider: [GitHub](/help/air/connect-repositories.html#github_access) or [GitLab](/help/air/connect-repositories.html#gitlab_access).
 
 Repository access in JetBrains Air is based on the [JetBrains Air](/help/air/connect-repositories.html#connecting_vcs_provider) app installed in your VCS provider.
 
@@ -118,15 +118,15 @@ For internal repositories, the usual fix is to grant the user explicit repositor
 
 \>
 
-## GitLab and Bitbucket
+## GitLab
 
-GitLab and Bitbucket repository access in JetBrains Air also goes through the JetBrains Air app. Air starts the flow, and the app is then installed and authorized in GitLab or Bitbucket.
+GitLab repository access in JetBrains Air also goes through the JetBrains Air app. Air starts the flow, and the app is then installed and authorized in GitLab.
 
 The repositories that appear in JetBrains Air depend on:
 
 -   which repositories the app is allowed to access
 
--   which repositories the current user is allowed to access in GitLab or Bitbucket
+-   which repositories the current user is allowed to access in GitLab
 
 ## Set up organization repository access (admin)
 

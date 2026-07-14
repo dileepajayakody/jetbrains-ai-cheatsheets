@@ -4,7 +4,7 @@
 
 # Codex
 
-Last modified: 11 June 2026
+Last modified: 03 July 2026
 
 ! **Codex** is a third-party [coding agent](https://developers.openai.com/codex) by OpenAI available for use in AI Assistant. It can help you to design and implement features, fix bugs, answer questions, review code, and assist with a wide range of development tasks.
 
@@ -14,11 +14,9 @@ Last modified: 11 June 2026
 >
 > Currently, Codex integration has a few limitations:
 >
-> -   Codex does not work with AI Assistant's `.aiignore` [functionality](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders), which means that files listed in `.aiignore` can be processed by Codex.
->
 > -   When configured with [BYOK (Bring Your Own Key)](activate-agents.html#activate-agent-with-api-key), Codex integration requires an OpenAI API key issued directly by OpenAI. Third-party API keys are not currently supported, even if they provide access to OpenAI models.
 >
-> -   Codex does not work in the Windows Subsystem for Linux ([WSL](https://learn.microsoft.com/en-us/windows/wsl/about)).
+> -   Codex does not work with AI Assistant's `.aiignore` [functionality](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders), which means that files listed in `.aiignore` can be processed by Codex.
 >
 
 ## Get started with Codex
@@ -73,13 +71,13 @@ To switch between modes, use the mode picker dropdown in the prompt window.
 
 ![Mode picker](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_mode_picker.png "Mode picker")
 
-## Select a processing model
+## Select a model and reasoning level
 
 To select a model that Codex uses to process your requests, click ! and select the model from the list.
 
 ![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_model_selection.png "Select the model")
 
-You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. The selected level controls how much analytical processing the model applies when generating responses.
+You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
 ## Approve operations
 
@@ -91,6 +89,8 @@ In the Read-only mode, Codex requests your permission to run suggested bash comm
 
 -   Allow for Session – allows Codex to execute this command for the current session without asking again.
 
+-   Allow Commands Starting With – allows Codex to run any command that begins with the specified prefix without asking again. This approves a group of related commands that share the same starting text, so you don't need to confirm each one individually.
+
 -   Reject – prevents Codex from executing this command.
 
 > ### tip
@@ -99,9 +99,13 @@ In the Read-only mode, Codex requests your permission to run suggested bash comm
 
 Before you decide, you can review what the agent is about to do:
 
--   For a suggested file change, click to review the changes the agent introduces.
+-   For a suggested file change, click ![the Show Diff button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.vcs.diff.svg "the Show Diff button") to review the changes the agent introduces.
+
+    ![Open the diff to review the file changes Codex suggests before you approve them](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_review_suggested_changes.png "Open the diff to review the file changes Codex suggests before you approve them")
 
 -   For a suggested command, click Open in editor in the top-right corner of the widget to review the complete command the agent suggests to run.
+
+    ![Open the suggested command in the editor to review it before running](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_terminal_command_review.png "Open the suggested command in the editor to review it before running")
 
 ## Rollback operations
 
@@ -119,17 +123,19 @@ If the changes introduced by Codex do not suit you, you can roll them back. To d
 
         ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_all_changes.png "Rollback changes in all files")
 
-## View Codex status and configuration
+## Use /commands
 
-Codex provides informational `/` commands to view the current agent configuration and manage the active session:
+Codex supports a subset of `/commands` that you can type directly in the chat to run actions such as checking the session status, managing the current session, or viewing the agent configuration.
 
--   `/mcp` – provides the list of configured MCP servers.
+To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
--   `/skills` – provides the list of available skills. For more information about skills, refer to [Use Codex skills](/help/ai-assistant/codex-agent.html#codex-skills).
+![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_commands.png "List of / commands")
 
--   `/logout` – ends the current session and logs out of the ChatGPT account.
+For details on specific commands, refer to the [official Codex documentation](https://developers.openai.com/codex/cli/slash-commands).
 
--   `/status` – displays information about the current session, including token usage and the available context window.
+> ### note
+>
+> Configured [MCP tools](mcp.html) are not shown in the `/` menu. The agent invokes them automatically when needed, or you can reference them directly in a prompt.
 
 ## Use Codex skills
 
@@ -152,6 +158,24 @@ To view the skills currently available to Codex, use the `/skills` command.
 > ### tip
 >
 > For more details about the skills functionality, refer to [OpenAI documentation](https://developers.openai.com/codex/skills).
+
+## Enable use of external tools
+
+You can enable Codex to use tools provided by configured [Model Context Protocol (MCP) servers](mcp.html), extending its capabilities to perform a wider range of tasks. The available tools can be invoked automatically when the agent considers them necessary, or you can call them manually when writing a request.
+
+![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_run_mcp_command.png "Run MCP command")
+
+To enable Codex to use tools:
+
+1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
+
+2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+
+3.  Enable the Pass custom MCP servers setting.
+
+4.  Click OK.
 
 Specific IDEs
 
@@ -190,3 +214,11 @@ Currently, Codex requires the following configuration to work with [database-spe
 6.  On the MCP Server page of the Settings dialog, click Auto-Configure under Codex to apply the new configuration.
 
 7.  Click OK to save the MCP server.
+
+## Add instructions
+
+Instructions let you provide persistent, reusable context to the agent. Codex adds this context to every task it works on, so you don't have to repeat project-specific instructions in each prompt.
+
+Codex reads instructions from the AGENTS.md file in the root project directory, so you can keep them under version control and reuse them across the project.
+
+For more information about instruction files and their format, refer to [Agent instructions](configure-agent-behavior.html).

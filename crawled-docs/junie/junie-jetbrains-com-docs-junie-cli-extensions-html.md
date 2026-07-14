@@ -4,7 +4,7 @@
 
 # Add and configure extensions
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Extensions are reusable bundles that extend Junie CLI with project-specific or domain-specific capabilities. A single extension can package any combination of:
 

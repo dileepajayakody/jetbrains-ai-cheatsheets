@@ -4,7 +4,7 @@
 
 # config.json
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Junie CLI can load settings from JSON configuration files in addition to command-line flags and environment variables. Configuration files are useful when you want to keep shared project defaults in the repository or define personal defaults once for all projects.
 

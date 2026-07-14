@@ -4,17 +4,17 @@
 
 # Agent instructions
 
-Last modified: 25 March 2026
+Last modified: 02 July 2026
 
 Agents can be configured using instruction files in your project that define how they should behave in your codebase, including coding conventions, architectural constraints, and common workflows.
 
-Most agents rely on an `AGENTS.md` [file](https://agents.md/) for reusable guidance, while some agents use their own formats. For example, [Claude Agent](claude-agent.html) uses `CLAUDE.md` and the `.claude` directory. AI Assistant supports these instruction formats and passes them to the selected agent.
+Most agents rely on an `AGENTS.md` [file](https://agents.md/) for reusable guidance, though some use their own format. For example, [Claude Agent](claude-agent.html) gets its instructions from `CLAUDE.md`.
 
 Agents automatically read these files and use them as guidance when generating code, executing commands, and making decisions. This helps keep project-specific instructions in one place and ensures more consistent results.
 
-## Instruction files vs Project rules
+## Instruction files vs. Project rules
 
-AI Assistant also provides a similar functionality called [Project rules](configure-project-rules.html), which define how AI Assistant behaves in chat.
+AI Assistant also provides a similar functionality called [Project rules](configure-project-rules.html), which defines how it behaves in chat.
 
 -   **Instruction files** (`AGENTS.md`, `CLAUDE.md`) are used by the selected coding agent and travel with your repository.
 
@@ -44,6 +44,6 @@ A typical file includes:
 Example
 ```
 
-> ### tip
+> ### note
 >
-> For details about supported formats and advanced usage, refer to the documentation of your coding agent tooling.
+> Supported file names and placement locations may vary by agent. For details, refer to your agent's documentation.

@@ -4,7 +4,7 @@
 
 # Add and configure MCP servers
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 You can connect Junie CLI to external tools via Model Context Protocol (MCP). Junie CLI uses the same MCP JSON configuration as [Junie in JetBrains IDEs](junie-ide-plugin.html#mcp-configuration).
 

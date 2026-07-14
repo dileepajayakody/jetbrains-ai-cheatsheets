@@ -1,6 +1,6 @@
 # Junie GitLab CI/CD
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Run AI tasks from GitLab issues or MRs with Junie GitLab CI/CD.
 

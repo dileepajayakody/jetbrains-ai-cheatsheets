@@ -4,7 +4,7 @@
 
 # Junie by JetBrains
 
-Last modified: 18 June 2026
+Last modified: 03 July 2026
 
 ![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.1/junie-logo.svg "Junie logo") **Junie** is an AI coding agent developed by JetBrains whose primary task is to autonomously plan and execute complex, multi-step actions based on your prompt. It can introduce large-scale edits to your project, run tests or terminal commands, and use external tools when needed, while reporting progress to you.
 
@@ -14,9 +14,7 @@ Last modified: 18 June 2026
 
 ## Get started with Junie
 
-To use Junie, you need to install and activate it using one of the supported authentication methods. For instructions, refer to:
-
--   [JetBrains AI subscription](activate-agents.html#activate-junie-with-jbai-subscription)
+To use Junie, you need to install and activate it with a [JetBrains AI subscription](activate-agents.html#activate-junie-with-jbai-subscription).
 
 After setup, select ! Junie in AI Chat to start using it.
 
@@ -42,11 +40,13 @@ An indicator in the chat input field shows the current state of automatic contex
 >
 > Other open files, recently edited files, and broader project context are not added automatically. Use `@` in the chat input to attach additional files when needed.
 
-## Select a processing model
+## Select a model and reasoning level
 
 To select a model that Junie uses to process your requests, click ! and select the model from the list.
 
 ![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_junie_model_selection.png "Select the model")
+
+You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
 ## Enable Brave mode
 
@@ -58,23 +58,13 @@ You can allow Junie to execute commands or modify files without asking for [conf
 >
 > Allowing Junie to execute potentially sensitive actions without your approval can lead to data loss or security issues.
 
-## Increase reasoning effort
-
-You can instruct Junie to Think More, increasing the reasoning effort it applies to a task. With Think More disabled, Junie uses a medium effort level; when you enable it, Junie switches to a high effort level, spending additional time planning and verifying its actions. This deeper reasoning can lead to higher-quality results, such as cleaner code and better-structured solutions.
-
-![The Think More setting](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_think_more.png "The Think More setting")
-
-> ### tip
->
-> Use this mode for complex or critical tasks.
-
 Specific IDEs
 
 ## Enable Debug mode
 
 **Available in:** IntelliJ IDEA Ultimate
 
-In Debug mode, Junie works as an AI-powered debugging assistant. Instead of editing code, it launches or attaches to a running program through the IDE debugger to manage breakpoints, inspect runtime state, and evaluate expressions in the paused execution frame.
+In Debug mode, Junie works as an AI-powered debugging assistant. Instead of editing code, it launches or attaches to a running program through the IDE debugger to manage breakpoints, inspect the runtime state, and evaluate expressions in the paused execution frame.
 
 ![The Debug mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_debug_mode.png "The Debug mode")
 
@@ -186,46 +176,52 @@ If the changes introduced by Junie do not suit you, you can roll them back. To d
 
 ## Use /commands
 
-Junie supports a subset of `/commands` for executing actions directly in the chat. The following commands are currently supported:
+Junie supports a subset of `/commands` that you can type directly in the chat to run actions such as checking the session status, managing the current session, or viewing the agent configuration.
+
+To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
+
+The following `/commands` are currently supported:
 
 -   `/ide` – shows the current JetBrains IDE connection status and the JetBrains IDE features available to the current session.
 
 -   `/usage` – shows the cost breakdown for the current session, including token usage and used models.
 
+-   `/remote` – starts a remote session that lets you control Junie from a web UI in your browser. When you run the command, Junie posts a message in AI Chat confirming that the remote session has started, along with a link to connect to it. Open the link, log in with your JetBrains account, and you will see the remote session. Click Open Chat to start working with the agent from the web UI.
+
+    The remote session lives as long as the IDE is running. Run `/remote` again to display the Remote Session Status.
+
+> ### note
+>
+> Configured [MCP tools](mcp.html) are not shown in the `/` menu. The agent invokes them automatically when needed, or you can reference them directly in a prompt.
+
 ## Enable use of external tools
 
-You can connect Junie to [Model Context Protocol (MCP) servers](https://github.com/modelcontextprotocol/servers). This will provide Junie with executable functionality for working with data sources and tools, such as file systems, productivity tools, or databases.
-
-When processing a prompt, Junie analyzes which commands exposed by the configured MCP servers as available tools are relevant and executes them through the respective MCP server.
+You can enable Junie to use tools provided by configured [Model Context Protocol (MCP) servers](mcp.html), extending its capabilities to perform a wider range of tasks. The available tools can be invoked automatically when the agent considers them necessary, or you can call them manually when writing a request.
 
 ![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_junie_run_mcp_command.png "Run MCP command")
 
-To connect Junie to an MCP server:
+To enable Junie to use tools:
 
-1.  Go to Settings | Tools | AI Assistant | Model Context Protocol (MCP).
+1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
 
-    [![Model Context Protocol settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_mcp.png "Model Context Protocol settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_mcp.png)
+2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
 
-2.  Click ![Add button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.general.add.svg "Add button") on the toolbar. In the New MCP Server dialog, select how you want to connect to the MCP server, provide a JSON configuration, and configure other parameters.
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
 
-    ![Add an MCP server](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_edit_mcp_config.png "Add an MCP server")
+3.  Enable the Pass custom MCP servers setting.
 
-    > ### tip
-    >
-    > For the JSON schema, refer to the documentation of the MCP server you are adding.
-    >
-    > For more information on how to configure MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
+4.  Click OK.
 
-3.  Click OK.
+## Add instructions
+
+Instructions let you provide persistent, reusable context to the agent. Junie adds this context to every task it works on, so you don't have to repeat project-specific instructions in each prompt.
+
+Junie reads instructions from the AGENTS.md file in the root project directory, so you can keep them under version control and reuse them across the project.
+
+For more information about instruction files and their format, refer to [Agent instructions](configure-agent-behavior.html).
 
 ## Restrict access with .aiignore
 
 Junie respects the existing .aiignore file, so if you have one [configured](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders) in your project, it will not process any files or directories listed there unless you explicitly permit it to do so.
 
 ![.aiignore support](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_aiignore_support.png ".aiignore support")
-
-## Add guidelines
-
-Guidelines allow you to provide persistent, reusable context to the agent. Junie adds this context to every task it works on.
-
-Guidelines are stored in the AGENTS.md file in the root project directory, so you can keep them under version control and reuse across the project. For more information on the format, see the [AGENTS.md](https://agents.md/) documentation.

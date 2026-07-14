@@ -56,8 +56,6 @@ AI Assistant provides hints for each model next to its name:
 
 -   ![Reasoning model](https://resources.jetbrains.com/help/img/idea/2026.1/brain.svg "Reasoning model") – these models are better suited for tasks that require logical reasoning, structured output, or deeper contextual understanding.
 
--   ![Supports images](https://resources.jetbrains.com/help/img/idea/2026.1/image_grey.svg "Supports images") – these models can process images, allowing you to add visual context to your request.
-
 -   ![High cost model](https://resources.jetbrains.com/help/img/idea/2026.1/ruby.svg "High cost model") – models marked with this icon may consume more tokens, resulting in higher [quota usage](licensing-and-subscriptions.html#reasons-for-high-quota-usage).
 
 -   ![Beta model](https://resources.jetbrains.com/help/img/idea/2026.1/beta.svg "Beta model") – these models may produce varying results, meaning that their behavior or performance is less predictable.
@@ -127,13 +125,9 @@ AI Assistant can extract relevant information from images and use it as context
 
 To add an image to your request:
 
-1.  In the chat, select the model that supports image processing. Such models are marked with the ![Supports images](https://resources.jetbrains.com/help/img/idea/2026.1/image_grey.svg "Supports images") icon.
+1.  Click ! Add attachment.
 
-    ![Models supporting images](https://resources.jetbrains.com/help/img/idea/2026.1/ai_models_supporting_images.png "Models supporting images")
-
-2.  Click ! Add attachment.
-
-3.  Select the Add Image option from the menu and specify the image you want to add. If needed, you can attach multiple images.
+2.  Select the Add Image option from the menu and specify the image you want to add. If needed, you can attach multiple images.
 
     > ### note
     >
@@ -145,7 +139,7 @@ To add an image to your request:
     >
     > Alternatively, you can add an image to the chat by referencing it via `@file:file_name`, copying and pasting it, or dragging and dropping it into the chat.
 
-4.  Type your question in the chat and submit the query.
+3.  Type your question in the chat and submit the query.
 
 AI Assistant will process the image and extract relevant information needed to generate a reply.
 

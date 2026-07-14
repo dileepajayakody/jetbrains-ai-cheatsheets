@@ -1,6 +1,6 @@
 # Junie GitHub Action
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Junie GitHub Action integrates Junie CLI into your GitHub workflows. It also allows you to trigger Junie to run code reviews, fix bugs, or implement new features right from GitHub issues or PR comments.
 

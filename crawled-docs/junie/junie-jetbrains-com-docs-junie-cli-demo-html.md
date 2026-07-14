@@ -1,10 +1,16 @@
+EAP
+
 # Demo agent
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Slash command to invoke the demo agent:
 
 `/demo`
+
+> ### tip
+>
+> This feature is currently in the [Early Access Program](junie-cli-eap.html). To try it, [install the Early Access version](junie-cli-eap.html#install-eap) of Junie CLI.
 
 The `/demo` slash command launches a visual demo of your project. Junie CLI spins up a disposable virtual machine, builds and starts your app inside it, and then drives the running UI — clicking, typing, and taking screenshots — to show that a feature or recent change works. The result is a structured Markdown answer in the TUI plus a folder of [output artifacts](/docs/junie-cli-demo.html#output-artifacts) — screenshots, a screen recording, and a self-contained HTML report — that you can share or attach to a PR.
 

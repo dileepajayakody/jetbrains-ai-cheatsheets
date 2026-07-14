@@ -1,6 +1,6 @@
 # Remote mode
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Slash command to switch to Remote mode:
 
@@ -86,7 +86,7 @@ The web UI is intentionally narrower than the terminal. It is built to keep work
 
 -   Drag-and-drop of files and images is not available in the web UI.
 
--   Prompt history search (`Ctrl+R`) and the session transcript view (`Ctrl+T`) are terminal-only.
+-   Prompt history search (`Ctrl+R`) and the session transcript view (`Ctrl+O`) are terminal-only.
 
 -   Only one web client can be connected to a remote session at a time. Opening the URL from another tab or device takes over the connection from the previous client.
 

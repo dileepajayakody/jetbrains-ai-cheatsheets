@@ -1,6 +1,6 @@
 # Quickstart
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Junie CLI is the agentic coding tool by JetBrains that provides an interactive terminal interface for developers to review, write, and modify code.
 
@@ -90,7 +90,7 @@ To search the prompt history, use `Ctrl+R`, and then navigate through the result
 
 Slash commands allow you to access various Junie CLI features directly from the prompt. Type `/` in the prompt to see and use the [available slash commands](slash-commands.html).
 
-Some built-in slash commands accept user prompts as arguments. For example, `/new fix tests` [starts a new session](/docs/junie-cli.html#clear-up-session-context) with `fix tests` in the prompt, and `/plan refactor commands` enables [plan mode](/docs/junie-cli.html#plan-mode) and submits `refactor commands` immediately.
+Some built-in slash commands accept user prompts as arguments. For example, `/new fix tests` [starts another live session](/docs/junie-cli.html#clear-up-session-context) with `fix tests` in the prompt, and `/plan refactor commands` enables [plan mode](/docs/junie-cli.html#plan-mode) and submits `refactor commands` immediately.
 
 In addition to the built-in commands, you can [add custom slash commands](custom-slash-commands.html) for frequently used prompts and repetitive tasks.
 
@@ -185,19 +185,23 @@ Use the `/account` command to manage your credentials and API keys:
 
 ## Manage your session
 
-### Clear up session context
+### Start another session
 
-Use `/new` to clear up the context of the current session and start a new session in Junie CLI interactive mode. Use `/new <prompt>` to start a new session with the prompt text already filled in.
+Use `/new` to start another live session in the same interactive Junie instance. Existing live sessions keep running in the background and stay available in Task history.
+
+Use `/new <prompt>` to start another session with the prompt text already filled in.
 
 ### View session transcript
 
-To access the full transcript of the current session, including all previous prompts and the agent output, use the `Ctrl+T` shortcut. When in the Transcript view, use `Ctrl+N` to load older entries, or `Esc` to return to the main view.
+To access the full transcript of the current session, including all previous prompts and the agent output, use the `Ctrl+O` shortcut. When in the Transcript view, use `Ctrl+N` to load older entries, or `Esc` to return to the main view.
 
-### Resume previous sessions
+### Switch sessions and resume history
 
-To see the session history and resume one of the previous sessions, use `/history`.
+To search session history, switch between live sessions, or resume a saved session from a previous run, use `/history` to open Task history.
 
-Junie CLI stores the full session context, including LLM usage data and the history of user prompts and agent responses, for the last 10 sessions.
+Junie stores the full session context, including LLM usage data and the history of user prompts and agent responses, for the last 10 sessions.
+
+For details on running several sessions and isolating their file changes, see [Parallel sessions and worktrees](junie-cli-worktrees.html).
 
 ### Quit the session
 

@@ -1,6 +1,6 @@
 # Headless mode
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 > ### tip
 >

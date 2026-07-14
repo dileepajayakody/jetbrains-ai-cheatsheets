@@ -2,7 +2,7 @@ Specific IDEs
 
 # AI Assistant in Jupyter notebooks
 
-Last modified: 03 September 2025
+Last modified: 08 July 2026
 
 **Only available in:** PyCharm Professional and DataSpell
 

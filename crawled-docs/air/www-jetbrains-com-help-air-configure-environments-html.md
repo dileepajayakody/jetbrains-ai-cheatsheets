@@ -139,7 +139,7 @@ The list below describes how the startup script works and how to use it:
 
 -   **Idempotency** – make the script idempotent.
 
-    > ### warning
+    > ### note
     >
     > JetBrains Air runs the script on every environment launch, including every time you resume the task – not only the first time. A script that isn't idempotent can repeat heavy setup or leave the environment in a broken state on resume.
     >

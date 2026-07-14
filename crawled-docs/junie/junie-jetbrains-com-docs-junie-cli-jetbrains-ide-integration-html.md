@@ -1,6 +1,6 @@
 # Integration with JetBrains IDEs
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 This page describes how Junie CLI integrates with JetBrains IDEs, what products are supported, which features depend on the JetBrains IDE connection, and how to inspect the connection with `/ide`.
 

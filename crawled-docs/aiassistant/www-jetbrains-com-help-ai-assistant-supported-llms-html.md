@@ -12,57 +12,63 @@ The table below lists models available in AI Assistant with the [JetBrains AI s
 
 -   ![Reasoning model](https://resources.jetbrains.com/help/img/idea/2026.1/brain.svg "Reasoning model") – these models are better suited for tasks that require logical reasoning, structured output, or deeper contextual understanding.
 
--   ![Supports images](https://resources.jetbrains.com/help/img/idea/2026.1/image_grey.svg "Supports images") – these models can process images, allowing you to add visual context to your request.
-
 Model
 
 Capabilities
 
 Model context window
 
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude Fable 5**
+
+!
+
+1M
+
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude Sonnet 5**
+
+!
+
+1M
+
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.8 Opus**
+
+!
+
+1M
+
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.7 Opus**
 
-!   !
+!
 
 1M
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.6 Opus**
 
-!   !
+!
 
 1M
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.6 Sonnet**
 
-!
-
 1M
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.5 Opus**
 
-!   !
+!
 
 200k
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.5 Sonnet**
 
-!   !
+!
 
 200k
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.5 Haiku**
 
-!
-
 200k
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.1 Opus**
-
-!   !
-
-200k
-
-[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4 Sonnet**
 
 !
 
@@ -70,175 +76,145 @@ Model context window
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 3.5 Flash**
 
-!
-
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 3.1 Pro**
 
-!   !
+!
 
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 3.1 Flash Lite**
 
-!
-
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 3 Flash**
-
-!
 
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 2.5 Pro**
 
-!
-
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 2.5 Flash**
-
-!
 
 1M
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 2.5 Flash-Lite**
 
-!
-
-1M
-
-[![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 2.0 Flash**
-
-!
-
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.5**
 
-!   !
+!
 
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.4 mini**
 
-!
-
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.4 nano**
-
-!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.4**
 
-!   !
+!
 
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.3 Codex**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.2 Codex**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.2**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.1-Codex-Max**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.1 Codex**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.1-Codex mini**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5.1**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5-Codex**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5 mini**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-5 nano**
 
-!   !
+!
 
 400k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-4.1**
 
-!
-
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-4.1 mini**
-
-!
 
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-4.1 nano**
 
-!
-
 1M
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **GPT-4o**
-
-!
 
 128k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **o1**
 
-!   !
+!
 
 200k
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **o3**
 
-!   !
+!
 
 200k
 
@@ -250,13 +226,11 @@ Model context window
 
 [![OpenAI](https://resources.jetbrains.com/help/img/idea/2026.1/OpenAI_icon.png "OpenAI")](https://platform.openai.com/docs/models)   **o4-mini**
 
-!   !
+!
 
 200k
 
 [![xAI](https://resources.jetbrains.com/help/img/idea/2026.1/xAI_icon.svg "xAI")](https://docs.x.ai/docs/models)   **Grok-4.3**
-
-!
 
 1M
 
@@ -271,6 +245,24 @@ Model
 Available in IDEs starting from version
 
 Status
+
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude Fable 5**
+
+2026.1.x
+
+Active
+
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude Sonnet 5**
+
+2026.1.x
+
+Active
+
+[![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.8 Opus**
+
+2026.1.x
+
+Active
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 4.7 Opus**
 
@@ -318,7 +310,7 @@ Active
 
 2025.1.x
 
-Active
+Deprecated by provider
 
 [![Anthropic](https://resources.jetbrains.com/help/img/idea/2026.1/Anthropic_icon.svg "Anthropic")](https://www.anthropic.com/)   **Claude 3.7 Sonnet**
 
@@ -390,7 +382,7 @@ Active
 
 2024.3.x
 
-Active
+Deprecated by provider
 
 [![Google](https://resources.jetbrains.com/help/img/idea/2026.1/Google_icon.svg "Google")](https://deepmind.google/models/gemini/)   **Gemini 1.5 Pro**
 

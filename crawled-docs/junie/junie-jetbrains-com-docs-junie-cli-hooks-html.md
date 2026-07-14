@@ -6,7 +6,7 @@ Nightly
 
 # Hooks
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Hooks let you run shell commands automatically at well-defined points in a Junie CLI session. Use them to launch a local proxy and refresh credentials at the start (`SessionStart`), validate or enrich a prompt before it is sent (`UserPromptSubmit`), inspect or block a tool call before it runs (`PreToolUse`), gate task completion behind tests or other checks (`Stop`), alert / page / clean up when the agent loop ends due to an LLM/API error (`StopFailure`), or to flush logs and clean up resources when a session ends (`SessionEnd`), or automatically allow or deny sensitive action permission requests without manual confirmation (`PermissionRequest`).
 

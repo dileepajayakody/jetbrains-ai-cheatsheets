@@ -4,7 +4,7 @@
 
 # Custom subagents
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Subagents in Junie extend the built-in logic of the main agent with task-specific instructions that define a tailored system prompt, tool restrictions, and usage of models and [agent skills](agent-skills.html).
 
