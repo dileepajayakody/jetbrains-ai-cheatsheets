@@ -4,7 +4,7 @@
 
 # GitHub Copilot
 
-Last modified: 17 June 2026
+Last modified: 03 July 2026
 
 ! **GitHub Copilot** is a third-party [coding agent](https://github.com/features/copilot) by GitHub available for use in AI Assistant. It can write, debug, and explain code, perform Git operations such as committing and branching, and manage pull requests and issues on GitHub.
 
@@ -16,9 +16,9 @@ Last modified: 17 June 2026
 
 ## Get started with GitHub Copilot
 
-GitHub Copilot is bundled with AI Assistant and comes preinstalled, so you don't need to install it separately.
+To use GitHub Copilot, you need to install and activate it with your [GitHub account](activate-agents.html#activate-agent-with-provider-account).
 
-To start using it, select ! GitHub Copilot in AI Chat and activate it with your [GitHub account](activate-agents.html#activate-agent-with-provider-account).
+After setup, select ! GitHub Copilot in AI Chat to start using it.
 
 ![Select GitHub Copilot](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Select GitHub Copilot")
 
@@ -66,13 +66,13 @@ The following modes are available:
     >
     > Autopilot controls whether the agent pauses for your input between steps, not whether it asks for approval. Even in Autopilot, GitHub Copilot still requests approval before actions that require permission unless [Allow All](/help/ai-assistant/copilot-agent.html#copilot-grant-permissions) is turned on.
 
-## Select a processing model
+## Select a model and reasoning level
 
 To select a model that GitHub Copilot uses to process your requests, click ! and select the model from the list.
 
 ![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_copilot_model_selection.png "Select the model")
 
-You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. The selected level controls how much analytical processing the model applies when generating responses.
+You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
 The list includes only the models enabled in your GitHub Copilot account.
 
@@ -138,22 +138,34 @@ You can enable GitHub Copilot to use tools provided by configured [Model Context
 
 To enable GitHub Copilot to use tools:
 
-1.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
+
+2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
 
     ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
 
-2.  Enable the Pass custom MCP servers setting.
+3.  Enable the Pass custom MCP servers setting.
 
-3.  Click OK.
+4.  Click OK.
 
-## Add guidelines
+## Add instructions
 
-Guidelines allow you to provide persistent, reusable context to the agent. GitHub Copilot adds this context to every task it works on.
+Instructions let you provide persistent, reusable context to the agent. GitHub Copilot adds this context to every task it works on, so you don't have to repeat project-specific instructions in each prompt.
 
-GitHub Copilot reads guidelines from the AGENTS.md and CLAUDE.md files in the root project directory, so you can keep them under version control and reuse across the project. For more information on the format, see the [AGENTS.md](https://agents.md/) documentation.
+GitHub Copilot reads instructions from the AGENTS.md and CLAUDE.md files in the root project directory, so you can keep them under version control and reuse them across the project.
+
+For more information about instruction files and their format, refer to [Agent instructions](configure-agent-behavior.html).
 
 ## Use /commands
 
-GitHub Copilot supports a subset of `/commands` for executing actions directly in the chat. For details on specific commands, refer to the [official GitHub Copilot documentation](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#slash-commands-in-the-interactive-interface).
+GitHub Copilot supports a subset of `/commands` that you can type directly in the chat to run actions such as checking the session status, managing the current session, or viewing the agent configuration.
+
+To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
 ![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_agent_commands.png "List of / commands")
+
+For details on specific commands, refer to the [official GitHub Copilot documentation](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#slash-commands-in-the-interactive-interface).
+
+> ### note
+>
+> Configured [MCP tools](mcp.html) are not shown in the `/` menu. The agent invokes them automatically when needed, or you can reference them directly in a prompt.

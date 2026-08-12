@@ -4,18 +4,13 @@
 
 # Claude Agent
 
-Last modified: 08 June 2026
+Last modified: 03 July 2026
 
 ! **Claude Agent** is a third-party coding agent by [Anthropic](https://www.anthropic.com/) available for use in AI Assistant. It understands your codebase, can plan and execute development tasks, and interact with your environment using tools, running commands, and analyzing their results to complete complex programming workflows.
 
 > ### note
 >
-> Notes
->
-> -   Starting from IDE versions **2025.3.4**, Claude Agent is available in AI Assistant through the [Agent Client Protocol (ACP)](https://agentclientprotocol.com/get-started/introduction), instead of a custom integration.
->
-> -   Claude Agent in AI Assistant is not related to the [Claude Code \[Beta\]](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) plugin, which is a separate third-party plugin with a different scope and functionality.
->
+> Claude Agent in AI Assistant is not related to the [Claude Code \[Beta\]](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) plugin, which is a separate third-party plugin with a different scope and functionality.
 
 > ### warning
 >
@@ -79,27 +74,30 @@ The following modes are available:
 
 -   Bypass Permissions – bypasses all permission checks.
 
-## Select a processing model
+## Select a model and reasoning level
 
 To select a model that Claude Agent uses to process your requests, click ! and select the model from the list.
 
 ![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_claude_agent_model_selection.png "Select the model")
 
-## Select an effort level
+You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
-The effort level controls how much Claude Agent reasons before it responds. Higher levels make the agent think more on the same task, which can help with complex problems but may take longer.
+## Speed up responses
 
-> ### tip
+When you need quicker responses during interactive work, enable Fast mode. It makes a model generate its output faster without switching to a smaller or less capable model.
+
+To turn Fast mode on or off, use the Fast mode toggle next to the operation mode selector.
+
+![Fast mode toggle](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_fast_mode.png "Fast mode toggle")
+
+> ### note
 >
-> At lower levels, the agent still reasons on difficult problems, but less than it would at higher levels.
-
-To set the effort level, click ! next to Effort in the chat input field and select one of the following:
-
-![Effort selector in the Claude Agent chat input field, expanded to show levels from Default to Max](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_effort_selection.png "Effort selector in the Claude Agent chat input field, expanded to show levels from Default to Max")
-
--   Default – the model's standard effort level.
-
--   Low, Medium, High, Xhigh, and Max – progressively increase the amount of reasoning the agent applies, with Max applying the most.
+> Notes
+>
+> -   Fast mode comes at a higher cost per token, so consider using it only when responsiveness matters more than cost.
+>
+> -   Not all models support Fast mode. See the [Anthropic documentation](https://code.claude.com/docs/en/fast-mode) for information about supported models.
+>
 
 ## Approve operations
 
@@ -151,13 +149,15 @@ You can enable Claude Agent to use tools provided by configured [Model Context P
 
 To enable Claude Agent to use tools:
 
-1.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
+
+2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
 
     ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
 
-2.  Enable the Pass custom MCP servers setting.
+3.  Enable the Pass custom MCP servers setting.
 
-3.  Click OK.
+4.  Click OK.
 
 Specific IDEs
 
@@ -175,8 +175,24 @@ Claude Agent requires the Pass IntelliJ MCP Server setting to be enabled to use 
 
 [![The Pass IntelliJ MCP Server setting enabled](https://resources.jetbrains.com/help/img/idea/2026.1/db_settings_pass_intellij_mcp_server.png "The Pass IntelliJ MCP Server setting enabled")](https://resources.jetbrains.com/help/img/idea/2026.1/db_settings_pass_intellij_mcp_server.png)
 
+## Add instructions
+
+Instructions let you provide persistent, reusable context to the agent. Claude Agent adds this context to every task it works on, so you don't have to repeat project-specific instructions in each prompt.
+
+Claude Agent reads instructions from the CLAUDE.md file in the root project directory, so you can keep them under version control and reuse them across the project.
+
+For more information about instruction files and their format, refer to [Agent instructions](configure-agent-behavior.html).
+
 ## Use /commands
 
-Claude Agent supports a subset of `/commands` for executing actions directly in the chat, along with bundled skills that extend its capabilities. For details on specific commands, refer to the [official Anthropic documentation](https://code.claude.com/docs/en/commands).
+Claude Agent supports a subset of `/commands` that you can type directly in the chat to run actions such as checking the session status, managing the current session, or viewing the agent configuration.
+
+To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
 ![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_commands.png "List of / commands")
+
+For details on specific commands, refer to the [official Anthropic documentation](https://code.claude.com/docs/en/commands).
+
+> ### note
+>
+> Configured [MCP tools](mcp.html) are not shown in the `/` menu. The agent invokes them automatically when needed, or you can reference them directly in a prompt.

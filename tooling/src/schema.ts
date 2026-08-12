@@ -23,8 +23,8 @@ export const CheatSheetRowSchema = z.object({
 });
 
 export const CheatSheetSectionSchema = z.object({
-  /** Leading emoji for the section header, e.g. "⚡". */
-  icon: z.string().min(1),
+  /** Optional, unused by the template — section bars render only the title. */
+  icon: z.string().min(1).optional(),
   /** Section title, e.g. "Getting Started". Sanitized; rendered with `| safe`. */
   title: inlineHtml,
   /** Palette class s1–s12 controlling the header/accent colors. */
@@ -96,10 +96,9 @@ export const cheatSheetJsonSchema = {
       minItems: 8,
       items: {
         type: 'object',
-        required: ['icon', 'title', 'colorClass', 'column', 'rows'],
+        required: ['title', 'colorClass', 'column', 'rows'],
         properties: {
-          icon: { type: 'string', description: 'A single leading emoji.' },
-          title: { type: 'string', description: 'Plain-text section title (no HTML).' },
+          title: { type: 'string', description: 'Plain-text section title (no HTML, no emoji).' },
           colorClass: {
             type: 'string',
             enum: ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10', 's11', 's12'],

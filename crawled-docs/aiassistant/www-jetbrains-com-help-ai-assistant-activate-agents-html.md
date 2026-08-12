@@ -4,7 +4,7 @@
 
 # Activate agents
 
-Last modified: 22 June 2026
+Last modified: 30 June 2026
 
 The instructions provided on this page apply when no authentication method is configured in AI Assistant.
 

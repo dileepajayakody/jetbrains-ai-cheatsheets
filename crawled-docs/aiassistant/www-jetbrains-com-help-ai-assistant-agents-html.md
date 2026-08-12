@@ -1,6 +1,6 @@
 # Agents
 
-Last modified: 20 April 2026
+Last modified: 03 July 2026
 
 Coding agents are AI systems that can autonomously plan and execute multi-step development tasks in your project. They edit files, run commands and tests, use external tools, and report progress as they work. You can review the proposed changes and keep or roll them back as needed.
 
@@ -36,7 +36,7 @@ Project instructions
 
 ![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.1/junie-logo.svg "Junie logo") [Junie](junie-agent.html)
 
-Brave mode
+Brave mode, Debug mode
 
 —
 
@@ -46,11 +46,11 @@ Respected
 
 ! [Claude Agent](claude-agent.html)
 
-Default, Accept Edits, Plan, Don't Ask, Bypass
+Auto, Default, Accept Edits, Plan, Don't Ask, Bypass
 
 Supported
 
-`CLAUDE.md`, `.claude/`
+`CLAUDE.md`
 
 Not respected
 

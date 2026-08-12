@@ -4,7 +4,7 @@
 
 # Jira integration
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Trigger Junie GitHub Action from issues and issue comments in [Atlassian Jira](https://www.atlassian.com/software/jira).
 

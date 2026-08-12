@@ -1,6 +1,6 @@
 # Junie IDE plugin
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 The recommended way to use Junie is from the single [AI Chat in your JetBrains IDE](https://www.jetbrains.com/help/ai-assistant/ai-chat.html): select Junie by JetBrains from the list of supported coding agents and have it downloaded automatically.
 

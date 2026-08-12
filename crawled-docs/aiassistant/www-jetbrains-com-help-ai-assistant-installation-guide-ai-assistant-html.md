@@ -182,7 +182,13 @@ Issue detected
 
 When a new version of the AI Assistant plugin becomes available, you will receive a notification in the ! AI Chat or ! JetBrains AI widget.
 
-![Update is available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_update_available.png "Update is available")
+AI Chat
+
+JetBrains AI widget
+
+![Update is available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_update_available_chat.png "Update is available")
+
+![Update is available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_update_available_widget.png "Update is available")
 
 To install a new version:
 

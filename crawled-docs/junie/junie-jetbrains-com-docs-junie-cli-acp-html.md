@@ -1,6 +1,6 @@
 # Junie for ACP clients
 
-Last modified: 26 June 2026
+Last modified: 10 July 2026
 
 Use Junie CLI with editors and IDEs that support the Agent Client Protocol (ACP).
 
