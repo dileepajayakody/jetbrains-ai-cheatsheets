@@ -15,7 +15,7 @@ on:
 # OIDC: request a token to assume the AWS deploy role. No long-lived AWS keys.
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 concurrency:
   group: cheatsheets-publish
