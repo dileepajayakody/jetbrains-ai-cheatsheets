@@ -4,27 +4,31 @@
 
 # Task run environments
 
-Last modified: 25 February 2026
+Last modified: 18 August 2026
 
 Select an environment in the task header before you start the task.
 
 ### Select a task run environment
 
--   In the task header, click the environment name.
-
-    -   Local Workspace: runs directly in your current workspace. This mode has the fastest startup and uses your existing environment, but changes are applied to your project folder. It does not provide isolation.
-
-    -   Git Worktree: creates a separate working branch of the repository. This mode provides isolation from your main branch while still using your local environment. Note that you may need to reinstall project dependencies or repeat location-specific setup for every new task.
-
-    -   Docker: runs in an isolated container. You must have Docker Desktop installed and a valid license to use it. This mode offers complete isolation for code changes and tools. Isolation means that all edits, commands, and dependencies stay inside the container and do not affect your local workspace or system environment.
-
-    -   Cloud: runs in a remote cloud environment. In cloud runs, JetBrains Air commits changes to a separate task branch and pushes them to the remote repository after the task is done.
+-   In the task header, use the environment selector.
 
     ![AI agent workspace selection](https://resources.jetbrains.com/help/img/air/aird_ai_agent_workspace.png "AI agent workspace selection")
+
+    -   [Local Workspace](/help/air/execution-environments.html#run_in_local_workspace) – runs directly in your current workspace. This mode has the fastest startup and uses your existing environment, but changes are applied to your project folder. It does not provide isolation.
+
+    -   [Git Worktree](/help/air/execution-environments.html#run_in_git_worktree) – creates a separate working branch of the repository. This mode provides isolation from your main branch while still using your local environment. Note that you may need to reinstall project dependencies or repeat location-specific setup for every new task.
+
+    -   [Docker](/help/air/execution-environments.html#run_in_docker) – runs in an isolated container. You must have Docker Desktop installed and a valid license to use it. This mode offers complete isolation for code changes and tools. Isolation means that all edits, commands, and dependencies stay inside the container and do not affect your local workspace or system environment.
+
+    -   [Cloud](/help/air/execution-environments.html#run_in_cloud) – runs in a remote cloud environment. In task cloud runs, JetBrains Air commits changes to a separate task branch and pushes them to the remote repository after the task is done.
 
 ## Local Workspace
 
 Use Local Workspace to run a task on your machine in the current workspace. This option starts fast and uses your existing local setup. Changes apply to your working copy.
+
+The agent edits files directly on your current branch. To accept the result, you commit and push:
+
+AgentLocal working copy(current branch, for example main)Remote repository(1) edits files directly(2) you commit and push
 
 ## Git Worktree
 
@@ -33,6 +37,10 @@ Use Git Worktree to run a task in a separate working copy of the same repository
 For each task, JetBrains Air creates a separate branch in the worktree. Learn more about how the isolation in a Git worktree works [here](accept-changes.html#isolation-model).
 
 Git Worktree isolates files and branches, but not the host environment itself. The task still runs on your machine. If you need task-specific environment variables or preparation steps, configure them in `.air/worktree.json`.
+
+Your local working copy stays on its branch while the agent works in the worktree. After review, you bring the result back with Apply Locally or Check Out Branch Locally, then commit and push:
+
+Local working copy(branch: main)AgentGit worktree(branch: air/<task>)Remote repository(1) Air creates a worktreeand task branch(3) 'Apply Locally' or'Check Out Branch Locally'(2) edits files in isolation(4) you commit and push,or open a pull request
 
 ### worktree.json
 
@@ -62,7 +70,7 @@ Sets a single environment variable. If `value` is omitted, the value is inherite
 
 `envFile`
 
-Loads variables from a `.env` file. Relative paths are resolved from the workspace root. Absolute paths and `~`\-prefixed paths are also supported.
+Loads variables from a `.env` file. Relative paths are resolved from the project root. Absolute paths and `~`\-prefixed paths are also supported.
 
 The following system variables are reserved and cannot be overridden: `HOME`, `PATH`, `USER`, `SHELL`, `TMPDIR`, variables that start with `FSD_`, and variables that start with `XDG_`.
 
@@ -131,6 +139,8 @@ For example:
 }
 ```
 
+You can also use setup commands to clone another repository that the task needs. For cloud tasks, see [Clone additional repositories](clone-additional-repositories.html).
+
 ### Run commands before the worktree is deleted
 
 Use the `cleanup` section to run commands on the host machine inside the worktree directory before JetBrains Air deletes the worktree. Use it to remove temporary files, stop background processes, or release resources the task created.
@@ -176,6 +186,14 @@ For example:
 Use Docker to run a task in an isolated container. This option helps you isolate tools, dependencies, and runtime configuration from your local machine.
 
 For each task, JetBrains Air creates a separate branch inside the container.
+
+Your local working copy stays untouched while the agent works in the container. After review, you bring the result back with Apply Locally or Check Out Branch Locally, then commit and push:
+
+Docker containerAgentTask branchair/<task>Local working copy(branch: main)Remote repository(1) Air creates a containerand task branch(3) 'Apply Locally' or'Check Out Branch Locally'(2) edits files in isolation(4) you commit and push,or open a pull request
+
+> ### note
+>
+> Claude Agent can't run in a container on a Claude subscription. The subscription credentials stay on your machine and JetBrains Air never holds a copy, so there's nothing to pass into the container. In Docker, Claude Agent runs on Anthropic API billing or on [JetBrains AI credits](ai-credits.html).
 
 ### docker.json
 
@@ -276,7 +294,7 @@ When `build` is specified, you must specify a valid `user` that is created expli
 
 `docker build [context]`
 
-(Optional) Build context directory. Relative paths are resolved from the workspace root. Absolute paths and `~`\-prefixed paths are also supported. Defaults to `.`
+(Optional) Build context directory. Relative paths are resolved from the project root. Absolute paths and `~`\-prefixed paths are also supported. Defaults to `.`
 
 `build.buildArgs`
 
@@ -344,7 +362,7 @@ If `value` is omitted, the variable is inherited from the host environment when 
 
 Loads variables from a `.env` file.
 
-Relative paths are resolved from the workspace root. Absolute paths and `~`\-prefixed paths are also supported.
+Relative paths are resolved from the project root. Absolute paths and `~`\-prefixed paths are also supported.
 
 #### Set variables directly
 
@@ -422,10 +440,34 @@ These commands run after the container starts and after JetBrains Air initialize
 >
 > If you want a variable to be available during the whole session, define it in the `environment` section instead.
 
+You can also use setup commands to clone another repository that the task needs. Because the container doesn't have your host credentials, pass a token through the `environment` section. For cloud tasks, see [Clone additional repositories](clone-additional-repositories.html).
+
+EAP
+
 ## Cloud
 
-Use Cloud to run a task in a remote environment. Cloud environments have a limited lifetime, so you might not be able to return later and review changes in the same environment.
+Use Cloud to run a task in a remote environment managed by JetBrains, instead of on your machine. JetBrains Air provisions a containerized cloud environment, checks out your repository, and runs the agent there, so you don't need a local copy of the project or any local setup.
 
-To avoid losing the result, JetBrains Air uses a Git-based workflow for cloud runs: after the task is done, JetBrains Air commits the changes to a separate task branch and pushes the branch to the remote repository. Then you review the result and create a pull request from the task branch.
+Cloud tasks are useful when you want to:
+
+-   work without the project on your machine, or from the browser at [the web version of JetBrains Air](https://air.jetbrains.cloud)
+
+-   run a task in a clean, isolated environment that doesn't use your local files, processes, or credentials
+
+-   run several tasks in parallel without consuming your local resources
+
+-   run automations that don't depend on your machine being online
+
+The environment runs against the remote repository, not your local copy. JetBrains Air clones the repository and checks out a task branch, the agent commits and pushes to that branch, and you create a pull request from it:
+
+Cloud environmentAgentTask branchair/<task>Remote repository(1) Air clones the repoand creates a branch(3) agent commits and pushesthe task branch(2) edits files in isolation(4) you create apull request
 
 For details, refer to [Run tasks in cloud](run-tasks-in-cloud.html).
+
+> ### note
+>
+> In cloud tasks, you can only use the agents enabled for your organization in JetBrains Central Console. Agents connected with your own provider account aren't available.
+
+> ### note
+>
+> Gemini CLI is temporarily unavailable for cloud tasks.

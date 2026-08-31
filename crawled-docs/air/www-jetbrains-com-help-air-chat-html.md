@@ -4,32 +4,32 @@
 
 # Chat
 
-Last modified: 25 February 2026
+Last modified: 17 August 2026
 
-Use Chat to create and continue tasks in JetBrains Air. This tool is always available in the workspace. You can describe your goal, add context, and send follow-up messages to refine the result.
+Use Chat to create and continue tasks in JetBrains Air. This tool is always available in the workspace: you describe your goal, add the context the agent needs, send the task, and refine the result with follow-up messages.
 
-### Work with tasks in Chat
+Chat is also where a finished task reports back. It shows how many lines the task added and deleted, for example +512 -4, and you click the statistics to open the diff.
 
-This is a generalized procedure for running tasks. For more information, refer to [Run tasks](run-tasks.html).
+## Chat toolbar
 
-1.  In Chat, enter a short task description.
+The toolbar sets how the current task runs. Every option can be changed per task.
 
-2.  If needed, select where the task runs. In the task header, click the environment name and select an option, such as Local Workspace, Git Worktree, Docker, or Cloud.
+-   Add context attaches project items to the task input. See [Task context](task-context.html).
 
-3.  Add project context when the task needs specific details. Click Add context and select the items you want to attach.
+-   The agent and model selectors choose who does the work. See [Agents and models](select-agents-and-models.html).
 
-4.  Click Send.
+-   Thinking Level adjusts the reasoning depth for agents that support it. See [Run tasks](run-tasks.html).
 
-5.  Use follow-up messages to refine the result and continue the task workflow.
+-   The permission mode controls how freely the agent acts, including [plan mode](plan-mode.html). See [Permission modes](permission-modes.html).
 
-## Chat controls
-
-Use the Chat toolbar to control how you send and refine a task.
-
--   Add context adds project items to the task input.
-
--   Model selects the model used for the current task.
-
--   Thinking Level adjusts the reasoning depth for the current task.
+-   The environment selector picks where the task runs. See [Task run environments](execution-environments.html).
 
 -   Send starts the task or sends a follow-up message.
+
+## What you can do here
+
+-   [Define tasks](define-tasks.html) – write a task the agent can act on, and add the context it needs.
+
+-   [Run tasks](run-tasks.html) – run the task, and [keep several running at once](multitasking.html).
+
+-   [Review changes](review-changes.html) – open the diff from the change statistics and turn your feedback into the next iteration.

@@ -10,7 +10,7 @@ Settings | Tools | AI Assistant | Skills
 
 Use this page to configure skill sources and install [skills](agent-skills.html) for agents.
 
-[![Skills settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_skills_settings.png "Skills settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_skills_settings.png)
+[![Skills settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_skills_settings.png "Skills settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_skills_settings.png)
 
 ## Actions
 
@@ -18,7 +18,7 @@ Item
 
 Description
 
-![Skills Settings](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.settings.svg "Skills Settings") Skills Settings
+![Skills Settings](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.settings.svg "Skills Settings") Skills Settings
 
 Click to select which skills source you want to configure:
 
@@ -26,7 +26,7 @@ Click to select which skills source you want to configure:
 
 -   Manage External Registries – select this option if you want to specify a URL of an external registry as a skill source.
 
-![Install Skill](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.general.add.svg "Install Skill") Install Skill
+![Install Skill](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.general.add.svg "Install Skill") Install Skill
 
 Click to install the selected skill and make it available for all projects in the current IDE.
 
@@ -64,19 +64,19 @@ Tooltip
 
 Description
 
-![the Add Directory button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.add.svg "the Add Directory button")
+![the Add Directory button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.add.svg "the Add Directory button")
 
 Add Directory
 
-⌘Cmd0N
+AltInsert
 
 Add a new directory containing skills.
 
-![the Remove Directory button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.remove.svg "the Remove Directory button")
+![the Remove Directory button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.remove.svg "the Remove Directory button")
 
 Remove Directory
 
-⌘Cmd⌫Delete
+AltDelete
 
 Remove the selected directory.
 
@@ -88,27 +88,27 @@ Tooltip
 
 Description
 
-![the Add Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.add.svg "the Add Registry URL button")
+![the Add Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.add.svg "the Add Registry URL button")
 
 Add Registry URL
 
-⌘Cmd0N
+AltInsert
 
 Add a new registry URL.
 
-![the Remove Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.remove.svg "the Remove Registry URL button")
+![the Remove Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.remove.svg "the Remove Registry URL button")
 
 Remove Registry URL
 
-⌘Cmd⌫Delete
+AltDelete
 
 Remove the selected registry URL.
 
-![the Edit Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.general.edit.svg "the Edit Registry URL button")
+![the Edit Registry URL button](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.general.edit.svg "the Edit Registry URL button")
 
 Edit Registry URL
 
-↩Enter
+Enter
 
 Edit the selected registry URL.
 

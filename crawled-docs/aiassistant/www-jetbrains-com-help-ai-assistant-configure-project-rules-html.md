@@ -12,7 +12,7 @@ To configure project rules:
 
 1.  Go to Settings | Tools | AI Assistant | Rules.
 
-    [![Project rules](https://resources.jetbrains.com/help/img/idea/2026.1/ai_project_rules_settings.png "Project rules")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_project_rules_settings.png)
+    [![Project rules](https://resources.jetbrains.com/help/img/idea/2026.2/ai_project_rules_settings.png "Project rules")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_project_rules_settings.png)
 
 2.  Click New Project Rules File and provide a name for the file. This creates an `.aiassistant/rules` folder with the `.md` file in it.
 
@@ -22,7 +22,7 @@ To configure project rules:
 
 3.  Switch to the created rule file in the editor and select the Rule type. The following types are available:
 
-    ![Project rules types](https://resources.jetbrains.com/help/img/idea/2026.1/ai_project_rules_types.png "Project rules types")
+    ![Project rules types](https://resources.jetbrains.com/help/img/idea/2026.2/ai_project_rules_types.png "Project rules types")
 
     -   Always – applied automatically to all chat sessions. As a result, AI Assistant will always take the specified guidelines into consideration when providing responses.
 
@@ -34,7 +34,7 @@ To configure project rules:
 
     -   Off – the rule is inactive and not applied.
 
-4.  Add the guidelines to the Markdown file. Here is an [example](https://resources.jetbrains.com/help/img/idea/2026.1/project_code_review_guidelines.md) of what the file with guidelines may look like:
+4.  Add the guidelines to the Markdown file. Here is an [example](https://resources.jetbrains.com/help/img/idea/2026.2/project_code_review_guidelines.md) of what the file with guidelines may look like:
 
     ```
     # General Code Review Guidelines
@@ -42,4 +42,4 @@ To configure project rules:
 
 Once configured, AI Assistant will use the rules (if applicable) when providing responses. To check whether the rules were applied, expand the list of attachments at the beginning of the AI Assistant's response:
 
-![Project rules attached to the AI Assistant's response](https://resources.jetbrains.com/help/img/idea/2026.1/ai_attached_project_rules_in_chat.png "Project rules attached to the AI Assistant's response")
+![Project rules attached to the AI Assistant's response](https://resources.jetbrains.com/help/img/idea/2026.2/ai_attached_project_rules_in_chat.png "Project rules attached to the AI Assistant's response")

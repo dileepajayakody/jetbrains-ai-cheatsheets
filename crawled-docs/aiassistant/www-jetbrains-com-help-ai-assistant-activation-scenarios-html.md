@@ -1,6 +1,6 @@
 # Activate AI Assistant
 
-Last modified: 11 June 2026
+Last modified: 05 August 2026
 
 This page provides an overview of the available activation options and how they differ. For setup instructions, refer to the corresponding sections.
 
@@ -10,15 +10,15 @@ AI Assistant provides flexible ways to access AI features and coding agents. Yo
 
 After [installation](installation-guide-ai-assistant.html), you can choose how you want to use AI Assistant:
 
-![Activation options](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Activation options")
+![Activation options](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Activation options")
 
--   [Start with JetBrains AI](jetbrains-ai-subscription.html) – use the JetBrains-managed service with full access to AI Assistant features and supported agents.
+-   [Start with JetBrains AI subscription](jetbrains-ai-subscription.html) – use the JetBrains-managed service with full access to AI Assistant features and supported agents.
 
--   [Activate an agent](activate-agents.html) – use a specific integrated agent ([Junie](junie-agent.html), [Claude Agent](claude-agent.html), or [Codex](codex-agent.html)), or add a custom agent using the [Agent Client Protocol (ACP)](https://agentclientprotocol.com/overview/introduction). Other AI Assistant features are not available with this option.
+-   [Pick an agent](activate-agents.html#integrated-agents) – use a specific integrated agent – [Junie](junie-agent.html), [Claude Agent](claude-agent.html), [Codex](codex-agent.html), or [GitHub Copilot](copilot-agent.html). Depending on the agent, activation may be available through a JetBrains AI subscription, a provider account (OAuth), an API key, or another supported method.
 
-    Depending on the agent, activation may be available through a JetBrains AI subscription, a provider account (OAuth), or an API key.
+-   [Add ACP-compatible agents](activate-agents.html#add-acp-agents) – connect an external or custom agent using the [Agent Client Protocol (ACP)](https://agentclientprotocol.com/overview/introduction).
 
--   [Bring Your Own Key (BYOK)](bring-your-own-key-byok.html) – use AI Assistant with models from a supported third-party provider by connecting your API key. Feature availability depends on whether the provider offers compatible models.
+-   [Use third-party provider](bring-your-own-key-byok.html) – use AI Assistant with models from a supported third-party provider by connecting your API key.
 
 When you choose one of these options, the corresponding activation procedure starts. The option you select determines which features are [available](/help/ai-assistant/activation-scenarios.html#activation-options-difference) and how usage is billed.
 
@@ -40,15 +40,25 @@ JetBrains AI subscription
 
 Yes
 
-All features and all supported agents
+All AI Assistant features and supported agents
 
 JetBrains AI subscription
 
-API key (BYOK)
+Integrated agent\[1\]
+
+JetBrains AI subscription
+
+Yes
+
+The activated agent and all other AI Assistant features. You can activate other integrated agents separately.
+
+JetBrains AI subscription
+
+API key
 
 No
 
-Most features\[1\], as well as agents that support API key authentication
+The activated agent and AI Assistant features supported by the provider's models
 
 Third-party AI provider
 
@@ -56,23 +66,41 @@ Provider account (OAuth)
 
 No
 
-Specific agents that support authentication with a provider account
+The activated agent only
 
 Provider account
+
+Provider-specific method
+
+No
+
+The activated agent only
+
+Agent provider
 
 ACP-compatible agent
 
 No
 
-Specific external or custom agents
+The connected external or custom agent only
 
 Agent provider (if applicable)
+
+Third-party provider (BYOK)
+
+No
+
+AI Assistant features supported by the provider's models\[2\] and agents that support the provided API key authentication
+
+Third-party AI provider
 
 \>
 
 > ### note
 >
-> \[1\] AI Assistant features rely on specific models. If compatible models are not available from your third-party provider, some features may become unavailable. To learn which AI Assistant features will work with the models available from the selected third-party AI provider, refer to [List of assigned and fallback models](use-custom-models.html#assigned-and-fallback-models).
+> \[1\]Not every integrated agent supports every authentication method. For the full list of supported methods per agent, refer to [Integrated agents](activate-agents.html#integrated-agents).
+>
+> \[2\]AI Assistant features rely on specific models. If compatible models are not available from your third-party provider, some features may become unavailable. To learn which AI Assistant features will work with the models available from the selected third-party AI provider, refer to [List of assigned and fallback models](use-custom-models.html#assigned-and-fallback-models).
 >
 > To keep all features available, you can [activate JetBrains AI](use-custom-models.html#enable-jb-ai) alongside your API key.
 
@@ -86,13 +114,13 @@ Priority order
 
 Behavior
 
-JetBrains AI
+JetBrains AI subscription
 
-JetBrains AI
+JetBrains AI subscription
 
 All features are available because the required models are provided by the JetBrains AI service.
 
-API key (BYOK)
+Third-party provider (BYOK)
 
 BYOK
 
@@ -106,7 +134,7 @@ The authorized agent uses the provider account.
 
 ACP-compatible agent
 
-ACP agent
+ACP-compatible agent
 
 Requests to the ACP-compatible agent are handled by the agent provider.
 
@@ -160,15 +188,15 @@ JetBrains AI + BYOK + Provider account
 
 Depending on the selected activation scenario, data may be handled differently:
 
-JetBrains AI
+JetBrains AI subscription
 
-API key (BYOK)
+Third-party provider (BYOK)
 
 JetBrains AI + BYOK
 
 Provider account (OAuth)
 
-ACP agents
+ACP-compatible agents
 
 Request
 
@@ -198,7 +226,7 @@ IDE
 
 BYOK LLM Provider
 
--   Prompts and context are sent directly to the BYOK-configured LLM provider using the user's API key.
+-   Prompts and context are sent directly to the BYOK-configured LLM provider using your API key.
 
 Request
 
@@ -250,7 +278,7 @@ IDE
 
 ACP Agent Provider
 
--   Prompts and context are sent directly to the ACP agent provider using the user's API key (if applicable).
+-   Prompts and context are sent directly to the ACP agent provider using your API key (if applicable).
 
 > ### note
 >
@@ -262,7 +290,7 @@ Pick the option that best matches your needs:
 
 -   [JetBrains AI subscription](licensing-and-subscriptions.html) – if you want full feature access with a ready-to-use setup.
 
--   [Bring Your Own Key (BYOK)](bring-your-own-key-byok.html) – if you want to use your own API keys and external models.
+-   [Third-party provider (BYOK)](bring-your-own-key-byok.html) – if you want to use your own API keys and external models.
 
 -   [Activate an agent](activate-agents.html#integrated-agents) – if you want to use supported integrated agents with your provider account.
 

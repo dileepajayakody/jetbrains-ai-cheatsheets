@@ -4,7 +4,7 @@
 
 # Jira integration
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Trigger Junie GitHub Action from issues and issue comments in [Atlassian Jira](https://www.atlassian.com/software/jira).
 
@@ -111,6 +111,10 @@ Configure the GitHub project where the Junie GitHub Action will be run:
           issue_attachments:
             description: 'Jira issue attachments'
             required: false
+          trigger_comment:
+            description: 'Optional comment that triggered Junie (used as user instruction)'
+            required: false
+            type: string
 
     jobs:
       junie:
@@ -129,7 +133,7 @@ Configure the GitHub project where the Junie GitHub Action will be run:
 
           - name: Run Junie
             id: junie
-            uses: JetBrains/junie-github-action@v0
+            uses: JetBrains/junie-github-action@v1
             with:
               junie_api_key: ${{ secrets.JUNIE_API_KEY }}
               jira_base_url: ${{ secrets.JIRA_BASE_URL }}
@@ -141,111 +145,119 @@ Configure the GitHub project where the Junie GitHub Action will be run:
 
 In your Jira space, create automation rules in Space settings → Automation:
 
--   Rule 1: Label trigger – triggers the Junie GitHub Action when a Jira issue is created or updated, or a label (such as `junie-agent`) is added to the issue.
+1.  In Manage secrets (or organization-level Automation secrets), add a new secret named `GITHUB_TOKEN` that will be used to authorize requests to the GitHub API from automation rules in Jira.
 
-    Trigger: Issue created/updated, or Label added.
+    As the value, provide a GitHub Personal Access Token (classic or fine-grained) with at least `workflow` scope (and `repo` for private repositories). This token will be referenced in headers as `YOUR_GITHUB_TOKEN`.
 
-    Condition (for a label trigger): `{{issue.labels}}` contains `junie-agent`.
+2.  Create an automation rule for triggering the GitHub workflow.
 
-    Action: Send web request with the following configuration:
+    There are rules for two trigger types:
 
-    Web request URL:
+    -   Rule 1: Label trigger – triggers the Junie GitHub Action when a Jira issue is created or updated, or a label (such as `junie-agent`) is added to the issue.
 
-    ```
-    https://api.github.com/repos/{owner}/{repo}/actions/workflows/junie-jira.yml/dispatches
-    ```
+        Trigger: Issue created/updated, or Label added.
 
-    HTTP method: `POST`
+        Condition (for a label trigger): `{{issue.labels}}` contains `junie-agent`.
 
-    Web request body (Custom data):
+        Action: Send web request with the following configuration:
 
-    ```
-    {
-      "ref": "YOUR DEFAULT BRANCH(main/master for example)",
-      "inputs": {
-        "action": "jira_event",
-        "issue_key": "{{issue.key}}",
-        "issue_summary": "{{issue.summary.jsonEncode}}",
-        "issue_description": "{{issue.description.jsonEncode}}",
-        "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
-        "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]"
-      }
-    }
-    ```
+        Web request URL:
 
-    Headers:
+        ```
+        https://api.github.com/repos/{owner}/{repo}/actions/workflows/junie-jira.yml/dispatches
+        ```
 
-    ```
-    Authorization: Bearer YOUR_GITHUB_TOKEN
-    Content-Type: application/json
-    ```
+        HTTP method: `POST`
 
--   Rule 2: Comment trigger – triggers the Junie GitHub Action when a user comments on a Jira issue tagging `@junie`.
+        Web request body (Custom data):
 
-    Trigger: Work item commented.
-
-    Comment type: Comment is the main action.
-
-    Condition: `{{comment.body}}` contains `@junie`.
-
-    Action: Send web request with the following configuration:
-
-    Web request URL:
-
-    ```
-    https://api.github.com/repos/{owner}/{repo}/actions/workflows/junie-jira.yml/dispatches
-    ```
-
-    HTTP method: `POST`
-
-    Web request body (Custom data):
-
-    ```
-    {
-      "ref": "main",
-      "inputs": {
-        "action": "jira_event",
-        "issue_key": "{{issue.key}}",
-        "issue_summary": "{{issue.summary.jsonEncode}}",
-        "issue_description": "{{issue.description.jsonEncode}}",
-        "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
-        "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]",
-        "trigger_comment": "{{comment.body.jsonEncode}}"
+        ```
+        {
+          "ref": "YOUR DEFAULT BRANCH(main/master for example)",
+          "inputs": {
+            "action": "jira_event",
+            "issue_key": "{{issue.key}}",
+            "issue_summary": "{{issue.summary.jsonEncode}}",
+            "issue_description": "{{issue.description.jsonEncode}}",
+            "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
+            "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]"
+          }
         }
-    }
-    ```
+        ```
 
-    Headers:
+        Headers:
 
-    ```
-    Authorization: Bearer YOUR_GITHUB_TOKEN
-    Content-Type: application/json
-    ```
+        ```
+        Authorization: Bearer YOUR_GITHUB_TOKEN
+        Content-Type: application/json
+        ```
 
-    > ### tip
-    >
-    > Handling special characters
-    >
-    > The action automatically handles unescaped special characters (newlines, quotes, etc.) that may not be properly encoded by Jira's `jsonEncode`. This means the basic configuration above will work in most cases without additional
-    > modifications.
-    >
-    > If you experience issues or want to ensure maximum compatibility, you can add explicit character replacement in your Jira automation:
-    >
-    > ```
-    > {
-    >   "ref": "main",
-    >   "inputs": {
-    >     "action": "jira_event",
-    >     "issue_key": "{{issue.key}}",
-    >     "issue_summary": "{{issue.summary.jsonEncode}}",
-    >     "issue_description": "{{issue.description.jsonEncode}}",
-    >     "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode.replace(\"\\n\",\" \").replace(\"\\\"\",\"\")}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
-    >     "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]"
-    >   }
-    > }
-    > ```
-    >
-    > The `.replace("\\n"," ").replace("\\"","")` addition removes newlines and quotes that could break JSON parsing.
+    -   Rule 2: Comment trigger – triggers the Junie GitHub Action when a user comments on a Jira issue tagging `@junie`.
+
+        Trigger: Work item commented.
+
+        Comment type: Comment is the main action.
+
+        Condition: `{{comment.body}}` contains `@junie`.
+
+        Action: Send web request with the following configuration:
+
+        Web request URL:
+
+        ```
+        https://api.github.com/repos/{owner}/{repo}/actions/workflows/junie-jira.yml/dispatches
+        ```
+
+        HTTP method: `POST`
+
+        Web request body (Custom data):
+
+        ```
+        {
+          "ref": "main",
+          "inputs": {
+            "action": "jira_event",
+            "issue_key": "{{issue.key}}",
+            "issue_summary": "{{issue.summary.jsonEncode}}",
+            "issue_description": "{{issue.description.jsonEncode}}",
+            "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
+            "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]",
+            "trigger_comment": "{{comment.body.jsonEncode}}"
+            }
+        }
+        ```
+
+        Headers:
+
+        ```
+        Authorization: Bearer YOUR_GITHUB_TOKEN
+        Content-Type: application/json
+        ```
+
+        > ### tip
+        >
+        > Handling special characters
+        >
+        > The action automatically handles unescaped special characters (newlines, quotes, etc.) that may not be properly encoded by Jira's `jsonEncode`. This means the basic configuration above will work in most cases without additional
+        > modifications.
+        >
+        > If you experience issues or want to ensure maximum compatibility, you can add explicit character replacement in your Jira automation:
+        >
+        > ```
+        > {
+        >   "ref": "main",
+        >   "inputs": {
+        >     "action": "jira_event",
+        >     "issue_key": "{{issue.key}}",
+        >     "issue_summary": "{{issue.summary.jsonEncode}}",
+        >     "issue_description": "{{issue.description.jsonEncode}}",
+        >     "issue_comments": "[{{#issue.comments}}{\"author\":\"{{author.displayName.jsonEncode}}\",\"body\":\"{{body.jsonEncode.replace(\"\\n\",\" \").replace(\"\\\"\",\"\")}}\",\"created\":\"{{created}}\"}{{^last}},{{/}}{{/}}]",
+        >     "issue_attachments": "[{{#attachment}}{\"filename\":\"{{filename.jsonEncode}}\",\"mimeType\":\"{{mimeType}}\",\"size\":{{size}},\"content\":\"{{content}}\"}{{^last}},{{/}}{{/}}]"
+        >   }
+        > }
+        > ```
+        >
+        > The `.replace("\\n"," ").replace("\\"","")` addition removes newlines and quotes that could break JSON parsing.
 
 Thanks for your feedback!
 

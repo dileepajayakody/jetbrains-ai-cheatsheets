@@ -1,6 +1,6 @@
 # Integration with JetBrains IDEs
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 This page describes how Junie CLI integrates with JetBrains IDEs, what products are supported, which features depend on the JetBrains IDE connection, and how to inspect the connection with `/ide`.
 
@@ -29,6 +29,8 @@ JetBrains IDE integration is passive from the CLI side:
 ## Supported JetBrains IDEs
 
 The current IDE discovery implementation supports these JetBrains IDEs:
+
+-   [Android Studio](https://developer.android.com/studio)
 
 -   ![CLion](img/junie/CLion_icon.png "CLion") [CLion](https://www.jetbrains.com/clion/)
 

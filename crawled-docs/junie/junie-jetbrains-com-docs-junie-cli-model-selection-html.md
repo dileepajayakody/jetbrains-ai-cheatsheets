@@ -4,7 +4,7 @@
 
 # Model selection
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Environment variable
 
@@ -30,7 +30,7 @@ JUNIE_LLM_PROVIDER
 --provider
 ```
 
-BYOK provider to use. Forces Junie to use a specific BYOK provider. Possible values: `openai`, `anthropic`, `google`, `xai`, `openrouter`. If not set, the Junie or Custom model provider is used.
+BYOK provider to use. Forces Junie to use a specific BYOK provider. Possible values: `openai`, `anthropic`, `google`, `xai`, `openrouter`, `copilot`, `litellm`. If not set, the Junie or Custom model provider is used.
 
 ```
 JUNIE_EFFORT
@@ -54,9 +54,9 @@ Junie supports four types of LLM providers:
 
 -   Junie — models accessed through a JetBrains AI subscription, by means of a Junie login or a JetBrains AI API key. No additional configuration is required.
 
--   BYOK (Bring Your Own Key) — models accessed using your own API key from a third-party provider such as OpenAI, Anthropic, Google, xAI, or OpenRouter. See [BYOK](byok.html) for setup instructions.
+-   BYOK (Bring Your Own Key) — models accessed using your own API key from a third-party provider such as OpenAI, Anthropic, Google, xAI, OpenRouter, or GitHub Copilot. See [BYOK](byok.html) for setup instructions.
 
--   Custom — models defined in a custom profile JSON file. See [Custom LLM models](custom-llm-models.html) for details.
+-   Custom — models defined in a custom profile JSON file. See [Custom LLM models](custom-llm-models.html) for details, or [Junie Local](junie-local.html) to run a model on your own Mac.
 
 -   Proxy — models accessed through a custom proxy endpoint configured in `config.json`.
 
@@ -104,7 +104,7 @@ Current model
 
 Anthropic
 
-[Claude Sonnet 4.6](https://www.anthropic.com/claude/sonnet)
+[Claude Sonnet 5](https://www.anthropic.com/claude/sonnet)
 
 `opus`
 

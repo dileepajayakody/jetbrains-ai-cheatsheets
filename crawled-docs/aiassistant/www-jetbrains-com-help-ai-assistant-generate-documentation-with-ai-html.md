@@ -14,11 +14,11 @@ In RustRover, [Doctests](https://www.jetbrains.com/help/rust/rust-doctest-suppor
 
 2.  In the context menu, select AI actions and then Write documentation.
 
-    ![Write Documentation context menu item](https://resources.jetbrains.com/help/img/idea/2026.1/ai_write_doc_context_menu.png "Write Documentation context menu item")
+    ![Write Documentation context menu item](https://resources.jetbrains.com/help/img/idea/2026.2/ai_write_doc_context_menu.png "Write Documentation context menu item")
 
     AI Assistant will generate documentation for the selected item.
 
-    ![Generated documentation](https://resources.jetbrains.com/help/img/idea/2026.1/ai_generated_documentation.png "Generated documentation")
+    ![Generated documentation](https://resources.jetbrains.com/help/img/idea/2026.2/ai_generated_documentation.png "Generated documentation")
 
 > ### tip
 >
@@ -33,6 +33,6 @@ In RustRover, [Doctests](https://www.jetbrains.com/help/rust/rust-doctest-suppor
 >
 > Then press Enter and click Generate with AI Assistant.
 >
-> ![Generate with AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.1/ai_suggest_documentation.png "Generate with AI Assistant")
+> ![Generate with AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.2/ai_suggest_documentation.png "Generate with AI Assistant")
 
 You can customize the prompt for the Write Documentation action in Settings | Tools | AI Assistant | Prompt Library | Write Documentation.

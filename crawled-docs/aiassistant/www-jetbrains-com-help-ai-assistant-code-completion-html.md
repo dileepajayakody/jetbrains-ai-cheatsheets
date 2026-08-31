@@ -4,7 +4,7 @@
 
 # Code completion
 
-Last modified: 18 June 2026
+Last modified: 14 August 2026
 
 Cloud completion powered by AI Assistant can autocomplete single lines, blocks of code, and even entire functions in real time based on the project context. The generated code is similar to how you would write code, matching your style and naming conventions.
 
@@ -14,7 +14,7 @@ Completion is available not only for code but also in commented lines, AI Chat, 
 >
 > By default, the cloud code completion feature relies on [Mellum](https://blog.jetbrains.com/ai/2025/02/why-and-how-jetbrains-built-mellum-the-llm-designed-for-code-completion/), a proprietary large language model developed by JetBrains and specifically optimized for this purpose.
 >
-> If needed, you can assign a custom model for this feature by [configuring](use-custom-models.html#use-custom-models-in-ai-features) a local or OpenAI-compatible provider.
+> If needed, you can use a model of your choice for this feature by [configuring](use-custom-models.html#ai-completion-provider) an OpenAI-compatible provider.
 
 ## Work with cloud completion
 
@@ -30,15 +30,15 @@ To invoke code completion suggestions:
 
     Commit Message
 
-    ![AI-generated code suggestion](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion.png "AI-generated code suggestion")
+    ![AI-generated code suggestion](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion.png "AI-generated code suggestion")
 
-    ![AI-generated code suggestion in AI Chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_in_ai_chat.png "AI-generated code suggestion in AI Chat")
+    ![AI-generated code suggestion in AI Chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_in_ai_chat.png "AI-generated code suggestion in AI Chat")
 
-    ![AI-generated code suggestion for commented code](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_code_comments.png "AI-generated code suggestion for commented code")
+    ![AI-generated code suggestion for commented code](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_code_comments.png "AI-generated code suggestion for commented code")
 
-    ![AI-generated commit message](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_commit_message.png "AI-generated commit message")
+    ![AI-generated commit message](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_commit_message.png "AI-generated commit message")
 
-    You can also trigger the code completion by pressing ⌥ Option⇧Shift0\\.
+    You can also trigger the code completion by pressing AltShift0\\.
 
     > ### tip
     >
@@ -46,19 +46,19 @@ To invoke code completion suggestions:
 
 2.  To apply the suggestion:
 
-    -   Press ⇥Tab to accept the entire suggestion. You can [configure a different shortcut](/help/ai-assistant/code-completion.html#change-cloud-completion-shortcut) for this action.
+    -   Press Tab to accept the entire suggestion. You can [configure a different shortcut](/help/ai-assistant/code-completion.html#change-cloud-completion-shortcut) for this action.
 
-    -   Press ⌥ Option0→ to accept a suggestion word by word.
+    -   Press Ctrl0→ to accept a suggestion word by word.
 
-    -   Press ⌘Cmd0→ to accept a suggestion line by line.
+    -   Press End to accept a suggestion line by line.
 
-    To reject the suggestion, press ⎋Esc. Alternatively, just continue typing or change the caret position either with the arrow keys or by a mouse click.
+    To reject the suggestion, press Esc. Alternatively, continue typing or change the caret position either with the arrow keys or by a mouse click.
 
 ## Configure cloud completion
 
-The cloud completion option is enabled by default. To configure the way it works, press ⌘Cmd0, to open the settings and go to Editor | General | Code Completion | Inline.
+The cloud completion option is enabled by default. To configure the way it works, press CtrlAlt0S to open the settings and go to Editor | General | Code Completion | Inline.
 
-[![Code completion settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_code_completion.png "Code completion settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_code_completion.png)
+[![Code completion settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_code_completion.png "Code completion settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_code_completion.png)
 
 Enable the necessary options to personalize your experience with code completion.
 
@@ -66,7 +66,7 @@ Enable the necessary options to personalize your experience with code completion
 
 In this section, you can enable or disable the inline code completion feature and define which language models you want to use for inline completion:
 
-![Enable inline completion](https://resources.jetbrains.com/help/img/idea/2026.1/ai_enable_inline_completion.png "Enable inline completion")
+![Enable inline completion](https://resources.jetbrains.com/help/img/idea/2026.2/ai_enable_inline_completion.png "Enable inline completion")
 
 Item
 
@@ -90,9 +90,9 @@ Enable inline code completion and select the models that you want to use for it:
 
 ### Display Suggestions For
 
-In this section, you can select the programming languages and features for which the suggestions must be shown:
+In this section, you can select the programming languages and features for which the suggestions are shown:
 
-![the Display Suggestions For section](https://resources.jetbrains.com/help/img/idea/2026.1/ai_display_suggestions_for.png "the Display Suggestions For section")
+![the Display Suggestions For section](https://resources.jetbrains.com/help/img/idea/2026.2/ai_display_suggestions_for.png "the Display Suggestions For section")
 
 Item
 
@@ -120,7 +120,7 @@ Advanced Settings
 
 Click this button to specify for which languages and features code completion is available.
 
-![Advanced Settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_advanced_settings.png "Advanced Settings")
+![Advanced Settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_advanced_settings.png "Advanced Settings")
 
 Languages and corresponding file types
 
@@ -338,7 +338,7 @@ Ruby CocoaPods specification
 
 In this section, you can fine-tune specific aspects of the code completion feature:
 
-![the Behavior section](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_behavior.png "the Behavior section")
+![the Behavior section](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_behavior.png "the Behavior section")
 
 Item
 
@@ -354,7 +354,7 @@ Select the number of suggestions you want to receive:
 
 -   Balanced – delivers a moderate number of suggestions. Softer filters allow for more variety while still prioritizing relevance.
 
--   Focused – the default setting. Offers brief, precise suggestions by applying strict filters that exclude potentially incorrect code.
+-   Focused – the default setting. Offers brief, precise suggestions by applying strict filters that exclude code that might be incorrect.
 
 Enable suggestions in Code Comments using cloud models
 
@@ -368,7 +368,7 @@ Synchronize inline and popup completions
 
 Select this option to see suggestions listed in a popup that appears in the editor while you type. This way, you can avoid shortcut conflicts.
 
-![Inline and popup completions combined](https://resources.jetbrains.com/help/img/idea/2026.1/ai_inline_and_popup_completions.png "Inline and popup completions combined")
+![Inline and popup completions combined](https://resources.jetbrains.com/help/img/idea/2026.2/ai_inline_and_popup_completions.png "Inline and popup completions combined")
 
 Download models
 
@@ -386,11 +386,11 @@ You can change the default cloud completion shortcut that you use to accept sugg
 
 1.  Hover over the suggestion.
 
-2.  In the popup that appears, click ! and select the key that you want to use for accepting suggestions.
+2.  In the popup that appears, click ! and select the key that you want to use for accepting suggestions
 
     To assign your own shortcut, select Custom.
 
-    ![Code completion popup%](https://resources.jetbrains.com/help/img/idea/2026.1/cloud_completion_shortcut.png "Code completion popup%")
+    ![Code completion popup%](https://resources.jetbrains.com/help/img/idea/2026.2/cloud_completion_shortcut.png "Code completion popup%")
 
 You can also change any code completion shortcuts in the Settings | Keymap anytime.
 
@@ -402,7 +402,7 @@ To analyze AI completion behavior or report inconsistencies to customer support,
 
 2.  In the .vmoptions file, add the `-Didea.is.internal=true` VM option.
 
-3.  In the main menu, go to Navigate | Search Everywhere or press ⇧Shift twice to open the search window.
+3.  In the main menu, go to Navigate | Search Everywhere or press Shift twice to open the search window.
 
 4.  Search for the `ml.completion.enable.diagnostics` setting and enable it.
 

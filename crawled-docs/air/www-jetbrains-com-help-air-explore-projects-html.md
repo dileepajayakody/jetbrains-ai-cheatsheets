@@ -1,6 +1,10 @@
+1.  [Work with code](#0)
+
+2.  [Explore code](#0)
+
 # Explore code
 
-Last modified: 23 June 2026
+Last modified: 17 August 2026
 
 Even when you develop code with agents, IDE features are still essential. You still need to understand code, inspect changes, verify assumptions, and quickly navigate to the exact place you want to review or edit.
 
@@ -10,31 +14,23 @@ JetBrains Air provides the core navigation and search features for this workflow
 >
 > Some navigation features depend on language support.
 
-## Open projects
+To open or clone a project, see [Open projects](open-projects.html).
 
-### Open a project from disk
+## Open the project in an IntelliJ-based IDE
 
-1.  If the project is already on your computer, go to File | Open.
+When you need capabilities that go beyond code navigation and search, such as debugging, run configurations, or advanced refactoring, open the same project in a full IntelliJ-based IDE installed on your machine, such as IntelliJ IDEA, PyCharm, Rider, and others.
 
-2.  Select the project folder.
+1.  In the top-right corner of the JetBrains Air window, click the IDE selector next to the IDE icon.
 
-### Clone a project from Git
+    ![The IDE selector in the top-right corner of the Air window, expanded to list installed IntelliJ-based IDEs](https://resources.jetbrains.com/help/img/air/explore-open-in-installed-ide.png "The IDE selector in the top-right corner of the Air window, expanded to list installed IntelliJ-based IDEs")
 
-1.  If the project is in a remote repository, go to Git | Clone.
+2.  Select an IDE from the list of the IntelliJ-based IDEs you have installed.
 
-2.  In Source URL, enter the repository URL.
-
-3.  In Location, specify where to store the cloned repository.
-
-4.  Click Clone.
-
-    The project will be opened in a new JetBrains Air window.
-
-    Learn more about other Git operations in [Git](git.html).
+3.  The selected IDE opens the current project. JetBrains Air stays open, so you can keep running agent tasks while you work in the IDE.
 
 ## Browse files and folders
 
-Use the Files tool to browse the project structure. Expand folders to navigate through the repository. Click a file to open it in an editor tab.
+Use the Files tool to browse the project structure. Expand folders to navigate through the repository, and click a file to open it in an editor tab. You can open files in splits, and add any item to a task as [context](task-context.html).
 
 ### Open the Files tool
 
@@ -42,9 +38,15 @@ Use the Files tool to browse the project structure. Expand folders to navigate t
 
 -   On the tool panel, click Files.
 
-To quickly find a file in the tree, focus the Files tool and press ⌘Cmd0F. Then start typing to filter the visible items.
+To quickly find a file in the tree, focus the Files tool and press Ctrl0F. Then start typing to filter the visible items.
 
-Learn more in [Files](files.html).
+### Manage files from the tree
+
+1.  In the Files tool, right-click a file or folder.
+
+2.  Select an action, such as New File…, New Folder…, Rename…, Delete…, Copy Path, or Paste.
+
+The same menu holds a Git submenu for the selected file, with actions such as [file history](git-browse-history.html#history_file_history), comparing the file with a branch or commit, and [reverting changes](git-undo-changes.html#revert_changes).
 
 ## Go to All (Search Everywhere)
 
@@ -54,7 +56,7 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
 1.  Open Go to All in one of the following ways:
 
-    -   Press ⌘Cmd0K or Shift Shift.
+    -   Press Ctrl0K or Shift Shift.
 
     -   In the main menu, select Goto | All....
 
@@ -62,7 +64,7 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
 3.  Use the filters below the search field to narrow results to Files, Symbols, or Symbols in File.
 
-4.  Select a result to preview it in the lower part of the popup. Press ↩Enter to open the selected result in an editor tab.
+4.  Select a result to preview it in the lower part of the popup. Press Enter to open the selected result in an editor tab.
 
     ![Go to All popup](https://resources.jetbrains.com/help/img/air/search-everywhere.png "Go to All popup")
 
@@ -70,7 +72,7 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
 1.  Open the Actions tab in one of the following ways:
 
-    -   Press ⌘Cmd⇧Shift0K.
+    -   Press CtrlShift0K.
 
     -   Open Go to All and switch to Actions.
 
@@ -78,13 +80,13 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
 2.  Type the action name, for example, Add to Task or Settings.
 
-3.  Select the action and press ↩Enter to run it.
+3.  Select the action and press Enter to run it.
 
 ### Open tools
 
 1.  Open the Tools tab in one of the following ways:
 
-    -   Press ⌘Cmd0T.
+    -   Press Ctrl0T.
 
     -   Open Go to All and switch to Tools.
 
@@ -92,7 +94,7 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
 2.  Type the tool name, for example, Files, Chat, or Review.
 
-3.  Select the tool and press ↩Enter to open it.
+3.  Select the tool and press Enter to open it.
 
 ### Search text across the project
 
@@ -100,13 +102,17 @@ Use Go to All to quickly navigate through the project and the IDE. If you used I
 
     -   Open Go to All and switch to Text Search.
 
-    -   Press ⌘Cmd⇧Shift0F.
+    -   Press CtrlShift0F.
+
+    -   Run the Find in Files… action.
 
 2.  Enter the text you want to find. You can use regular expressions and the search options in the search field.
 
 3.  Optionally, narrow the search with In folder and File mask.
 
 4.  Review the matches and open the result you need.
+
+Text Search is built for jumping to one result. When you need to see every match at once, replace text across files, or hand the whole result set to an agent, use the Search tool instead – see [Search and replace](search-and-replace.html).
 
 ## Navigate through code
 
@@ -120,7 +126,7 @@ The exact level of support depends on the language. For the current list, see [L
 
 2.  Find its usages in one of the following ways:
 
-    -   Press ⌘Cmd0U.
+    -   Press Ctrl0U.
 
     -   Hold ⌘Cmd and click the symbol.
 
@@ -136,7 +142,7 @@ The exact level of support depends on the language. For the current list, see [L
 
 2.  Go to its definition in one of the following ways:
 
-    -   Press ⌘Cmd0B.
+    -   Press Ctrl0B.
 
     -   Go to Goto | Definition.
 
@@ -148,7 +154,7 @@ The exact level of support depends on the language. For the current list, see [L
 
 2.  Go to implementations in one of the following ways:
 
-    -   Press ⌘Cmd⌥ Option0B.
+    -   Press AltShift0B.
 
     -   Go to Goto | Implementations.
 
@@ -160,7 +166,7 @@ The exact level of support depends on the language. For the current list, see [L
 
 2.  Go to the type definition in one of the following ways:
 
-    -   Press ⌘Cmd⇧Shift0B.
+    -   Press CtrlShift0B.
 
     -   Go to Goto | Type Definition.
 
@@ -170,7 +176,7 @@ The exact level of support depends on the language. For the current list, see [L
 
     -   Go to Goto | Next Problem or Goto | Previous Problem.
 
-    -   Press ⌘Cmd0E or ⌘Cmd⇧Shift0E.
+    -   Press Ctrl0E or CtrlShift0E.
 
 2.  To inspect all current problems in the file, click the problem indicator in the editor tab or in the upper-right corner of the editor.
 

@@ -4,7 +4,7 @@
 
 # History
 
-Last modified: 11 March 2026
+Last modified: 17 August 2026
 
 Use History to track how your workspace evolves over time. History combines Git commits with task-related snapshots, so you can review what happened before a request, what the agent changed, and what you applied to your branch.
 
@@ -28,74 +28,14 @@ History can show different types of entries, such as:
 
 -   Uncommitted changes from the user's working copy when JetBrains Air records your current local edits.
 
-This timeline helps you connect task discussions and results to concrete code changes.
+Pull and Push at the top of the tool carry the number of commits waiting on each side, so you can see what needs syncing while you read the timeline.
 
-## Find and filter entries
+## What you can do here
 
-Use search and filters to locate the point you need.
+-   [Browse Git history](git-browse-history.html) – search and filter the timeline, and compare any entry with your current code.
 
-### Search commits and snapshots
+-   [Check out a commit](git-manage-branches.html#history_checkout_commit) or [start a branch from it](git-manage-branches.html#history_branch_from_commit).
 
--   In the History tool, type in the Search commits field.
+-   [Roll back to a commit](git-undo-changes.html#history_rollback) by resetting the current branch.
 
-### Filter by branch or author
-
--   Use the Branch and User selectors to filter the list.
-
-## View diffs from History
-
-Select an entry to see which files changed and review the diff.
-
-[![History entry details](https://resources.jetbrains.com/help/img/air/aird_history_entry_details.png "History entry details")](https://resources.jetbrains.com/help/img/air/aird_history_entry_details.png)
-
-### View file diffs for an entry
-
-1.  In the History tool, select an entry in the list.
-
-2.  In the details pane, select a file. JetBrains Air opens the diff for the selected file.
-
-### Compare with the current branch
-
-1.  In the History tool, right-click an entry.
-
-2.  Select Compare with Current Branch.
-
-### Show diff with the working tree
-
-1.  In the History tool, right-click an entry.
-
-2.  Select Show Diff with Working Tree.
-
-## Roll back to a commit
-
-Roll back to a specific commit when you want to return your branch to an earlier state. For more information about working with git, refer to [Git](git.html).
-
-### Reset the current branch to a commit
-
-1.  In the History tool, right-click the commit you want to roll back to.
-
-2.  Select Reset Current Branch To Here.
-
-3.  Select the reset mode:
-
-    -   Mixed — Keep All Changes: moves the branch to the selected commit and keeps your current file changes as uncommitted changes.
-
-    -   Keep — Keep Only Uncommitted Changes: moves the branch to the selected commit and keeps only changes that are not committed.
-
-    -   Hard — Discard All Changes: moves the branch to the selected commit and discards all local changes.
-
-## Sync with a remote repository
-
-Use History to fetch updates, pull remote changes, and push your local commits.
-
-### Fetch updates
-
--   In the History tool, click Fetch.
-
-### Pull changes
-
--   In the History tool, click Pull.
-
-### Push commits
-
--   In the History tool, click Push.
+-   [Pull](git-sync-with-a-remote-repository.html#pull-changes) remote commits and [push](git-commit-and-push-changes.html#push-changes-to-a-remote-repository) your local ones.

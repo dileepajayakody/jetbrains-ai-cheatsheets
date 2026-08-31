@@ -4,13 +4,17 @@
 
 # Next edit suggestions
 
-Last modified: 05 May 2026
+Last modified: 14 August 2026
 
-When you write or edit code, AI Assistant can predict which parts you might want to change or add next and suggest likely edits. This allows you to quickly apply a suggestion and jump to the next place that might need a change, making it easier to update related code throughout the file.
+When you write or edit code, AI Assistant can predict which parts you might want to change or add next and suggest edits. This allows you to apply a suggestion and jump to the next place that might need a change, making it easier to update related code throughout the file.
 
 > ### warning
 >
 > This functionality is currently not available for users on the **AI Free** [license tier](licensing-and-subscriptions.html#ai-assistant-license-tiers). This limitation will be addressed in future releases.
+
+> ### note
+>
+> By default, next edit suggestions rely on JetBrains models. If needed, you can use a model of your choice that supports edit prediction by [configuring](use-custom-models.html#ai-completion-provider) an OpenAI-compatible provider.
 
 ## Enable next edit suggestions
 
@@ -20,7 +24,7 @@ To enable the feature:
 
 2.  In the Next Edit Suggestions section, select the Enable next edit suggestions setting. Additionally, you can further configure how the edits are suggested:
 
-    [![Next edit suggestions settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_code_completion.png "Next edit suggestions settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_code_completion.png)
+    [![Next edit suggestions settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_code_completion.png "Next edit suggestions settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_code_completion.png)
 
     -   Preview instantly – enable this setting to display suggested edits with fewer confirmation prompts.
 
@@ -30,15 +34,15 @@ To enable the feature:
 
     -   Suggest formatting-only edits – enable this setting if you want to receive suggestions that change indentation, spacing, and blank lines.
 
-3.  In the Display Suggestions For section, configure for which languages the suggestions must be provided. The next edit suggestions feature will be available when working in files of the [corresponding types](/help/ai-assistant/next-edit-suggestions.html#languages-and-corresponding-file-types).
+3.  In the Display Suggestions For section, configure for which languages the suggestions are provided. The next edit suggestions feature will be available when working in files of the [corresponding types](/help/ai-assistant/next-edit-suggestions.html#languages-and-corresponding-file-types).
 
-    ![The Display Suggestions For section](https://resources.jetbrains.com/help/img/idea/2026.1/ai_display_suggestions_for.png "The Display Suggestions For section")
+    ![The Display Suggestions For section](https://resources.jetbrains.com/help/img/idea/2026.2/ai_display_suggestions_for.png "The Display Suggestions For section")
 
     The All others option covers [other file types](/help/ai-assistant/next-edit-suggestions.html#all-other-file-types) and is disabled by default.
 
     Alternatively, you can click the Advanced Settings button to fine-tune the configuration.
 
-    ![Advanced Settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_code_completion_advanced_settings.png "Advanced Settings")
+    ![Advanced Settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_code_completion_advanced_settings.png "Advanced Settings")
 
 4.  Click Apply to save changes.
 
@@ -256,11 +260,11 @@ Once the next edit suggestions are enabled:
 
 1.  In the editor, modify an existing line or write new code. AI Assistant will suggest the next edit.
 
-2.  Press ⇥Tab to jump to the suggestion to review it, then press ⇥Tab again to apply it.
+2.  Press Tab to jump to the suggestion to review it, then press Tab again to apply it.
 
 3.  Repeat the previous step to apply other suggestions.
 
-    To cancel the suggestion, press ⎋Esc.
+    To cancel the suggestion, press Esc.
 
 ## Application examples
 
@@ -280,4 +284,4 @@ The example below demonstrates another common case: when you make a typo in your
 
 Introducing changes
 
-The main case for this feature is when you introduce changes to your code. AI Assistant suggests the next place that you might want to change and provides the most likely edit.
+The main case for this feature is when you introduce changes to your code. AI Assistant suggests the next place that you might want to change and provides the most relevant edit.

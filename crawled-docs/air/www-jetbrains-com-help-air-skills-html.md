@@ -4,7 +4,7 @@
 
 # Skills
 
-Last modified: 06 May 2026
+Last modified: 14 August 2026
 
 Skills are reusable workflow modules packaged as named units. Unlike commands, which you invoke explicitly, skills provide structured capability blocks that the agent can choose and load when they match the task.
 
@@ -12,7 +12,7 @@ Their main purpose is progressive context disclosure: instead of loading all tea
 
 In the Chat tool, type `/` to open the slash menu. Skills appear there after built-in commands and custom commands.
 
-![Skills in the slash menu after commands](https://resources.jetbrains.com/help/img/air/air-agent-skills.png "Skills in the slash menu after commands")
+![Skills in the slash menu after commands](https://resources.jetbrains.com/help/img/air/agent-slash-commands.png "Skills in the slash menu after commands")
 
 > ### note
 >

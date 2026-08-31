@@ -28,19 +28,19 @@ To start a trial:
 
 2.  Click Start Free Trial.
 
-    ![Start Free Trial](https://resources.jetbrains.com/help/img/idea/2026.1/ai_start_free_trial.png "Start Free Trial")
+    ![Start Free Trial](https://resources.jetbrains.com/help/img/idea/2026.2/ai_start_free_trial.png "Start Free Trial")
 
 3.  Click Verify Account. You will be redirected to your JetBrains Account, where you will need to link a payment card.
 
-    ![Verify Account](https://resources.jetbrains.com/help/img/idea/2026.1/ai_verify_account.png "Verify Account")
+    ![Verify Account](https://resources.jetbrains.com/help/img/idea/2026.2/ai_verify_account.png "Verify Account")
 
 4.  Link a payment card, then return to the IDE, and click Check Account Status.
 
-    ![Check Account Status](https://resources.jetbrains.com/help/img/idea/2026.1/ai_card_linked.png "Check Account Status")
+    ![Check Account Status](https://resources.jetbrains.com/help/img/idea/2026.2/ai_card_linked.png "Check Account Status")
 
 After completing these steps, your free trial will be linked to your [JetBrains Account](https://account.jetbrains.com/). A **Trial** label will appear in the AI Chat tool window to indicate that the trial has been successfully activated.
 
-![Trial label](https://resources.jetbrains.com/help/img/idea/2026.1/ai_trial_label.png "Trial label")
+![Trial label](https://resources.jetbrains.com/help/img/idea/2026.2/ai_trial_label.png "Trial label")
 
 When the trial expires, you can switch to a paid license of your choice. Otherwise, you will be automatically moved to the **AI Free** tier.
 
@@ -84,75 +84,75 @@ IDE versions prior to 2024.2.1
 
 Paid license for individual use
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
 Organizational license assigned by your employer
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")\[1\]
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")\[1\]
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")\[1\]
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")\[1\]
 
 Commercial license obtained from License Vault Cloud, License Server, or IDE Services
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")\[2\]
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")\[2\]
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")\[3\]
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")\[3\]
 
 [Free educational license](https://www.jetbrains.com/academy/student-pack/#students) for students and teachers
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 [Free classroom license](https://www.jetbrains.com/academy/student-pack/#classrooms) for educational institutions
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 [Free open-source development license](https://www.jetbrains.com/community/opensource/#support)
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 Free non-commercial license ([RustRover](https://www.jetbrains.com/rust/buy/?section=personal&billing=yearly), [WebStorm](https://www.jetbrains.com/webstorm/buy/?section=personal&billing=monthly), [Rider](https://www.jetbrains.com/rider/buy/?section=personal&billing=yearly))
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 JetBrains IDE free trial
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 Community Editions of PyCharm and IntelliJ IDEA
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 PyCharm Unified (starting from version 2025.1)
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 Fleet EAP license
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
 Early Access Program license for any other JetBrains IDE
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
 > ### note
 >
@@ -174,9 +174,9 @@ If you have already purchased the license on the [AI in IDEs](https://www.jetbra
 
 1.  Open the ! AI Chat tool window.
 
-2.  Click Start with JetBrains AI.
+2.  Click Start with JetBrains AI subscription.
 
-    ![Start with JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Start with JetBrains AI")
+    ![Start with JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Start with JetBrains AI")
 
 3.  Log in to your JetBrains Account.
 
@@ -186,7 +186,7 @@ If you have not purchased a license yet, do the following:
 
 2.  Click Get JetBrains AI Pro.
 
-    ![Get a JetBrains AI license](https://resources.jetbrains.com/help/img/idea/2026.1/ai_start_free_trial.png "Get a JetBrains AI license")
+    ![Get a JetBrains AI license](https://resources.jetbrains.com/help/img/idea/2026.2/ai_start_free_trial.png "Get a JetBrains AI license")
 
 3.  On the [AI in IDEs](https://www.jetbrains.com/ai-ides/buy) webpage, select the license tier you want to purchase.
 
@@ -196,7 +196,7 @@ If you have not purchased a license yet, do the following:
 
 6.  Open the ! AI Chat tool window, and click Start with JetBrains AI.
 
-    ![Start with JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Start with JetBrains AI")
+    ![Start with JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Start with JetBrains AI")
 
 7.  Log in to your JetBrains Account.
 

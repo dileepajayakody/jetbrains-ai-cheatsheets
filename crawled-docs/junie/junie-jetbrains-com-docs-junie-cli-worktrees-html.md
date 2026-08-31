@@ -1,6 +1,6 @@
 # Parallel sessions and worktrees
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Start another live session with
 
@@ -110,7 +110,7 @@ If you often work this way, pre-create a few worktrees so build caches are ready
 
 ### Transferring uncommitted changes
 
-If the current working directory has uncommitted changes when you switch to a worktree, Junie asks whether to move them to the target workspace or start clean:
+If the current working directory has uncommitted changes when you create a new worktree, Junie asks whether to move them to the target workspace or start clean:
 
 -   Transfer changes to workspace: Junie uses `git stash` to move uncommitted changes from the source directory to the target worktree.
 

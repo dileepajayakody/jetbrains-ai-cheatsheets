@@ -4,11 +4,13 @@
 
 # Add and configure MCP servers
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 You can connect Junie CLI to external tools via Model Context Protocol (MCP). Junie CLI uses the same MCP JSON configuration as [Junie in JetBrains IDEs](junie-ide-plugin.html#mcp-configuration).
 
 The `/mcp` slash command shows the [list of configured MCP servers](/docs/junie-cli-mcp-configuration.html#list-configured-mcp-servers) and the [MCP Installation Assistant](/docs/junie-cli-mcp-configuration.html#mcp-installation-assistant) to guide you through adding, editing, or troubleshooting configs for MCP servers.
+
+In ACP (Agent Client Protocol) clients, `/mcp` is a read-only listing: it shows local MCP servers (with runtime status and source) and any MCP servers the client passed at session init. It does not open the installation assistant or edit configs. To change local servers from ACP, edit `.junie/mcp/mcp.json`/`~/.junie/mcp/mcp.json` (or use the interactive TUI `/mcp` screen).
 
 ## MCP Installation Assistant
 

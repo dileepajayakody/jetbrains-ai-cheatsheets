@@ -1,6 +1,6 @@
 # Headless mode
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 > ### tip
 >
@@ -41,6 +41,12 @@ junie --help
 ```
 
 For the full list of available options and environment variables, see [reference](parameters.html).
+
+### Project trust
+
+Interactive UI launches enforce project trust: Junie asks you to trust a project before it loads project-scoped inputs. Non-interactive runs — one-shot prompts, piped-input tasks, ACP, and Gateway — cannot ask for a trust decision, so they are trusted by design and load the project's Junie configuration (MCP servers, hooks, agents, skills, and guidelines) without prompting. Only run Junie non-interactively in projects you trust.
+
+To manage trust for interactive sessions, start `junie` interactively and select Trust this project or Trust all projects in `<parent>`. Delete the corresponding marker under `<Junie Home>/trust` to revoke exact or inherited parent trust for the next launch.
 
 Thanks for your feedback!
 

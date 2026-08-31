@@ -1,11 +1,11 @@
 {
-  "title": "<span class=\"hl\">AI Assistant</span> — JetBrains <span class=\"hl2\">Agentic</span> Coding Cheat Sheet",
+  "title": "<span class=\"hl\">AI Assistant</span> — <span class=\"hl2\">Agentic</span> Coding Cheat Sheet",
   "brandName": "JetBrains AI Assistant",
-  "brandSub": "AI Chat · Code Completion · In-Editor Actions · Agents · MCP · BYOK",
+  "brandSub": "Chat · Code Completion · In-Editor Actions · Agents · MCP · BYOK",
   "badge": "JETBRAINS",
   "docsUrl": "https://www.jetbrains.com/help/ai-assistant/ai-chat.html",
   "docsLabel": "AI Assistant Docs",
-  "generatedNote": "Built from docs scraped on 2026-07-03",
+  "generatedNote": "Built from docs scraped on 2026-08-18",
   "sections": [
     {
       "title": "Getting Started",
@@ -13,543 +13,582 @@
       "column": 1,
       "rows": [
         {
-          "label": "Install plugin",
-          "value": "<strong>Settings | Plugins | Marketplace</strong> → search <code>AI Assistant</code> → Install (not bundled by default)"
+          "label": "Install",
+          "value": "Not bundled by default — install via <code>Settings | Plugins | Marketplace</code> → search <em>AI Assistant</em>"
         },
         {
-          "label": "Supported IDEs",
-          "value": "CLion, DataGrip, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, Rider, RubyMine, RustRover, WebStorm, Android Studio"
+          "label": "IDEs",
+          "value": "IntelliJ IDEA, PyCharm, GoLand, Rider, WebStorm, CLion, PhpStorm, RubyMine, RustRover, DataGrip, DataSpell + Android Studio"
+        },
+        {
+          "label": "Activation",
+          "value": "JetBrains AI subscription, BYOK API key, provider OAuth, or ACP-compatible external agent"
+        },
+        {
+          "label": "30-day trial",
+          "value": "Click <em>Start Free Trial</em> in the AI Chat tool window; links to JetBrains Account (card required, no charge)"
+        },
+        {
+          "label": "AI Free tier",
+          "value": "3 AI Credits / 30 days, available from IDE 2025.1+; no top-up allowed"
+        },
+        {
+          "label": "AI Hub widget",
+          "value": "Click the <strong>JetBrains AI</strong> widget in the window toolbar to check quota, plan, and settings"
+        },
+        {
+          "label": "Disable per-project",
+          "value": "JetBrains AI widget → <em>Disable for This Project</em>; or drop <code>.noai</code> file in project root"
         },
         {
           "label": "Min IDE version",
-          "value": "<strong>2023.3</strong> or later; Community Editions require <strong>2024.1.1</strong>+"
-        },
-        {
-          "label": "Activation options",
-          "value": "JetBrains AI subscription · BYOK (API key) · Provider OAuth account · ACP external agent"
-        },
-        {
-          "label": "Free trial",
-          "value": "30-day <strong>AI Pro</strong> trial; links to JetBrains Account; requires payment method on file"
-        },
-        {
-          "label": "License tiers",
-          "value": "<strong>AI Free</strong> (3 credits/30d) · <strong>AI Pro</strong> ($10, 10 credits) · <strong>AI Ultimate</strong> ($30, 35 credits)"
-        },
-        {
-          "label": "AI widget",
-          "value": "JetBrains AI widget in toolbar → tracks quota, credits, plan &amp; quick settings"
-        },
-        {
-          "label": "Disable for project",
-          "value": "Widget → <strong>Disable AI Assistant → Disable for This Project</strong>; or drop <code>.noai</code> in project root"
+          "value": "2023.3+ for paid; 2024.1.1+ for Community editions"
         }
       ]
     },
     {
-      "title": "What's New (2026.1+)",
+      "title": "What's New &amp; Notable",
       "colorClass": "s2",
       "column": 1,
       "rows": [
         {
+          "label": "Cloud agents",
+          "value": "Run agents in an isolated JetBrains Air cloud environment; writes results to a separate branch for review &amp; merge"
+        },
+        {
           "label": "Agent Client Protocol",
-          "value": "ACP support: install external agents from curated registry or via <code>~/.jetbrains/acp.json</code> — no JetBrains AI subscription required"
+          "value": "ACP lets you connect external agents (e.g., opencode, goose, auggie) via <code>~/.jetbrains/acp.json</code>"
+        },
+        {
+          "label": "Skills",
+          "value": "Reusable agent abilities (supported by Claude Agent &amp; Codex); invoke with <code>$skill-name</code> in chat"
         },
         {
           "label": "Junie Debug mode",
-          "value": "IntelliJ IDEA Ultimate: Junie acts as AI debugger — sets breakpoints, inspects variables, evaluates expressions at runtime"
-        },
-        {
-          "label": "Skills system",
-          "value": "Reusable agent skills for Claude Agent &amp; Codex; install from registry or custom dirs; invoke with <code>$skill-name</code>"
-        },
-        {
-          "label": "GitHub Copilot agent",
-          "value": "GitHub Copilot integrated as a coding agent in AI Chat (OAuth via GitHub account)"
-        },
-        {
-          "label": "Query plan AI",
-          "value": "DataGrip/DB plugin 2026.1+: <strong>Analyze SQL Plan with AI</strong> and <strong>Optimize Query with AI</strong> actions"
-        },
-        {
-          "label": "Junie remote session",
-          "value": "<code>/remote</code> command in Junie chat starts a browser-accessible remote session linked to the IDE"
-        },
-        {
-          "label": "Perforce MCP",
-          "value": "Detect Perforce project → configure Perforce MCP server → AI gains access to changelists, shelves &amp; workspace data"
+          "value": "AI-powered debugger assistant in IntelliJ IDEA Ultimate; set breakpoints, inspect variables, evaluate expressions"
         },
         {
           "label": "Next edit suggestions",
-          "value": "Predict the next code change; chain suggestions; support for rename refactorings &amp; formatting-only edits (not on AI Free)"
+          "value": "AI predicts the next code change after you edit; accept with <code>Tab → Tab</code>; not on AI Free tier"
+        },
+        {
+          "label": "Group with AI",
+          "value": "Experimental plugin clusters uncommitted/committed diffs into high/medium/low-impact groups for faster review"
+        },
+        {
+          "label": "Perforce MCP",
+          "value": "Configure a Perforce MCP server via <code>Settings | Version Control | Perforce | Perforce MCP</code>"
+        },
+        {
+          "label": "Java-to-Kotlin AI",
+          "value": "IntelliJ IDEA Ultimate: <code>Code | Convert Java to Kotlin | AI-Assisted</code>; uses <code>kotlin-tooling-java-to-kotlin</code> skill"
         }
       ]
     },
     {
       "title": "AI Chat Basics",
       "colorClass": "s3",
-      "column": 1,
+      "column": 2,
       "rows": [
         {
           "label": "Open AI Chat",
-          "value": "Click AI Chat button on right toolbar, or assign a custom shortcut under <strong>Keymap → Tool Windows → AI Assistant</strong>"
-        },
-        {
-          "label": "Switch mode/agent",
-          "value": "Click the mode selector button → choose <strong>Chat</strong> or any agent (Junie, Claude Agent, Codex, Copilot, ACP)"
+          "value": "Click the <strong>AI Chat</strong> button on the right toolbar; in DataGrip use <em>More tool windows</em>"
         },
         {
           "label": "New chat",
-          "value": "<code>⌘N</code> or click New Chat button — starts a fresh context window; use per topic to limit token bleed"
+          "value": "Click <strong>New Chat</strong> or press <code>Alt+Insert</code>"
         },
         {
-          "label": "Toggle Chat ↔ agent",
-          "value": "<code>⌘/</code> — toggles between Chat mode and the last selected agent"
+          "label": "Send message",
+          "value": "<code>Enter</code> — send; <code>Shift+Enter</code> — new line; <code>Ctrl+Shift+Enter</code> — send to new chat"
+        },
+        {
+          "label": "Send Now",
+          "value": "<code>Ctrl+Enter</code> — interrupt ongoing generation and send prompt immediately"
         },
         {
           "label": "Search in chat",
-          "value": "<code>⌘F</code> inside a chat instance; same shortcut in Chat History list finds past chats"
+          "value": "<code>Ctrl+F</code> in the chat pane highlights occurrences; also works in Chat History list"
         },
         {
-          "label": "Auto model",
-          "value": "Set model to <strong>Auto</strong> — AI Assistant picks best performance/cost balance automatically"
+          "label": "Chat in editor tab",
+          "value": "Click <em>Show Chats in Editor Tabs</em> to open the current chat as a full editor tab"
         },
         {
-          "label": "Custom response language",
-          "value": "<strong>Settings | Tools | AI Assistant → Natural Language</strong> → enable and specify language"
+          "label": "Response language",
+          "value": "<code>Settings | Tools | AI Assistant</code> → <em>Receive AI Assistant chat responses in a custom language</em>"
         },
         {
-          "label": "Maximize chat window",
-          "value": "<code>⌘⇧'</code> — maximize / restore the AI Assistant tool window"
+          "label": "Chat waiting indicator",
+          "value": "Yellow dot in Chat History marks an agent chat that is paused and waiting for your approval"
         }
       ]
     },
     {
       "title": "Context &amp; Attachments",
-      "colorClass": "s6",
+      "colorClass": "s4",
       "column": 2,
       "rows": [
         {
-          "label": "@thisFile / @selection",
-          "value": "Reference current open file or editor selection without clicking Add attachment"
+          "label": "@thisFile",
+          "value": "References the currently open file in the editor"
         },
         {
           "label": "@file: / @folder:",
-          "value": "<code>@file:Foo.kt</code> or <code>@folder:src</code> — whole file or directory tree added as context"
+          "value": "Attach a specific file or folder; also accepts drag-and-drop or <code>Ctrl+F</code> search in attachment picker"
+        },
+        {
+          "label": "@selection",
+          "value": "Attaches the code currently selected in the editor"
+        },
+        {
+          "label": "@localChanges",
+          "value": "Attaches uncommitted changes from VCS"
         },
         {
           "label": "@commit:",
-          "value": "Add a commit diff by hash — e.g. <code>@commit:a1b2c3d</code>"
+          "value": "Adds a commit reference by hash or popup selection"
         },
         {
           "label": "@symbol:",
-          "value": "Add a specific symbol declaration — e.g. <code>@symbol:UserService</code>"
-        },
-        {
-          "label": "@problems / @localChanges",
-          "value": "<code>@problems</code>: issues in open file; <code>@localChanges</code>: uncommitted VCS diff"
+          "value": "Adds a named symbol, e.g. <code>@symbol:FieldName</code>"
         },
         {
           "label": "@dbObject:",
-          "value": "Attach a database schema or table object (DataGrip / DB plugin 2025.2+)"
+          "value": "Attaches a database schema or table (DataGrip / DB plugin)"
         },
         {
-          "label": "Add context from UI",
-          "value": "Add attachment → <strong>Add context from UI</strong> → pick terminal, console, Build output, etc."
-        },
-        {
-          "label": "Disable codebase mode",
-          "value": "Click options icon → disable <strong>Enable Codebase Mode</strong> to attach all context manually; respects <code>.gitignore</code> &amp; <code>.aiignore</code> when enabled"
-        }
-      ]
-    },
-    {
-      "title": "Chat Commands &amp; Responses",
-      "colorClass": "s5",
-      "column": 2,
-      "rows": [
-        {
-          "label": "/explain",
-          "value": "Explain a mentioned entity or attached code"
-        },
-        {
-          "label": "/refactor",
-          "value": "Suggest refactoring for code selected in the editor"
-        },
-        {
-          "label": "/web",
-          "value": "Search the internet; AI returns answer + source links"
-        },
-        {
-          "label": "/docs",
-          "value": "Search IDE documentation; may link to setting or docs page"
-        },
-        {
-          "label": "/help",
-          "value": "List available AI Chat features and commands"
-        },
-        {
-          "label": "Apply snippet",
-          "value": "Click <strong>Apply</strong> on a code snippet to merge it into the open file; review with Next/Prev Change buttons"
-        },
-        {
-          "label": "Run snippet",
-          "value": "Click Run Snippet to execute a generated terminal command or code directly"
-        },
-        {
-          "label": "Regenerate",
-          "value": "Click <strong>Regenerate this response</strong> at the bottom of a reply to get a fresh answer"
+          "label": "Codebase Mode",
+          "value": "Auto-gathers context from the project; disable via <code>!</code> menu → <em>Enable Codebase Mode</em> to attach manually. Respects <code>.aiignore</code>"
         }
       ]
     },
     {
       "title": "Code Completion",
-      "colorClass": "s4",
-      "column": 2,
-      "rows": [
-        {
-          "label": "Trigger manually",
-          "value": "<code>⌥⇧\\</code> — force a cloud completion suggestion at caret"
-        },
-        {
-          "label": "Accept full suggestion",
-          "value": "<code>Tab</code> (configurable) — accepts the entire inline suggestion"
-        },
-        {
-          "label": "Accept word-by-word",
-          "value": "<code>⌥→</code> — accept the next word of the suggestion"
-        },
-        {
-          "label": "Accept line-by-line",
-          "value": "<code>⌘→</code> — accept the next line of the suggestion"
-        },
-        {
-          "label": "Reject suggestion",
-          "value": "<code>Esc</code> — dismiss; also dismissed by typing or moving the caret"
-        },
-        {
-          "label": "Default model",
-          "value": "Cloud completion uses <strong>Mellum</strong> (JetBrains FIM model) by default; override in Providers &amp; API keys"
-        },
-        {
-          "label": "Completion policy",
-          "value": "<strong>Editor | Code Completion | Inline</strong> → Focused (strict) / Balanced / Creative (experimental)"
-        },
-        {
-          "label": "Enable in comments &amp; commits",
-          "value": "Settings → <em>Display Suggestions For</em> → enable <strong>Commit Messages</strong> and <strong>AI Chat Input</strong>"
-        }
-      ]
-    },
-    {
-      "title": "In-Editor AI Actions",
-      "colorClass": "s7",
-      "column": 2,
-      "rows": [
-        {
-          "label": "Open AI Actions menu",
-          "value": "<code>⌥↩</code> on selection → <strong>AI Actions</strong>; or right-click → AI Actions"
-        },
-        {
-          "label": "Generate code in editor",
-          "value": "<code>⌘\\</code> on empty line → type prompt → <code>Enter</code>; generates code inline with diff view"
-        },
-        {
-          "label": "Edit selected code",
-          "value": "<code>⌘\\</code> with selection → describe change → AI rewrites selection in-place"
-        },
-        {
-          "label": "Explain Code",
-          "value": "AI Actions → <strong>Explain Code</strong> — opens Chat with explanation; also works for RegExp, SQL, injected langs"
-        },
-        {
-          "label": "Generate Unit Tests",
-          "value": "AI Actions → <strong>Generate Unit Tests</strong> — opens AI Diff tab; click Accept all to save test file"
-        },
-        {
-          "label": "Write Documentation",
-          "value": "AI Actions → <strong>Write Documentation</strong>; or type <code>/**</code> / <code>\"\"\"</code> / <code>//</code> then <em>Generate with AI Assistant</em>"
-        },
-        {
-          "label": "Find Problems",
-          "value": "Select code → floating toolbar → <strong>Find Problems</strong> — Chat opens with bug/issue analysis"
-        },
-        {
-          "label": "Suggest Refactoring",
-          "value": "Select code → floating toolbar → <strong>Suggest Refactoring</strong> — Chat proposes and applies refactor via diff"
-        }
-      ]
-    },
-    {
-      "title": "Agents &amp; Operation Modes",
-      "colorClass": "s9",
+      "colorClass": "s5",
       "column": 3,
       "rows": [
         {
-          "label": "Junie (JetBrains)",
-          "value": "Autonomous multi-file agent; requires JetBrains AI subscription; respects <code>.aiignore</code>; instructions in <code>AGENTS.md</code>"
+          "label": "Trigger manually",
+          "value": "<code>Alt+Shift+\\</code> — invoke cloud completion explicitly"
         },
         {
-          "label": "Junie Brave mode",
-          "value": "Toggle <strong>Brave Mode</strong> in chat input — executes commands without per-action confirmation"
+          "label": "Accept all",
+          "value": "<code>Tab</code> — accept entire suggestion (configurable)"
         },
         {
-          "label": "Claude Agent modes",
-          "value": "<strong>Auto · Default · Accept Edits · Plan · Don't Ask · Bypass</strong>; instructions from <code>CLAUDE.md</code>"
+          "label": "Accept word",
+          "value": "<code>Ctrl+→</code> — accept suggestion word by word"
         },
         {
-          "label": "Codex modes",
-          "value": "<strong>Read-only · Agent · Agent (full access)</strong>; use <code>AGENTS.md</code> for instructions; BYOK requires direct OpenAI key"
+          "label": "Accept line",
+          "value": "<code>End</code> — accept suggestion line by line"
         },
         {
-          "label": "GitHub Copilot modes",
-          "value": "<strong>Agent · Plan · Autopilot</strong>; OAuth via GitHub only; reads <code>AGENTS.md</code> &amp; <code>CLAUDE.md</code>"
+          "label": "Reject",
+          "value": "<code>Esc</code> — dismiss the current suggestion"
         },
         {
-          "label": "Rollback agent changes",
-          "value": "Hover changed file in agent pane → rollback icon (single file); or click <strong>Rollback</strong> for all files"
+          "label": "Default model",
+          "value": "Mellum (JetBrains FIM model); override with an OpenAI-compatible provider in <code>Settings | AI Completion</code>"
         },
         {
-          "label": "Agent /commands",
-          "value": "Type <code>/</code> in chat to list agent-specific slash commands (e.g. Junie: <code>/usage</code>, <code>/remote</code>, <code>/ide</code>)"
+          "label": "Completion policy",
+          "value": "Focused (default) / Balanced / Creative — controls suggestion volume &amp; filter strictness"
         },
         {
-          "label": "Approve operations",
-          "value": "Agents prompt for permission before bash commands or file edits; Allow / Always Allow / Reject"
+          "label": "Completions in",
+          "value": "Editor code, AI Chat input, commit messages, and code comments (each toggleable in settings)"
         }
       ]
     },
     {
-      "title": "Agent Instructions &amp; Skills",
+      "title": "In-Editor Actions",
+      "colorClass": "s6",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Open AI Actions",
+          "value": "<code>Alt+Enter</code> → <em>AI Actions</em> or right-click → <em>AI Actions</em>"
+        },
+        {
+          "label": "Generate code (inline)",
+          "value": "<code>Ctrl+\\</code> on empty line → type prompt → <code>Enter</code>; on selected code → modify it"
+        },
+        {
+          "label": "Explain Code",
+          "value": "Select code → <code>Alt+Enter</code> → <em>AI Actions | Explain Code</em>"
+        },
+        {
+          "label": "Generate Unit Tests",
+          "value": "Caret in class/method → <code>Alt+Enter</code> → <em>AI Actions | Generate Unit Tests</em>"
+        },
+        {
+          "label": "Write Documentation",
+          "value": "Caret on declaration → right-click → <em>AI Actions | Write documentation</em>"
+        },
+        {
+          "label": "Find Problems",
+          "value": "Select code → floating popup → <em>Find Problems</em>"
+        },
+        {
+          "label": "Suggest Refactoring",
+          "value": "Select code → floating popup → <em>Suggest Refactoring</em>; then click <em>Apply</em> to write to file"
+        },
+        {
+          "label": "Accept / Discard changes",
+          "value": "After generation: <em>Accept All</em> to apply; <em>Discard All</em> or gutter <em>Revert</em> to reject individual hunks"
+        }
+      ]
+    },
+    {
+      "title": "Keyboard Shortcuts",
+      "colorClass": "s7",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Ctrl+\\",
+          "value": "Generate code on empty line <strong>or</strong> edit selected code in editor"
+        },
+        {
+          "label": "Alt+Shift+\\",
+          "value": "Manually invoke cloud code completion"
+        },
+        {
+          "label": "Alt+Enter",
+          "value": "Open AI Actions context menu on current selection or caret"
+        },
+        {
+          "label": "Alt+Insert",
+          "value": "Open a new AI Chat"
+        },
+        {
+          "label": "Ctrl+F (chat)",
+          "value": "Search within the current chat conversation"
+        },
+        {
+          "label": "Ctrl+Shift+'",
+          "value": "Maximize / restore the AI Assistant tool window"
+        },
+        {
+          "label": "Shift+F6",
+          "value": "Rename symbol — AI suggests name options based on code context"
+        },
+        {
+          "label": "Configure shortcuts",
+          "value": "<code>Settings | Keymap | Plugins | JetBrains AI Assistant</code>"
+        }
+      ]
+    },
+    {
+      "title": "Agents",
+      "colorClass": "s8",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Junie",
+          "value": "JetBrains autonomous agent; requires JetBrains AI subscription; reads <code>AGENTS.md</code>; respects <code>.aiignore</code>"
+        },
+        {
+          "label": "Claude Agent",
+          "value": "Anthropic; supports JetBrains AI, BYOK (Anthropic key), or Anthropic Console; reads <code>CLAUDE.md</code>"
+        },
+        {
+          "label": "Codex",
+          "value": "OpenAI; supports JetBrains AI, BYOK (OpenAI key), or ChatGPT OAuth; reads <code>AGENTS.md</code>"
+        },
+        {
+          "label": "GitHub Copilot",
+          "value": "GitHub OAuth only; reads <code>AGENTS.md</code> &amp; <code>CLAUDE.md</code>; not available in Remote Development"
+        },
+        {
+          "label": "Operation modes",
+          "value": "Each agent has distinct modes (e.g., Junie: <em>Brave</em>; Claude: <em>Auto / Plan / Bypass</em>; Codex: <em>Read-only / Agent / Full access</em>)"
+        },
+        {
+          "label": "Rollback",
+          "value": "In the changed-files pane: hover a file → revert icon for single file, or <em>Rollback</em> button for all"
+        },
+        {
+          "label": "JetBrains Pick",
+          "value": "Default mode opens with JetBrains' recommended agent; selected by benchmark solve rate, cost &amp; A/B tests"
+        },
+        {
+          "label": "Approve actions",
+          "value": "Agents ask permission before file ops/commands; choose <em>Allow Once</em>, <em>Always allow</em>, or <em>Deny</em>"
+        }
+      ]
+    },
+    {
+      "title": "MCP &amp; External Tools",
+      "colorClass": "s9",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Add MCP server",
+          "value": "<code>Settings | Tools | AI Assistant | Model Context Protocol (MCP)</code> → click <code>+</code>"
+        },
+        {
+          "label": "Transports",
+          "value": "STDIO (local subprocess), Streamable HTTP, and legacy SSE"
+        },
+        {
+          "label": "Import from Claude",
+          "value": "Click <em>Import from Claude</em> on the MCP settings page to reuse Claude Desktop's <code>mcpServers</code> config"
+        },
+        {
+          "label": "Use IDE as MCP server",
+          "value": "<code>Settings | Tools | MCP Server</code> → enable; auto-configures clients like Claude Code, Codex, VS Code"
+        },
+        {
+          "label": "Brave mode (MCP)",
+          "value": "Enable <em>Run shell commands without confirmation</em> in <code>Settings | Tools | MCP Server</code>"
+        },
+        {
+          "label": "Pass to agent",
+          "value": "<code>Settings | Tools | AI Assistant | Agents</code> → enable <em>Pass custom MCP servers</em> or <em>Pass IntelliJ MCP server</em>"
+        },
+        {
+          "label": "Invoke manually",
+          "value": "Type <code>/</code> in chat input to see and run available MCP tool commands"
+        },
+        {
+          "label": "ACP config file",
+          "value": "Custom external agents defined in <code>~/.jetbrains/acp.json</code>; IDE auto-detects installed ACP agents"
+        }
+      ]
+    },
+    {
+      "title": "Models &amp; Providers",
       "colorClass": "s10",
       "column": 3,
       "rows": [
         {
-          "label": "AGENTS.md",
-          "value": "Place in repo root — Junie, Codex &amp; Copilot read this for coding conventions, architecture rules, common commands"
+          "label": "Cloud models",
+          "value": "Claude, Gemini, GPT, Grok families via JetBrains AI service; select in chat model picker"
         },
         {
-          "label": "CLAUDE.md",
-          "value": "Claude Agent (and Copilot) instruction file; same format as <code>AGENTS.md</code>; version-controlled alongside code"
-        },
-        {
-          "label": "Instruction file sections",
-          "value": "Include: project context, dev rules, build/test commands, restrictions, definition of done"
-        },
-        {
-          "label": "Project rules vs. instructions",
-          "value": "<code>AGENTS.md</code>/<code>CLAUDE.md</code> = agent-scoped; <strong>Project Rules</strong> (<code>.aiassistant/rules/*.md</code>) = Chat mode only"
-        },
-        {
-          "label": "Install skills",
-          "value": "<strong>Settings | Tools | AI Assistant | Skills</strong> → browse registry → Install at IDE, Project, or Agent level"
-        },
-        {
-          "label": "Invoke skill explicitly",
-          "value": "Type <code>$skill-name</code> in the agent chat input; agent also invokes relevant skills automatically"
-        },
-        {
-          "label": "Import existing skills",
-          "value": "IDE detects skills from <code>~/.codex/skills</code> or <code>~/.claude/skills</code> and offers to import them"
-        },
-        {
-          "label": "ACP custom agent config",
-          "value": "Edit <code>~/.jetbrains/acp.json</code> — set <code>agent_servers</code> with <code>command</code>, <code>args</code>, <code>env</code> keys"
-        }
-      ]
-    },
-    {
-      "title": "MCP — Model Context Protocol",
-      "colorClass": "s8",
-      "column": 3,
-      "rows": [
-        {
-          "label": "Add MCP server",
-          "value": "<strong>Settings | Tools | AI Assistant | MCP</strong> → Add → paste JSON config (STDIO or HTTP transport)"
-        },
-        {
-          "label": "STDIO config format",
-          "value": "<code>{\"mcpServers\":{\"name\":{\"command\":\"...\",\"args\":[...]}}}</code>"
-        },
-        {
-          "label": "HTTP config format",
-          "value": "<code>{\"mcpServers\":{\"name\":{\"url\":\"https://...\",\"type\":\"streamable-http\"}}}</code>"
-        },
-        {
-          "label": "Import from Claude Desktop",
-          "value": "MCP settings → <strong>Import from Claude</strong> — reuses existing Claude Desktop MCP configuration"
-        },
-        {
-          "label": "IDE as MCP server",
-          "value": "<strong>Settings | Tools | MCP Server</strong> → Enable → Auto-Configure clients (Claude Code, Cursor, Codex, VS Code…)"
-        },
-        {
-          "label": "Expose to agents",
-          "value": "<strong>Settings | Tools | AI Assistant | Agents</strong> → enable <em>Pass custom MCP servers</em> and/or <em>Pass IntelliJ MCP server</em>"
-        },
-        {
-          "label": "Invoke MCP tool manually",
-          "value": "Type <code>/</code> in chat — MCP tools appear alongside built-in commands; agents also auto-invoke when relevant"
-        },
-        {
-          "label": "MCP server logs",
-          "value": "<strong>Help → Show Log in Finder/Explorer</strong> → navigate to <code>mcp/</code> folder for per-server logs"
-        }
-      ]
-    },
-    {
-      "title": "Models &amp; Providers (BYOK)",
-      "colorClass": "s11",
-      "column": 3,
-      "rows": [
-        {
-          "label": "BYOK settings path",
-          "value": "<strong>Settings | Tools | AI Assistant | Providers &amp; API keys</strong> → select Provider → enter API key → Test Connection"
-        },
-        {
-          "label": "Supported providers",
-          "value": "Anthropic · Gemini · Google Vertex AI (API key or ADC) · OpenAI · OpenAI-compatible · Ollama · LM Studio"
-        },
-        {
-          "label": "Local models",
-          "value": "Ollama or LM Studio: set Base URL (e.g. <code>http://localhost:11434</code>), pick Model, configure context window (default 64k tokens)"
-        },
-        {
-          "label": "Assign models to features",
-          "value": "Model Assignment section → <strong>Core features</strong> / <strong>Instant helpers</strong> / <strong>Completion model</strong> (OpenAI-compatible &amp; local only)"
-        },
-        {
-          "label": "BYOK + JetBrains AI",
-          "value": "Enable both: BYOK handles features with compatible models; JetBrains AI fills the rest (including next edit suggestions &amp; Mellum completion)"
+          "label": "Auto model",
+          "value": "Set model to <em>Auto</em> in chat — AI Assistant picks the best cost/performance balance"
         },
         {
           "label": "Reasoning models",
-          "value": "Brain icon in model picker = reasoning model (o3, Claude Opus series, etc.) — better for complex multi-step logic"
+          "value": "Brain icon in model picker = reasoning model; configurable reasoning level per agent"
         },
         {
-          "label": "High-cost model warning",
-          "value": "Ruby icon in model picker = higher token cost; monitor quota counter in AI widget"
+          "label": "BYOK setup",
+          "value": "<code>Settings | Tools | AI Assistant | Providers &amp; API keys</code> → select provider → enter API key → <em>Test Connection</em>"
         },
         {
-          "label": "Revoke agent auth",
-          "value": "Providers &amp; API keys → <strong>Agent Authorization → Revoke</strong>; create a new chat for changes to take effect"
-        }
-      ]
-    },
-    {
-      "title": "Version Control AI Features",
-      "colorClass": "s3",
-      "column": 4,
-      "rows": [
-        {
-          "label": "Generate commit message",
-          "value": "Commit tool window <code>⌘0</code> → click <strong>Generate Commit Message with AI Assistant</strong> (sparkle icon)"
+          "label": "Supported BYOK providers",
+          "value": "OpenAI, Anthropic, Google (Gemini API or Vertex AI ADC), OpenAI-compatible, Ollama, LM Studio"
         },
         {
-          "label": "Customize commit prompt",
-          "value": "<strong>Settings | Tools | AI Assistant | Prompt Library → Commit Message Generation</strong>; use <code>$GIT_BRANCH_NAME</code> variable"
+          "label": "Local models",
+          "value": "Ollama / LM Studio: specify Base URL in settings; default context window 64k tokens (adjustable)"
         },
         {
-          "label": "Self-Review with AI",
-          "value": "Commit window → select files → <strong>Self-Review with AI</strong> → Problems tool window shows AI-detected issues"
+          "label": "Assign to features",
+          "value": "Local / OpenAI-compatible models: assign <em>Core features</em> and <em>Instant helpers</em> models in <em>Model Assignment</em> section"
         },
         {
-          "label": "Explain commit",
-          "value": "VCS log <code>⌘9</code> → right-click commit → <strong>Explain Commit with AI Assistant</strong>"
-        },
-        {
-          "label": "Merge with AI",
-          "value": "Merge Revisions dialog → <strong>Merge with AI</strong> — resolves conflicting and non-conflicting changes"
-        },
-        {
-          "label": "PR title &amp; description",
-          "value": "PR/MR creation tool window → click sparkle icon in description field → AI generates title &amp; description"
-        },
-        {
-          "label": "Incoming PR summary",
-          "value": "Enable in <strong>Settings | Tools | AI Assistant → GitHub Plugin: Generate a summary upon opening a Pull Request</strong>"
-        },
-        {
-          "label": "Group with AI (experimental)",
-          "value": "Commit window → <strong>Group with AI</strong> button — clusters diff into High/Medium/Low impact changelists (requires Experimental Features plugin)"
+          "label": "Completion provider",
+          "value": "Override Mellum: <code>Settings | Providers &amp; API keys | AI Completion</code> → <em>OpenAI Compatible</em> with FIM/edit-prediction model"
         }
       ]
     },
     {
       "title": "Prompts &amp; Project Rules",
-      "colorClass": "s12",
+      "colorClass": "s11",
       "column": 4,
       "rows": [
         {
           "label": "Prompt Library",
-          "value": "<strong>Settings | Tools | AI Assistant | Prompt Library</strong> — add custom prompts or override built-in action prompts (tests, docs, commit)"
-        },
-        {
-          "label": "Save chat prompt",
-          "value": "Hover prompt in chat → click options → <strong>Save Current Prompt</strong> → appears in AI Actions menu"
+          "value": "<code>Settings | Tools | AI Assistant | Prompt Library</code> — add custom prompts or edit built-in ones (e.g., commit message prompt)"
         },
         {
           "label": "$SELECTION variable",
-          "value": "Use in custom prompt body to insert the current editor selection as a formatted code block"
+          "value": "In custom prompts, inserts a Markdown code block of the currently selected code"
         },
         {
-          "label": "Chat Instructions prompt",
-          "value": "Prompt Library → <em>General → Chat Instructions</em> — auto-prepended to every new chat session"
+          "label": "$GIT_BRANCH_NAME",
+          "value": "Use in the commit-message prompt to include the current branch name"
         },
         {
-          "label": "Create project rule",
-          "value": "<strong>Settings | Tools | AI Assistant | Rules</strong> → New Project Rules File → choose rule type (Always / Manual / By model decision / By file patterns)"
+          "label": "Save from chat",
+          "value": "Hover over a sent message → <code>...</code> → <em>Save Current Prompt</em> to add it to the Prompt Library"
         },
         {
-          "label": "Invoke rule manually",
-          "value": "In chat type <code>@rule:RuleName</code> or use Add Attachment → select rule file (for rules set to <em>Manually</em>)"
+          "label": "Project rules",
+          "value": "<code>Settings | Tools | AI Assistant | Rules</code> → <em>New Project Rules File</em> → creates <code>.aiassistant/rules/*.md</code>"
         },
         {
-          "label": "Effective prompting",
-          "value": "One task per prompt · attach precise context · define done criteria · name constraints · ask agent to run tests after changes"
+          "label": "Rule types",
+          "value": "Always / Manually (<code>@rule:</code>) / By model decision / By file patterns (<code>*.kt</code>) / Off"
         },
         {
-          "label": "Start new chat per topic",
-          "value": "Reusing one long chat inflates context exponentially and degrades response quality — start fresh per topic"
+          "label": "Agent instructions",
+          "value": "Create <code>AGENTS.md</code> (or <code>CLAUDE.md</code> for Claude Agent) in project root; versioned with the repo"
+        },
+        {
+          "label": "/commands",
+          "value": "Built-in: <code>/explain</code> <code>/refactor</code> <code>/web</code> <code>/docs</code> <code>/help</code>; MCP tools &amp; agents add more"
         }
       ]
     },
     {
-      "title": "Privacy, Security &amp; Controls",
-      "colorClass": "s2",
-      "column": 4,
+      "title": "VCS &amp; Code Review",
+      "colorClass": "s12",
+      "column": 1,
       "rows": [
         {
-          "label": ".aiignore file",
-          "value": "<strong>Settings | AI Assistant | Project Settings</strong> → Create <code>.aiignore</code> — same syntax as <code>.gitignore</code>; Junie respects it; Claude Agent/Codex/Copilot do <strong>not</strong>"
+          "label": "Generate commit msg",
+          "value": "In Commit tool window (<code>Alt+0</code>): click <em>Generate Commit Message with AI Assistant</em>"
         },
         {
-          "label": "Also supported",
-          "value": "<code>.cursorignore</code>, <code>.codeiumignore</code>, <code>.aiexclude</code> in project root are treated identically to <code>.aiignore</code>"
+          "label": "Self-Review before commit",
+          "value": "Select changes → click <em>Self-Review with AI</em>; issues appear in Problems tool window"
         },
         {
-          "label": "Data not stored by default",
-          "value": "JetBrains AI service does not store code unless <em>Send detailed code-related data</em> is explicitly enabled (opt-in)"
+          "label": "Review rules file",
+          "value": "<code>Settings | Tools | AI Assistant | Project Settings</code> → set <em>Path to rules for AI Self-Review</em>"
         },
         {
-          "label": "Enable detailed data sharing",
-          "value": "<strong>Settings | Appearance &amp; Behavior | System Settings | Data Sharing → Send detailed code-related data</strong> (required for Experimental Features)"
+          "label": "Explain commit",
+          "value": "In Git log: right-click commit(s) → <em>Explain Commit with AI Assistant</em>"
         },
         {
-          "label": "Review sent prompts",
-          "value": "Search Everywhere → <strong>Open AI Assistant Requests Log in Editor</strong> → opens <code>ai-assistant-requests.md</code>"
+          "label": "PR title &amp; description",
+          "value": "In PR/MR creation dialog: click <em>Generate a Title and Description with AI Assistant</em>"
         },
         {
-          "label": "Network-level block",
-          "value": "Block <code>https://api.jetbrains.ai/</code> and <code>https://api.app.prod.grazie.aws.intellij.net/</code> to disable at the network level"
+          "label": "Merge with AI",
+          "value": "In <em>Merge Revisions</em> conflict dialog: click <em>Merge with AI</em>"
+        },
+        {
+          "label": "Incoming PR summary",
+          "value": "Enable <em>GitHub Plugin: Generate a summary upon opening a Pull Request</em> in AI Assistant settings"
+        },
+        {
+          "label": "Shelf title",
+          "value": "Silently shelving changes auto-generates a shelf name; disable in <code>Settings | Tools | AI Assistant</code>"
+        }
+      ]
+    },
+    {
+      "title": "Privacy &amp; Controls",
+      "colorClass": "s3",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Data flow (JB AI)",
+          "value": "IDE → JetBrains AI service (no storage) → LLM provider; JB does not store data unless opt-in is enabled"
+        },
+        {
+          "label": "Detailed data opt-in",
+          "value": "<code>Settings | Appearance &amp; Behavior | System Settings | Data Sharing</code> → <em>Send detailed code-related data</em> (off by default)"
         },
         {
           "label": "BYOK data flow",
-          "value": "API key mode: prompts go <strong>directly</strong> to your third-party provider; JetBrains does not see them"
+          "value": "Prompts &amp; context sent directly to your BYOK provider; JetBrains never sees them"
         },
         {
-          "label": "Disable permanently",
-          "value": "Widget → Disable AI Assistant → <strong>Disable Permanently via Plugin</strong> → click Disable on the plugin page"
+          "label": ".aiignore",
+          "value": "Create via <code>Settings | AI Assistant | Project Settings</code>; uses <code>.gitignore</code> syntax to block files from AI access"
+        },
+        {
+          "label": "Supported ignore files",
+          "value": "<code>.aiignore</code>, <code>.cursorignore</code>, <code>.codeiumignore</code>, <code>.aiexclude</code> — all respected if in project root"
+        },
+        {
+          "label": "Network block",
+          "value": "Block <code>https://api.jetbrains.ai/</code> and <code>https://api.app.prod.grazie.aws.intellij.net/</code> at network level"
+        },
+        {
+          "label": "View sent data",
+          "value": "Search Everywhere → <em>Open AI Assistant Requests Log in Editor</em> → reviews <code>ai-assistant-requests.md</code>"
+        },
+        {
+          "label": "Enterprise controls",
+          "value": "JetBrains IDE Services / JetBrains Central admins can restrict providers, agents, and MCP servers org-wide"
+        }
+      ]
+    },
+    {
+      "title": "Pro Tips",
+      "colorClass": "s1",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Start fresh chats",
+          "value": "Long chat threads inflate token cost exponentially; open a new chat for each unrelated task"
+        },
+        {
+          "label": "Attach precise context",
+          "value": "Use <code>@file:</code>, <code>@symbol:</code>, or drag-and-drop rather than pasting code into your message"
+        },
+        {
+          "label": "Plan before code",
+          "value": "Ask the agent for an implementation plan first; use Plan mode if supported; review before proceeding"
+        },
+        {
+          "label": "Define 'done'",
+          "value": "Include a verifiable success metric: \"run <code>./gradlew test</code> and confirm build passes\""
+        },
+        {
+          "label": "Use Auto model",
+          "value": "Let AI Assistant pick the model for everyday tasks; switch to a reasoning model only for complex problems"
+        },
+        {
+          "label": "Sensitive code &amp; BYOK",
+          "value": "Use BYOK for data-sensitive projects so prompts go directly to your chosen provider, bypassing JetBrains"
+        },
+        {
+          "label": "Context trimming",
+          "value": "Set <em>Trim message if it exceeds % of model context</em> in settings to avoid silent truncation of large files"
+        },
+        {
+          "label": "IDE as MCP server",
+          "value": "Enable <em>MCP Server</em> plugin to let external agents (Claude Code, Codex) use IDE tools like build, search, and run"
+        }
+      ]
+    },
+    {
+      "title": "Quota &amp; Subscriptions",
+      "colorClass": "s5",
+      "column": 4,
+      "rows": [
+        {
+          "label": "AI Credits",
+          "value": "1 AI Credit ≈ $1 USD; consumed by cloud features; resets every 30 days from first use"
+        },
+        {
+          "label": "AI Free",
+          "value": "3 credits / 30 days, no top-up; not available on Community editions or Android Studio"
+        },
+        {
+          "label": "AI Pro (individual)",
+          "value": "10 credits / 30 days at $10 USD; 20 credits / 30 days per-user for orgs at $20 USD"
+        },
+        {
+          "label": "AI Ultimate",
+          "value": "35 credits (individual) / 70 credits (org) per 30 days; supports top-up"
+        },
+        {
+          "label": "Top-up credits",
+          "value": "Purchase extra credits via JetBrains AI widget → <em>Buy</em>; valid 12 months; shared across org if applicable"
+        },
+        {
+          "label": "Track usage",
+          "value": "JetBrains AI widget in window toolbar shows credits remaining and reset date"
+        },
+        {
+          "label": "Quota savers",
+          "value": "Use cost-effective models (no ruby icon), avoid large agent sessions, start new chats per topic"
+        },
+        {
+          "label": "Multiple licenses",
+          "value": "AI Chat options → <em>Manage License</em> to switch between active JetBrains AI licenses"
         }
       ]
     }

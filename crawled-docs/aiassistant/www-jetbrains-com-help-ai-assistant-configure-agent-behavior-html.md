@@ -4,7 +4,7 @@
 
 # Agent instructions
 
-Last modified: 02 July 2026
+Last modified: 22 July 2026
 
 Agents can be configured using instruction files in your project that define how they should behave in your codebase, including coding conventions, architectural constraints, and common workflows.
 
@@ -36,7 +36,7 @@ A typical file includes:
 
 -   **Common tasks** – commands for building, testing, and running the project.
 
--   **Restrictions** – what the agent must not do.
+-   **Restrictions** – what the agent should not do.
 
 -   **Definition of done** – conditions for completing a task.
 

@@ -1,6 +1,6 @@
 # Tools
 
-Last modified: 23 June 2026
+Last modified: 17 August 2026
 
 Tools in JetBrains Air are panels that provide specific functions for a workspace. You use tools to navigate code, inspect changes, run commands, and review results.
 
@@ -8,9 +8,9 @@ Tools in JetBrains Air are panels that provide specific functions for a workspac
 
 -   Select View | Tools from the main menu.
 
--   Press ⌘Cmd⇧Shift0K and search for a tool name.
+-   Press CtrlShift0K and search for a tool name.
 
--   Click the Hide Tool Panel icon (⌘Cmd03) or select the tool on the right-side toolbar. Note that not all the tools are available on this panel.
+-   Click the Hide Tool Panel icon (Alt03) or select the tool on the right-side toolbar. Note that not all the tools are available on this panel.
 
 Tool
 
@@ -24,11 +24,11 @@ In settings, you can configure both global options and workspace-specific option
 
 [History](history.html)
 
-Use History to work with Git history in the current workspace. You can fetch updates, pull remote changes, and push your local commits. When you select a commit, JetBrains Air shows the changed files and the diff for the selected file.
+Use History to work with Git history in the current workspace. You can pull remote changes, push your local commits, check out a commit, and reset the current branch. When you select a commit, JetBrains Air shows the changed files and the diff for the selected file. For the other Git surfaces, see [Git](git.html).
 
 [Comments](comments.html)
 
-Use Comments to review and manage comments in the current workspace. This tool includes comments that you add in code and comments created during agentic review. You can select a comment to navigate to the related place in code. When you send comments, JetBrains Air creates a new task with your feedback.
+Use Comments to review and manage comments in the current workspace. This tool includes comments that you add in code and comments created during agentic review. You can select a comment to navigate to the related place in code. When you send the comments you agree with, JetBrains Air adds them to Chat as a follow-up in the same agent session.
 
 [Files](files.html)
 
@@ -45,36 +45,6 @@ Use Chat to work on tasks in JetBrains Air. This tool is always available in the
 [Search](search.html)
 
 Use Search to find text across your workspace. You can also switch to replace mode and apply replacements in multiple files. You can add search results to a task as context.
-
-[Git](git.html)
-
-Use the Git tool to manage version control in JetBrains Air.
-
-You can use it to:
-
--   Review changed files.
-
--   Create commits and amend the latest commit.
-
--   Sync your local branch with the remote repository.
-
--   Review local and remote differences in Unsynced commits and run Sync.
-
-[Review](review.html)
-
-Use Review to inspect changes produced by an agent before you apply them.
-
-You can use it to:
-
--   See the list of changed files and open a diff for each file.
-
--   Switch between unified and split diff views.
-
--   Select what changes to include before you commit.
-
-[Symbols](symbols.html)
-
-Use Symbols to browse symbols in the current file and navigate to their definitions. Symbols can include types, fields, functions, and methods. When you select a symbol, JetBrains Air opens the related code location in the editor.
 
 [Terminal](terminal-emulator.html)
 

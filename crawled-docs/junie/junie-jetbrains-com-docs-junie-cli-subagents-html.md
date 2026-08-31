@@ -4,7 +4,7 @@
 
 # Custom subagents
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Subagents in Junie extend the built-in logic of the main agent with task-specific instructions that define a tailored system prompt, tool restrictions, and usage of models and [agent skills](agent-skills.html).
 
@@ -145,7 +145,7 @@ no
 
 The subagent name. If missing, the file name (without extension) is used.
 
-Must match: `[a-z][a-z0-9-]*` (lowercase letters, digits, hyphens).
+Must match: `[a-z][a-z0-9_-]*` (lowercase letters, digits, hyphens, underscores).
 
 `description`
 
@@ -186,6 +186,14 @@ If present and non-empty: an allowlist of MCP server names. Only tools from the 
 no
 
 Default model for this subagent (if supported by your environment). When set, this model is always used for this subagent. Accepted values depend on your environment; to see the model names currently available in your setup, start Junie and use `/model`, or use a name accepted by the `--model` CLI flag. Some builds also support aliases like `sonnet`, `opus`, `grok`, and custom model profile IDs in the `custom:<profile-id>` format. For more details, see [Model selection](junie-cli-model-selection.html).
+
+`permissionMode`
+
+`String`
+
+no
+
+Permission mode applied to this subagent run. Allowed values: `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, `plan`. Defaults to `default`.
 
 `reasoningLevel`
 

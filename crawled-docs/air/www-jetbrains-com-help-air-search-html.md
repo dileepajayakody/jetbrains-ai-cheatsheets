@@ -4,9 +4,9 @@
 
 # Search
 
-Last modified: 25 February 2026
+Last modified: 17 August 2026
 
-Use Search to find text across your workspace. You can also switch to replace mode and apply replacements in multiple files. You can add search results to a task as context.
+Use Search to find text across your workspace and see every match in one list. You can switch to replace mode and apply replacements in multiple files, and you can add the results to a task as context.
 
 ### Open the Search tool
 
@@ -16,46 +16,10 @@ Use Search to find text across your workspace. You can also switch to replace mo
 
 ![Open the Search tool](https://resources.jetbrains.com/help/img/air/aird_open_the_search_tool.png "Open the Search tool")
 
-### Switch between search and replace
+## What you can do here
 
-1.  Navigate to View | Tools in the main menu and select Search.
+-   [Search across the project](search-and-replace.html#search_run) – and [narrow the results](search-and-replace.html#search_narrow) by folder, file mask, or grouping.
 
-2.  In the Search tool, click Toggle Replace.
+-   [Replace in multiple files](search-and-replace.html#search_replace).
 
-    ![Switch between search and replace](https://resources.jetbrains.com/help/img/air/aird_search_toggle_replace.png "Switch between search and replace")
-
-### Add search results to a task
-
-1.  Navigate to View | Tools in the main menu and select Search.
-
-2.  Run a search.
-
-3.  Click Add Search Results to Task. JetBrains Air adds the current search results to the task context.
-
-### Limit the search scope
-
-1.  Navigate to View | Tools in the main menu and select Search.
-
-2.  In the Search tool, open the filter menu.
-
-3.  Enable Scope to show the In folder field.
-
-4.  Select a folder to search in.
-
-### Filter by file name pattern
-
-1.  Navigate to View | Tools in the main menu and select Search.
-
-2.  In the Search tool, open the filter menu.
-
-3.  Enable File Mask to show the File mask field.
-
-4.  Enter a file name pattern.
-
-### Group results by folder
-
-1.  Navigate to View | Tools in the main menu and select Search.
-
-2.  In the Search tool, open the filter menu.
-
-3.  Under Group By, select Folder. JetBrains Air shows parent folders in the results pane.
+-   [Send the results to an agent](search-and-replace.html#search_as_context) as task context.

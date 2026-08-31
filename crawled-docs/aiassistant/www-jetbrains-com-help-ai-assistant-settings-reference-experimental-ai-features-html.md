@@ -6,7 +6,7 @@ Settings | Tools | AI Assistant Experimental Features
 
 Use this page to manage [Overview and setup](experimental-ai-features.html) features in AI Assistant.
 
-![AI Workflows settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_ai_workflows.png "AI Workflows settings")
+![AI Workflows settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_ai_workflows.png "AI Workflows settings")
 
 Item
 

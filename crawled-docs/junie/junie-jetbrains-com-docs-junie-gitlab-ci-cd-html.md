@@ -1,6 +1,6 @@
 # Junie GitLab CI/CD
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Run AI tasks from GitLab issues or MRs with Junie GitLab CI/CD.
 
@@ -46,7 +46,7 @@ The setup process requires creation of a separate container project for Junie's 
 
     -   `JUNIE_API_KEY` with your API token for Junie. To generate the token, go to [junie.jetbrains.com/cli](https://junie.jetbrains.com/cli).
 
-        Alternatively, instead of `JUNIE_API_KEY`, you can use your own API key from a third-party LLM provider (BYOK). Add one of the following variables: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GROK_API_KEY`, `OPENROUTER_API_KEY`, or `GOOGLE_API_KEY`.
+        Alternatively, instead of `JUNIE_API_KEY`, you can use your own API key from a third-party LLM provider (BYOK). Add one of the following variables: `JUNIE_OPENAI_API_KEY`, `JUNIE_ANTHROPIC_API_KEY`, `JUNIE_GROK_API_KEY`, `JUNIE_OPENROUTER_API_KEY`, or `JUNIE_GOOGLE_API_KEY`.
 
     -   `GITLAB_TOKEN_FOR_JUNIE` with a [personal](https://docs.gitlab.com/user/profile/personal_access_tokens/#create-a-personal-access-token) or [group](https://docs.gitlab.com/user/group/settings/group_access_tokens/#create-a-group-access-token) Gitlab access token. Make sure that the token has at least Maintainer role and the api checkbox selected for Selected scope. Select `init` from the Environments dropdown to restrict the variable's exposure to Junie initialization jobs.
 
@@ -60,7 +60,7 @@ The setup process requires creation of a separate container project for Junie's 
 
 1.  In Junie's project, go to Build → Pipelines and click New pipeline.
 
-2.  On the Run new pipeline page that opens, fill in the Variable value for the `PROJECTS_TO_INIT` Variable key with a comma-separated lost of IDs for the projects where Junie needs to be initialized. For a project's ID, go to its Settings → General page.
+2.  On the Run new pipeline page that opens, fill in the Variable value for the `PROJECTS_TO_INIT` Variable key with a comma-separated list of IDs for the projects where Junie needs to be initialized. For a project's ID, go to its Settings → General page.
 
     ![New gitlab pipeline](img/junie/new_gitlab_pipeline.png "New gitlab pipeline")
 

@@ -4,7 +4,7 @@
 
 # GitHub Copilot
 
-Last modified: 03 July 2026
+Last modified: 03 August 2026
 
 ! **GitHub Copilot** is a third-party [coding agent](https://github.com/features/copilot) by GitHub available for use in AI Assistant. It can write, debug, and explain code, perform Git operations such as committing and branching, and manage pull requests and issues on GitHub.
 
@@ -12,7 +12,10 @@ Last modified: 03 July 2026
 >
 > Limitations
 >
-> GitHub Copilot does not work with AI Assistant's `.aiignore` [functionality](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders), which means that files listed in `.aiignore` can be processed by GitHub Copilot.
+> -   GitHub Copilot does not work with AI Assistant's `.aiignore` [functionality](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders), which means that files listed in `.aiignore` can be processed by GitHub Copilot.
+>
+> -   GitHub Copilot does not work in Remote Development sessions. Activation requires you to log in to your GitHub account in a browser (OAuth), but because the remote environment does not support opening a browser, the GitHub login cannot be completed, and the agent cannot be activated.
+>
 
 ## Get started with GitHub Copilot
 
@@ -20,7 +23,7 @@ To use GitHub Copilot, you need to install and activate it with your [GitHub acc
 
 After setup, select ! GitHub Copilot in AI Chat to start using it.
 
-![Select GitHub Copilot](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Select GitHub Copilot")
+![Select GitHub Copilot](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Select GitHub Copilot")
 
 > ### note
 >
@@ -40,7 +43,7 @@ An indicator in the chat input field shows the current state of automatic contex
 
 -   ! IDE context disabled – no editor context is attached automatically.
 
-![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
+![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
 
 > ### note
 >
@@ -52,7 +55,7 @@ GitHub Copilot can operate in different modes, each providing a distinct level o
 
 To select an operation mode, click ! and select a mode from the list.
 
-![Select operation mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_copilot_mode_picker.png "Select operation mode")
+![Select operation mode](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_copilot_mode_picker.png "Select operation mode")
 
 The following modes are available:
 
@@ -70,7 +73,7 @@ The following modes are available:
 
 To select a model that GitHub Copilot uses to process your requests, click ! and select the model from the list.
 
-![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_copilot_model_selection.png "Select the model")
+![Select the model](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_copilot_model_selection.png "Select the model")
 
 You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
@@ -80,7 +83,7 @@ The list includes only the models enabled in your GitHub Copilot account.
 
 By default, GitHub Copilot requests your permission to use a tool, access a path, or open a URL. You can control this behavior with the Allow All setting in the chat input field:
 
-![The Allow All setting in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_allow_all.png "The Allow All setting in the chat input field")
+![The Allow All setting in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.2/ai_copilot_allow_all.png "The Allow All setting in the chat input field")
 
 -   Allow All turned on – GitHub Copilot proceeds without asking for approval each time it needs to use a tool, access a file path, or open a URL.
 
@@ -94,7 +97,7 @@ By default, GitHub Copilot requests your permission to use a tool, access a path
 
 When [Allow All](/help/ai-assistant/copilot-agent.html#copilot-grant-permissions) is turned off, GitHub Copilot requests your permission to run suggested bash commands, introduce changes, perform file operations, or use [external tools](mcp.html). In this case, you can either approve or reject the operation.
 
-![GitHub Copilot requests an approval](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_approve_request.png "GitHub Copilot requests an approval")
+![GitHub Copilot requests an approval](https://resources.jetbrains.com/help/img/idea/2026.2/ai_copilot_approve_request.png "GitHub Copilot requests an approval")
 
 -   Allow once – allows GitHub Copilot to perform the action this time only. You will be asked again if the same action is requested later.
 
@@ -110,11 +113,7 @@ Before you decide, you can review what the agent is about to do:
 
 -   For a suggested file change, click to review the changes the agent introduces.
 
-    ![Open the diff to review the file changes Claude Agent suggests before you approve them](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_agent_review_suggested_changes.png "Open the diff to review the file changes Claude Agent suggests before you approve them")
-
--   For a suggested command, click Open in editor in the top-right corner of the widget to review the complete command the agent suggests to run.
-
-    ![Open the suggested command in the editor to review it before running](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_agent_terminal_command_review.png "Open the suggested command in the editor to review it before running")
+    ![Open the diff to review the file changes Claude Agent suggests before you approve them](https://resources.jetbrains.com/help/img/idea/2026.2/ai_copilot_agent_review_suggested_changes.png "Open the diff to review the file changes Claude Agent suggests before you approve them")
 
 ## Rollback operations
 
@@ -126,11 +125,11 @@ If the changes introduced by GitHub Copilot do not suit you, you can roll them b
 
     -   To roll back changes in a specific file, hover over it and click !.
 
-        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
+        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
 
     -   To roll back changes in all files, click Rollback.
 
-        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_all_changes.png "Rollback changes in all files")
+        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_all_changes.png "Rollback changes in all files")
 
 ## Enable use of external tools
 
@@ -140,9 +139,9 @@ To enable GitHub Copilot to use tools:
 
 1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
 
-2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+2.  In the IDE settings (CtrlAlt0S), go to Tools | AI Assistant | Agents.
 
-    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "the Agents settings page")
 
 3.  Enable the Pass custom MCP servers setting.
 
@@ -162,7 +161,7 @@ GitHub Copilot supports a subset of `/commands` that you can type directly in th
 
 To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
-![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_agent_commands.png "List of / commands")
+![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.2/ai_copilot_agent_commands.png "List of / commands")
 
 For details on specific commands, refer to the [official GitHub Copilot documentation](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#slash-commands-in-the-interactive-interface).
 

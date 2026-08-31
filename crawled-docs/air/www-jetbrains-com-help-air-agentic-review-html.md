@@ -4,7 +4,7 @@
 
 # Review with agent
 
-Last modified: 04 May 2026
+Last modified: 11 August 2026
 
 Review with agent is an automated review pass performed by an agent. Use it when you want a strong first check that applies your project's constraints and review focus areas consistently. This works especially well before a pull request and human review.
 
@@ -16,7 +16,7 @@ Review with agent runs as a separate review task with a fresh agent session and 
 
 The review context includes:
 
--   **Agent and model** – review can [use a different agent and model](/help/air/agentic-review.html#change_review_agent) than the one that implemented the change.
+-   **Agent and model** – you select the agent and model in the review menu, so the review can run with a different agent than the one that implemented the change.
 
 -   **Review prompt** – the agent uses review instructions that define what it should focus on. You can [adjust the review prompt](/help/air/agentic-review.html#adjust_global_review_prompt) or [override it for a specific project](/help/air/agentic-review.html#project_review_prompt).
 
@@ -30,9 +30,9 @@ Use this option when you want to review only the changes created by the current 
 
 1.  Open the task changes in one of the following ways:
 
-    -   after the task is finished, use the Review with Agent button shown in the Chat tool
+    -   after the task is finished, use the Review with <agent> button shown in the Chat tool
 
-        ![Agentic review button in the Chat tool](https://resources.jetbrains.com/help/img/air/agentic-review.png "Agentic review button in the Chat tool")
+        ![The Review with Codex button in the Chat tool after a task is finished](https://resources.jetbrains.com/help/img/air/air-review-with-agent-button.png "The Review with Codex button in the Chat tool after a task is finished")
 
     -   after the task is finished, open the Task Changes editor tab
 
@@ -40,19 +40,27 @@ Use this option when you want to review only the changes created by the current 
 
     -   open the Changes tool and select Current Task to open the Task Changes tab in the editor
 
-    -   type `/` in the task input, choose Review with Agent, and then choose Task Changes as the review scope
+    -   type `/` in the task input, choose Review with <agent>, and then choose Task Changes as the review scope
 
         ![Review with agent with slash](https://resources.jetbrains.com/help/img/air/air-review-with-agent-slash-command-scope.png "Review with agent with slash")
 
-2.  Start the review with Review with Agent.
+2.  Optionally, select another agent and model for the review.
 
-3.  Wait until JetBrains Air starts and completes the dedicated review task.
+    The button shows the agent that runs the review, for example, Review with Codex. Click the arrow next to it, select an agent, and then select a model. A review by a different agent than the one that implemented the change gives you a more independent second opinion.
+
+    ![The review menu with the list of agents, their models, the Add Agents action, and the Edit Review Prompt action](https://resources.jetbrains.com/help/img/air/air-review-with-agent-menu.png "The review menu with the list of agents, their models, the Add Agents action, and the Edit Review Prompt action")
+
+    The menu lists the agents you have connected, each with the model it currently uses. To review with an agent you haven't connected yet, select Add Agents.
+
+3.  Start the review with Review with <agent>.
+
+4.  Wait until JetBrains Air starts and completes the dedicated review task.
 
     The review runs in a separate agent session and uses its own context, so it does not interfere with the main task.
 
     ![Task for agentic review](https://resources.jetbrains.com/help/img/air/agentic-review-task.png "Task for agentic review")
 
-4.  Review the generated comments in Task Changes and in the Comments tool.
+5.  Review the generated comments in Task Changes and in the Comments tool.
 
     Select the comments you agree with and click Send to send them to the main task.
 
@@ -72,7 +80,7 @@ This is useful when task changes are mixed with manual edits or changes from pre
 
     -   open the Changes tool and switch from Current Task to All
 
-    -   type `/` in the task input, choose Review with Agent, and then choose Local Changes as the review scope
+    -   type `/` in the task input, choose Review with <agent>, and then choose Local Changes as the review scope
 
 2.  If you used the Changes tool, make sure the All Changes tab is open in the editor.
 
@@ -80,7 +88,7 @@ This is useful when task changes are mixed with manual edits or changes from pre
 
     ![Review with agent in All Changes tab](https://resources.jetbrains.com/help/img/air/air-review-with-agent-all-changes.png "Review with agent in All Changes tab")
 
-3.  In the All Changes tab, click Review with Agent. Or, if you started from the command, confirm Local Changes as the scope.
+3.  In the All Changes tab, click Review with <agent>. Or, if you started from the command, confirm Local Changes as the scope.
 
 4.  Review the generated comments and send the accepted ones to the main task.
 
@@ -88,29 +96,17 @@ This is useful when task changes are mixed with manual edits or changes from pre
 
 Use this option when you want to review something other than task changes or all local changes. For example, you can review specific files, folders, commits, or branches.
 
-Start this review from the task input: type `/`, choose Review with Agent, and then select the scope you want to review.
+Start this review from the task input: type `/`, choose Review with <agent>, and then select the scope you want to review.
 
 ### Review another scope with an agent
 
 1.  In the task input, type `/`.
 
-2.  Select Review with Agent.
+2.  Select Review with <agent>.
 
 3.  Select the scope you want to review, such as files and folders, Git commits, or Git branches.
 
 4.  Wait until the review finishes, then inspect the review comments and send the accepted ones to the main task.
-
-## Use a different agent for review
-
-By default, review with agent uses the review model configured in settings. Change it when you want review to be performed by a different agent than the one that implemented the change, for example, to get a more independent second opinion.
-
-### Change the review agent
-
-1.  Open Settings.
-
-2.  Open the Global tab and go to AI | Review.
-
-3.  In Agent review model, select the model you want to use for review.
 
 ## Adjust the review prompt
 
@@ -118,13 +114,13 @@ The global review prompt is used by default for review with agent in all project
 
 ### Edit the global review prompt
 
-1.  Open Settings.
+1.  Next to Review with <agent>, click the arrow to open the review menu.
 
-2.  Open the Global tab and go to AI | Review.
+2.  Select Edit Review Prompt.
 
-3.  Next to Agent review prompt, click Edit.
+    You can also open the prompt from Settings: on the Global tab, go to AI | Review and click Edit next to Agent review prompt.
 
-4.  Update the prompt and save it.
+3.  Update the prompt and save it.
 
 ## Use a project-specific review prompt
 

@@ -4,7 +4,7 @@
 
 # Review changes
 
-Last modified: 24 April 2026
+Last modified: 11 August 2026
 
 After an agent plans and implements a change, review the result before you integrate it. In JetBrains Air, review is interactive: you can inspect diffs, navigate to modified files, comment on code, and turn feedback into the next iteration.
 
@@ -16,13 +16,15 @@ Review can be done by a human or by an agent. This topic describes human review.
 
 1.  Open the task changes.
 
-    After a task is finished, the Chat tool shows the Changes button. Click it to open the merged diff in a single editor tab named Task Changes.
+    After a task is finished, the Chat tool shows how many lines the task added and deleted, for example, +512 -4. Click the statistics to open the merged diff in a single editor tab named Task Changes.
 
-    [![The Changes button in task chat and the Task Changes diff tab](https://resources.jetbrains.com/help/img/air/review-changes.png "The Changes button in task chat and the Task Changes diff tab")](https://resources.jetbrains.com/help/img/air/review-changes.png)
+    ![The change statistics and the Review with Codex button in the Chat tool after a task is finished](https://resources.jetbrains.com/help/img/air/air-review-with-agent-button.png "The change statistics and the Review with Codex button in the Chat tool after a task is finished")
 
 2.  Navigate the diff and choose how to inspect it.
 
     Use the diff header to switch between Unified and Side-by-side views. Use the navigation controls to jump to the next or previous hunk. You can also open the changed files and review them in the context of the whole project.
+
+    The diff header also holds the Review with <agent> button, so you can hand the same diff to an agent without leaving the tab. See [Review with agent](agentic-review.html).
 
     ![Diff view modes and diff navigation controls](https://resources.jetbrains.com/help/img/air/review-diff-view.png "Diff view modes and diff navigation controls")
 
@@ -44,7 +46,7 @@ Review can be done by a human or by an agent. This topic describes human review.
 
     ![A task requesting command execution for verification](https://resources.jetbrains.com/help/img/air/run-command-approval.png "A task requesting command execution for verification")
 
-    After the agent completes the follow-up, JetBrains Air shows the Changes button again. Each iteration returns you to the updated Task Changes tab.
+    After the agent completes the follow-up, JetBrains Air shows the updated change statistics again. Each iteration returns you to the updated Task Changes tab.
 
 ## Review actions
 

@@ -1,8 +1,8 @@
 # Plan mode
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
-Shortcut to toggle Plan mode:
+Shortcut to enter Plan mode:
 
 `Shift+Tab`
 
@@ -26,7 +26,7 @@ Plan mode is most useful for non-trivial tasks where alignment on intent and app
 
 You can enable Plan mode in the following ways:
 
--   Press `Shift+Tab` in the prompt area to toggle between the default mode and Plan mode.
+-   Press `Shift+Tab` in the prompt area to cycle through the default mode, Plan mode, and Debug mode (Debug mode appears in the cycle only when it is available).
 
 -   Run the `/plan` slash command to toggle Plan mode. To start in Plan mode with your prompt submitted immediately, type `/plan <prompt>`, for example:
 
@@ -44,6 +44,10 @@ You can enable Plan mode in the following ways:
 ![Plan mode enabled](img/junie/plan_mode_enabled.png "Plan mode enabled")
 
 When Plan mode is active, the prompt area shows a corresponding indicator, and the agent's behavior changes to plan-first.
+
+> ### note
+>
+> Plan mode applies to the next prompt you submit. After each submitted prompt, Junie CLI returns to the default mode, so press `Shift+Tab` or run `/plan` again if you want to keep planning.
 
 ## Review and refine the plan
 

@@ -4,7 +4,7 @@
 
 # Activate agents
 
-Last modified: 30 June 2026
+Last modified: 04 August 2026
 
 The instructions provided on this page apply when no authentication method is configured in AI Assistant.
 
@@ -40,45 +40,45 @@ API key (BYOK)
 
 Provider-specific
 
-![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.1/junie-logo.svg "Junie logo") **Junie**
+![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.2/junie-logo.svg "Junie logo") **Junie**
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
 ! **Claude Agent**
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
 Anthropic Console
 
 ! **Codex**
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
 ! **GitHub Copilot**
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
-![Supported](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Supported")
+![Supported](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
-![Not supported](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not supported")
+![Not supported](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not supported")
 
 \>
 
@@ -88,9 +88,9 @@ Anthropic Console
 
 The selected authentication method is used for both request processing and billing. You can check which method is currently active in Settings | Tools | AI Assistant | Providers & API keys, in the Agent Authorization section.
 
-![View agent authentication method](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agent_authentication_method.png "View agent authentication method")
+![View agent authentication method](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agent_authentication_method.png "View agent authentication method")
 
-If you want to change the authentication method, you can [revoke](/help/ai-assistant/activate-agents.html#revoke-agent-authorization) the current one and select a different option. For the changes to take effect, you will need to create a new chat.
+If you want to change the authentication method, you can [revoke](/help/ai-assistant/activate-agents.html#revoke-agent-authorization) the current one and select a different option. To apply the changes, you will need to create a new chat.
 
 ### Activate an agent using a JetBrains AI subscription
 
@@ -104,9 +104,9 @@ Codex
 
 1.  Open the ! AI Chat tool window.
 
-2.  Select Junie.
+2.  Select Junie by JetBrains.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
 3.  Complete sign-in with your JetBrains Account if required.
 
@@ -114,7 +114,7 @@ Codex
 
 2.  Select Claude Agent.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Claude Agent selected for interaction.
 
@@ -122,13 +122,13 @@ Codex
 
 4.  Click Install and Continue to accept the [terms of service](https://code.claude.com/docs/en/legal-and-compliance) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select JetBrains.
 
-    ![Select the JetBrains option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_authorize_agent_in_chat.png "Select the JetBrains option")
+    ![Select the JetBrains option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_authorize_agent_in_chat.png "Select the JetBrains option")
 
 6.  Complete sign-in with your JetBrains Account if required.
 
@@ -136,7 +136,7 @@ Codex
 
 2.  Select Codex.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Codex selected for interaction.
 
@@ -144,13 +144,13 @@ Codex
 
 4.  Click Install and Continue to accept the [terms of service](https://github.com/openai/codex/?tab=Apache-2.0-1-ov-file#readme) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select JetBrains.
 
-    ![Select the JetBrains option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_authorize_agent_in_chat.png "Select the JetBrains option")
+    ![Select the JetBrains option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_authorize_agent_in_chat.png "Select the JetBrains option")
 
 6.  Complete sign-in with your JetBrains Account if required.
 
@@ -174,7 +174,7 @@ Codex
 
 2.  Select Claude Agent.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Claude Agent selected for interaction.
 
@@ -182,19 +182,19 @@ Codex
 
 4.  Click Install and Continue to accept the [terms of service](https://code.claude.com/docs/en/legal-and-compliance) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select API Key.
 
-    ![Select the API Key option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_authorize_agent_in_chat.png "Select the API Key option")
+    ![Select the API Key option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_authorize_agent_in_chat.png "Select the API Key option")
 
     The settings page opens.
 
 6.  In the Third-party AI providers section, select Anthropic as the Provider.
 
-    [![AI Assistant Models & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png "AI Assistant Models & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png)
+    [![AI Assistant Models & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_byok_selecting_provider.png "AI Assistant Models & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_byok_selecting_provider.png)
 
 7.  Enter your API key in the API Key field and click Test Connection to verify that the connection is established.
 
@@ -204,7 +204,7 @@ Codex
 
 2.  Select Codex.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Codex selected for interaction.
 
@@ -212,19 +212,19 @@ Codex
 
 4.  Click Install and Continue to accept the [terms of service](https://github.com/openai/codex/?tab=Apache-2.0-1-ov-file#readme) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select API Key.
 
-    ![Select the API Key option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_authorize_agent_in_chat.png "Select the API Key option")
+    ![Select the API Key option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_authorize_agent_in_chat.png "Select the API Key option")
 
     The settings page opens.
 
 6.  In the Third-party AI providers section, select OpenAI as the Provider.
 
-    [![AI Assistant Models & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png "AI Assistant Models & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png)
+    [![AI Assistant Models & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_byok_selecting_provider.png "AI Assistant Models & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_byok_selecting_provider.png)
 
 7.  Enter your API key in the API Key field and click Test Connection to verify that the connection is established.
 
@@ -246,7 +246,7 @@ GitHub Copilot
 
 2.  Select Codex.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Codex selected for interaction.
 
@@ -254,23 +254,27 @@ GitHub Copilot
 
 4.  Click Install and Continue to accept the [terms of service](https://github.com/openai/codex/?tab=Apache-2.0-1-ov-file#readme) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select ChatGPT.
 
-    ![Select the ChatGPT option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_authorize_agent_in_chat.png "Select the ChatGPT option")
+    ![Select the ChatGPT option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_authorize_agent_in_chat.png "Select the ChatGPT option")
 
     The OpenAI sign-in page opens.
 
-6.  Sign in with your ChatGPT account to authorize the agent.
+6.  Log in to your ChatGPT account to authorize the agent.
+
+> ### note
+>
+> GitHub Copilot does not work in Remote Development sessions. Activation requires you to log in to your GitHub account in a browser (OAuth), but because the remote environment does not support opening a browser, the GitHub login cannot be completed, and the agent cannot be activated.
 
 1.  Open the ! AI Chat tool window.
 
 2.  Select GitHub Copilot.
 
-    ![Sign in to Codex with ChatGPT account](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Sign in to Codex with ChatGPT account")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with GitHub Copilot selected for interaction.
 
@@ -278,17 +282,17 @@ GitHub Copilot
 
 4.  Click Install and Continue to accept the terms of service and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_copilot_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_copilot_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, select Sign in with GitHub.
 
-    ![Sign in with GitHub](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_copilot_sign_in.png "Sign in with GitHub")
+    ![Sign in with GitHub](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_copilot_sign_in.png "Sign in with GitHub")
 
     The GitHub sign-in page opens.
 
-6.  Sign in with your GitHub account to authorize the agent.
+6.  Log in to your GitHub account to authorize the agent.
 
 After completing these steps, you can start using the agent.
 
@@ -308,7 +312,7 @@ To activate Claude Agent using Anthropic Console:
 
 2.  Select Claude Agent.
 
-    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Select the agent")
+    ![Select the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Select the agent")
 
     This action opens the AI Chat with Claude Agent selected for interaction.
 
@@ -316,15 +320,15 @@ To activate Claude Agent using Anthropic Console:
 
 4.  Click Install and Continue to accept the [terms of service](https://code.claude.com/docs/en/legal-and-compliance) and install the agent.
 
-    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
+    ![Accept terms of service and install the agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_install_and_accept_tos.png "Accept terms of service and install the agent")
 
     After the installation, you will be prompted to select the authentication method.
 
 5.  In the prompt, Anthropic Console.
 
-    ![Select the Anthropic Console option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_claude_agent_authorize_agent_in_chat.png "Select the Anthropic Console option")
+    ![Select the Anthropic Console option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_claude_agent_authorize_agent_in_chat.png "Select the Anthropic Console option")
 
-6.  Sign in with your Anthropic account to authorize the agent.
+6.  Log in to your Anthropic account to authorize the agent.
 
 After completing these steps, you can start using the agent.
 
@@ -336,13 +340,13 @@ AI Assistant supports the [Agent Client Protocol (ACP)](https://agentclientprot
 
 1.  Open the ! AI Chat tool window.
 
-2.  Click Add ACP Agents.
+2.  Click More Agents.
 
-    ![Add ACP Agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Add ACP Agent")
+    ![Add ACP Agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Add ACP Agent")
 
 3.  On the Agents page, select the agent that you want to install and click Install.
 
-    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "the Agents settings page")
 
     During installation, the IDE automatically:
 
@@ -364,7 +368,7 @@ Alternatively, you can manually add custom ACP-compatible agents:
 
 2.  Click the ! button in the upper-right corner of the AI Chat tool window and select Add Custom Agent.
 
-    ![Add a custom agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_add_custom_agent_no_license.png "Add a custom agent")
+    ![Add a custom agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_add_custom_agent_no_license.png "Add a custom agent")
 
 3.  In the acp.json file, provide the agent configuration details.
 
@@ -382,10 +386,10 @@ To use a different authentication method or sign out of the provider account, yo
 
 2.  In the Agent Authorization section, click Revoke next to the agent whose authorization you want to revoke.
 
-    ![Revoke authorization](https://resources.jetbrains.com/help/img/idea/2026.1/ai_revoke_agent_authorization.png "Revoke authorization")
+    ![Revoke authorization](https://resources.jetbrains.com/help/img/idea/2026.2/ai_revoke_agent_authorization.png "Revoke authorization")
 
 3.  Click OK.
 
 > ### note
 >
-> Existing chats will keep the previous authentication method. For the changes to take effect, create a new chat.
+> Existing chats will keep the previous authentication method. To apply the changes, create a new chat.

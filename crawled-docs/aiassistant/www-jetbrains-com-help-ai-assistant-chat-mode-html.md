@@ -4,7 +4,7 @@
 
 # Chat with AI
 
-Last modified: 26 June 2026
+Last modified: 03 August 2026
 
 In Chat mode, you can ask questions about your code or project, generate code snippets, and work with AI responses directly in the chat.
 
@@ -14,27 +14,23 @@ To begin working with AI Assistant, open the AI Chat tool window. You can then 
 
 ### Open AI Chat
 
-To open the AI Chat tool window, click ! AI Chat on the right toolbar (in DataGrip, click ![the More tool windows icon](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.general.moreHorizontal%4020x20.svg "the More tool windows icon") More tool windows in the header and select ! AI Assistant).
+To open the AI Chat tool window, click ! AI Chat on the right toolbar (in DataGrip, click ![the More tool windows icon](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.general.moreHorizontal%4020x20.svg "the More tool windows icon") More tool windows in the header and select ! AI Assistant).
 
-![Open AI Chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_open_ai_chat.png "Open AI Chat")
+![Open AI Chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_open_ai_chat.png "Open AI Chat")
 
-By default, the tool window opens with an agent selected rather than Chat mode. You can switch to Chat mode at any time, as described below. For more information, refer to [AI Chat](ai-chat.html#default-interaction-mode).
+By default, the tool window opens with an agent selected rather than Chat mode. You can switch to Chat mode at any time, as described below. For more information, refer to [JetBrains Pick](ai-chat.html#default-interaction-mode).
 
 ### Switch between chat and an agent
 
 To switch to Chat mode or to a different agent, click the ! button and select it from the list.
 
-![Switch chat mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Switch chat mode")
-
-> ### tip
->
-> Alternatively, press ⌘Cmd0/ to switch between the Chat mode and the last selected agent.
+![Switch chat mode](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Switch chat mode")
 
 ### Start a new chat
 
-If you already have an open chat and want to start a new one, click ! New Chat or press ⌘Cmd0N.
+If you already have an open chat and want to start a new one, click ! New Chat or press AltInsert.
 
-![Start a new chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_start_new_chat.png "Start a new chat")
+![Start a new chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_start_new_chat.png "Start a new chat")
 
 ## Select a model
 
@@ -44,9 +40,9 @@ To select a model you want to use:
 
 1.  In the chat, click the ! button next to the model's name.
 
-    ![Select the model from the list](https://resources.jetbrains.com/help/img/idea/2026.1/ai_select_cloud_llm_intro.png "Select the model from the list")
+    ![Select the model from the list](https://resources.jetbrains.com/help/img/idea/2026.2/ai_select_cloud_llm_intro.png "Select the model from the list")
 
-2.  Select the desired model from the list.
+2.  Select the model from the list.
 
     > ### tip
     >
@@ -54,11 +50,11 @@ To select a model you want to use:
 
 AI Assistant provides hints for each model next to its name:
 
--   ![Reasoning model](https://resources.jetbrains.com/help/img/idea/2026.1/brain.svg "Reasoning model") – these models are better suited for tasks that require logical reasoning, structured output, or deeper contextual understanding.
+-   ![Reasoning model](https://resources.jetbrains.com/help/img/idea/2026.2/brain.svg "Reasoning model") – these models are better suited for tasks that require logical reasoning, structured output, or deeper contextual understanding.
 
--   ![High cost model](https://resources.jetbrains.com/help/img/idea/2026.1/ruby.svg "High cost model") – models marked with this icon may consume more tokens, resulting in higher [quota usage](licensing-and-subscriptions.html#reasons-for-high-quota-usage).
+-   ![High cost model](https://resources.jetbrains.com/help/img/idea/2026.2/ruby.svg "High cost model") – models marked with this icon may consume more tokens, resulting in higher [quota usage](licensing-and-subscriptions.html#reasons-for-high-quota-usage).
 
--   ![Beta model](https://resources.jetbrains.com/help/img/idea/2026.1/beta.svg "Beta model") – these models may produce varying results, meaning that their behavior or performance is less predictable.
+-   ![Beta model](https://resources.jetbrains.com/help/img/idea/2026.2/beta.svg "Beta model") – these models may produce varying results, meaning that their behavior or performance is less predictable.
 
 ## Add context
 
@@ -68,9 +64,9 @@ AI Assistant uses context from your project to generate responses. It can colle
 
 By default, AI Assistant automatically gathers relevant context to provide a response. If you prefer to add the context manually, you can disable this behavior. To do this, click ! and disable the Enable Codebase Mode setting.
 
-![Codebase setting](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_mode_codebase_setting.png "Codebase setting")
+![Codebase setting](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_mode_codebase_setting.png "Codebase setting")
 
-After that, you can [add](/help/ai-assistant/chat-mode.html#add-attachments-manually) the relevant information manually via the ! button or using `@` [references](/help/ai-assistant/chat-mode.html#use-mentions).
+After that, you can [add](/help/ai-assistant/chat-mode.html#add-attachments-manually) the relevant information manually with the ! button or using `@` [references](/help/ai-assistant/chat-mode.html#use-mentions).
 
 > ### warning
 >
@@ -80,7 +76,7 @@ After that, you can [add](/help/ai-assistant/chat-mode.html#add-attachments-manu
 
 You can add the relevant context manually by clicking the ! Add attachment button. You can then select the category of attachment, and the item you want to add.
 
-![Add context](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_context_to_request.png "Add context")
+![Add context](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_context_to_request.png "Add context")
 
 > ### tip
 >
@@ -98,7 +94,7 @@ To add a file or folder to the context:
 
 2.  Select the Files and Folders option from the menu and specify the file or folder you want to add.
 
-    ![Add Folder](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_context_to_request.png "Add Folder")
+    ![Add Folder](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_context_to_request.png "Add Folder")
 
     > ### tip
     >
@@ -131,13 +127,13 @@ To add an image to your request:
 
     > ### note
     >
-    > The attached image must not exceed 20 MB in size.
+    > The attached image cannot exceed 20 MB in size.
 
-    ![Add Image](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_context_to_request.png "Add Image")
+    ![Add Image](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_context_to_request.png "Add Image")
 
     > ### tip
     >
-    > Alternatively, you can add an image to the chat by referencing it via `@file:file_name`, copying and pasting it, or dragging and dropping it into the chat.
+    > Alternatively, you can add an image to the chat by referencing it with `@file:file_name`, copying and pasting it, or dragging and dropping it into the chat.
 
 3.  Type your question in the chat and submit the query.
 
@@ -153,7 +149,7 @@ When asking questions in the chat, you can add context to your query directly fr
 
 2.  Select the Add context from UI option from the menu.
 
-    ![Add context from UI](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_context_to_request.png "Add context from UI")
+    ![Add context from UI](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_context_to_request.png "Add context from UI")
 
 3.  Select the UI element that contains data that you want to add to the context.
 
@@ -175,11 +171,11 @@ You can attach a specific database object to your request in AI chat to provide 
 
 2.  From the list of database objects that appears, select the one you want to attach.
 
-    ![Attaching a database object to AI chat](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_attach_db_object_to_ai_chat.png "Attaching a database object to AI chat")
+    ![Attaching a database object to AI chat](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_attach_db_object_to_ai_chat.png "Attaching a database object to AI chat")
 
     > ### tip
     >
-    > If you want to attach a whole schema, you can also click ! Add Attachment in the chat, then select the Database Schema option and specify the schema. In DataGrip, click ![the Attach Schema button](https://resources.jetbrains.com/help/img/idea/2026.1/database-plugin.icons.expui.schema.svg "the Attach Schema button") Attach Schema and select one from the list.
+    > If you want to attach a whole schema, you can also click ! Add Attachment in the chat, then select the Database Schema option and specify the schema. In DataGrip, click ![the Attach Schema button](https://resources.jetbrains.com/help/img/idea/2026.2/database-plugin.icons.expui.schema.svg "the Attach Schema button") Attach Schema and select one from the list.
 
     You can see which object was attached to your message and navigate to it by clicking the corresponding attachment in the chat.
 
@@ -197,7 +193,7 @@ Mention database context
 
 AI Assistant can manage settings for the [file created from a code snippet](/help/ai-assistant/chat-mode.html#process-responses) automatically. For this, provide any context relating to the SQL dialect, a data source, or a schema in the chat. Also, if you ask AI Assistant about a file that already has a data source attached, it attaches that data source to the newly created file.
 
-![Database context is applied to a newly created file](https://resources.jetbrains.com/help/img/idea/2026.1/db_db_context_for_new_file.png "Database context is applied to a newly created file")
+![Database context is applied to a newly created file](https://resources.jetbrains.com/help/img/idea/2026.2/db_db_context_for_new_file.png "Database context is applied to a newly created file")
 
 Attach selection as context
 
@@ -207,7 +203,7 @@ To get an explanation:
 
 1.  Select the content you want explained. This can be a code snippet from the editor, a runtime error, terminal output, or other console messages shown in a corresponding tool window.
 
-    ![Selection is added to chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_selection_added_to_chat.png "Selection is added to chat")
+    ![Selection is added to chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_selection_added_to_chat.png "Selection is added to chat")
 
     The selection is automatically added to the chat as context.
 
@@ -217,7 +213,7 @@ To get an explanation:
 
 You can use `@mentions` to add specific items, such as files or symbols, to your request as context.
 
-![Add context](https://resources.jetbrains.com/help/img/idea/2026.1/ai_references_list.png "Add context")
+![Add context](https://resources.jetbrains.com/help/img/idea/2026.2/ai_references_list.png "Add context")
 
 > ### tip
 >
@@ -253,11 +249,11 @@ Available categories
 
 You can review any attachment by clicking it. The item will be opened in a separate window.
 
-![Click the attached file to review it](https://resources.jetbrains.com/help/img/idea/2026.1/ai_review_attachments.png "Click the attached file to review it")
+![Click the attached file to review it](https://resources.jetbrains.com/help/img/idea/2026.2/ai_review_attachments.png "Click the attached file to review it")
 
 If the request was already sent, you can find the attachments that were added to it by clicking the ! button.
 
-![Review attached context](https://resources.jetbrains.com/help/img/idea/2026.1/ai_reviewing_attached_context.png "Review attached context")
+![Review attached context](https://resources.jetbrains.com/help/img/idea/2026.2/ai_reviewing_attached_context.png "Review attached context")
 
 The attachments provided by AI Assistant in the answer are always shown but can be hidden if needed by clicking !.
 
@@ -265,7 +261,7 @@ The attachments provided by AI Assistant in the answer are always shown but can
 
 Each language model has a [context window](supported-llms.html) – the maximum amount of context it can process at once. If this limit is exceeded, the model may produce incomplete responses or discard earlier parts of the conversation.
 
-![Model context window is full](https://resources.jetbrains.com/help/img/idea/2026.1/ai_context_used_warning.png "Model context window is full")
+![Model context window is full](https://resources.jetbrains.com/help/img/idea/2026.2/ai_context_used_warning.png "Model context window is full")
 
 To ensure your requests stay within the model's capacity, you can configure a message trimming threshold. If this threshold is exceeded, AI Assistant starts prioritizing smaller files and extracting key content from larger ones to optimize the amount of context sent to the model.
 
@@ -275,11 +271,11 @@ To ensure your requests stay within the model's capacity, you can configure a me
 
     Alternatively, hover over the trimmed attachment, marked with the ! icon, and click Adjust threshold.
 
-    ![Adjust the threshold](https://resources.jetbrains.com/help/img/idea/2026.1/ai_adjust_threshold_popup.png "Adjust the threshold")
+    ![Adjust the threshold](https://resources.jetbrains.com/help/img/idea/2026.2/ai_adjust_threshold_popup.png "Adjust the threshold")
 
 2.  In the Message Trimming Threshold section, select a value for the Trim message if it exceeds % of a model context window setting.
 
-    ![Set message trimming threshold](https://resources.jetbrains.com/help/img/idea/2026.1/ai_set_message_trimming_threshold.png "Set message trimming threshold")
+    ![Set message trimming threshold](https://resources.jetbrains.com/help/img/idea/2026.2/ai_set_message_trimming_threshold.png "Set message trimming threshold")
 
 3.  Click OK to save changes.
 
@@ -289,7 +285,7 @@ As a result, when your message exceeds the specified threshold, AI Assistant tr
 >
 > Trimming is also applied to the responses returned by the LLM. For example, your request may trigger the use of an external tool that returns multiple attachments as context. If the combined size of these attachments exceeds the defined trimming threshold, their contents will be trimmed.
 >
-> ![Response from the external tool exceeds the model's context window limit](https://resources.jetbrains.com/help/img/idea/2026.1/ai_response_exceeds_context_window.png "Response from the external tool exceeds the model's context window limit")
+> ![Response from the external tool exceeds the model's context window limit](https://resources.jetbrains.com/help/img/idea/2026.2/ai_response_exceeds_context_window.png "Response from the external tool exceeds the model's context window limit")
 
 ## Use /commands
 
@@ -311,25 +307,41 @@ By default, the following `/` commands are available:
 >
 > The list of commands can be extended by connecting to an [MCP server](mcp.html). Coding agents may also provide additional `/` commands.
 
+## Send messages
+
+To submit your prompt in the current chat, click ! Send in the bottom-right corner of the input field or press Enter.
+
+Alternatively, you can send the message to a new chat by clicking ! and selecting the Send to a New Chat option, or by pressing CtrlShiftEnter.
+
+![Send message options](https://resources.jetbrains.com/help/img/idea/2026.2/ai_send_message_options.png "Send message options")
+
+The menu also shows the shortcut assigned to each option and the shortcut for inserting a new line (ShiftEnter).
+
+To change them, click Edit shortcuts. This opens the Keymap settings page where you can reconfigure the Send, New Line, Send to a New Chat, and Send Now actions.
+
+![Send message shortcuts](https://resources.jetbrains.com/help/img/idea/2026.2/ai_send_message_shortcuts.png "Send message shortcuts")
+
+For the full list of chat shortcuts, refer to [Chat shortcuts](ai-keyboard-shortcuts.html#shortcuts-chat).
+
 ## Process responses
 
 In Chat mode, you can apply or reuse AI-generated suggestions using the actions available in the top-right corner of the code snippet.
 
-![Asking AI Assistant programming-related questions](https://resources.jetbrains.com/help/img/idea/2026.1/ai_ask_questions.png "Asking AI Assistant programming-related questions")
+![Asking AI Assistant programming-related questions](https://resources.jetbrains.com/help/img/idea/2026.2/ai_ask_questions.png "Asking AI Assistant programming-related questions")
 
 -   Apply – [apply](/help/ai-assistant/chat-mode.html#apply-changes-to-the-current-file) the suggestion to the currently open file.
 
--   ![Copy to Clipboard](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.copy.svg "Copy to Clipboard") Copy to Clipboard – copy the code snippet.
+-   ![Copy to Clipboard](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.copy.svg "Copy to Clipboard") Copy to Clipboard – copy the code snippet.
 
--   ![Insert Snippet at Caret](https://resources.jetbrains.com/help/img/idea/2026.1/ml-llm.icons.expui.sendToEditor.svg "Insert Snippet at Caret") Insert Snippet at Caret – insert the code snippet into the editor.
+-   ![Insert Snippet at Caret](https://resources.jetbrains.com/help/img/idea/2026.2/ml-llm.icons.expui.sendToEditor.svg "Insert Snippet at Caret") Insert Snippet at Caret – insert the code snippet into the editor.
 
--   ![Create File from Snippet](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.actions.addFile.svg "Create File from Snippet") Create File from Snippet – creates a new file from the snippet.
+-   ![Create File from Snippet](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.actions.addFile.svg "Create File from Snippet") Create File from Snippet – creates a new file from the snippet.
 
     > ### note
     >
     > The file is created in the folder selected in the Project tool window (in Rider, in the project selected in the Explorer tool window). If a file is selected instead of a folder, the new file is created in the same folder as the selected file.
 
--   ![Run Snippet](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.gutter.run.svg "Run Snippet") Run Snippet – execute the generated command or code.
+-   ![Run Snippet](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.gutter.run.svg "Run Snippet") Run Snippet – execute the generated command or code.
 
 ### Apply a suggestion to the current file
 
@@ -341,11 +353,11 @@ To apply the suggestion:
 
 2.  Click the Apply button.
 
-    ![Apply changes to the current file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_ask_questions.png "Apply changes to the current file")
+    ![Apply changes to the current file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_ask_questions.png "Apply changes to the current file")
 
 3.  In the editor, review the changes by clicking ! Next Change or ! Previous Change buttons.
 
-    ![Review the changes](https://resources.jetbrains.com/help/img/idea/2026.1/ai_apply_changes_to_the_current_file_review.png "Review the changes")
+    ![Review the changes](https://resources.jetbrains.com/help/img/idea/2026.2/ai_apply_changes_to_the_current_file_review.png "Review the changes")
 
 4.  When you are ready to apply the changes, click Accept All. Otherwise, click Discard All to reject the changes.
 
@@ -357,26 +369,52 @@ To apply the suggestion:
 
 If you do not like the answer provided by AI Assistant, click ! Regenerate this response at the end of the response to generate a new one.
 
-![Regenerate response](https://resources.jetbrains.com/help/img/idea/2026.1/ai_regenerate_response.png "Regenerate response")
+![Regenerate response](https://resources.jetbrains.com/help/img/idea/2026.2/ai_regenerate_response.png "Regenerate response")
 
 ## View chat history
 
-AI Assistant stores chat history separately for each project across IDE sessions. You can find the saved chats in the ! Chat History list.
+AI Assistant stores chat history separately for each project across IDE sessions. To browse your chats, open the Chat History list in the top-left corner of the AI Chat tool window.
 
-![All Chats list](https://resources.jetbrains.com/help/img/idea/2026.1/ai_all_chats.png "All Chats list")
+![All Chats list](https://resources.jetbrains.com/help/img/idea/2026.2/ai_all_chats.png "All Chats list")
 
-Names of the chats are generated automatically and contain the summary of the initial query. Right-click the chat's name to rename it or delete it from the list. Search for a particular chat name using ⌘Cmd0F.
+Each entry represents a conversation in chat or with an agent and displays how long ago the chat was last active.
+
+### Identify chats waiting for input
+
+Since you can run several chats at once and switch between them, an agent might pause and wait for your input – for example, to approve a command – while your attention is on another chat.
+
+To help you notice this, AI Assistant marks any chat waiting for your input with a yellow dot next to it in the list, so you can tell at a glance which agent needs a response.
+
+![Chat with an agent that waits for input](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_agent_waits_for_input.png "Chat with an agent that waits for input")
+
+### Rename or delete a chat
+
+Names of the chats are generated automatically and contain the summary of the initial query. You can rename the entries in the chat or delete the conversation entirely. To do this, right-click the chat and select the required option from the context menu.
+
+![Rename or delete a chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_rename_delete_chat.png "Rename or delete a chat")
+
+### Find a chat in the list
+
+To find a particular chat by name, open the Chat History list, press Ctrl0F and start typing.
+
+![Search for a chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_search_chat_list.png "Search for a chat")
+
+### Search within a chat
 
 Besides searching for a specific chat, you can also search within a chat instance. To revisit a specific part of the conversation:
 
-1.  In the chat instance, press ⌘Cmd0F. Alternatively, click ! and select Find in Chat.
+1.  In the chat instance, press Ctrl0F. Alternatively, click ! and select Find in Chat.
 
 2.  In the search field, type your query. AI Assistant will highlight all occurrences of the specified text in the chat.
 
     > ### tip
     >
-    > You can also search for multiple lines by pressing ⌘Cmd⇧Shift↩Enter or clicking New Line after each specified line.
+    > You can also search for multiple lines by pressing CtrlShiftEnter or clicking New Line after each specified line.
 
 3.  Use ! ! buttons to navigate to the next/previous occurrence.
 
-    ![Search through chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_search_through_chat.png "Search through chat")
+    ![Search through chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_search_through_chat.png "Search through chat")
+
+> ### note
+>
+> Searching for specific text within the chat is available only for conversations in the [chat mode](ai-chat.html#chat-mode).

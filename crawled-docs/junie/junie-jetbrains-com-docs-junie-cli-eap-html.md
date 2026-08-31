@@ -1,6 +1,6 @@
 # Early Access Program (EAP)
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 The Early Access Program (EAP) gives you access to pre-release versions of Junie CLI with the latest features and improvements before they are generally available.
 

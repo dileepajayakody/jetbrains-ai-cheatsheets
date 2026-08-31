@@ -1,16 +1,14 @@
 # Use third-party and local models
 
-Last modified: 20 April 2026
+Last modified: 28 July 2026
 
 By default, AI Assistant provides access to a set of [cloud-based models](supported-llms.html#jbai-service-models) from various AI providers through the [JetBrains AI service](https://www.jetbrains.com/help/ai/jetbrains-ai.html). These models power AI Assistant features and can be selected in AI Chat to have a conversation about your codebase.
 
-In addition, you can configure AI Assistant to use locally hosted models or models provided by third parties. Supported providers include:
+In addition, you can configure AI Assistant to use locally hosted models or models provided by third parties. Supported options include:
 
 -   [Anthropic](https://www.anthropic.com/) – provides the Claude family of models.
 
--   [Gemini](https://deepmind.google/models/gemini/) – provides the Gemini family of models.
-
--   [Google Vertex AI](https://cloud.google.com/vertex-ai) – provides access to Google models through Vertex AI.
+-   [Google](https://deepmind.google/models/gemini/) – provides the Gemini family of models, available either through the Gemini API (using an API key) or through Google Vertex AI.
 
 -   [OpenAI](https://platform.openai.com/docs/models) – offers GPT, o-series, and other general-purpose models.
 
@@ -26,27 +24,33 @@ By configuring models from different sources, you can control which models AI A
 
 To access models from third-party providers, AI Assistant requires an API key and, in some cases, additional configuration. Entering the key allows AI Assistant to authenticate with the provider and access its models.
 
+> ### note
+>
+> If your organization manages AI centrally through JetBrains IDE Services or JetBrains Central, an administrator can set the AI provider for you and control whether you can connect third-party models with your own API key. As a result, the choice of providers might be limited, and you might not be able to connect models from third-party providers.
+>
+> For details, refer to the [JetBrains IDE Services](https://www.jetbrains.com/help/ide-services/configure-profiles.html#ai_profile) or [JetBrains Central](https://www.jetbrains.com/help/jetbrains-console/eap/ai-policies.html) documentation.
+
 To provide the API key:
 
 1.  Navigate to Settings | Tools | AI Assistant | Providers & API keys.
 
-    [![Providers & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png "Providers & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_selecting_provider.png)
+    [![Providers & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png "Providers & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png)
 
 2.  In the Third-party AI providers section, select the Provider.
 
 3.  Configure the provider settings. Depending on the selected provider, the configuration may differ:
 
-    OpenAI, Anthropic, Gemini
+    OpenAI, Anthropic, Gemini API key
 
     OpenAI-compatible
 
     Google Vertex AI
 
-    ![Provide API key](https://resources.jetbrains.com/help/img/idea/2026.1/ai_configure_third_party_providers.png "Provide API key")
+    ![Provide API key](https://resources.jetbrains.com/help/img/idea/2026.2/ai_configure_third_party_providers.png "Provide API key")
 
     -   Enter the API Key and click Test Connection to check whether the connection is established successfully.
 
-    ![OpenAI-compatible provider](https://resources.jetbrains.com/help/img/idea/2026.1/ai_byok_openai_api.png "OpenAI-compatible provider")
+    ![OpenAI-compatible provider](https://resources.jetbrains.com/help/img/idea/2026.2/ai_byok_openai_api.png "OpenAI-compatible provider")
 
     1.  Specify the URL of the provider's API endpoint.
 
@@ -60,13 +64,13 @@ To provide the API key:
 
         -   API key – authenticate using a Vertex AI [express mode](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview) API key.
 
-            ![Google Vertex AI API key](https://resources.jetbrains.com/help/img/idea/2026.1/ai_google_vertex_ai_api_key.png "Google Vertex AI API key")
+            ![Google Vertex AI API key](https://resources.jetbrains.com/help/img/idea/2026.2/ai_google_vertex_ai_api_key.png "Google Vertex AI API key")
 
         -   ADC (Application Default Credentials) – a Google Cloud authentication mechanism that uses credentials configured in your environment (for example, from your local Google Cloud setup or a service account) to authorize requests.
 
             This method also requires specifying the Project ID and Location parameters.
 
-            ![Google Vertex AI ADC](https://resources.jetbrains.com/help/img/idea/2026.1/ai_google_vertex_ai_adc.png "Google Vertex AI ADC")
+            ![Google Vertex AI ADC](https://resources.jetbrains.com/help/img/idea/2026.2/ai_google_vertex_ai_adc.png "Google Vertex AI ADC")
 
             > ### tip
             >
@@ -78,11 +82,13 @@ To provide the API key:
 
 To verify that the models from the configured provider became available for use, open AI Chat and click the model selector. Provider's models are available under a corresponding section.
 
-![Third-party provider models in chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_third_party_provider_models.png "Third-party provider models in chat")
+![Third-party provider models in chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_third_party_provider_models.png "Third-party provider models in chat")
 
-Models accessed from a third-party AI provider are assigned to AI Assistant features automatically. If these models do not support certain AI Assistant features, those features become unavailable.
-
-For more information on what models are used for AI Assistant features, refer to [List of assigned and fallback models](/help/ai-assistant/use-custom-models.html#assigned-and-fallback-models).
+> ### note
+>
+> Models accessed from a third-party AI provider are assigned to AI Assistant features automatically. If these models do not support certain AI Assistant features, those features become unavailable.
+>
+> For more information on what models are used for AI Assistant features, refer to [List of assigned and fallback models](/help/ai-assistant/use-custom-models.html#assigned-and-fallback-models).
 
 ## Connect local models
 
@@ -90,7 +96,7 @@ Providers like Ollama and LM Studio run models on your machine. Connecting to th
 
 > ### note
 >
-> These providers must be installed and configured on your machine before you can connect to them.
+> These providers need to be installed and configured on your machine and have the necessary models downloaded before you can connect to them.
 
 1.  Navigate to Settings | Tools | AI Assistant | Providers & API keys.
 
@@ -98,7 +104,7 @@ Providers like Ollama and LM Studio run models on your machine. Connecting to th
 
 3.  Specify the URL where it can be accessed and click Test Connection to check whether the connection is established successfully.
 
-    ![Enable Third-party AI providers](https://resources.jetbrains.com/help/img/idea/2026.1/ai_enable_third_party_providers.png "Enable Third-party AI providers")
+    ![Enable Third-party AI providers](https://resources.jetbrains.com/help/img/idea/2026.2/ai_enable_third_party_providers.png "Enable Third-party AI providers")
 
 4.  Click Apply to save changes.
 
@@ -106,13 +112,70 @@ Once the connection is established, local models become available for use in AI 
 
 > ### note
 >
-> Use of MCP tools
+> Notes
 >
-> Currently, AI Assistant does not support invoking tools from configured MCP servers when using local models.
+> -   Currently, AI Assistant does not support invoking tools from configured MCP servers when using local models.
+>
+> -   The default model context window for local models is set to **64 000** tokens. If needed, you can [adjust](/help/ai-assistant/use-custom-models.html#use-custom-models-in-ai-features) this value in the settings.
+>
 
-> ### note
->
-> The default model context window for local models is set to **64 000** tokens. If needed, you can [adjust](/help/ai-assistant/use-custom-models.html#use-custom-models-in-ai-features) this value in the settings.
+## Use a custom model for AI Completion
+
+AI completion features, such as [inline code completion](code-completion.html) and [next edit suggestions](next-edit-suggestions.html), rely on JetBrains models by default. If needed, you can use a model of your choice from an OpenAI-compatible provider instead.
+
+Different AI completion features require different model capabilities. Inline code completion requires Fill-in-the-Middle (FIM) support. The next edit suggestions feature requires edit-prediction support. General-purpose chat models typically do not provide these capabilities and are therefore not suitable for AI completion.
+
+The features available in the IDE depend on the capabilities of the configured model:
+
+Configured model supports
+
+Available features
+
+Fill-in-the-Middle (FIM) only
+
+Inline code completion
+
+Edit prediction
+
+Inline code completion, Next edit suggestions
+
+To specify the model for AI completion features:
+
+1.  Navigate to Settings | Tools | AI Assistant | Providers & API keys.
+
+    [![Providers & API keys settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png "Providers & API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png)
+
+2.  In the AI Completion section, select the Provider:
+
+    -   JetBrains – use JetBrains models for AI Completion. This is the default option.
+
+    -   OpenAI Compatible – use a model served through an OpenAI-compatible endpoint.
+
+    > ### note
+    >
+    > The provider you select for AI completion features is independent from the provider used for chat and other features. Selecting it here does not reuse or change the [third-party AI provider](/help/ai-assistant/use-custom-models.html#provide-your-own-api-key) configured for chat and other AI features.
+
+3.  If you selected OpenAI Compatible, specify the provider parameters:
+
+    ![Configure the third-party provider for AI completion features](https://resources.jetbrains.com/help/img/idea/2026.2/ai_third_party_provider_for_ai_completion.png "Configure the third-party provider for AI completion features")
+
+    -   API key – enter the API key for the selected endpoint.
+
+    -   Base URL – specify the URL of the endpoint. Click Test Connection to check whether the connection is established successfully.
+
+    -   Model – specify the model to use for AI Completion. AI Assistant indicates whether the model is recognized and supported for AI Completion.
+
+    -   Model context – specify the size of the model context window, in tokens.
+
+    -   Max output tokens – specify the maximum number of tokens the model can return in a single completion.
+
+    -   Prompt schema – the template used to format completion requests so that the model receives the code context in the structure it expects. When AI Assistant recognizes the model, it sets the matching schema automatically, so you usually do not need to change this parameter.
+
+        > ### tip
+        >
+        > Select a specific schema only when your model is not recognized: a (fim) schema that matches your completion model's family (for example, (fim) DeepSeek), or an edit-prediction schema (such as Zeta or Sweep) for a next-edit-style model.
+
+4.  Click Apply to save changes.
 
 ## Assign models to AI Assistant features
 
@@ -180,13 +243,11 @@ To assign local models and models accessed from the OpenAI-compatible endpoint t
 
 2.  In the Models Assignment section, specify the models that you want to use for core, lightweight, and code completion features. Also, define the model context window size if needed.
 
-    ![Local models setup](https://resources.jetbrains.com/help/img/idea/2026.1/ai_local_models_setup.png "Local models setup")
+    ![Local models setup](https://resources.jetbrains.com/help/img/idea/2026.2/ai_local_models_setup.png "Local models setup")
 
     -   Core features – this model will be used for in-editor code generation, commit message generation, as a default model in chat, and other core features.
 
     -   Instant helpers – this model will be used for lightweight features, such as chat context collection, chat title generation, and name suggestions.
-
-    -   Completion model – this model will be used for the [inline code completion](code-completion.html) feature in the editor. Works only with Fill-in-the-Middle (FIM) models.
 
     -   Context window – allows you to configure the model context window for local models. A larger window lets the model handle more context in a request, while a smaller one reduces memory usage and may improve performance. This helps balance context length with system resources. The default value is **64 000** tokens.
 
@@ -206,14 +267,14 @@ This section lists AI Assistant features and the models they require, helping y
 >
 > Limitations
 >
-> The following features do not work in a BYOK setup because they rely on proprietary JetBrains models:
+> The following features are not powered by the models configured in the [Third-party AI providers](/help/ai-assistant/use-custom-models.html#provide-your-own-api-key) section:
 >
 > -   [Next edit suggestions](next-edit-suggestions.html)
 >
 > -   [Code completion](code-completion.html)
 >
 >
-> To use these features, consider using BYOK in [combination](/help/ai-assistant/use-custom-models.html#enable-jb-ai) with a JetBrains AI service subscription.
+> These features rely on JetBrains models by default. To use a different model, configure an OpenAI-compatible provider in the [AI Completion](/help/ai-assistant/use-custom-models.html#ai-completion-provider) section.
 
 #### Core features
 
@@ -391,8 +452,8 @@ To enable your JetBrains AI subscription:
 
 2.  In the JetBrains AI section, click Activate JetBrains AI.
 
-    ![Click Activate JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.1/ai_activate_jb_ai.png "Click Activate JetBrains AI")
+    ![Click Activate JetBrains AI](https://resources.jetbrains.com/help/img/idea/2026.2/ai_activate_jb_ai.png "Click Activate JetBrains AI")
 
 3.  Click Log in to JetBrains Account, enter your credentials, and wait for the login process to complete.
 
-After you sign in with a JetBrains Account that has an active JetBrains AI subscription, you can start using AI Assistant with full functionality.
+After you log in to a JetBrains Account that has an active JetBrains AI subscription, you can start using AI Assistant with full functionality.

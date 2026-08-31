@@ -1,10 +1,10 @@
 # Run tasks
 
-Last modified: 05 May 2026
+Last modified: 17 August 2026
 
 > ### note
 >
-> JetBrains Air requires a Git repository in the workspace to create and run tasks. If the workspace has no Git repository, JetBrains Air shows a warning and prompts you to initialize Git.
+> JetBrains Air requires a Git repository in the project to create and run tasks. If the project has no Git repository, JetBrains Air shows a warning and prompts you to initialize Git.
 
 Chat is the main entry point for interacting with [LLMs](https://en.wikipedia.org/wiki/Large_language_model) and [agents](supported-agents.html) supported by JetBrains Air. You can ask questions about your project and work with agents to plan and execute tasks.
 

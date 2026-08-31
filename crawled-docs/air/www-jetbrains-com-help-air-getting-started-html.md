@@ -12,21 +12,13 @@ Create your first task, select a task run environment, add context, run the task
 
 [
 
-### Setup
+### Set up Air
 
-Install required tools like Git and optional Docker, connect an AI provider, and configure other settings.
+Install Air and required tools, connect an AI provider, and configure other settings.
 
 ](set-up.html)
 
 ## Core workflows
-
-[
-
-### Run tasks
-
-Run tasks, manage task states, use isolated environments, and resume suspended tasks.
-
-](run-tasks.html)
 
 [
 
@@ -35,6 +27,14 @@ Run tasks, manage task states, use isolated environments, and resume suspended t
 Write a clear task, add context, and refine your request as you iterate.
 
 ](define-tasks.html)
+
+[
+
+### Run tasks
+
+Run tasks, manage task states, use isolated environments, and resume suspended tasks.
+
+](run-tasks.html)
 
 [
 
@@ -56,11 +56,19 @@ Run tasks in parallel, isolate them, switch between tasks, and group tasks.
 
 [
 
-### Quickstart with cloud agents
+### Quickstart with cloud tasks
 
 Complete onboarding and run your first task in a cloud environment, from the JetBrains Air app or the web.
 
 ](quickstart-with-cloud-agents.html)
+
+[
+
+### Set up Air for your organization
+
+For administrators: enable the web version of JetBrains Air for your organization, give it access to your organization repositories, and manage AI access from JetBrains Central Console.
+
+](set-up.html#setup-admin)
 
 [
 

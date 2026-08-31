@@ -1,6 +1,6 @@
 # Junie IDE plugin
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 The recommended way to use Junie is from the single [AI Chat in your JetBrains IDE](https://www.jetbrains.com/help/ai-assistant/ai-chat.html): select Junie by JetBrains from the list of supported coding agents and have it downloaded automatically.
 
@@ -24,7 +24,7 @@ Junie is also available in [Android Studio](https://developer.android.com/studio
 
 ### Install Junie from Marketplace
 
-1.  In your JetBrains IDE, press ⌘Cmd0, to open settings and then select Plugins.
+1.  In your JetBrains IDE, press CtrlAlt0S to open settings and then select Plugins.
 
 2.  Click the Marketplace tab and type the plugin name in the search field.
 
@@ -36,7 +36,7 @@ Junie is also available in [Android Studio](https://developer.android.com/studio
 
 1.  Download the plugin from the [JetBrains Junie plugin page](https://plugins.jetbrains.com/plugin/26104-jetbrains-junie) in JetBrains Marketplace.
 
-2.  In your JetBrains IDE, press ⌘Cmd0, to open settings and then select Plugins.
+2.  In your JetBrains IDE, press CtrlAlt0S to open settings and then select Plugins.
 
 3.  On the Plugins page, click ![The Settings button](img/junie/app.expui.general.settings.svg "The Settings button") and then click Install Plugin from Disk.
 
@@ -237,9 +237,9 @@ When Junie starts a task, it looks for guidelines in the following order:
 
 1.  Custom path: If a specific path to guidelines is specified in the IDE's project settings (**Settings | Tools | Junie | Project Settings**).
 
-2.  `.junie/AGENTS.md`: This is the most preferred standard location.
+2.  `.junie/AGENTS.md`: This is the most preferred standard location. If it exists, it is used exclusively and no other guidelines files are combined with it.
 
-3.  `AGENTS.md` in the project root folder: If no file is found in the `.junie` folder, the project root is checked.
+3.  `AGENTS.md` in the project root folder: If no file is found in the `.junie` folder, the project root `AGENTS.md` is used, combined with `.junie/playbook.md` and every `.junie/rules/*.md` file, if present.
 
 4.  Legacy locations (deprecated):
 
@@ -314,7 +314,7 @@ If the MCP server is not run via Docker, you can preload environment variables f
 
 ### Manage configured MCP servers
 
-The MCP servers configured at both global and project levels are displayed on the MCP Servers list in Settings (⌘Cmd0,) | Tools | Junie | MCP Settings.
+The MCP servers configured at both global and project levels are displayed on the MCP Servers list in Settings (CtrlAlt0S) | Tools | Junie | MCP Settings.
 
 #### Server connection status
 
@@ -332,7 +332,7 @@ To edit a configuration, select it on the list and click ![Edit](img/junie/app.e
 
 Actions that Junie can perform through configured MCP servers are listed as available tools.
 
-To view what tools are available for a specific MCP server, navigate to Settings (⌘Cmd0,) | Tools | Junie | MCP Settings, locate the server on the list, and expand the Status drop-down list.
+To view what tools are available for a specific MCP server, navigate to Settings (CtrlAlt0S) | Tools | Junie | MCP Settings, locate the server on the list, and expand the Status drop-down list.
 
 > ### tip
 >

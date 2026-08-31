@@ -16,7 +16,7 @@ Get started with an interactive Junie CLI in your terminal.
 
 Use Junie in the AI chat of your JetBrains IDE.
 
-](https://www.jetbrains.com/help/ai-assistant/ai-chat.html#junie-agent)
+](https://www.jetbrains.com/help/ai-assistant/junie-agent.html)
 
 ## Junie in CI/CD environments
 

@@ -4,7 +4,7 @@
 
 # Add and configure extensions
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Extensions are reusable bundles that extend Junie CLI with project-specific or domain-specific capabilities. A single extension can package any combination of:
 
@@ -17,6 +17,8 @@ Extensions are reusable bundles that extend Junie CLI with project-specific or d
 -   [Custom slash commands](custom-slash-commands.html)
 
 -   [Guidelines](guidelines-and-memory.html)
+
+-   [Hooks](junie-cli-hooks.html)
 
 This makes extensions a convenient way to install a curated set of capabilities for a particular technology stack (for example, an Android, Spring Boot, or SQL extension), share team-wide setups, or distribute community-built integrations — without manually configuring each piece.
 
@@ -109,7 +111,7 @@ You can also drive the same actions inline via `/extensions <arg>`:
 
     -   User scope: the extension is enabled across all projects on your machine. The reference is stored in `~/.junie/extensions/extensions.json` (or `%USERPROFILE%\.junie\extensions\extensions.json` on Windows).
 
-Extension content (skills, agents, commands, MCP configs, guidelines) is downloaded once into the user-level cache directory `~/.junie/extensions/<marketplace>/<extension>/` and reused across projects.
+Extension content (skills, agents, commands, MCP configs, guidelines, hooks) is downloaded once into the user-level cache directory `~/.junie/extensions/<marketplace>/<extension>/` and reused across projects.
 
 You can also pass a raw trailing argument directly to the `/extensions` command, for example:
 

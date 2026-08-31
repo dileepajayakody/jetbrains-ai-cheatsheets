@@ -10,7 +10,7 @@ Settings | Tools | AI Assistant | Agents
 
 Use this page to manage ACP-compatible agents.
 
-[![Agents settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "Agents settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png)
+[![Agents settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "Agents settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png)
 
 Item
 

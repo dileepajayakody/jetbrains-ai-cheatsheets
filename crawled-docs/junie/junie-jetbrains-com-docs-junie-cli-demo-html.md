@@ -2,7 +2,7 @@ EAP
 
 # Demo agent
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Slash command to invoke the demo agent:
 
@@ -20,15 +20,15 @@ Think of it as 'show me, don't tell me': instead of asking Junie to read code an
 
 `/demo` requires:
 
--   Docker running on your machine. This is the most important prerequisite — the demo VM is a Docker container, and `/demo` will not start without a working Docker daemon. If `docker ps` doesn't work in your terminal, `/demo` won't work either. Start Docker Desktop before running `/demo`.
+-   Docker running on your machine. This is the most important prerequisite — the demo VM is a Docker container, and `/demo` will not start without a working Docker daemon. If `docker ps` doesn't work in your terminal, `/demo` won't work either. Start Docker Desktop before running `/demo`. Junie checks this before a run starts and tells you right away rather than failing halfway through, on every path that can launch a demo.
 
--   A model with Computer Use support. Right now only GPT‑5.4 and newer (GPT‑5.4, GPT‑5.5) are supported. More models will be added later as Computer Use becomes available on them. If your active model doesn't qualify, `/demo` refuses to start and shows the supported list. See [Junie CLI Model selection](junie-cli-model-selection.html).
+-   A model with Computer Use support. Right now only GPT‑5.4, GPT‑5.5, and GPT‑5.6 SOL are supported. More models will be added later as Computer Use becomes available on them. If your active model doesn't qualify, `/demo` refuses to start and shows the supported list. See [Junie CLI Model selection](junie-cli-model-selection.html).
 
--   A demo VM image at `.junie/vms/<name>/Dockerfile`, layered on top of the base image `registry.jetbrains.team/p/junie-cli/containers/demo-base:2`. The base is Debian bookworm and ships Chromium, Node.js, xterm, ffmpeg, xdotool, screenshot tooling and a headless Xvfb desktop with a window manager — everything Computer Use needs to drive a desktop or web app. The first time `/demo` runs in a project with no VM template, Junie seeds a starter one for you — see [First-run setup](/docs/junie-cli-demo.html#first-run-setup). Add the runtimes your app needs on top, as shown in [Customizing the demo](/docs/junie-cli-demo.html#customizing-the-demo).
+-   A demo VM image at `.junie/vms/<name>/Dockerfile`, layered on top of the base image `registry.jetbrains.team/p/junie-cli/containers/demo-base:2`. The base is Debian bookworm and ships Chromium, Node.js, xterm, ffmpeg, xdotool, screenshot tooling and a headless Xvfb desktop with a window manager — everything Computer Use needs to drive a desktop or web app. When `/demo` runs in a project that has no VM template, Junie seeds a starter one for you — see [First-run setup](/docs/junie-cli-demo.html#first-run-setup). Add the runtimes your app needs on top, as shown in [Customizing the demo](/docs/junie-cli-demo.html#customizing-the-demo).
 
 ## Quick start
 
-You have two ways to set up `/demo` for a project: author the files by hand as shown below, or skip authoring and let `/demo` create starter versions for you on the first run (see [First-run setup](/docs/junie-cli-demo.html#first-run-setup)).
+You have two ways to set up `/demo` for a project: author the files by hand as shown below, or skip authoring and let `/demo` create starter versions for you (see [First-run setup](/docs/junie-cli-demo.html#first-run-setup)).
 
 For projects that need anything beyond "open a browser at localhost", you'll typically set up three things in your repo:
 
@@ -100,41 +100,51 @@ Now `/demo` will pick up your custom image, mounts, and launch instructions auto
 
 ## Basic usage
 
-The syntax is:
-
-```
-/demo [what to demo]
-```
-
-The argument is free‑form natural language describing what you want to see. Everything after `/demo` is passed to the demo agent verbatim.
-
-### With no arguments
+The command never starts a demo straight away — it always opens the picker:
 
 ```
 /demo
 ```
 
-If you don't pass anything, `/demo` picks up the previous context of the current session automatically — the messages you exchanged, the files Junie touched, the task it just finished. You don't have to repeat what was done; the demo agent already sees it. Junie then demos whatever stands out from that history. If nothing stands out — for example you've just opened a fresh project — Junie demos the app's main functionality.
+### Choosing what to demo
 
-This is the most common way to use `/demo`: you've just had Junie implement or fix something, and you want to see it working before you commit. Just type `/demo` and hit Enter.
+Junie asks what you would like it to demo and offers a short list of scopes to choose from, with a text field right below it for [describing the demo yourself](/docs/junie-cli-demo.html#describing-the-demo-yourself) (navigate with the arrow keys, Enter to pick, Esc to cancel):
 
-### With a specific request
+-   Changes of this branch (vs `origin/main`) — everything the current branch adds on top of the default branch, including changes you haven't committed yet. The ref in the label is the default branch Junie resolved for your repository (`origin/main`, `origin/master`, `main`, or `master`).
+
+-   Changes from this session — the messages you exchanged, the files Junie touched, the task it just finished. You don't have to repeat what was done; the demo agent already sees it.
+
+-   Uncommitted changes — your working tree compared to `HEAD`. Files that aren't tracked by git yet are picked up too.
+
+-   Last commit — the last commit compared to its parent.
+
+-   Smoke test — find anything broken — Junie drives the app's main flows looking for breakage and reports what works and what doesn't.
+
+The list adapts to your project: the branch scope only shows up when you're not on the default branch, Uncommitted changes only when the working tree is dirty, Last commit only when there is a commit to compare against. Outside a git repository (or when git isn't installed) you get the session scope and the smoke test.
+
+For the three git scopes the diff is the specification of the demo: Junie reads it first, lists every user-visible change in it, and demonstrates them one by one instead of stopping at the first one. This is the most common way to use `/demo`: you've just had Junie implement or fix something, and you want to see it working before you commit — type `/demo`, hit Enter, and pick the scope that matches what you want to see.
+
+### Describing the demo yourself
+
+None of the scopes has to fit: the picker always has a free‑form field below the list. Press ↓ past the last scope to get into it (or type the request right after `/demo` to land in it directly), and type what you want to see in plain natural language:
 
 ```
-/demo show the new dark-theme toggle in Settings
-/demo open the search dialog and find 'TODO'
-/demo log in as user@example.com and open the profile page
+show the new dark-theme toggle in Settings
+open the search dialog and find 'TODO'
+log in as user@example.com and open the profile page
 ```
 
-The more concrete the request, the tighter the demo. A request like `/demo show X` is treated as self‑contained — Junie won't go hunting through git history to find unrelated context.
+Enter starts the run, ↑ takes you back to the list of scopes, Esc cancels. The request is passed to the demo agent verbatim, so the more concrete it is, the tighter the demo. Such a request is treated as self‑contained — Junie won't go hunting through git history to find unrelated context.
 
 ### Demoing a specific feature from scratch
 
+When you want a demo of an existing feature (not a recent change), name the feature explicitly in the same text field:
+
 ```
-/demo the file-tree drag-and-drop in the sidebar
+the file-tree drag-and-drop in the sidebar
 ```
 
-When you want a demo of an existing feature (not a recent change), name the feature explicitly. Junie will resolve how to reach it (menu item, hotkey, URL, etc.) and walk through it.
+Junie will resolve how to reach it (menu item, hotkey, URL, etc.) and walk through it.
 
 ## What happens when you run `/demo`
 
@@ -150,6 +160,8 @@ Before any VM starts, Junie writes a short visible demo plan — an ordered list
 3. Toggle "Dark theme" — UI re-renders in dark colors.
 4. Close Settings — main window remains in dark mode.
 ```
+
+When the run is scoped to a diff — one of the git scopes of the picker, or a review-style request — Junie reads that diff before planning and turns every user-visible change in it into a milestone, so the plan covers the whole change set.
 
 The plan is your contract with the agent. If a step looks wrong, interrupt with Esc and adjust the request before the VM starts.
 
@@ -228,13 +240,25 @@ Common things to put in `.junie/demo.md`:
 
 -   The launch command — always background it (`&` or `nohup … &`).
 
--   A health check Junie can wait on before interacting with the UI.
+-   A health check Junie can wait on before interacting with the UI, e.g. `# ready when http://localhost:3000 responds 200`.
+
+-   A preflight check for services you run on the host yourself — inside the VM your host machine is reachable as `host.docker.internal`, so a line like `curl -sf http://host.docker.internal:9400/health` lets the demo fail fast when the backend isn't up.
+
+-   Test users the agent may log in with, and known quirks it should avoid. Never put secret values in `demo.md` — the file is committed; pass secrets to the VM through the template's `mounts` file instead.
 
 -   Whether the jar/binary should be built on the host first (and the exact `bash` command to do it — Junie will only run it if you explicitly ask).
 
 ## First-run setup
 
-If you haven't configured `/demo` for this project yet — meaning no `.junie/vms/<name>/Dockerfile` exists — the first run won't start a real demo. Instead, Junie seeds a starter configuration for you and asks how you want to proceed. Two files appear in your project:
+Before every run, `/demo` checks that your project has both halves of a working configuration:
+
+-   a VM template — some `.junie/vms/<name>/Dockerfile`, and
+
+-   a launch command in `.junie/demo.md`.
+
+If either is missing, the run won't start a real demo. Instead, Junie creates whatever isn't there yet and asks how you want to proceed. This is not a one-shot: a `demo.md` that was seeded and never touched counts as no setup at all, so the prompt keeps coming back until you edit the file. Junie never rewrites a file that already exists.
+
+Up to two files appear in your project:
 
 ### What gets seeded
 
@@ -252,17 +276,17 @@ If you haven't configured `/demo` for this project yet — meaning no `.junie/vm
 
 Right after seeding, Junie shows you the two files and offers a choice (navigate with the arrow keys, `enter` to pick):
 
--   Yes, fill them in for me — Junie inspects your project (package manager, dev/start command, port, extra runtimes) and fills in the launch command in `demo.md` and the `Dockerfile` for you. Review what it wrote, then re-run `/demo`.
+-   Yes, fill them in for me — Junie inspects your project (package manager, dev/start command, port, runtime version requirements, backing services, login walls, required tokens), asks you to confirm the resulting plan, and only then fills in `demo.md` and the `Dockerfile` — plus a `mounts` line when a host-side credential has to reach the VM. Review what it wrote, then re-run `/demo`.
 
 -   No, I'll do it myself — Junie leaves the seeded files untouched so you can edit them by hand.
 
-You can also trigger the automatic fill-in later — ask Junie to "set up `/demo` ", or invoke the `demo-setup` skill with `$demo-setup`. Either way Junie only edits `demo.md` and the VM `Dockerfile`, and leaves the final review and the real demo run to you.
+You can also trigger the automatic fill-in later — ask Junie to "set up `/demo` ", or invoke the `demo-setup` skill with `$demo-setup`. Either way Junie edits only `demo.md`, the VM `Dockerfile`, and — when a host credential must reach the VM — the template's `mounts` file, and leaves the final review and the real demo run to you.
 
 ### After editing
 
-Once both files are filled in, re-run `/demo`. Junie will pick up the new VM template and start a real demo run. The seed only fires when no VM template exists yet — once `.junie/vms/` has any Dockerfile, your configuration is treated as authoritative and Junie leaves it alone.
+Once both files are filled in, re-run `/demo`. Junie will pick up the VM template and start a real demo run. From then on your configuration is treated as authoritative and Junie leaves it alone — the check is simply whether `demo.md` still looks exactly like the file that was seeded. Edit it in any way and it is yours; Junie stops asking and never second-guesses what you wrote.
 
-If you mess something up and want to start over, delete `.junie/vms/` (and optionally `.junie/demo.md`) and re-run `/demo` — the seed will fire again.
+To go through the setup again, either ask Junie to "set up `/demo` ", or clear the configuration and re-run `/demo`: emptying `.junie/demo.md` brings back the prompt while keeping your VM template, and deleting both `.junie/vms/` and `.junie/demo.md` reseeds them from scratch.
 
 > ### tip
 >
@@ -297,14 +321,17 @@ All templates discovered under `.junie/vms/` are listed to the demo agent on eve
 > fix the bug where the search box loses focus after typing one character
 …Junie edits files, runs tests…
 > /demo
+…pick "Changes from this session" (or "Uncommitted changes")
 ```
 
-Junie picks up the change from the current session, opens the search box, types several characters, and shows that focus stays.
+Junie picks up the change, opens the search box, types several characters, and shows that focus stays.
 
 ### Demo a feature in a fresh repo
 
 ```
-/demo open the project, run the example notebook, show the chart it produces
+> /demo
+…press ↓ past the last scope to reach the text field
+> open the project, run the example notebook, show the chart it produces
 ```
 
 Useful for onboarding videos or PR descriptions.
@@ -312,7 +339,9 @@ Useful for onboarding videos or PR descriptions.
 ### Compare a 'before / after' change
 
 ```
-> /demo show the old behavior, then the new behavior of the export button
+> /demo
+…press ↓ past the last scope to reach the text field
+> show the old behavior, then the new behavior of the export button
 ```
 
 If the session history doesn't contain a clear "before" state, Junie will note that in the report instead of inventing one.
@@ -321,7 +350,7 @@ If the session history doesn't contain a clear "before" state, Junie will note t
 
 'Demo agent requires access to a model with computer use support…'
 
-Your active model isn't on the supported list. Today that list is GPT‑5.4 and GPT‑5.5; more models will land later. Switch via [Junie CLI Model selection](junie-cli-model-selection.html).
+Your active model isn't on the supported list. Today that list is GPT‑5.4, GPT‑5.5, and GPT‑5.6 SOL; more models will land later. Switch via [Junie CLI Model selection](junie-cli-model-selection.html).
 
 The VM starts but the screen stays blank
 
@@ -329,7 +358,7 @@ Normal in the first few seconds after `vm_start`. If it persists, the app probab
 
 Junie keeps reading source files instead of clicking
 
-This usually means the entry path (how to reach the feature) isn't obvious. Tell Junie directly in the request: `/demo open Settings via Cmd+, and toggle X`.
+This usually means the entry path (how to reach the feature) isn't obvious. Describe the entry path yourself in the request field, for example `open Settings via Cmd+, and toggle X`.
 
 `/demo` is disabled / greyed out
 

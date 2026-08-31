@@ -10,21 +10,21 @@ With AI Assistant, you can generate unit tests for code segments (including pub
 
 1.  Place the caret somewhere within a class or a specific method and right-click to open the context menu.
 
-    Alternatively, press ⌥ Option↩Enter.
+    Alternatively, press AltEnter.
 
 2.  Select AI Actions and then Generate Unit Tests.
 
-    ![Generate Unit Tests action in context menu](https://resources.jetbrains.com/help/img/idea/2026.1/ij_generate_unit_tests_action.png "Generate Unit Tests action in context menu")
+    ![Generate Unit Tests action in context menu](https://resources.jetbrains.com/help/img/idea/2026.2/ij_generate_unit_tests_action.png "Generate Unit Tests action in context menu")
 
 3.  The generated test opens in a separate AI Diff tab.
 
-    ![Generated unit test in a separate AI Diff tab](https://resources.jetbrains.com/help/img/idea/2026.1/ij_generated_unit_test.png "Generated unit test in a separate AI Diff tab")
+    ![Generated unit test in a separate AI Diff tab](https://resources.jetbrains.com/help/img/idea/2026.2/ij_generated_unit_test.png "Generated unit test in a separate AI Diff tab")
 
     > ### note
     >
     > In PyCharm, AI Assistant generates tests for the default test runner of your project (Settings | Python | Tools | Integrated Tools | Testing | Default test runner).
 
-    If you want to improve the generated code, click Specify, add new requirements, and press ↩Enter.
+    If you want to improve the generated code, click Specify, add new requirements, and press Enter.
 
     If you want to regenerate the answer, click ! Regenerate.
 
@@ -34,7 +34,7 @@ With AI Assistant, you can generate unit tests for code segments (including pub
 
     It will be shown as a new file in a separate tab.
 
-    ![Generated test saved as a new file](https://resources.jetbrains.com/help/img/idea/2026.1/ij_accepted_new_test.png "Generated test saved as a new file")
+    ![Generated test saved as a new file](https://resources.jetbrains.com/help/img/idea/2026.2/ij_accepted_new_test.png "Generated test saved as a new file")
 
     If you already have a test module in your project, the new test will be stored there. If not, AI Assistant will automatically create a test module and place the generated test inside it.
 

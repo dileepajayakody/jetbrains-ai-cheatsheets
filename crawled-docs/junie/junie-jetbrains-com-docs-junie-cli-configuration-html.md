@@ -4,7 +4,7 @@
 
 # config.json
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Junie CLI can load settings from JSON configuration files in addition to command-line flags and environment variables. Configuration files are useful when you want to keep shared project defaults in the repository or define personal defaults once for all projects.
 
@@ -18,19 +18,43 @@ By default, Junie CLI looks for `config.json` in these locations:
 
 The project-level configuration is intended for settings that should be shared with the whole team. The user-level configuration is intended for personal defaults on your machine.
 
+## Project trust
+
+Interactive Junie CLI sessions ask for a trust decision before loading project configuration from a project that has no valid stored trust marker:
+
+1.  Keep untrusted — continue with isolated temporary project Junie storage.
+
+2.  Trust this project — trust only the canonical project directory.
+
+3.  Trust all projects in `<parent>` — trust the canonical parent directory and projects below it.
+
+Junie canonicalizes project and scope paths and resolves symbolic links before evaluating trust. Exact trust applies only to that project. Parent trust applies to projects at or below the displayed canonical parent, using path-aware containment rather than string-prefix matching. A valid exact or ancestor marker lets a matching project start without another prompt.
+
+An untrusted project remains the workspace for ordinary file operations, but Junie does not implicitly load project configuration, MCP servers, hooks, extensions, models, plans, demos, custom agents or commands, skills, root or project Junie guidelines, project memory, or automatic migration/onboarding sources. Instead, Junie uses a writable temporary project Junie directory outside the repository. MCP servers, skills, and commands added during the session use that directory and are removed when the CLI process closes. Global sources under Junie Home remain enabled.
+
+After the interactive UI opens an untrusted project, its startup header explains that project files remain available while project-provided Junie configuration is not loaded.
+
+Paths supplied explicitly through CLI options or environment variables, including `--config-location`, remain enabled because the user selected them deliberately.
+
+Junie stores only a project-trust authentication key in macOS Keychain, Windows Credential Manager, or Linux Secret Service. If native secure storage is unavailable or unusable, the key is kept in an owner-only `authentication-key` file inside the same trust directory instead, so your decision is remembered on headless machines and in containers. Each exact-project or parent-directory scope has a separate authenticated marker under `<Junie Home>/trust`; the default location is `~/.junie/trust`. The marker contains its kind and canonical path, but cannot grant trust unless its integrity code matches that key. Deleting an exact marker revokes that project; deleting a parent marker revokes inherited trust for projects below it on the next CLI process. Keeping a project untrusted does not create a denial marker.
+
+If a marker still cannot be written and verified, the trust selection applies to the current run only, and Junie says so once so that you know it will ask again next launch. Neither the key nor trust markers are written to `settings.json` or the plaintext `secure_credentials.json` fallback.
+
+Interactive UI launches always resolve project trust and prompt when no valid exact-project or ancestor marker exists. Non-interactive JSON, ACP, and Gateway launches are always trusted: they cannot ask you for a decision, so they load project configuration without a prompt, a flag, or an environment variable. This keeps CI and other automated environments working without any extra setup.
+
 ## Configuration precedence
 
-When the same setting is defined in multiple places, Junie resolves it in this order (highest priority first):
+`config.json` files are merged together, and command-line flags override their values. When the same setting is defined in multiple `config.json` files, Junie resolves it in this order (highest priority first):
 
 1.  Command-line flags
 
-2.  User settings from `~/.junie/settings.json`
+2.  Project configuration from `<project-root>/.junie/config.json` when the CLI project is trusted
 
-3.  Project configuration from `<project-root>/.junie/config.json`
-
-4.  User configuration from `~/.junie/config.json`
+3.  User configuration from `~/.junie/config.json`
 
 For example, if `~/.junie/config.json` sets `"model": "sonnet"`, the project config sets `"model": "gpt"`, and you run `junie --model opus`, the effective model is `opus`.
+
+User settings stored in `~/.junie/settings.json` are a separate channel and are not part of this `config.json` merge. There is no single global precedence across both channels: settings such as the model, provider, brave mode, and effort each resolve through their own consumer path, so a value from `config.json` does not simply override, or get overridden by, a value from `settings.json`.
 
 ## Add extra configuration files
 
@@ -41,6 +65,8 @@ junie \
   --config-location /opt/company/junie/config.json \
   --config-location ./configs/junie.local.json
 ```
+
+Explicit configuration locations are loaded even when the CLI project is untrusted.
 
 To disable loading from the default user and project locations, use `--config-default-locations false`.
 
@@ -84,6 +110,10 @@ Description
 
 Default model to use. For supported built-in model IDs and custom model profiles, see [Model selection](junie-cli-model-selection.html) and [Custom LLM models](custom-llm-models.html).
 
+`effort`
+
+Default reasoning effort for the selected model.
+
 `provider`
 
 Default BYOK provider. For supported provider values, see [LLM providers](junie-cli-model-selection.html#llm-providers).
@@ -124,7 +154,7 @@ Enable or disable the default custom slash command locations.
 
 Extra folders where Junie should search for custom agents.
 
-`agent-default-location`
+`agent-default-locations`
 
 Enable or disable the default custom agent locations.
 
@@ -143,10 +173,6 @@ Enable or disable automatic update checks.
 `guidelines-location`
 
 Path to the guidelines file Junie should use.
-
-`time-limit`
-
-Default task time limit.
 
 `byok`
 
@@ -169,9 +195,10 @@ For safety, `hooks` from the default project configuration file are ignored. Use
 ```
 {
   "model": "sonnet",
+  "effort": "high",
   "provider": "anthropic",
   "brave": false,
-  "flags": ["copilot"],
+  "flags": [],
   "mcp-locations": ["./mcp", "./shared/mcp"],
   "mcp-default-locations": true,
   "skill-locations": ["./skills"],
@@ -179,12 +206,11 @@ For safety, `hooks` from the default project configuration file are ignored. Use
   "command-locations": ["./commands"],
   "command-default-locations": true,
   "agent-locations": ["./agents"],
-  "agent-default-location": true,
+  "agent-default-locations": true,
   "model-locations": ["./models"],
   "model-default-locations": true,
   "auto-update": true,
   "guidelines-location": "./team-guidelines.md",
-  "time-limit": 3600,
   "byok": {
     "anthropic": "sk-ant-...",
     "openai": "sk-..."

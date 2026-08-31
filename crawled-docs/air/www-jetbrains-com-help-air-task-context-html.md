@@ -4,7 +4,7 @@
 
 # Task context
 
-Last modified: 05 May 2026
+Last modified: 14 August 2026
 
 Context is the information the agent uses to understand your project and produce a correct change. The more relevant the task context is, the fewer assumptions the agent has to make.
 
@@ -18,7 +18,7 @@ Good practice is to add just enough context to point the agent to the right code
 
 2.  Select a context item from the list.
 
-    Depending on what is available, you can add files and folders, symbols, Git branches, Git commits, local changes, terminals, and documentation sources.
+    Depending on what is available, you can add files and folders, symbols, Git branches, Git commits, local changes, and terminals.
 
     ![Searching for context items after typing @ in the task input](https://resources.jetbrains.com/help/img/air/add-task-context.png "Searching for context items after typing @ in the task input")
 
@@ -28,7 +28,7 @@ Good practice is to add just enough context to point the agent to the right code
 
     ![Typing after @ to search through files, folders, and symbols](https://resources.jetbrains.com/help/img/air/air-context-start-search.png "Typing after @ to search through files, folders, and symbols")
 
-4.  Press ↩Enter to add the selected item.
+4.  Press Enter to add the selected item.
 
 5.  To add more context items, type `@` again and repeat the same steps.
 
@@ -45,16 +45,6 @@ Good practice is to add just enough context to point the agent to the right code
 Attach files when the change is local and you already know the file to edit. Attach folders when the change spans multiple files in the same area.
 
 Prefer a small folder over the entire repository. Large context can make it harder for the agent to focus on the correct code.
-
-## Documentation
-
-Use documentation context when the agent needs to follow an external source of truth. A common use case is adding library documentation, for example, a framework API reference, so the agent can use the correct APIs and patterns.
-
-The fastest way to add documentation is directly from the Chat tool: type `@`, then in the Documentation section select Add Documentation and provide a name and a URL.
-
-After you add a source, you can reference it as task context with `@`.
-
-To view and manage the documentation sources available in the project, open the project tab in Settings and find Documentation.
 
 ## Git branches
 
@@ -86,7 +76,7 @@ The symbol list shows symbols only for the files that are currently opened in th
 
 Attach a terminal when the agent needs command output, logs, or an existing shell state. This is useful for debugging tasks where the evidence is in the console output.
 
-You can reference only terminals that are currently opened in JetBrains Air. If there are no opened terminals, terminal context is not available in the context list.
+You can reference only terminals that are currently opened in JetBrains Air.
 
 If the output is long, select the exact lines you care about in the Terminal and add them with Add to Task.
 

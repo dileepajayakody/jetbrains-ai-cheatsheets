@@ -1,6 +1,6 @@
 # Restrict or disable AI Assistant features
 
-Last modified: 14 October 2025
+Last modified: 14 July 2026
 
 You can restrict the use of AI Assistant if you do not want to share source code with third parties, or choose to disable it entirely.
 
@@ -14,11 +14,11 @@ You can disable AI Assistant for the project that is currently open in your IDE
 
 1.  Click the ! JetBrains AI widget located in the toolbar in the window header.
 
-    ![JetBrains AI settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub.png "JetBrains AI settings")
+    ![JetBrains AI settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub.png "JetBrains AI settings")
 
 2.  Hover over the Disable AI Assistant option and click Disable for This Project.
 
-    ![Disable for This Project](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_disable_for_project.png "Disable for This Project")
+    ![Disable for This Project](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_disable_for_project.png "Disable for This Project")
 
 The JetBrains AI widget icon will change, and a notification that AI features are disabled for the project will appear. This information will also be duplicated in the AI Chat.
 
@@ -30,11 +30,11 @@ To disable AI Assistant on the IDE level, you can disable the AI Assistant plu
 
 1.  Click the ! JetBrains AI widget located in the toolbar in the window header.
 
-    ![JetBrains AI settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub.png "JetBrains AI settings")
+    ![JetBrains AI settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub.png "JetBrains AI settings")
 
 2.  Hover over the Disable AI Assistant option and select the Disable Permanently via Plugin option.
 
-    ![Disable Permanently via Plugin](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_disable_permanently.png "Disable Permanently via Plugin")
+    ![Disable Permanently via Plugin](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_disable_permanently.png "Disable Permanently via Plugin")
 
 3.  On the plugin's description pane that opens, click Disable.
 
@@ -56,7 +56,7 @@ As an alternative to disabling AI Assistant, you can create a file that will re
 
 When this file is present, all AI Assistant features are fully disabled for the project. Even if this project is opened in another IDE, the AI Assistant features will not be available.
 
-![Project root contains a .noai file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_noai_file_warning.png "Project root contains a .noai file")
+![Project root contains a .noai file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_noai_file_warning.png "Project root contains a .noai file")
 
 > ### note
 >
@@ -84,7 +84,7 @@ You can restrict AI Assistant from processing specific files or folders by crea
 
 3.  Specify a pattern to exclude files and/or folders from processing by AI Assistant. The `.aiignore` file uses the same syntax as a [.gitignore](https://git-scm.com/docs/gitignore) file and provides a configuration template.
 
-    ![Add restricted files and folders to the .aiignore file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_aiignore_file_template.png "Add restricted files and folders to the .aiignore file")
+    ![Add restricted files and folders to the .aiignore file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_aiignore_file_template.png "Add restricted files and folders to the .aiignore file")
 
     The configured file might look like this:
 
@@ -119,7 +119,7 @@ You can restrict AI Assistant from processing specific files or folders by crea
 
 As a result, if you try to invoke any AI Assistant action in a restricted file, you will receive the following message:
 
-![AI Has No Access to This File warning](https://resources.jetbrains.com/help/img/idea/2026.1/ai_aiignore_warning_message.png "AI Has No Access to This File warning")
+![AI Has No Access to This File warning](https://resources.jetbrains.com/help/img/idea/2026.2/ai_aiignore_warning_message.png "AI Has No Access to This File warning")
 
 ### Disable AI Assistant on a network level
 
@@ -135,17 +135,17 @@ You can restrict access to AI Assistant by blocking the following [JetBrains AI
 
 Even if you do not have the AI Assistant plugin installed, you may still notice the ! AI Chat tool window offering to install the plugin, and the ! JetBrains AI widget in the toolbar in the window header.
 
-![AI Assistant installation tool window](https://resources.jetbrains.com/help/img/idea/2026.1/install_ai.png "AI Assistant installation tool window")
+![AI Assistant installation tool window](https://resources.jetbrains.com/help/img/idea/2026.2/install_ai.png "AI Assistant installation tool window")
 
 These items are not the AI Assistant plugin, and they have no access to your code. However, if you still wish to remove them, you can do so.
 
 To hide the AI Chat tool window, right-click the icon and select Hide:
 
-![Hiding the tool window](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hiding_ai_tool_window.png "Hiding the tool window")
+![Hiding the tool window](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hiding_ai_tool_window.png "Hiding the tool window")
 
 > ### tip
 >
-> If you later decide to restore the tool window, press ⇧Shift twice and search for the ! AI Assistant action.
+> If you later decide to restore the tool window, press Shift twice and search for the ! AI Assistant action.
 
 To hide the JetBrains AI widget:
 
@@ -153,7 +153,7 @@ To hide the JetBrains AI widget:
 
 2.  In the Customize Main Toolbar dialog, select the widget and click ! Remove.
 
-    ![Hiding the widget](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hiding_jetbrains_ai_widget.png "Hiding the widget")
+    ![Hiding the widget](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hiding_jetbrains_ai_widget.png "Hiding the widget")
 
 3.  Click Apply to save the changes.
 
@@ -167,15 +167,3 @@ To hide the JetBrains AI widget:
 >
 > 3.  Search for the `AIAssistantHubPopupAction` action, select it, and click OK.
 >
-
-### Disable AI Assistant in terminal
-
-When used in the New Terminal (an experimental terminal engine available in IDEs of version 2024.\*, deprecated in later versions), AI Assistant can recognize natural language and convert it into corresponding terminal commands.
-
-However, some terminal commands may resemble natural language queries, which can cause AI Assistant to interpret them as part of your prompt rather than actual commands. To disable this behavior:
-
-1.  Click ![Options](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.moreVertical.svg "Options") in the tool window header.
-
-2.  Clear the Detect Natural Language option.
-
-For additional information, refer to [Generate terminal commands](generate-terminal-commands.html).

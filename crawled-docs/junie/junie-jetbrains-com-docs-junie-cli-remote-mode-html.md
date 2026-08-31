@@ -1,6 +1,6 @@
 # Remote mode
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Slash command to switch to Remote mode:
 

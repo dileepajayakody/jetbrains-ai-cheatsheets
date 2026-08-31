@@ -1,36 +1,55 @@
 # JetBrains AI plans and usage
 
-Last modified: 22 April 2026
+Last modified: 22 July 2026
 
-The [JetBrains AI service](https://www.jetbrains.com/help/ai/jetbrains-ai.html) connects you, as a product user, to various large language models ([LLMs](https://en.wikipedia.org/wiki/Large_language_model)) and enables AI-powered features in JetBrains products.
+AI Assistant is a collection of specific features that become available to users through access to the [JetBrains AI service](https://www.jetbrains.com/help/ai/jetbrains-ai.html). This service connects you, as a product user, to various large language models ([LLMs](https://en.wikipedia.org/wiki/Large_language_model)) and enables AI-powered features in JetBrains products.
+
+To access the JetBrains AI service, you usually need a JetBrains AI subscription. To start a free trial or activate a subscription, refer to [Use JetBrains AI subscription](jetbrains-ai-subscription.html). This article describes the available license tiers, their price, and usage volume for individual and organizational users.
 
 > ### tip
 >
-> Availability limitations
+> Notes
 >
-> Due to the restrictions imposed by providers of the AI models connected to JetBrains AI, such as OpenAI, Google, and Anthropic, usage of JetBrains AI service is restricted to the [allowed territories](https://www.jetbrains.com/legal/docs/terms/jetbrains-ai/service-territory).
-
-## Available license tiers
-
-JetBrains AI offers several license tiers – **AI Free**\[1\], **AI Pro**, **AI Ultimate**\[1\], and **AI Enterprise**\[1\].
-
-The difference between license tiers lies in the quota size. Quota (also referred to as cloud quota or monthly quota) is a resource that regulates access to AI-powered features. Each month, you receive a certain number of AI Credits, which represent your quota. These credits are consumed when you use AI features that rely on cloud models.
+> -   AI Assistant provides other ways to [activate AI-powered features](activation-scenarios.html). However, using the JetBrains AI service subscription ensures that all features are available and work as expected.
+>
+> -   In organizations that have been migrated to [JetBrains Central](https://console.jetbrains.cloud/), you do not need a separate JetBrains AI subscription. Instead, an administrator grants you AI access, and your usage draws from a pool of resources shared across the whole organization. For details, refer to the **Organizations (JetBrains Central)** tab in [Available license tiers](/help/ai-assistant/licensing-and-subscriptions.html#ai-assistant-license-tiers).
+>
 
 > ### note
 >
-> \[1\]The **AI Free** and **AI Ultimate** tiers are available in most JetBrains IDEs starting from version **2025.1**, though some [restrictions](/help/ai-assistant/licensing-and-subscriptions.html#license-tiers-availability) may apply. The **AI Enterprise** license tier provides additional custom features and is available only as a part of [JetBrains IDE services](https://www.jetbrains.com/ide-services/ai-enterprise/).
+> Availability limitations
+>
+> Due to the restrictions imposed by providers of the AI models connected to JetBrains AI, such as OpenAI, Google, and Anthropic, usage of the JetBrains AI service is restricted to the [allowed territories](https://www.jetbrains.com/legal/docs/terms/jetbrains-ai/service-territory).
 
-The size of the quota depends on your subscription plan – higher tiers offer more AI Credits, providing additional resources for using AI features.
+## Available license tiers
+
+JetBrains AI offers several license tiers – **AI Free**\[1\], **AI Pro**, **AI Ultimate**\[1\], and **AI Enterprise**:
+
+-   The **AI Free**, **AI Pro**, and **AI Ultimate** license tiers are available for both individual users and organizations.
+
+-   The **AI Enterprise** license tier is available only to organizations as a part of [JetBrains IDE services](https://www.jetbrains.com/ide-services/ai-enterprise/).
+
+> ### tip
+>
+> There is also an **AI Trial** license tier intended for evaluation and available to both individual and organizational users.
+
+> ### note
+>
+> \[1\]The **AI Free** and **AI Ultimate** tiers are available in most JetBrains IDEs starting from version **2025.1**, though some [restrictions](/help/ai-assistant/licensing-and-subscriptions.html#license-tiers-availability) may apply.
+
+Each license provides a quota – a resource that regulates access to AI-powered features. It is represented by AI Credits, which are consumed when you use AI features that rely on cloud models.
 
 Individual use
 
-Organizations
+Organizations (per-user)
+
+Organizations (JetBrains Central)
 
 License tier
 
 Price
 
-Dedicated quota
+AI Credits
 
 Ability to top up AI Credits
 
@@ -40,7 +59,7 @@ Free
 
 **10** AI Credits per **trial period**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
 
 AI Free
 
@@ -48,7 +67,7 @@ Free
 
 **3** AI Credits per **30-days**
 
-![Feature is not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Feature is not available")
+![Feature is not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Feature is not available")
 
 AI Pro
 
@@ -56,7 +75,7 @@ $10 USD
 
 **10** AI Credits per **30-days**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
 
 AI Ultimate
 
@@ -64,15 +83,19 @@ $30 USD
 
 **35** AI Credits per **30-days**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
 
 \>
+
+The number of AI Credits included in your plan corresponds to its subscription price, with a small bonus for the **AI Ultimate** license tier. Each AI Credit equals **$1 USD** charged in your local currency.
+
+If you run out of AI Credits included in your subscription, you can [top up](/help/ai-assistant/licensing-and-subscriptions.html#manage-top-up-ai-credits) your balance to continue using AI features. These Top-up AI Credits are valid for **12 months** and remain available until they are used or expire.
 
 License tier
 
 Price
 
-Dedicated quota
+AI Credits
 
 Ability to top up AI Credits
 
@@ -82,7 +105,15 @@ Free
 
 **20** AI Credits per **trial period**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
+
+AI Free
+
+Free
+
+**3** AI Credits per **30-days**
+
+![Feature is not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Feature is not available")
 
 AI Pro
 
@@ -90,7 +121,7 @@ $20 USD
 
 **20** AI Credits per **30-days**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
 
 AI Ultimate
 
@@ -98,7 +129,7 @@ $60 USD
 
 **70** AI Credits per **30-days**
 
-![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Feature is available")
+![Feature is available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Feature is available")
 
 AI Enterprise
 
@@ -106,7 +137,7 @@ $60 USD
 
 On par with **AI Ultimate** quota, or higher\[2\]
 
-![Feature is not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Feature is not available")\[3\]
+![Feature is not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Feature is not available")\[3\]
 
 \>
 
@@ -122,23 +153,43 @@ The number of AI Credits included in your plan corresponds to its subscription p
 
 If you run out of AI Credits included in your subscription, you can [top up](/help/ai-assistant/licensing-and-subscriptions.html#manage-top-up-ai-credits) your balance to continue using AI features. These Top-up AI Credits are valid for **12 months** and remain available until they are used or expire.
 
-The chart below summarizes the key aspects of quota allocation and consumption:
+Organizations are being migrated to [JetBrains Central](https://console.jetbrains.cloud/) gradually. In an organization that uses it, AI access isn't tied to individual licenses: an administrator grants or revokes AI access independent of licenses and controls how many AI Credits you can use through a default limit for everyone, with optional per-user limits.
 
-Each license tier comes with a dedicated monthly quota measured in AI Credits
+The AI Credits included in the organization's licenses aren't assigned to individual users. Instead, they're added to a single pool shared across the whole organization, and purchased Top-up AI Credits join the same pool. Pooled AI Credits accumulate monthly. Purchased Top-up AI Credits expire one year after being added to the pool, while AI Credits converted into the pool from a license expire at the end of the month when that license expires. This differs from the per-user model, where each user's monthly quota expires when the subscription is renewed.
 
-Dedicated monthly quota gets exhausted
+Each license that includes AI resources contributes a fixed number of monthly AI Credits to the pool. This includes dedicated AI license tiers as well as IDE licenses that bundle AI resources:
 
-Cloud-based features become unavailable
+License
 
-Wait until the quota is renewed
+AI Credits per month
 
-If Top-up AI Credits are available, AI Assistant switches to them
+AI Ultimate
 
-Continue using cloud-based features
+**70**
+
+AI Pro
+
+**20**
+
+All Products Pack
+
+**20**
+
+dotUltimate
+
+**20**
+
+AI Free
+
+**3**
 
 > ### tip
 >
-> You can find detailed information about features, subscription plans, and pricing on the [AI in IDEs](https://www.jetbrains.com/ai-ides/buy) webpage. If you have not found the information you are looking for, please visit our [FAQ](https://lp.jetbrains.com/ai-ides-faq/).
+> For more details on how existing quotas are aggregated into the shared pool, refer to [JetBrains Central Console](https://www.jetbrains.com/help/jetbrains-console/eap/migrating-from-licenses-to-ai-seats.html#migrating_ai_credits) documentation.
+
+> ### tip
+>
+> License tiers differ mostly in the size of the quota they provide. For a detailed comparison of what each tier includes, refer to the [JetBrains AI pricing](https://www.jetbrains.com/ai-ides/buy/?section=personal&billing=yearly) page. If you have not found the information you are looking for, please visit our [FAQ](https://lp.jetbrains.com/ai-ides-faq/).
 
 ### License tiers availability
 
@@ -154,33 +205,33 @@ AI Enterprise
 
 IDE versions 2025.1 and later
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
 IDE versions from 2024.2.1 up to 2025.1
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")\[4\]
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")\[4\]
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
 IDE versions prior to 2024.2.1
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
-![Not available](https://resources.jetbrains.com/help/img/idea/2026.1/cross.svg "Not available")
+![Not available](https://resources.jetbrains.com/help/img/idea/2026.2/cross.svg "Not available")
 
-![Available](https://resources.jetbrains.com/help/img/idea/2026.1/check.svg "Available")
+![Available](https://resources.jetbrains.com/help/img/idea/2026.2/check.svg "Available")
 
 \>
 
@@ -196,7 +247,7 @@ In addition, these license tiers have other limitations:
 
 -   The **AI Free** license tier is not automatically included in any IDE trial license.
 
--   The **AI Pro** license tier provided for free with the [All Products Pack](https://www.jetbrains.com/all/) or [dotUltimate](https://www.jetbrains.com/dotnet/) subscription, as well as the **AI Free** license tier, cannot be activated if the IDE license is obtained via the [License Server](https://www.jetbrains.com/help/license_server/getting_started.html).
+-   The **AI Pro** license tier provided for free with the [All Products Pack](https://www.jetbrains.com/all/) or [dotUltimate](https://www.jetbrains.com/dotnet/) subscription, as well as the **AI Free** license tier, cannot be activated if the IDE license is obtained through the [License Server](https://www.jetbrains.com/help/license_server/getting_started.html).
 
 -   The **AI Pro** license tier is provided for free with **DataSpell**.
 
@@ -212,15 +263,15 @@ If you have multiple JetBrains AI licenses, you can manage them in the ! AI Chat
 
 1.  In the AI Chat tool window, click the ! Options button.
 
-    ![AI Chat options](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_options_button.png "AI Chat options")
+    ![AI Chat options](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_options_button.png "AI Chat options")
 
 2.  Select the Manage License option from the list.
 
-    ![the Manage License option](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_manage_license.png "the Manage License option")
+    ![the Manage License option](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_manage_license.png "the Manage License option")
 
     This opens a License pane where you can review the license details:
 
-    ![License details](https://resources.jetbrains.com/help/img/idea/2026.1/ai_list_of_licenses.png "License details")
+    ![License details](https://resources.jetbrains.com/help/img/idea/2026.2/ai_list_of_licenses.png "License details")
 
     -   If you have multiple licenses, you can choose the one you want to use by selecting it from the list and clicking Activate.
 
@@ -234,17 +285,15 @@ If you need to log out of JetBrains AI, you can do so in the settings.
 
 2.  In the JetBrains AI section, click Log out.
 
-    [![AI Assistant providers and API keys settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_models.png "AI Assistant providers and API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_models.png)
+    [![AI Assistant providers and API keys settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png "AI Assistant providers and API keys settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_models.png)
 
 After that, you can configure [other](activation-scenarios.html) authentication options to keep using AI Assistant.
 
-If you want to sign in again using your JetBrains AI service subscription, refer to the [Enable JetBrains AI alongside custom models](use-custom-models.html#enable-jb-ai) section.
+If you want to log in again using your JetBrains AI service subscription, refer to the [Enable JetBrains AI alongside custom models](use-custom-models.html#enable-jb-ai) section.
 
 ## Add and manage Top-up AI Credits
 
-Top-up AI Credits are additional AI Credits that you can purchase to continue using AI features after the quota included in your license tier is exhausted. Once purchased, these credits are automatically added to your balance and consumed the same way as your regular quota.
-
-You can purchase and manage Top-up AI Credits through the ! JetBrains AI widget in your IDE or in [JetBrains Account](https://account.jetbrains.com/licenses) settings.
+Top-up AI Credits are additional AI Credits that you can purchase to continue using AI features after the quota included in your license tier is exhausted. Once purchased, these credits are automatically added to your balance and consumed the same way as your regular quota. You can purchase and manage them through the ! JetBrains AI widget in your IDE or in [JetBrains Account](https://account.jetbrains.com/licenses) settings.
 
 ### Using the JetBrains AI widget
 
@@ -258,11 +307,11 @@ The ! JetBrains AI widget located in the window header toolbar lets you quickly 
 
 1.  Click Buy near the **top-up credits** counter.
 
-    ![Track Top-up AI Credits usage](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_top_up_credits_counter.png "Track Top-up AI Credits usage")
+    ![Buy Top-up AI Credits](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_top_up_credits_counter.png "Buy Top-up AI Credits")
 
 2.  On the **eStore Order Checkout** page, specify the number of Top-up AI Credits you want to purchase.
 
-    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png)
+    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png)
 
 3.  Provide any other required information and submit your order.
 
@@ -270,19 +319,15 @@ The ! JetBrains AI widget located in the window header toolbar lets you quickly 
 
 The **top-up credits** counter shows how many Top-up AI Credits you currently have, with an option to [add](/help/ai-assistant/licensing-and-subscriptions.html#add-top-up-ai-credits-using-widget) more, if needed.
 
-![Track Top-up AI Credits usage](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_top_up_credits_counter.png "Track Top-up AI Credits usage")
-
-> ### note
->
-> If you are using an account provided by your organization, the counter shows the number of **shared top-up credits** – Top-up AI Credits that come from a single pool shared by all members of your organization.
->
-> ![Shared Top-up AI Credits](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_quota_top_up_credits_counter_org.png "Shared Top-up AI Credits")
->
-> The amount available to you is set by your administrator, but the actual number may be lower if your team has already used some credits.
+![Track Top-up AI Credits usage](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_top_up_credits_counter.png "Track Top-up AI Credits usage")
 
 ### Using JetBrains Account
 
 You can purchase [Top-up AI Credits](/help/ai-assistant/licensing-and-subscriptions.html#quota-faq) and view usage information in your JetBrains Account settings.
+
+> ### note
+>
+> If your organization has been migrated to the [shared credit pool model](/help/ai-assistant/licensing-and-subscriptions.html#organizations-jb-central), manage AI Credits in [JetBrains Central Console](/help/ai-assistant/licensing-and-subscriptions.html#manage-ai-central-console) instead.
 
 Individual use
 
@@ -296,7 +341,7 @@ Organizations
 
 3.  In the Top-up AI Credits for personal use card, click the Add AI Credits button.
 
-    [![Add AI Credits](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_extra_ai_credits_for_individual.png "Add AI Credits")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_extra_ai_credits_for_individual.png)
+    [![Add AI Credits](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_extra_ai_credits_for_individual.png "Add AI Credits")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_extra_ai_credits_for_individual.png)
 
     > ### note
     >
@@ -306,7 +351,7 @@ Organizations
 
 5.  On the **eStore Order Checkout** page, specify the number of Top-up AI Credits you want to purchase.
 
-    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png)
+    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png)
 
 6.  Provide any other required information and submit your order.
 
@@ -318,7 +363,7 @@ Organizations
 
 3.  Review the Top-up AI Credits for personal use and Top-up AI Credits for work cards. The upper card displays your personal AI Credits, while the lower one displays AI Credits assigned to you by your organization.
 
-    ![Review Top-up AI Credits balance](https://resources.jetbrains.com/help/img/idea/2026.1/ai_reviewing_extra_ai_credits_balance_individual.png "Review Top-up AI Credits balance")
+    ![Review Top-up AI Credits balance](https://resources.jetbrains.com/help/img/idea/2026.2/ai_reviewing_extra_ai_credits_balance_individual.png "Review Top-up AI Credits balance")
 
     > ### note
     >
@@ -345,7 +390,7 @@ Organizations
 
 4.  In the Top-up AI Credits for your organization card, click the Add AI Credits button.
 
-    [![Add AI Credits](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_extra_ai_credits_for_org.png "Add AI Credits")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_extra_ai_credits_for_org.png)
+    [![Add AI Credits](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_extra_ai_credits_for_org.png "Add AI Credits")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_extra_ai_credits_for_org.png)
 
     > ### note
     >
@@ -355,7 +400,7 @@ Organizations
 
 6.  On the **eStore Order Checkout** page, specify the number of Top-up AI Credits you want to purchase.
 
-    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_credits_checkout.png)
+    [![eStore Order Checkout](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png "eStore Order Checkout")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_credits_checkout.png)
 
 7.  Provide any other required information and submit your order.
 
@@ -369,7 +414,7 @@ Organizations
 
 4.  In the Monthly limit for top-up AI Credits card, specify how many Top-up AI Credits can be used in a month per subscription.
 
-    ![Set a monthly limit](https://resources.jetbrains.com/help/img/idea/2026.1/ai_extra_ai_credits_monthly_limit.png "Set a monthly limit")
+    ![Set a monthly limit](https://resources.jetbrains.com/help/img/idea/2026.2/ai_extra_ai_credits_monthly_limit.png "Set a monthly limit")
 
 5.  Click Save to apply the changes.
 
@@ -383,7 +428,7 @@ Organizations
 
 4.  Review the Top-up AI Credits for your organization card. It displays the number of Top-up AI Credits available to your organization.
 
-    ![Review Top-up AI Credits balance](https://resources.jetbrains.com/help/img/idea/2026.1/ai_reviewing_extra_ai_credits_balance_org.png "Review Top-up AI Credits balance")
+    ![Review Top-up AI Credits balance](https://resources.jetbrains.com/help/img/idea/2026.2/ai_reviewing_extra_ai_credits_balance_org.png "Review Top-up AI Credits balance")
 
     > ### note
     >
@@ -396,13 +441,29 @@ Organizations
     >
     > This implementation is temporary and will be improved in the future.
 
+JetBrains Central
+
+### Using JetBrains Central Console
+
+Organizations that have been migrated to the [shared credit pool model](/help/ai-assistant/licensing-and-subscriptions.html#organizations-jb-central) manage AI Credits in [JetBrains Central Console](https://console.jetbrains.cloud/).
+
+![Shared credit pool](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_quota_shared_pool.png "Shared credit pool")
+
+For instructions, refer to the JetBrains Central Console documentation:
+
+-   [Manage AI access](https://www.jetbrains.com/help/jetbrains-console/eap/ai-access.html) – grant or revoke AI access to users.
+
+-   [Manage AI Credits](https://www.jetbrains.com/help/jetbrains-console/eap/ai-settings.html#manage_ai_credits) – add AI Credits, set limits, and configure an auto-purchase schedule for your organization.
+
+-   [Monitor AI Credits usage](https://www.jetbrains.com/help/jetbrains-console/eap/ai-credits-consumption.html) – track how AI Credits are consumed across your organization.
+
 ### Review Top-up AI Credits usage report
 
 At the beginning of each month, you receive a report with details of your Top-up AI Credits usage for the previous month. The report is sent to the email address associated with your [JetBrains Account](https://account.jetbrains.com/licenses).
 
 The report provides various details, but the following fields are the most important for interpreting your Top-up AI Credits usage:
 
-[![Credits usage report](https://resources.jetbrains.com/help/img/idea/2026.1/ai_credits_usage_report.png "Credits usage report")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_credits_usage_report.png)
+[![Credits usage report](https://resources.jetbrains.com/help/img/idea/2026.2/ai_credits_usage_report.png "Credits usage report")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_credits_usage_report.png)
 
 -   **Period** – the date range covered by the report.
 
@@ -422,7 +483,7 @@ The number of AI Credits available to you matches the [price](https://www.jetbra
 
 How much usage do I get from one AI Credit?
 
-One AI Credit roughly gives you:
+One AI Credit gives you about:
 
 -   **~10** requests to [generate](ai-chat.html) code in AI Chat.
 
@@ -450,7 +511,7 @@ How can I track my quota usage?
 
 Quota usage can be tracked in the ! JetBrains AI widget located in the toolbar in the window header:
 
-![Monthly credits counter](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_quota_counter.png "Monthly credits counter")
+![Credits counter](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_top_up_credits_counter.png "Credits counter")
 
 The **monthly credits left** counter shows how many AI Credits you have left out of your [subscription quota](/help/ai-assistant/licensing-and-subscriptions.html#ai-quota). The progress bar reflects overall usage and decreases as you use cloud-based features. The date under the progress bar indicates when the monthly quota resets.
 
@@ -474,7 +535,7 @@ Several factors can increase quota consumption:
 
 -   **Long chat threads:** Using a single chat instance for multiple topics causes context to grow exponentially, increasing token consumption and quickly using up your quota.
 
--   **Expensive models:** Models with higher token costs ([marked](chat-mode.html#select-a-model) with the ![High cost model](https://resources.jetbrains.com/help/img/idea/2026.1/ruby.svg "High cost model") icon) consume quota faster.
+-   **Expensive models:** Models with higher token costs ([marked](chat-mode.html#select-a-model) with the ![High cost model](https://resources.jetbrains.com/help/img/idea/2026.2/ruby.svg "High cost model") icon) consume quota faster.
 
 -   **Agent mode:** Extensive use of the [agent mode](ai-chat.html#agent-mode) leads to higher quota consumption.
 
@@ -500,17 +561,7 @@ Where can I track the usage of Top-up AI Credits?
 
 Top-up AI Credits can be tracked in the ! JetBrains AI widget located in the toolbar in the window header:
 
-![Track Top-up AI Credits usage](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_top_up_credits_counter.png "Track Top-up AI Credits usage")
-
-The **top-up credits** counter shows how many Top-up AI Credits you currently have, with an option to [add](/help/ai-assistant/licensing-and-subscriptions.html#add-top-up-ai-credits-using-widget) more, if needed.
-
-> ### note
->
-> If you are using an account provided by your organization, the counter shows the number of **shared top-up credits** – Top-up AI Credits that come from a single pool shared by all members of your organization.
->
-> ![Shared Top-up AI Credits](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_quota_top_up_credits_counter_org.png "Shared Top-up AI Credits")
->
-> The amount available to you is set by your administrator, but the actual number may be lower if your team has already used some credits.
+![Track Top-up AI Credits usage](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_top_up_credits_counter.png "Track Top-up AI Credits usage")
 
 As an alternative, you can also track Top-up AI Credits in the [settings](/help/ai-assistant/licensing-and-subscriptions.html#manage-top-up-ai-credits) of your [JetBrains Account](https://account.jetbrains.com/licenses).
 

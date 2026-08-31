@@ -4,7 +4,7 @@
 
 # Bring your own key (BYOK)
 
-Last modified: 11 June 2026
+Last modified: 04 August 2026
 
 The instructions provided on this page apply when no authentication method is configured in AI Assistant.
 
@@ -18,9 +18,9 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
 1.  Open the ! AI Chat tool window.
 
-2.  Click Bring your own API key.
+2.  Click OpenAI-compatible, LM Studio, Ollama.
 
-    ![Bring your own API key](https://resources.jetbrains.com/help/img/idea/2026.1/ai_bring_your_own_key.png "Bring your own API key")
+    ![Bring your own API key](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bring_your_own_key.png "Bring your own API key")
 
 3.  In the Provider field, select the AI provider that you want to use.
 
@@ -32,9 +32,9 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
     OpenAI-compatible
 
-    Ollama, LMStudio
+    Ollama, LM Studio
 
-    ![Specify an API key](https://resources.jetbrains.com/help/img/idea/2026.1/ai_provide_api_key_on_starting_screen.png "Specify an API key")
+    ![Specify an API key](https://resources.jetbrains.com/help/img/idea/2026.2/ai_provide_api_key_on_starting_screen.png "Specify an API key")
 
     -   Enter your Key and click Continue.
 
@@ -42,13 +42,13 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
         -   Express – authenticate using a Vertex AI [express mode](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview) API key.
 
-            ![Google Vertex AI – Express](https://resources.jetbrains.com/help/img/idea/2026.1/ai_vertex_ai_express_on_starting_screen.png "Google Vertex AI – Express")
+            ![Google Vertex AI – Express](https://resources.jetbrains.com/help/img/idea/2026.2/ai_vertex_ai_express_on_starting_screen.png "Google Vertex AI – Express")
 
         -   ADC (Application Default Credentials) – a Google Cloud authentication mechanism that uses credentials configured in your environment (for example, from your local Google Cloud setup or a service account) to authorize requests.
 
             This method requires specifying the Project ID and Location parameters.
 
-            ![Google Vertex AI – ADC](https://resources.jetbrains.com/help/img/idea/2026.1/ai_vertex_ai_adc_on_starting_screen.png "Google Vertex AI – ADC")
+            ![Google Vertex AI – ADC](https://resources.jetbrains.com/help/img/idea/2026.2/ai_vertex_ai_adc_on_starting_screen.png "Google Vertex AI – ADC")
 
             > ### tip
             >
@@ -56,7 +56,7 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
     2.  Click Continue.
 
-    ![Specify OpenAI-compatible provider's settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_openai_compatible_providers_on_starting_screen.png "Specify OpenAI-compatible provider's settings")
+    ![Specify OpenAI-compatible provider's settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_openai_compatible_providers_on_starting_screen.png "Specify OpenAI-compatible provider's settings")
 
     1.  Specify the Base URL of the provider's API endpoint.
 
@@ -66,7 +66,7 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
     4.  Click Continue.
 
-    ![Specify local provider's settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_local_providers_on_starting_screen.png "Specify local provider's settings")
+    ![Specify local provider's settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_local_providers_on_starting_screen.png "Specify local provider's settings")
 
     1.  Specify the Base URL of the provider's local instance.
 
@@ -76,7 +76,7 @@ You can enter your API key after [installing](installation-guide-ai-assistant.ht
 
 After completing these steps, you can start using AI Assistant with the selected AI provider. To verify that the selected provider is active, click the ! JetBrains AI widget in the window header toolbar.
 
-![Third-party provider in JetBrains AI widget](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_third_party_provider.png "Third-party provider in JetBrains AI widget")
+![Third-party provider in JetBrains AI widget](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_third_party_provider.png "Third-party provider in JetBrains AI widget")
 
 > ### tip
 >

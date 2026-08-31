@@ -4,17 +4,23 @@
 
 # Quickstart with Air
 
-Last modified: 17 June 2026
+Last modified: 20 August 2026
 
 JetBrains Air is an Agentic Development Environment where you delegate coding tasks to [AI agents](supported-agents.html) and stay in control of the workflow. In this quickstart, you install JetBrains Air, sign in to an agent provider, open a project, run your first task, and review the result.
 
 ## 1\. Install Air
 
--   **macOS**: Download JetBrains Air for macOS from the [official page at air.dev](https://air.dev/)
+-   **macOS** – download JetBrains Air for macOS from the [official page at air.dev](https://air.dev/) or install it through [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/)
 
--   **Linux**: Install JetBrains Air for Linux through [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/)
+-   **Linux** – run the install script:
 
--   **Windows**: Support for Windows is planned for 2026
+    ```
+    curl -fsSL https://jb.gg/air-install.sh | sh
+    ```
+
+    You can also install JetBrains Air for Linux through [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/)
+
+-   **Windows** – install JetBrains Air for Windows through [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/)
 
 ## 2\. Sign in to an agent provider
 
@@ -22,21 +28,25 @@ To run tasks, JetBrains Air needs at least one connected agent provider. On the 
 
 -   If you have a JetBrains AI subscription, connect JetBrains AI. It works as a universal provider and gives you access to Claude Agent, OpenAI Codex, Gemini CLI, and Junie under a single subscription.
 
--   If you prefer to use a specific provider account – Anthropic, OpenAI, or Google – sign in to that account directly. You can also bring your own API key (BYOK).
+-   If you prefer to use a specific provider account – Anthropic, OpenAI, or Google – sign in to that account directly with a subscription you already pay for, such as Claude Pro, Max, or Team. You can also bring your own API key (BYOK).
 
 ![The first-launch sign-in screen of JetBrains Air](https://resources.jetbrains.com/help/img/air/aird_login.png "The first-launch sign-in screen of JetBrains Air")
+
+> ### note
+>
+> If you plan to use ACP-compatible agents only, you can skip this step and [add your own agent](select-agents-and-models.html#add-acp-agent) later.
 
 To connect additional providers later, open Settings | Account | AI Providers. For details, see [Set up Air](set-up.html).
 
 ## 3\. Open a project
 
-After you sign in, open the project you want to work on. In JetBrains Air, each project opens as a workspace that groups the agent sessions, Git state, and tools for that project in one place.
+After you sign in, open the project you want to work on – the folder that holds your code. Opening it creates a workspace around the project: the container that keeps its agent sessions, Git state, and tools together. Workspaces share one window, so you can open as many projects as you need and switch between them in the Tasks tool.
 
 ### Open a project
 
--   To open a local project, click Open and select the project folder on your computer.
+-   To open a local project, select File | Open and select the project folder on your computer.
 
--   To clone a project from Git, click Clone from Git, enter the repository URL in the Source URL field, and choose a location on your computer.
+-   To clone a project from Git, select Git | Clone, enter the repository URL in the Source URL field, and choose a location on your computer.
 
 When the workspace opens, JetBrains Air asks whether you trust the code in the folder. Click Trust only if you trust the authors of the project – opening the project may run scripts or import code, which can execute anything in the project. If you want to look around first, click Preview: JetBrains Air functionality will be limited but safer.
 
@@ -86,23 +96,27 @@ In JetBrains Air, you work with the agent through the Chat tool. You describe th
 
 4.  Send the task.
 
-    Press ↩Enter or click Send. The agent works on the task while you keep editing or start another task in parallel.
+    Press Enter or click Send. The agent works on the task while you keep editing or start another task in parallel.
 
     Learn more about running and managing tasks in [Run tasks](run-tasks.html).
 
 ## 5\. Review the changes
 
-When the task is done, JetBrains Air shows the Changes button in the Chat tool. Click it to open the diff in the Task Changes tab and decide what to do next.
+When the task is done, the Chat tool shows how many lines the task added and deleted, for example, +512 -4. Click the statistics to open the diff in the Task Changes tab and decide what to do next.
 
-![The Task Changes tab in the Chat tool after a task is finished](https://resources.jetbrains.com/help/img/air/review-changes.png "The Task Changes tab in the Chat tool after a task is finished")
+![The change statistics and the Review with Codex button in the Chat tool after a task is finished](https://resources.jetbrains.com/help/img/air/air-review-with-agent-button.png "The change statistics and the Review with Codex button in the Chat tool after a task is finished")
 
 ### Review with an agent
 
-For a fast first pass, use Review with Agent. JetBrains Air runs a separate review task with a fresh agent session that checks the diff against your review focus areas and leaves comments on specific lines. Accept the comments you agree with and send them back to the main task – the main agent uses them as follow-up instructions and updates the code.
+For a fast first pass, use Review with <agent>. JetBrains Air runs a separate review task with a fresh agent session that checks the diff against your review focus areas and leaves comments on specific lines. Accept the comments you agree with and send them back to the main task – the main agent uses them as follow-up instructions and updates the code.
 
 ![Review with Agent](https://resources.jetbrains.com/help/img/air/agentic-review-comments.png "Review with Agent")
 
-For the full workflow, including how to review another scope or change the review agent and prompt, see [Review with agent](agentic-review.html).
+To review with another agent, click the arrow next to the button and select the agent and model you want – a second opinion from a different agent often catches what the agent that wrote the code missed.
+
+![The review menu with the list of agents, their models, the Add Agents action, and the Edit Review Prompt action](https://resources.jetbrains.com/help/img/air/air-review-with-agent-menu.png "The review menu with the list of agents, their models, the Add Agents action, and the Edit Review Prompt action")
+
+For the full workflow, including how to review another scope or change the review prompt, see [Review with agent](agentic-review.html).
 
 ### Review the diff yourself
 
@@ -136,7 +150,7 @@ If you ran the task in Git Worktree or Docker, the agent worked outside your loc
 
 -   Click Apply Locally to copy the changes into your current working copy as uncommitted changes. Then commit and push as usual.
 
--   From the Apply Locally drop-down, select Checkout Branch Locally to check out the task branch in your working copy. Push the branch or open a pull request as usual.
+-   From the Apply Locally drop-down, select Check Out Branch Locally to check out the task branch in your working copy. Push the branch or open a pull request as usual.
 
 ![The Apply Locally control in the Task Changes tab](https://resources.jetbrains.com/help/img/air/review-diff-apply-changes.png "The Apply Locally control in the Task Changes tab")
 

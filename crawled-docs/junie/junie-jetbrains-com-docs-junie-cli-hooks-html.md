@@ -6,7 +6,7 @@ Nightly
 
 # Hooks
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Hooks let you run shell commands automatically at well-defined points in a Junie CLI session. Use them to launch a local proxy and refresh credentials at the start (`SessionStart`), validate or enrich a prompt before it is sent (`UserPromptSubmit`), inspect or block a tool call before it runs (`PreToolUse`), gate task completion behind tests or other checks (`Stop`), alert / page / clean up when the agent loop ends due to an LLM/API error (`StopFailure`), or to flush logs and clean up resources when a session ends (`SessionEnd`), or automatically allow or deny sensitive action permission requests without manual confirmation (`PermissionRequest`).
 
@@ -337,16 +337,18 @@ You can scope a hook to a specific source or reason using `matcher`. For example
 
 ## Hook input
 
-Each hook receives a single line of JSON on standard input:
+Each hook receives a single line of JSON on standard input. The examples below list the event-specific fields; they are illustrative rather than an exhaustive contract, and more fields may be present.
 
 ```
-{"hook_event_name":"SessionStart","source":"startup"}
+{"hook_event_name":"SessionStart","session_id":"…","cwd":"/path/to/working/dir","project_path":"/path/to/project","source":"startup"}
 ```
 
-For `UserPromptSubmit`, the payload carries the prompt text:
+`SessionStart` and `UserPromptSubmit` payloads also carry `cwd`, plus `session_id` and `project_path` when the session provides them.
+
+For `UserPromptSubmit`, the payload carries the prompt text alongside the same session fields:
 
 ```
-{"hook_event_name":"UserPromptSubmit","prompt":"…"}
+{"hook_event_name":"UserPromptSubmit","session_id":"…","cwd":"/path/to/working/dir","project_path":"/path/to/project","prompt":"…"}
 ```
 
 For `PreToolUse`, the payload carries the tool name and its full input:
@@ -372,10 +374,10 @@ For `Stop`, the payload carries the agent's submission text and a retry flag:
 For `PermissionRequest`, the payload describes the action that triggered the permission dialog:
 
 ```
-{"hook_event_name":"PermissionRequest","tool_name":"Bash","tool_input":{}}
+{"hook_event_name":"PermissionRequest","tool_name":"Bash","tool_input":{},"permission_reason":"…"}
 ```
 
-`tool_name` is the tool category (`Bash`, `Edit`, `Read`, or an MCP tool name). `tool_input` contains the full serialized action.
+`tool_name` is the tool category (`Bash`, `Edit`, `Read`, or an MCP tool name). `tool_input` contains the full serialized action, and `permission_reason` explains why the permission dialog was raised.
 
 For `StopFailure`, the payload carries the matched error class and the underlying failure description:
 
@@ -465,17 +467,51 @@ A `Stop` hook can request a hard halt (no retry, the task ends with a failure ex
 
 A `Stop` hook can send messages on a successful exit through two distinct JSON fields:
 
--   `{"hookSpecificOutput":{"additionalContext":"…"}}` (or a top-level `additionalContext`) — agent-facing payload. Always shown in the TUI as `Stop hook context: …`. It is also delivered to the agent as observer-message feedback in three cases: a `block` (retry), a `continue: false` hard-halt, and on a plain successful exit — in the latter case the conversation continues as non-error feedback (Claude parity). When the hook only emits `additionalContext` without `decision: block`, the agent runs one extra step with the context attached and then submits. The shared `JUNIE_STOP_HOOK_BLOCK_CAP` counter bounds runaway continuations the same way it bounds blocks.
+-   `{"hookSpecificOutput":{"additionalContext":"…"}}` (or a top-level `additionalContext`) — agent-facing payload, not shown in the TUI. Delivered to the agent as observer-message feedback in three cases: a `block` (retry), a `continue: false` hard-halt, and on a plain successful exit — in the latter case the conversation continues as non-error feedback (Claude parity). When the hook only emits `additionalContext` without `decision: block`, the agent runs one extra step with the context attached and then submits. The shared `JUNIE_STOP_HOOK_BLOCK_CAP` counter bounds runaway continuations the same way it bounds blocks.
 
--   `{"systemMessage":"…"}` — user-facing payload. Shown in the TUI as `Stop hook: …`.
+-   `{"systemMessage":"…"}` — user-facing payload. The `Stop` executor does not currently surface it in the TUI.
 
 Both fields are accumulated across all hooks that ran in the chain.
+
+## Packaging hooks in an extension
+
+Extensions can ship hooks alongside skills, MCP servers, and commands. Place a `hooks/hooks.json` file at the extension root (Claude plugin layout). The file uses the same schema as the `hooks` object in `config.json`, optionally wrapped as `{ "hooks": { ... } }`:
+
+```
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/guard.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Use `${CLAUDE_PLUGIN_ROOT}` or `${JUNIE_EXTENSION_ROOT}` to reference files inside the installed extension directory. Both expand to the extension cache path when the extension is loaded.
+
+Extension hooks become active only after the extension is installed through `/extensions` (user or project scope). They are not loaded from an untrusted project-local `config.json`.
 
 ## Merging hooks across configuration files
 
 When multiple configuration files define hook entries for the same event, all entries from all files are concatenated. Higher-priority files do not override lower-priority files; their entries are appended.
 
-Only trusted sources participate in hook merging: user configuration and explicit `--config-location` files. Default project-local `hooks` entries are skipped and reported as a hook configuration warning.
+Trusted sources that participate in hook merging:
+
+-   User configuration (`~/.junie/config.json`) and explicit `--config-location` files
+
+-   Hooks packaged in installed extensions (`hooks/hooks.json`)
+
+Default project-local `hooks` entries in `<project>/.junie/config.json` are skipped and reported as a hook configuration warning.
+
+Merge order: configuration-file hooks first, then extension hooks (in extension enablement order).
 
 For the configuration precedence order, see [Configuration files](junie-cli-configuration.html#configuration-precedence).
 
@@ -511,9 +547,9 @@ For the configuration precedence order, see [Configuration files](junie-cli-conf
 
 -   The `SessionStart`/`UserPromptSubmit`/`SessionEnd` executors log `continue: false` as a failure but do not yet halt the session, cancel the prompt, or abort startup. Only `Stop` maps `continue: false` to a real abort action.
 
--   `additionalContext` on stdout — agent-facing. For sync hooks: `UserPromptSubmit` prepends it to the prompt; `Stop` folds it into the agent's observer message on block / hard-halt retries and on a plain successful exit (Claude-style continue, see [Stop hook blocking and retries](/docs/junie-cli-hooks.html#stop-hook-blocking-and-retries)); `PreToolUse` adds it to the model context for that tool step; `SessionStart`, `SessionEnd`, and `PermissionRequest` ignore it. For async hooks (`async: true`): the field is queued and prepended to the next user submit regardless of the originating event.
+-   `additionalContext` on stdout — agent-facing, never published to the TUI. For sync hooks: `UserPromptSubmit` prepends it to the prompt; `Stop` folds it into the agent's observer message on block / hard-halt retries and on a plain successful exit (Claude-style continue, see [Stop hook blocking and retries](/docs/junie-cli-hooks.html#stop-hook-blocking-and-retries)); `PreToolUse` adds it to the model context for that tool step; `SessionStart`, `SessionEnd`, and `PermissionRequest` ignore it. For async hooks (`async: true`): the field is queued and prepended to the next user submit regardless of the originating event.
 
--   `systemMessage` on stdout — user-facing TUI info message. For sync hooks, currently honoured by the `Stop` executor only. For async hooks, published on completion as `<Event> hook: <message>` for any event that supports `async: true`.
+-   `systemMessage` on stdout — user-facing TUI info message, published as `<Event> hook: <message>`. For sync hooks it is honoured by the `SessionStart`, `SessionEnd`, and `UserPromptSubmit` executors. For async hooks it is published on completion for any event that supports `async: true`.
 
 -   `PermissionRequest` hooks fire for all permission dialogs regardless of whether the agent triggered the action autonomously or the user requested it directly.
 

@@ -1,6 +1,6 @@
 # Install AI Assistant
 
-Last modified: 26 June 2026
+Last modified: 22 July 2026
 
 The [AI Assistant plugin](https://plugins.jetbrains.com/plugin/22282-ai-assistant) is **not bundled** with [JetBrains IDEs](about-ai-assistant.html#ide-compatibility) and is **disabled** by default\[1\].
 
@@ -14,33 +14,33 @@ It does not access your code unless you install the plugin, [activate](activatio
 
 By default, AI Assistant relies on cloud-hosted LLMs, so there is no load on your local hardware. The same generally applies to energy consumption, since cloud models do not increase your machine's power usage. Therefore, you can refer to the system requirements of the specific IDE in which you use AI Assistant:
 
--   ![CLion](https://resources.jetbrains.com/help/img/idea/2026.1/CLion_icon.png "CLion")   [CLion](https://www.jetbrains.com/help/clion/installation-guide.html#requirements)
+-   ![CLion](https://resources.jetbrains.com/help/img/idea/2026.2/CLion_icon.png "CLion")   [CLion](https://www.jetbrains.com/help/clion/installation-guide.html#requirements)
 
--   ![DataGrip](https://resources.jetbrains.com/help/img/idea/2026.1/DataGrip_icon.png "DataGrip")   [DataGrip](https://www.jetbrains.com/help/datagrip/installation-guide.html#requirements)
+-   ![DataGrip](https://resources.jetbrains.com/help/img/idea/2026.2/DataGrip_icon.png "DataGrip")   [DataGrip](https://www.jetbrains.com/help/datagrip/installation-guide.html#requirements)
 
--   ![DataSpell](https://resources.jetbrains.com/help/img/idea/2026.1/DataSpell_icon.png "DataSpell")   [DataSpell](https://www.jetbrains.com/help/dataspell/installation-guide.html#requirements)
+-   ![DataSpell](https://resources.jetbrains.com/help/img/idea/2026.2/DataSpell_icon.png "DataSpell")   [DataSpell](https://www.jetbrains.com/help/dataspell/installation-guide.html#requirements)
 
--   ![GoLand](https://resources.jetbrains.com/help/img/idea/2026.1/GoLand_icon.png "GoLand")   [GoLand](https://www.jetbrains.com/help/go/installation-guide.html#requirements)
+-   ![GoLand](https://resources.jetbrains.com/help/img/idea/2026.2/GoLand_icon.png "GoLand")   [GoLand](https://www.jetbrains.com/help/go/installation-guide.html#requirements)
 
--   ![IntelliJ IDEA](https://resources.jetbrains.com/help/img/idea/2026.1/IntelliJ_IDEA_icon.png "IntelliJ IDEA")   [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#requirements)
+-   ![IntelliJ IDEA](https://resources.jetbrains.com/help/img/idea/2026.2/IntelliJ_IDEA_icon.png "IntelliJ IDEA")   [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#requirements)
 
--   ![PhpStorm](https://resources.jetbrains.com/help/img/idea/2026.1/PhpStorm_icon.png "PhpStorm")   [PhpStorm](https://www.jetbrains.com/help/phpstorm/installation-guide.html#requirements)
+-   ![PhpStorm](https://resources.jetbrains.com/help/img/idea/2026.2/PhpStorm_icon.png "PhpStorm")   [PhpStorm](https://www.jetbrains.com/help/phpstorm/installation-guide.html#requirements)
 
--   ![PyCharm](https://resources.jetbrains.com/help/img/idea/2026.1/PyCharm_icon.png "PyCharm")   [PyCharm](https://www.jetbrains.com/help/pycharm/installation-guide.html#requirements)
+-   ![PyCharm](https://resources.jetbrains.com/help/img/idea/2026.2/PyCharm_icon.png "PyCharm")   [PyCharm](https://www.jetbrains.com/help/pycharm/installation-guide.html#requirements)
 
--   ![Rider](https://resources.jetbrains.com/help/img/idea/2026.1/Rider_icon.png "Rider")   [Rider](https://www.jetbrains.com/dotnet/download/system-requirements/#section-rider)
+-   ![Rider](https://resources.jetbrains.com/help/img/idea/2026.2/Rider_icon.png "Rider")   [Rider](https://www.jetbrains.com/dotnet/download/system-requirements/#section-rider)
 
--   ![RubyMine](https://resources.jetbrains.com/help/img/idea/2026.1/RubyMine_icon.png "RubyMine")   [RubyMine](https://www.jetbrains.com/help/ruby/installation-guide.html#requirements)
+-   ![RubyMine](https://resources.jetbrains.com/help/img/idea/2026.2/RubyMine_icon.png "RubyMine")   [RubyMine](https://www.jetbrains.com/help/ruby/installation-guide.html#requirements)
 
--   ![RustRover](https://resources.jetbrains.com/help/img/idea/2026.1/RustRover_icon.png "RustRover")   [RustRover](https://www.jetbrains.com/help/rust/installation-guide.html#requirements)
+-   ![RustRover](https://resources.jetbrains.com/help/img/idea/2026.2/RustRover_icon.png "RustRover")   [RustRover](https://www.jetbrains.com/help/rust/installation-guide.html#requirements)
 
--   ![WebStorm](https://resources.jetbrains.com/help/img/idea/2026.1/WebStorm_icon.png "WebStorm")   [WebStorm](https://www.jetbrains.com/help/webstorm/installation-guide.html#requirements)
+-   ![WebStorm](https://resources.jetbrains.com/help/img/idea/2026.2/WebStorm_icon.png "WebStorm")   [WebStorm](https://www.jetbrains.com/help/webstorm/installation-guide.html#requirements)
 
-However, if you plan to use [local models](use-custom-models.html), you will need to assess the hardware requirements and energy consumption yourself, as these third-party models are not provided by JetBrains. AI Assistant simply enables integration with the local models of your choice.
+However, if you plan to use [local models](use-custom-models.html), you will need to assess the hardware requirements and energy consumption yourself, as these third-party models are not provided by JetBrains. AI Assistant only enables integration with the local models of your choice.
 
 > ### note
 >
-> The **AI Enterprise** plan allows you to run LLMs within your organization’s environment, which may require additional hardware resources. If you are interested in the **AI Enterprise** plan, please contact our [Sales Team](https://www.jetbrains.com/ide-services/#contact-sales).
+> The **AI Enterprise** plan allows you to run LLMs within your organization’s environment, which may require additional hardware resources. If you are interested in the **AI Enterprise** plan, contact our [Sales Team](https://www.jetbrains.com/ide-services/#contact-sales).
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ JetBrains Marketplace
 
 In the ! AI Chat tool window, click Install Plugin.
 
-![AI Chat tool window](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_tool_window.png "AI Chat tool window")
+![AI Chat tool window](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_tool_window.png "AI Chat tool window")
 
 This triggers the plugin installation.
 
@@ -82,7 +82,7 @@ This triggers the plugin installation.
 
 In the ! JetBrains AI widget located in the window header, click Let's Go.
 
-![Install from AI Hub](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_install_plugin.png "Install from AI Hub")
+![Install from AI Hub](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_install_plugin.png "Install from AI Hub")
 
 This triggers the plugin installation.
 
@@ -94,7 +94,7 @@ This triggers the plugin installation.
 
 1.  Open Settings | Plugins | Marketplace and type AI Assistant in the search field.
 
-    ![AI Assistant in the list of available plugins in the marketplace](https://resources.jetbrains.com/help/img/idea/2026.1/install_ai_marketplace.png "AI Assistant in the list of available plugins in the marketplace")
+    ![AI Assistant in the list of available plugins in the marketplace](https://resources.jetbrains.com/help/img/idea/2026.2/install_ai_marketplace.png "AI Assistant in the list of available plugins in the marketplace")
 
 2.  Click Install.
 
@@ -118,7 +118,7 @@ After installation, AI Assistant checks your license status:
 
 Once the plugin is installed, you can control its key settings in the ! JetBrains AI widget.
 
-![JetBrains AI key settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_key_settings_key_elements.png "JetBrains AI key settings")
+![JetBrains AI key settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_key_settings_key_elements.png "JetBrains AI key settings")
 
 Using this widget, you can:
 
@@ -146,13 +146,11 @@ Using this widget, you can:
 
     -   The **top-up credits** counter shows how many Top-up AI Credits you currently have, with an option to [add](licensing-and-subscriptions.html#add-top-up-ai-credits-using-widget) more, if needed.
 
-        > ### note
-        >
-        > If you are using an account provided by your organization, the counter shows the number of **shared top-up credits** – Top-up AI Credits that come from a single pool shared by all members of your organization.
-        >
-        > ![Shared Top-up AI Credits](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_quota_top_up_credits_counter_org.png "Shared Top-up AI Credits")
-        >
-        > The amount available to you is set by your administrator, but the actual number may be lower if your team has already used some credits.
+    > ### note
+    >
+    > If your organization has been migrated to the [shared credit pool model](licensing-and-subscriptions.html#organizations-jb-central), the widget displays the number of AI Credits allocated to you by the organization admin.
+    >
+    > ![Shared AI Credits pool](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_quota_shared_pool.png "Shared AI Credits pool")
 
 3.  Configure AI Assistant settings:
 
@@ -162,7 +160,7 @@ Using this widget, you can:
 
     -   Check the available AI Assistant features.
 
-Additionally, if your quota is nearly used up, your subscription is about to expire, or there is an issue that requires your attention, you will receive a corresponding notification in this widget.
+Additionally, if your quota is running low, your subscription is about to expire, or there is an issue that requires your attention, you will receive a corresponding notification in this widget.
 
 Examples of such notifications include:
 
@@ -172,11 +170,11 @@ Subscription has expired
 
 Issue detected
 
-![Quota limit reached](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_quota_limit_reached.png "Quota limit reached")
+![Quota limit reached](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_notification_quota_limit_reached.png "Quota limit reached")
 
-![Subscription has expired](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_plan_expired.png "Subscription has expired")
+![Subscription has expired](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_notification_plan_expired.png "Subscription has expired")
 
-![Detected issue](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_no_local_models.png "Detected issue")
+![Detected issue](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_notification_no_local_models.png "Detected issue")
 
 ## Update AI Assistant plugin
 
@@ -186,9 +184,9 @@ AI Chat
 
 JetBrains AI widget
 
-![Update is available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_update_available_chat.png "Update is available")
+![Update is available](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_notification_update_available_chat.png "Update is available")
 
-![Update is available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_hub_notification_update_available_widget.png "Update is available")
+![Update is available](https://resources.jetbrains.com/help/img/idea/2026.2/ai_hub_notification_update_available_widget.png "Update is available")
 
 To install a new version:
 
@@ -196,7 +194,7 @@ To install a new version:
 
 2.  In the Plugin Updates dialog, click Update.
 
-    ![Plugin Updates dialog](https://resources.jetbrains.com/help/img/idea/2026.1/ai_plugin_updates_dialog.png "Plugin Updates dialog")
+    ![Plugin Updates dialog](https://resources.jetbrains.com/help/img/idea/2026.2/ai_plugin_updates_dialog.png "Plugin Updates dialog")
 
     > ### tip
     >

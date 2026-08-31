@@ -4,9 +4,9 @@
 
 # Files
 
-Last modified: 25 February 2026
+Last modified: 17 August 2026
 
-Use Files to browse your workspace structure and open files in the editor. You can expand folders, open files in splits, and add items to a task as context. The right-click menu includes file operations and Git operations for the selected file or folder.
+Use Files to browse your workspace structure and open files in the editor. The tree shows the project as it is on disk, and the right-click menu of an item holds both file operations and Git actions for that file or folder.
 
 ### Open the Files tool
 
@@ -14,18 +14,10 @@ Use Files to browse your workspace structure and open files in the editor. You c
 
 -   On the tool panel, click Files.
 
-### Open a file from Files
+## What you can do here
 
--   In the Files tool, select a file. JetBrains Air opens the file in the editor.
+-   [Browse files and folders](explore-projects.html#files-tool) – open files from the tree, filter it, and create, rename, or delete items.
 
-### Open file actions
+-   [Add files and folders as context](task-context.html#context-files-and-folders) so the agent works from the right part of the project.
 
-1.  In the Files tool, right-click a file or folder.
-
-2.  Select an action, such as New File…, New Folder…, Rename…, Delete…, Copy Path, or Paste.
-
-### Open Git actions for a file
-
-1.  In the Files tool, right-click a file and select Git.
-
-2.  Select a Git action, such as viewing file history, comparing with a branch or commit, or reverting changes.
+-   [Git actions for a file](git.html) – [view its history](git-browse-history.html#history_file_history), compare it with a branch or commit, or [revert its changes](git-undo-changes.html#revert_changes).

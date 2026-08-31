@@ -1,6 +1,6 @@
 # Debug mode
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Slash command to switch to Debug mode:
 
@@ -44,13 +44,17 @@ If no IDE with debugging support is connected when you try to enable Debug mode,
 
 ## Enable Debug mode
 
-To toggle Debug mode, use the `Shift+Tab+Tab` shortcut or run the `/debug` slash command in the Junie CLI prompt:
+To switch to Debug mode, run the `/debug` slash command in the Junie CLI prompt, or press `Shift+Tab` to cycle through the modes (default → Plan → Debug):
 
 ```
 > /debug
 ```
 
-Using the same shortcut or running `/debug` again disables Debug mode and returns Junie CLI to the default mode.
+Running `/debug` again, or continuing the `Shift+Tab` cycle back to the default mode, disables Debug mode and returns Junie CLI to the default mode.
+
+> ### note
+>
+> Debug mode applies to the next prompt you submit. After each submitted prompt, Junie CLI returns to the default mode, so re-enable Debug mode if you want to continue debugging.
 
 ## Related documentation
 

@@ -1,6 +1,6 @@
 # Junie GitHub Action
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Junie GitHub Action integrates Junie CLI into your GitHub workflows. It also allows you to trigger Junie to run code reviews, fix bugs, or implement new features right from GitHub issues or PR comments.
 
@@ -82,7 +82,7 @@ To set up [Junie GitHub Actions](https://github.com/JetBrains/junie-github-actio
 
           - name: Run Junie
             id: junie
-            uses: JetBrains/junie-github-action@v0
+            uses: JetBrains/junie-github-action@v1
             with:
               junie_api_key: ${{ secrets.JUNIE_API_KEY }} # Change to the vendor key in case of BYOK, e.g. `anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}`
     ```
@@ -93,9 +93,9 @@ To set up [Junie GitHub Actions](https://github.com/JetBrains/junie-github-actio
     >
     > Version tags
     >
-    > `JetBrains/junie-github-action@v0` for the latest v0.x.x version (pre-release).
+    > `JetBrains/junie-github-action@v1` for the latest v1.x.x version.
     >
-    > `JetBrains/junie-github-action@v0.1.0` for a specific version.
+    > `JetBrains/junie-github-action@v1.0.0` for a specific version.
     >
     > `JetBrains/junie-github-action@main` for the latest development version (not recommended for production).
 
@@ -336,7 +336,7 @@ The GitHub token used by the Junie action.
 Example usage of output parameters in the workflow:
 
 ```
-- uses: JetBrains/junie-github-action@v0
+- uses: JetBrains/junie-github-action@v1
   id: junie
   with:
     junie_api_key: ${{ secrets.JUNIE_API_KEY }}
@@ -370,7 +370,7 @@ Creates inline code review comments with GitHub suggestions on PRs (enabled auto
 Example configuration:
 
 ```
-- uses: JetBrains/junie-github-action@v0
+- uses: JetBrains/junie-github-action@v1
   with:
     junie_api_key: ${{ secrets.JUNIE_API_KEY }}
     allowed_mcp_servers: "mcp_github_checks_server"

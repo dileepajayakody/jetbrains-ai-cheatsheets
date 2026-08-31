@@ -1,8 +1,8 @@
 # AI Chat
 
-Last modified: 26 June 2026
+Last modified: 18 August 2026
 
-AI Chat is the main entry point for interacting with the AI models and agents supported by AI Assistant. Here, you can have conversations with language models, ask questions about your code or project, and work with agents to plan and execute development tasks.
+AI Chat is the main entry point for interacting with the AI models and agents supported in AI Assistant. Here, you can have conversations with language models, ask questions about your code or project, and work with agents to plan and execute development tasks.
 
 AI Chat interactions generally follow this pattern:
 
@@ -20,31 +20,41 @@ This allows you to get relevant answers, generate code, and make changes to your
 
 AI Chat is available as a tool window located on the right toolbar. You can open it by clicking the ! AI Chat button.
 
-![Open the AI Chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_open_ai_chat.png "Open the AI Chat")
+![Open the AI Chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_open_ai_chat.png "Open the AI Chat")
 
 The tool window consists of the following elements:
 
-![AI Chat elements](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_elements.png "AI Chat elements")
+![AI Chat elements](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_elements.png "AI Chat elements")
 
-1.  [Chat mode and agent selector](/help/ai-assistant/ai-chat.html#select-interaction-mode) – switch between Chat for quick conversations and one of the supported Agents for complex tasks.
+1.  [Chat mode selector](/help/ai-assistant/ai-chat.html#select-interaction-mode) – allows you to switch between a chat for quick conversations and one of the available agents for complex tasks.
 
-2.  [Model picker](/help/ai-assistant/ai-chat.html#select-a-model) – select the model used to process your requests, including locally running models or models provided by configured third-party providers.
+2.  [Model selector](/help/ai-assistant/ai-chat.html#select-a-model) – lets you choose the language model to process your requests, including locally running models or models provided by configured third-party providers.
 
-3.  [Attachments](/help/ai-assistant/ai-chat.html#context-management) – add files, folders, images, symbols, or other elements that can serve as context for your request.
+3.  [Add attachment button](/help/ai-assistant/ai-chat.html#context-management) – allows you to manually add files, folders, images, symbols, or other elements as context for your request.
 
-4.  [New chat](chat-mode.html#start-new-chat) – start a new conversation by clicking the ! New Chat button.
+4.  [Send button](chat-mode.html#send-messages) – submits your message to the AI model. Also allows you to choose how to send the prompt and to configure input shortcuts.
 
-5.  [Chat history](/help/ai-assistant/ai-chat.html#conversations-history) and settings – access previous conversations by clicking the ! Chat History button, rename or delete the currently active chat, adjust the chat layout, or manage AI Assistant settings from the ! Options menu.
+5.  [Chat History](/help/ai-assistant/ai-chat.html#conversations-history) – opens a list containing your previous conversations and allows you to manage them.
+
+6.  [New Chat button](chat-mode.html#start-new-chat) – starts a new conversation.
+
+7.  [Show Chats in Editor Tabs](customize-ai-chat.html#chat-in-editor) – opens the current chat as an editor tab to give the conversation more space.
+
+8.  Options button – allows you to adjust the chat layout and manage AI Assistant settings from the ! Options menu.
 
 ## Interaction modes
 
 AI Chat supports two ways of interacting with AI: **Chat** and **Agents**. The selected mode determines how the AI handles your requests.
 
-![Select a chat mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode_intro.png "Select a chat mode")
+![Select a chat mode](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Select a chat mode")
 
-Chat
+JetBrains Pick
 
-Use **Chat mode** to ask general or project-related questions, request explanations, or generate code snippets. In this mode, the AI provides responses and suggestions but does not apply changes to your project automatically. Any generated code must be reviewed and [applied](/help/ai-assistant/ai-chat.html#response-processing) manually.
+By default, AI Chat opens with a Recommended agent selected for use. This is JetBrains' current recommendation, chosen based on the benchmark results. JetBrains evaluates agent, model, and reasoning-level combinations on real development tasks across multiple programming ecosystems. Candidate configurations are evaluated by task solve rate, cost, and latency, and the finalists are then validated through A/B testing with real users, using signals such as engagement and agent switching.
+
+The evaluation data is available in the [Developer Productivity AI Arena (DPAIA)](https://github.com/search?q=org%3Adpaia+is%3Apr+label%3Adefault-agent+&type=pullrequests), JetBrains' open benchmark for AI coding tools.
+
+The recommendation can change over time as agents, models, and benchmark coverage evolve.
 
 Agents
 
@@ -52,17 +62,15 @@ Agents
 
 For the list of supported agents, refer to [Agents](agents.html).
 
-> ### note
->
-> By default, AI Chat opens with an agent selected rather than Chat mode. AI Assistant chooses this default agent automatically based on JetBrains benchmarks, so it may change over time.
->
-> You can switch to Chat mode or to a different agent at any time. If you select an agent other than the default one, your choice is remembered: when you start a new chat, AI Assistant keeps the agent you selected instead of reverting to the default.
+Chat
+
+Use **Chat mode** to ask general or project-related questions, request explanations, or generate code snippets. In this mode, the AI provides responses and suggestions but does not apply changes to your project automatically. Any generated code needs to be reviewed and [applied](/help/ai-assistant/ai-chat.html#response-processing) manually.
 
 ## Models
 
 Different models have different capabilities, so you may want to switch them depending on your task. AI Assistant lets you choose from a [list](supported-llms.html#jbai-service-models) of supported LLMs, models from configured [third-party providers](use-custom-models.html#provide-your-own-api-key), or [locally running models](use-custom-models.html#connect-local-models).
 
-![Select model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_select_cloud_llm_intro.png "Select model")
+![Select model](https://resources.jetbrains.com/help/img/idea/2026.2/ai_select_cloud_llm_intro.png "Select model")
 
 For details on selecting a model in the chat, refer to [Select a model](chat-mode.html#select-a-model).
 
@@ -70,7 +78,7 @@ For details on selecting a model in the chat, refer to [Select a model](chat-mod
 
 Attaching the right context to your request helps AI Assistant provide more accurate and relevant responses. You can add files, folders, images, symbols, commits, or other items to provide AI Assistant with additional information related to your question.
 
-![Add context](https://resources.jetbrains.com/help/img/idea/2026.1/ai_add_context_to_request.png "Add context")
+![Add context](https://resources.jetbrains.com/help/img/idea/2026.2/ai_add_context_to_request.png "Add context")
 
 For details on adding context in Chat mode, refer to [Add context](chat-mode.html#add-context).
 
@@ -82,11 +90,11 @@ How responses are processed depends on the selected [operation mode](/help/ai-as
 
 -   In Chat mode, responses typically contain suggestions or code snippets that you can review and apply if needed.
 
-    ![Chat response processing](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_response_processing.png "Chat response processing")
+    ![Chat response processing](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_response_processing.png "Chat response processing")
 
 -   **Agents** typically introduce more complex changes across multiple files, which you can review and accept or discard.
 
-    ![Agent response processing](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_specific_file.png "Agent response processing")
+    ![Agent response processing](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_specific_file.png "Agent response processing")
 
 For details on processing responses in Chat mode, refer to [Process responses](chat-mode.html#process-responses).
 
@@ -94,7 +102,7 @@ For details on processing responses in Chat mode, refer to [Process responses](c
 
 AI Assistant organizes chat interactions as conversations. Each conversation keeps the history of your messages and responses, allowing you to revisit or continue previous interactions later if needed.
 
-![All Chats list](https://resources.jetbrains.com/help/img/idea/2026.1/ai_all_chats.png "All Chats list")
+![All Chats list](https://resources.jetbrains.com/help/img/idea/2026.2/ai_all_chats.png "All Chats list")
 
 For details on managing chat history, refer to [View chat history](chat-mode.html#chat-history).
 

@@ -4,15 +4,13 @@
 
 # Comments
 
-Last modified: 25 February 2026
+Last modified: 17 August 2026
 
-Use Comments to review and manage comments in the current workspace. This tool includes comments that you add in code and comments created during agentic review. You can select a comment to navigate to the related place in code. When you send comments, JetBrains Air creates a new task with your feedback.
+Use Comments to review and manage comments in the current workspace. It collects both the comments you add in code and the ones an agent leaves during [agentic review](agentic-review.html), for the current task or across all tasks. Select a comment to open the file and jump to the commented code.
 
-### Add a comment
+Collecting comments here is what lets you review a whole diff before you answer it: add as many comments as you need, then send the ones you agree with in one go. JetBrains Air sends them to Chat as a follow-up in the same agent session, so the agent already has the task's context when it picks them up.
 
--   Select code in the editor and click Add comment.
-
-    ![Add a comment](https://resources.jetbrains.com/help/img/air/aird_add_a_comment.png "Add a comment")
+![The Comments tool showing collected review comments and the Send button](https://resources.jetbrains.com/help/img/air/air-comments-send.png "The Comments tool showing collected review comments and the Send button")
 
 ### Open the Comments tool
 
@@ -20,12 +18,8 @@ Use Comments to review and manage comments in the current workspace. This tool i
 
 -   On the tool panel, click Comments.
 
-### Navigate to code from a comment
+## What you can do here
 
--   In the Comments tool, select a comment. JetBrains Air opens the file and navigates to the commented code.
+-   [Comment on changes](review-changes.html#comment_on_changes) – add comments to specific lines and send them to the task as review feedback.
 
-### Send comments as a new task
-
-1.  In the Comments tool, select the comments you want to send.
-
-2.  Click Send Comments. Alternatively, select comments that you want to send in the Comments tool and click Send. JetBrains Air creates a new task with the selected comments.
+-   [Review with agent](agentic-review.html) – have an agent review the diff, then send the comments you accept back to the main task.

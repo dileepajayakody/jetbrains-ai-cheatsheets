@@ -1,6 +1,6 @@
 # Quickstart
 
-Last modified: 10 July 2026
+Last modified: 28 August 2026
 
 Junie CLI is the agentic coding tool by JetBrains that provides an interactive terminal interface for developers to review, write, and modify code.
 
@@ -16,12 +16,24 @@ Linux / macOS
 
 Windows
 
+npm
+
+Homebrew
+
 ```
 curl -fsSL https://junie.jetbrains.com/install.sh | bash
 ```
 
 ```
 powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://junie.jetbrains.com/install.ps1')"
+```
+
+```
+npm install -g @jetbrains/junie
+```
+
+```
+brew install jetbrains/junie/junie
 ```
 
 ### Step 2: Start Junie in your project
@@ -40,19 +52,27 @@ junie
 
 On the Junie welcome screen, select one of the available authentication options:
 
--   Log in with your JetBrains Account
+-   Continue with JetBrains account
 
     Use Junie CLI as part of your subscription plan with JetBrains. When selecting this option, you'll be redirected to the JetBrains Junie login page in your browser.
 
--   Use `JUNIE_API_KEY`
+-   Use a Junie API key
 
     Run Junie CLI with usage-based billing. When selecting this option, you'll be prompted to provide an access token. To generate your `JUNIE_API_KEY` access token, go to [junie.jetbrains.com/cli](https://junie.jetbrains.com/cli).
 
--   [Bring Your Own Key (BYOK)](byok.html)
+-   Use your own API key (OpenAI, Anthropic, Google, xAI, OpenRouter, GitHub Copilot)
 
-    Use your own API keys or OAuth tokens from Anthropic, OpenAI, Google, or other third-party LLM providers. Junie CLI uses these API keys to send requests to LLMs directly without requiring a JetBrains AI subscription.
+    Use your own API keys from OpenAI, Anthropic, Google, xAI, OpenRouter, GitHub Copilot, or other third-party LLM providers. Junie CLI uses these API keys to send requests to LLMs directly without requiring a JetBrains AI subscription. For details, see [Bring Your Own Key (BYOK)](byok.html).
 
     BYOK can be used on its own or together with JetBrains Account authorization or Junie API key. If a model is available through both the BYOK API key and JetBrains AI subscription, the requests are billed to your BYOK provider directly.
+
+-   [Use custom models and endpoints](custom-llm-models.html)
+
+    Connect Junie CLI to custom or self-hosted LLM endpoints, such as LiteLLM, Ollama, or LM Studio.
+
+> ### note
+>
+> Depending on your JetBrains subscription and setup, the welcome screen may offer additional options, such as signing in with JetBrains Enterprise or using local models.
 
 ### Step 4: Type your prompt
 
@@ -173,15 +193,19 @@ After the review is complete, Junie CLI presents the findings and lets you accep
 
 Use the `/account` command to manage your credentials and API keys:
 
--   Select Junie Account to authenticate with Junie CLI via JetBrains Account or a Junie API key.
+-   Select Continue with JetBrains account (or Manage JetBrains account if you're already signed in) to authenticate with Junie CLI via your JetBrains Account.
+
+-   Select Use a Junie API key to run Junie CLI with usage-based billing.
 
     To generate a `JUNIE_API_KEY` access token, go to [junie.jetbrains.com/cli](https://junie.jetbrains.com/cli).
 
--   Select Bring Your Own Key (BYOK) to add API keys for LLM providers like OpenAI, Anthropic, Google, or xAI.
+-   Select Use your own API key (or Manage your API keys) to add API keys for LLM providers like OpenAI, Anthropic, Google, xAI, or OpenRouter. See [Bring Your Own Key (BYOK)](byok.html).
 
     > ### tip
     >
     > BYOK can be used on its own or together with JetBrains Account authorization. If a model is available through both the BYOK API key and JetBrains AI subscription, the requests are billed directly to the model provider without consuming credits from your JetBrains account.
+
+-   Select Use custom models and endpoints to connect custom or self-hosted LLM endpoints such as LiteLLM, Ollama, or LM Studio. See [Custom LLM models](custom-llm-models.html).
 
 ## Manage your session
 
@@ -193,13 +217,15 @@ Use `/new <prompt>` to start another session with the prompt text already filled
 
 ### View session transcript
 
-To access the full transcript of the current session, including all previous prompts and the agent output, use the `Ctrl+O` shortcut. When in the Transcript view, use `Ctrl+N` to load older entries, or `Esc` to return to the main view.
+To access the full transcript of the current session, including all previous prompts and the agent output, use the `Ctrl+O` shortcut. By default, Junie opens a continuously updated `transcript.md` file stored next to the session's `events.jsonl` file. Subagent transcripts are stored in the session's `subagents` folder and `Ctrl+O` opens the selected subagent transcript while you are viewing its task.
+
+Use `/settings` and change Show transcript to Terminal to open the built-in Transcript view instead. In that view, use `Esc` to return to the main view.
 
 ### Switch sessions and resume history
 
 To search session history, switch between live sessions, or resume a saved session from a previous run, use `/history` to open Task history.
 
-Junie stores the full session context, including LLM usage data and the history of user prompts and agent responses, for the last 10 sessions.
+Junie stores the full session context, including LLM usage data and the history of user prompts and agent responses, for all your saved sessions.
 
 For details on running several sessions and isolating their file changes, see [Parallel sessions and worktrees](junie-cli-worktrees.html).
 
@@ -221,7 +247,7 @@ The selection of available models depends on your [authentication method](/docs/
 
 ### Effort level
 
-For models that support adjustable reasoning effort (for example, recent Claude, GPT-5, and Gemini models), you can pick how hard the model thinks before answering. The set of supported effort levels (such as `Low`, `Medium`, `High`, `XHigh`, `Max`) depends on the selected model.
+For models that support adjustable reasoning effort (for example, recent Claude, GPT-5, and Gemini models), you can pick how hard the model thinks before answering. The set of supported effort levels (such as `None`, `Minimal`, `Low`, `Medium`, `High`, `XHigh`, `Max`) depends on the selected model.
 
 You can change the effort level in two ways:
 
@@ -272,7 +298,7 @@ junie --auth="$JUNIE_API_KEY" "Fix any failing tests"
 junie --auth="$JUNIE_API_KEY" --review
 ```
 
-The `junie` command takes [options](parameters.html) and [environment variables](parameters.html#environment-variables).
+The `junie` command takes [options](parameters.html) and [environment variables](environment-variables.html).
 
 For more information and examples, see [Headless mode](junie-headless.html).
 

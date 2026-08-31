@@ -1,26 +1,28 @@
-1.  [Cloud agents](cloud-agents.html)
+1.  [Cloud tasks](cloud-tasks.html)
 
 2.  [Run tasks in cloud](#0)
 
-Limited EAP
+EAP
 
 # Run tasks in cloud
 
-Last modified: 24 June 2026
+Last modified: 20 August 2026
 
 Cloud tasks run in remote cloud environments instead of on your machine. You can start them either from the JetBrains Air app or from [https://air.jetbrains.cloud](https://air.jetbrains.cloud) in a browser.
 
-### How cloud runs differ from local runs
+### How cloud tasks differ from local tasks
 
 > ### tip
 >
-> In cloud runs, after the task is done, the agent commits changes to a separate task branch and pushes them to the remote repository.
+> In task cloud runs, after the task is done, the agent commits changes to a separate task branch and pushes them to the remote repository.
 
-In local runs, JetBrains Air changes files in your local working copy and does not commit them automatically ([see details](review-and-integrate.html)).
+In local tasks, JetBrains Air changes files in your local working copy and does not commit them automatically ([see details](review-and-integrate.html)).
 
-In cloud runs, JetBrains Air uses a remote environment with a limited lifetime. Although the environment remains available for some time after the task is done, there is always a chance that you will return after it is no longer available and will not be able to open it to review the changes there.
+In cloud tasks, JetBrains Air uses a remote environment with a limited lifetime. JetBrains Air suspends the environment after a period of inactivity; you can resume it to return to the task, but there is still a chance you'll come back after it's no longer available.
 
 To avoid this risk, JetBrains Air commits the result to a separate task branch and pushes it to the remote repository. Because of this, the cloud workflow is slightly different: after the task is done, you review the result and then create a pull request from the pushed task branch.
+
+Cloud environmentAgentTask branchair/<task>Remote repository(1) Air clones the repoand creates a branch(3) agent commits and pushesthe task branch(2) edits files in isolation(4) you create apull request
 
 ## Before you start
 
@@ -34,7 +36,23 @@ You can start with the default cloud environment, but for many projects it is us
 
 You can start a cloud task from the JetBrains Air app or from the web UI.
 
-### From the JetBrains Air app
+From the web version of JetBrains Air
+
+From JetBrains Air
+
+### Run a cloud task from the browser
+
+1.  Log in to [https://air.jetbrains.cloud](https://air.jetbrains.cloud) with your JetBrains Account.
+
+2.  On the New Task page, select an environment or a repository, and a branch. Selecting an environment runs the task with that configuration; selecting a repository uses the default environment.
+
+    ![The New Task selector open, listing environment configurations under Environments and repositories under Repositories](https://resources.jetbrains.com/help/img/air/airc-new-task-select-environment.png "The New Task selector open, listing environment configurations under Environments and repositories under Repositories")
+
+3.  Enter your task prompt and send the task.
+
+4.  After the task starts, it appears in the left pane.
+
+    ![A started cloud task shown in the left pane of the web version of JetBrains Air](https://resources.jetbrains.com/help/img/air/airteam-started-task.png "A started cloud task shown in the left pane of the web version of JetBrains Air")
 
 ### Run a cloud task from the JetBrains Air app
 
@@ -48,27 +66,9 @@ You can start a cloud task from the JetBrains Air app or from the web UI.
 
 4.  Enter your task prompt and send the task.
 
-### From the web UI
-
-### Run a cloud task from the web UI
-
-1.  Log in to [https://air.jetbrains.cloud](https://air.jetbrains.cloud) with your JetBrains Account.
-
-2.  On the New Task page, select a repository and a branch.
-
-3.  Enter your task prompt and send the task.
-
-    ![The New Task page in the web version of JetBrains Air with repository, branch, and task prompt fields](https://resources.jetbrains.com/help/img/air/airteam-run-task-web.png "The New Task page in the web version of JetBrains Air with repository, branch, and task prompt fields")
-
-4.  After the task starts, it appears in the left pane.
-
-    ![A started cloud task shown in the left pane of the web version of JetBrains Air](https://resources.jetbrains.com/help/img/air/airteam-started-task.png "A started cloud task shown in the left pane of the web version of JetBrains Air")
-
 ## 2\. Review the result
 
 After the task is done, open it to review the result. JetBrains Air opens in your browser, so you can inspect the changed files, continue working with the agent, or ask the agent to review the recent changes.
-
-![the web version of JetBrains Air. Cloud task done](https://resources.jetbrains.com/help/img/air/air-web-cloud-run-task-done.png "the web version of JetBrains Air. Cloud task done")
 
 ### Review a cloud task
 
@@ -76,7 +76,7 @@ After the task is done, open it to review the result. JetBrains Air opens in you
 
 2.  Review the changed files and the task conversation in the web version of JetBrains Air.
 
-3.  If you want the agent to review the recent changes, use `/review` command (type `/`, start typing `review`, and select Review with Agent).
+3.  If you want the agent to review the recent changes, use `/review` command (type `/`, start typing `review`, and select Review with <agent>).
 
     ![Review with command](https://resources.jetbrains.com/help/img/air/air-review-with-agent-command.png "Review with command")
 
@@ -86,36 +86,50 @@ After the task is done, open it to review the result. JetBrains Air opens in you
 
 6.  If more work is needed, continue iterating in the same task: add extra context, leave comments in the code, and so on. Learn how to add context in [Task context](task-context.html).
 
-> ### note
->
-> If the task is in the **Completed** state, its cloud environment is no longer available. In this case, check out the task branch in JetBrains Air and review the recent commit there instead.
->
-> The **Completed** state is temporary. In a future release, it will be replaced with **Suspended**, and it will be possible to restart the environment.
-
 ## 3\. Apply the changes
 
 After you review the result, apply the changes by creating a pull request from the task branch.
 
 You can do this in either of the following ways:
 
--   in the cloud task itself (if the cloud environment still exists), by clicking Create PR
+-   in the cloud task itself, by clicking Create PR – resume the environment first if the task is Suspended
 
 -   in your VCS provider, by opening the pushed task branch and creating a pull request there
 
 ## Run cloud tasks from IntelliJ-based IDEs
 
-You can start a cloud task from the [AI Assistant](https://www.jetbrains.com/help/ai-assistant/about-ai-assistant.html) in your IntelliJ-based IDE. This lets you stay in the IDE while the task runs in the cloud. You can monitor the task execution in JetBrains Air in the Tasks tool. You can also open your account page at [air.jetbrains.cloud](https://air.jetbrains.cloud/) to see your running tasks.
+You can start a cloud task from the [AI Assistant](https://www.jetbrains.com/help/ai-assistant/about-ai-assistant.html) plugin in your IntelliJ-based IDE. This lets you stay in the IDE while the task runs in the cloud. You can monitor the task execution in JetBrains Air in the Tasks tool. You can also open your account page at [air.jetbrains.cloud](https://air.jetbrains.cloud/) to see your running tasks.
 
 ### Run a cloud task in an IntelliJ-based IDE
 
-1.  In your IntelliJ-based IDE (for example, IntelliJ IDEA), open AI Assistant and select JetBrains Cloud from the list of agents.
+1.  In your IntelliJ-based IDE (for example, IntelliJ IDEA), open AI Chat.
 
-    [![AI Assistant with the JetBrains Cloud agent selected](https://resources.jetbrains.com/help/img/air/ai-assistant-cloud-agent.png "AI Assistant with the JetBrains Cloud agent selected")](https://resources.jetbrains.com/help/img/air/ai-assistant-cloud-agent.png)
+2.  If the agent supports remote runs, a panel with a switcher for running it in the cloud appears. Switch to Cloud mode.
 
-2.  Type a task and click Send.
+    ![AI Assistant with the JetBrains Cloud agent selected](https://resources.jetbrains.com/help/img/air/ai-assistant-cloud-agent.png "AI Assistant with the JetBrains Cloud agent selected")
 
-    In JetBrains Air, open Tasks and select the task to track its state and progress.
+3.  If you run the cloud task for this repository for the first time, the plugin prompts you to authorize the [JetBrains Air](connect-repositories.html#how_repository_access_works) connection app to access your repository.
 
-    Alternatively, open [air.jetbrains.cloud](https://air.jetbrains.cloud/) to monitor your running tasks in the web interface.
+4.  Select a branch and a model to run the task.
 
-    [![the web version of JetBrains Air. Cloud running tasks](https://resources.jetbrains.com/help/img/air/air-web-cloud-running-tasks.png "the web version of JetBrains Air. Cloud running tasks")](https://resources.jetbrains.com/help/img/air/air-web-cloud-running-tasks.png)
+5.  Type a task and click Send.
+
+    The agent runs in the cloud and writes its changes to a separate branch. When it finishes, you can review results by clicking View Commits and merge the changes into your working branch by clicking Merge.
+
+    Alternatively, click Open in JetBrains Cloud to open [air.jetbrains.cloud](https://air.jetbrains.cloud/) for monitoring your tasks in the web interface.
+
+For more details, refer to the [JetBrains AI Assistant documentation](https://www.jetbrains.com/help/ai-assistant/cloud-agents.html).
+
+## Resume a suspended task
+
+After 75 minutes of inactivity, JetBrains Air suspends the task's cloud environment and marks the task Suspended. Your results are safe on the task branch, and you can start the environment again while the task stays suspended.
+
+### Resume a suspended task
+
+1.  Open the suspended cloud task.
+
+2.  Click Resume. JetBrains Air starts the environment again, and you can continue reviewing or working on the task.
+
+The environment returns as it was, with the working tree, installed packages, and caches. Running processes are the exception, so restart servers, watchers, and anything else the task had running. See [Snapshots and preserved state](cloud-tasks.html#state_between_runs).
+
+You can resume a task only while it stays suspended. After 24 hours of inactivity, JetBrains Air archives the task – you can still open it to view the chat history, but Resume is no longer available, because the environment can't be restarted. Your results remain on the task branch. See [Cloud environment lifecycle](cloud-tasks.html#cloud-environment-lifecycle).
