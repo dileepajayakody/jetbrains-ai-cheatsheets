@@ -4,7 +4,7 @@
 
 # Permission modes
 
-Last modified: 16 June 2026
+Last modified: 14 August 2026
 
 Permission modes control how freely an agent can act in a task: whether it only plans, asks for approval before acting, edits files automatically, or works with full access.
 

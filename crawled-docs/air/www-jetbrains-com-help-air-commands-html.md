@@ -4,13 +4,13 @@
 
 # Commands
 
-Last modified: 06 May 2026
+Last modified: 14 August 2026
 
 Commands are reusable prompt actions for common tasks. Use them when you want to trigger a predefined workflow, for example initialize project instructions, run a review workflow, or execute a project-specific helper action.
 
 In the Chat tool, type `/` to open the slash menu. Commands appear there and can be inserted directly into the task input.
 
-![Commands in the slash menu](https://resources.jetbrains.com/help/img/air/air-agent-commands.png "Commands in the slash menu")
+![Commands in the slash menu](https://resources.jetbrains.com/help/img/air/agent-slash-commands.png "Commands in the slash menu")
 
 > ### note
 >
@@ -24,7 +24,7 @@ Predefined commands are available without any additional configuration.
 
 Air commands are built into JetBrains Air itself. They are not agent-specific commands.
 
--   Review with Agent – starts an agentic review of the selected scope. [Learn more](agentic-review.html)
+-   Review with <agent> – starts an agentic review of the selected scope. [Learn more](agentic-review.html)
 
 -   Upload File from Computer – uploads a file from your computer and adds it to the current task. [Learn more](task-context.html#context-upload)
 

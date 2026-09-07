@@ -4,11 +4,17 @@
 
 # Agent Client Protocol (ACP)
 
-Last modified: 12 June 2026
+Last modified: 22 July 2026
 
 AI Assistant supports the [Agent Client Protocol (ACP)](https://agentclientprotocol.com/overview/introduction), allowing you to connect external AI agents and use them in the [AI Chat](ai-chat.html#agent-mode). ACP defines a standard communication interface, so any agent that implements the protocol can be added without requiring a custom integration.
 
 ACP-compatible agents can be installed from a curated registry or set up manually. Agents from the registry require no additional setup, while custom ones require configuration.
+
+> ### note
+>
+> If your organization manages AI centrally through JetBrains IDE Services or JetBrains Central, an administrator can control which agents are available to you and whether you can add your own. As a result, the registry might show a limited set of agents, some agents might be disabled, and you might not be able to add a custom agent.
+>
+> For details, refer to the [JetBrains IDE Services](https://www.jetbrains.com/help/ide-services/configure-profiles.html#ai_profile) or [JetBrains Central](https://www.jetbrains.com/help/jetbrains-console/eap/ai-policies.html) documentation.
 
 Where to get an agent
 
@@ -32,13 +38,13 @@ You can select and install an agent from the registry, which contains a list of 
 
 2.  Click ! to open the chat mode selector and select the Install From ACP Registry option.
 
-    ![Add agents from the registry](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_add_agents_from_registry.png "Add agents from the registry")
+    ![Add agents from the registry](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_add_agents_from_registry.png "Add agents from the registry")
 
     Alternatively, navigate to Settings | Tools | AI Assistant | Agents.
 
 3.  On the Agents page, install the agent that you want to use. Additionally, configure the MCP settings as needed.
 
-    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "the Agents settings page")
 
     -   Pass custom MCP servers – enable this setting to expose [configured MCP servers](mcp.html#connect-to-an-mcp-server) to installed agents.
 
@@ -56,19 +62,19 @@ During installation, the IDE automatically:
 
 After installation, the selected agent is ready and becomes available for use in AI Chat.
 
-![Installed agents](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_installed_agents.png "Installed agents")
+![Installed agents](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_installed_agents.png "Installed agents")
 
 > ### note
 >
 > Agents from the registry support the authentication flow. When used for the first time, you may be prompted to provide an API key to authorize.
 >
-> ![Agent authentication flow](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_authenticate_in_chat.png "Agent authentication flow")
+> ![Agent authentication flow](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_authenticate_in_chat.png "Agent authentication flow")
 
 ### Update agents
 
 If a newer version of the agent becomes available, a blue dot appears next to it.
 
-![Update available](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agent_update_available.png "Update available")
+![Update available](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agent_update_available.png "Update available")
 
 You can update the agent from the registry as follows:
 
@@ -78,7 +84,7 @@ You can update the agent from the registry as follows:
 
 3.  Click Update.
 
-    ![Update agents](https://resources.jetbrains.com/help/img/idea/2026.1/ai_update_install_acp_agents.png "Update agents")
+    ![Update agents](https://resources.jetbrains.com/help/img/idea/2026.2/ai_update_install_acp_agents.png "Update agents")
 
 4.  Click OK to apply changes.
 
@@ -92,7 +98,7 @@ To uninstall agents:
 
 3.  Click Uninstall.
 
-    ![Update agents](https://resources.jetbrains.com/help/img/idea/2026.1/ai_update_install_acp_agents.png "Update agents")
+    ![Update agents](https://resources.jetbrains.com/help/img/idea/2026.2/ai_update_install_acp_agents.png "Update agents")
 
 4.  Click OK to apply changes.
 
@@ -104,11 +110,11 @@ If you want to add a custom agent not listed in the registry, you need to provid
 
 2.  Click the ! button in the upper-right corner of the AI Chat tool window and select Add Custom Agent.
 
-    ![Configure ACP Agents](https://resources.jetbrains.com/help/img/idea/2026.1/ai_configure_acp_agents.png "Configure ACP Agents")
+    ![Configure ACP Agents](https://resources.jetbrains.com/help/img/idea/2026.2/ai_configure_acp_agents.png "Configure ACP Agents")
 
-    Choosing this option creates the acp.json file at ~/.jetbrains/acp.json and opens it for editing, where you must provide the configuration details.
+    Choosing this option creates the acp.json file at ~/.jetbrains/acp.json and opens it for editing, where you need to provide the configuration details.
 
-3.  Populate the configuration file with the details of your agent. You can add multiple agents if needed. The configuration must follow this format:
+3.  Populate the configuration file with the details of your agent. You can add multiple agents if needed. The configuration needs to follow this format:
 
     ```
     {
@@ -155,11 +161,11 @@ If you want to add a custom agent not listed in the registry, you need to provid
     >
     > The IDE can detect ACP-compatible agents already installed on your machine and offers to add them to the configuration. To do this, click Add to configuration.
     >
-    > ![Add detected agents to the configuration](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_add_detected_agents.png "Add detected agents to the configuration")
+    > ![Add detected agents to the configuration](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_add_detected_agents.png "Add detected agents to the configuration")
 
 Once you complete the configuration, the agent becomes available for selection in [AI Chat](ai-chat.html). Added agents are indicated by the ! icon.
 
-![Added ACP Agents in AI Chat](https://resources.jetbrains.com/help/img/idea/2026.1/ai_added_acp_agents.png "Added ACP Agents in AI Chat")
+![Added ACP Agents in AI Chat](https://resources.jetbrains.com/help/img/idea/2026.2/ai_added_acp_agents.png "Added ACP Agents in AI Chat")
 
 To use the configured agent, select it in the list, enter a prompt, and send it.
 
@@ -169,11 +175,11 @@ To collect logs for configured agents, click the ! button in the upper-right cor
 
 To collect more detailed logs, including all requests sent to agents and their responses, enable the `llm.agent.extended.logging` key in the Registry:
 
-1.  In the main menu, go to Navigate | Search Everywhere or press ⇧Shift twice to open the search window.
+1.  In the main menu, go to Navigate | Search Everywhere or press Shift twice to open the search window.
 
-2.  Type Registry and press ↩Enter.
+2.  Type Registry and press Enter.
 
-3.  In the dialog that opens, find the `llm.agent.extended.logging` key using ⌘Cmd0F and enable it.
+3.  In the dialog that opens, find the `llm.agent.extended.logging` key using Ctrl0F and enable it.
 
 4.  Click Close and restart the IDE to apply the changes.
 

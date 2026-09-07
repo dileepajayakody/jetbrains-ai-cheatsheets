@@ -1,24 +1,26 @@
-1.  [Cloud agents](cloud-agents.html)
+1.  [Cloud tasks](cloud-tasks.html)
 
 2.  [Quickstart](#0)
 
-Limited EAP
+EAP
 
-# Quickstart with cloud agents
+# Quickstart with cloud tasks
 
-Last modified: 29 May 2026
+Last modified: 05 August 2026
 
-Cloud agents run tasks in remote cloud environments instead of on your machine. This is useful when you want to work from the web version of JetBrains Air, avoid setting up a project locally, run tasks in an isolated environment, or create automations that work without your machine being online.
+Cloud tasks run in remote cloud environments instead of on your machine. This is useful when you want to work from the web version of JetBrains Air, avoid setting up a project locally, run tasks in an isolated environment, or create automations that work without your machine being online.
 
 ## Before you start
 
 Make sure the following prerequisites are met:
 
+-   Your organization is set up for the web version of JetBrains Air. This is done once by an administrator – see [Set up Air for your organization](set-up.html#setup-admin).
+
 -   You are signed in to your [JetBrains Account](https://account.jetbrains.com/login).
 
--   You have access to the repository you want to work on with cloud agents, hosted in GitHub, GitLab, or Bitbucket.
+-   You have access to the repository you want to work on in the cloud, hosted in GitHub or GitLab.
 
--   **For organization repositories** – the JetBrains Air app is installed in your VCS provider for the organization that owns the repositories. Ask your organization administrator to install it – see [app installation instructions](connect-repositories.html#grant_air_access_to_org_repositories_procedure).
+-   **For organization repositories** – your organization is set up for cloud tasks, and the JetBrains Air app is installed in your VCS provider for the organization that owns the repositories. Ask your administrator to set it up – see [app installation instructions](connect-repositories.html#grant_air_access_to_org_repositories_procedure).
 
     **For personal repositories** – no prerequisites required – the app is installed for your personal account during onboarding.
 
@@ -52,13 +54,13 @@ From JetBrains Air
 
 5.  Wait while JetBrains Air creates the cloud environment and starts the task.
 
-    The task appears in the left panel in the Running state.
+    The task appears in the left panel in the Starting state.
 
     ![Running task in the left panel](https://resources.jetbrains.com/help/img/air/air-web-task-running.png "Running task in the left panel")
 
 6.  Click the task to open the JetBrains Air editor right in the browser.
 
-    After the task starts, you work with it the same way as with other JetBrains Air tasks: review changes, iterate on the result, and decide whether to accept the changes.
+    After the task starts, you work with it the same way as with other JetBrains Air tasks: review changes, iterate on the result, and decide whether to accept the changes and create a pull request.
 
     ![Air editor in web](https://resources.jetbrains.com/help/img/air/air-web-cloud-task-session.png "Air editor in web")
 
@@ -78,17 +80,17 @@ From JetBrains Air
 
 5.  Wait while JetBrains Air prepares the cloud environment and opens the task session.
 
-6.  Review the running task in the same familiar JetBrains Air interface.
+6.  Review the running task in the same familiar JetBrains Air interface. When ready, create a pull request.
 
 ## 3\. (Optional) Connect other VCS providers
 
-During onboarding, you connect one VCS provider. To work with repositories hosted in another provider, connect it from Settings | Integrations.
+During onboarding, you connect one VCS provider. To work with repositories hosted in another provider, connect it from Settings | VCS Providers.
 
 ### Connect another VCS provider
 
-1.  In the web version of JetBrains Air, click ![Settings](https://resources.jetbrains.com/help/img/air/air-web-settings-icon.png "Settings") Settings in the left panel, then open the Integrations section.
+1.  In the web version of JetBrains Air, click ![Settings](https://resources.jetbrains.com/help/img/air/air-web-settings-icon.png "Settings") Settings in the left panel, then open the VCS Providers section.
 
-    ![Settings page in the web version of JetBrains Air with the Integrations section open](https://resources.jetbrains.com/help/img/air/air-web-settings-integrations.png "Settings page in the web version of JetBrains Air with the Integrations section open")
+    ![Settings page in the web version of JetBrains Air with the VCS Providers section open](https://resources.jetbrains.com/help/img/air/air-web-settings-integrations-no-bb.png "Settings page in the web version of JetBrains Air with the VCS Providers section open")
 
 2.  Click Connect next to the VCS provider you want to add.
 
@@ -96,7 +98,7 @@ During onboarding, you connect one VCS provider. To work with repositories hoste
 
 4.  Return to JetBrains Air and verify that the provider is shown as connected.
 
-    ![Integrations page showing a successfully connected VCS provider](https://resources.jetbrains.com/help/img/air/air-web-provider-connected.png "Integrations page showing a successfully connected VCS provider")
+    ![VCS Providers page showing a successfully connected VCS provider](https://resources.jetbrains.com/help/img/air/air-web-provider-connected-no-bb.png "VCS Providers page showing a successfully connected VCS provider")
 
 For full details, including how to grant access to organization repositories, see [Connect repositories](connect-repositories.html).
 
@@ -122,9 +124,9 @@ Environment configurations are created per repository in Settings | Environments
 
 2.  In the left panel, click ![Settings](https://resources.jetbrains.com/help/img/air/air-web-settings-icon.png "Settings") Settings. Then open the Environments section.
 
-3.  Click New Configuration.
+3.  Click New Environment.
 
-    ![Environments page](https://resources.jetbrains.com/help/img/air/air-web-new-env-config-button-no-envs.png "Environments page")
+    [![Environments page](https://resources.jetbrains.com/help/img/air/air-web-new-env-config-button-no-envs.png "Environments page")](https://resources.jetbrains.com/help/img/air/air-web-new-env-config-button-no-envs.png)
 
 4.  Adjust the configuration:
 
@@ -134,7 +136,7 @@ Environment configurations are created per repository in Settings | Environments
 
     -   Add environment variables and personal secrets if your project requires them.
 
-    ![New environment configuration form](https://resources.jetbrains.com/help/img/air/air-web-new-env-config.png "New environment configuration form")
+    [![New environment configuration form](https://resources.jetbrains.com/help/img/air/air-web-new-env-config.png "New environment configuration form")](https://resources.jetbrains.com/help/img/air/air-web-new-env-config.png)
 
 5.  Click Save.
 
@@ -151,5 +153,7 @@ For full details, see [Configure environments](configure-environments.html).
 -   [Run tasks in cloud](run-tasks-in-cloud.html)
 
 -   [Configure environments](configure-environments.html)
+
+-   [Clone additional repositories](clone-additional-repositories.html)
 
 -   [Automations](automations.html)

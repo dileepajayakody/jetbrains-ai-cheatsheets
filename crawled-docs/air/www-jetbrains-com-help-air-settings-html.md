@@ -4,7 +4,7 @@
 
 # Settings
 
-Last modified: 18 June 2026
+Last modified: 17 August 2026
 
 Use settings to configure JetBrains Air and your workspaces. You can adjust the UI theme, editor behavior, tools, AI features, connected providers, and account options.
 
@@ -12,7 +12,7 @@ Use settings to configure JetBrains Air and your workspaces. You can adjust the 
 
 -   On macOS, open the application menu and select Air | Settings.
 
--   Press ⌘Cmd0,.
+-   Press Ctrl0,.
 
 ## How settings are organized
 
@@ -56,7 +56,7 @@ Review guidelines applied during agentic review. See [Agentic review](agentic-re
 
 `.air/cloud/startup.sh`
 
-Commands that run before a cloud agent session starts. See [Configure environments](configure-environments.html).
+Commands that run before a cloud task session starts. See [Configure environments](configure-environments.html).
 
 Workspace settings also include agent configuration that already lives in your project, such as `CLAUDE.md`, the `.claude` folder, `AGENTS.md`, skills, and commands. JetBrains Air picks these up and shares them through version control the same way. See [Project instructions](project-instructions.html).
 
@@ -120,6 +120,28 @@ Opens the palette editor to create a custom accent palette.
 
 ## AI
 
+### AI Providers
+
+Setting
+
+Description
+
+Anthropic
+
+Shows the connection state for Claude Agent and lets you sign out.
+
+OpenAI
+
+Shows the connection state for OpenAI Codex and lets you sign out.
+
+Google
+
+Shows the connection state for Gemini CLI and lets you sign out.
+
+JetBrains
+
+Shows the connection state for JetBrains AI subscription access and lets you sign out. Also shows the credits you've used this month out of your limit – see [Credits and usage](ai-credits.html).
+
 ### Chat
 
 Setting
@@ -133,16 +155,6 @@ Sets the shortcut that sends a chat message.
 Show suggestions for a new task
 
 Shows prompt suggestions when you start a new task.
-
-### Claude Agent
-
-Setting
-
-Description
-
-Global settings
-
-Edits global Claude Agent settings in JSON format.
 
 ### MCP Servers
 
@@ -168,7 +180,7 @@ Setting
 
 Description
 
-Review guidelines
+Agent review prompt
 
 Edits instructions used when reviewing agent changes.
 
@@ -538,41 +550,9 @@ Setting
 
 Description
 
-Restore workspace on startup
-
-Reopens the last workspace on startup.
-
-Show startup page when closing the last workspace
-
-Shows the startup page instead of closing JetBrains Air.
-
 Warn before quitting
 
 Requires you to hold ⌘Q or press it twice to quit JetBrains Air.
-
-## Account
-
-### AI Providers
-
-Setting
-
-Description
-
-Anthropic
-
-Shows the connection state for Claude Agent and lets you sign out.
-
-OpenAI
-
-Shows the connection state for OpenAI Codex and lets you sign out.
-
-Google
-
-Shows the connection state for Gemini CLI and lets you sign out.
-
-JetBrains
-
-Shows the connection state for JetBrains AI subscription access and lets you sign out.
 
 ## Region
 

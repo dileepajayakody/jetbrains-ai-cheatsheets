@@ -10,7 +10,7 @@ Settings | Tools | AI Assistant | Model Context Protocol (MCP)
 
 Use this page to [connect](mcp.html) AI Assistant to an [MCP](https://modelcontextprotocol.io/introduction) server and enable additional capabilities.
 
-[![AI Assistant Model Context Protocol](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_mcp.png "AI Assistant Model Context Protocol")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_mcp.png)
+[![AI Assistant Model Context Protocol](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_mcp.png "AI Assistant Model Context Protocol")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_mcp.png)
 
 ## Actions
 
@@ -20,53 +20,53 @@ Tooltip
 
 Description
 
-![the Add button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.add.svg "the Add button")
+![the Add button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.add.svg "the Add button")
 
 Add
 
-⌘Cmd0N
+AltInsert
 
 Add a new MCP server configuration.
 
-![the Remove button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.remove.svg "the Remove button")
+![the Remove button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.remove.svg "the Remove button")
 
 Remove
 
-⌘Cmd⌫Delete
+AltDelete
 
 Remove the selected MCP server configuration.
 
-![the Edit button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.general.edit.svg "the Edit button")
+![the Edit button](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.general.edit.svg "the Edit button")
 
 Edit
 
-↩Enter
+Enter
 
 Edit the selected MCP configuration.
 
-![the Up button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.moveUp.svg "the Up button")
+![the Up button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.moveUp.svg "the Up button")
 
 Up
 
-⌥ Option0↑
+Alt0↑
 
 Move the selected item up.
 
-![the Down button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.moveDown.svg "the Down button")
+![the Down button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.moveDown.svg "the Down button")
 
 Down
 
-⌥ Option0↓
+Alt0↓
 
 Move the selected item one position down.
 
-![the Reconnect button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.run.restart.svg "the Reconnect button")
+![the Reconnect button](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.run.restart.svg "the Reconnect button")
 
 Reconnect
 
 Reconnect to the selected MCP server.
 
-![the Import from Claude button](https://resources.jetbrains.com/help/img/idea/2026.1/app.expui.general.export.svg "the Import from Claude button")
+![the Import from Claude button](https://resources.jetbrains.com/help/img/idea/2026.2/app.expui.general.export.svg "the Import from Claude button")
 
 Import from Claude
 

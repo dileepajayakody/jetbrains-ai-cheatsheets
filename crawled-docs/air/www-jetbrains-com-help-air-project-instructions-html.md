@@ -4,7 +4,7 @@
 
 # Project instructions
 
-Last modified: 02 March 2026
+Last modified: 14 August 2026
 
 Project instructions define "how we work here": conventions, constraints, preferred commands, and review expectations. They help agents produce consistent results across tasks and reduce the need to repeat the same guidance in every prompt.
 
@@ -12,7 +12,7 @@ Project instructions define "how we work here": conventions, constraints, prefer
 
 JetBrains Air picks up instruction files and configuration that already exist in your project. For example:
 
--   `CLAUDE.md` and the `.claude` folder for Claude Agent.
+-   `CLAUDE.md` and the `.claude` folder for Claude Agent, including [settings files](https://code.claude.com/docs/en/settings) such as `.claude/settings.json`.
 
 -   `AGENTS.md` for agent workflows and reusable guidance.
 
@@ -24,9 +24,11 @@ This means you can keep instructions in version control, share them with the tea
 
 ## Project-specific AI settings
 
-In Settings, you can configure both shared and project-specific AI settings.
+In Settings, the tab named after your project holds settings that apply only to the current workspace. Its AI section keeps agent configuration with the project:
 
-Shared settings apply to all projects on your machine. Project-specific settings apply only to the current workspace and are shown under a separate tab with the project name.
+-   Agent review prompt – instructions that guide how the agent reviews your code. See [Review with agent](agentic-review.html).
+
+-   Setup script under Docker and Worktree – instructions for initializing a run environment. See [Task run environments](execution-environments.html).
 
 ### Open project AI settings
 
@@ -34,26 +36,6 @@ Shared settings apply to all projects on your machine. Project-specific settings
 
 2.  Switch to the tab with your project name.
 
-3.  In the navigation tree, open AI and select the agent settings page you want to configure.
+3.  Go to the AI section.
 
-    ![AI project settings](https://resources.jetbrains.com/help/img/air/project-ai-settings.png "AI project settings")
-
-### Claude Agent settings
-
-Claude Agent supports both shared settings and personal settings:
-
--   **Shared settings** are checked into source control and shared with the team. They are stored in `.claude/settings.json`.
-
--   **Personal settings** are not checked into source control and are intended for personal preferences. They are stored in `.claude/settings.local.json`.
-
-For the full reference on settings scopes and the `settings.json` format, see [Claude Code settings](https://code.claude.com/docs/en/settings).
-
-### Documentation
-
-You can attach external documentation sources to a workspace. These sources can be referenced as [task context](task-context.html#context-documentation) and help the agent follow project requirements and guidelines.
-
-### Review guidelines
-
-Review guidelines are custom instructions that guide how the agent reviews your code. The instructions are stored as a review prompt file (`review-prompt.md`) and applied during agentic review.
-
-Learn more in [Review with agent](agentic-review.html).
+Both are stored in the .air directory in your project root, so you can commit them and share them with the team – see [Share workspace settings through version control](settings.html#settings_air_directory).

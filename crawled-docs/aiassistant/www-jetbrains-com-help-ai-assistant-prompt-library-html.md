@@ -16,13 +16,13 @@ You can add your own prompts to the Prompt Library and use them from the AI Acti
 
     -   Right-click anywhere in the editor to open the context menu, select AI Actions, and click Add Your Prompts.
 
-    -   Press ⌥ Option↩Enter, select AI Actions, and click Add your prompts.
+    -   Press AltEnter, select AI Actions, and click Add your prompts.
 
-    -   Press ⌘Cmd0, to open settings and then select Tools | AI Assistant | Prompt Library.
+    -   Press CtrlAlt0S to open settings and then select Tools | AI Assistant | Prompt Library.
 
 2.  Click ! to create a new prompt.
 
-    ![User prompts library settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_new_prompt.png "User prompts library settings")
+    ![User prompts library settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_new_prompt.png "User prompts library settings")
 
 3.  In the text field, write the prompt.
 
@@ -30,7 +30,7 @@ You can add your own prompts to the Prompt Library and use them from the AI Acti
 
 4.  Edit the Prompt name.
 
-    ![Custom prompt parameters](https://resources.jetbrains.com/help/img/idea/2026.1/ai_custom_prompt.png "Custom prompt parameters")
+    ![Custom prompt parameters](https://resources.jetbrains.com/help/img/idea/2026.2/ai_custom_prompt.png "Custom prompt parameters")
 
 5.  Enable the Wait for additional user input after invoking setting if you want AI Assistant to wait for additional input from you in the chat after invoking the prompt.
 
@@ -40,9 +40,9 @@ You can add your own prompts to the Prompt Library and use them from the AI Acti
 
 8.  Click Apply.
 
-Once you create a prompt, it becomes available for use from the AI Actions menu that can be opened by right-clicking anywhere in the editor or pressing ⌥ Option↩Enter.
+Once you create a prompt, it becomes available for use from the AI Actions menu that can be opened by right-clicking anywhere in the editor or pressing AltEnter.
 
-![AI Actions menu with a custom prompt](https://resources.jetbrains.com/help/img/idea/2026.1/ai_custom_prompt_in_ai_actions_menu.png "AI Actions menu with a custom prompt")
+![AI Actions menu with a custom prompt](https://resources.jetbrains.com/help/img/idea/2026.2/ai_custom_prompt_in_ai_actions_menu.png "AI Actions menu with a custom prompt")
 
 You can edit or delete it at any time.
 
@@ -54,13 +54,13 @@ You can adjust how AI Assistant behaves when using specific AI actions by modif
 
     -   Right-click anywhere in the editor to open the context menu, select AI Actions, and click Add Your Prompts.
 
-    -   Press ⌥ Option↩Enter, select AI Actions, and click Add your prompts.
+    -   Press AltEnter, select AI Actions, and click Add your prompts.
 
-    -   Press ⌘Cmd0, to open settings and then select Tools | AI Assistant | Prompt Library.
+    -   Press CtrlAlt0S to open settings and then select Tools | AI Assistant | Prompt Library.
 
 2.  Select the action for which you want to modify the prompt.
 
-    ![Select the action](https://resources.jetbrains.com/help/img/idea/2026.1/ai_modify_prompt.png "Select the action")
+    ![Select the action](https://resources.jetbrains.com/help/img/idea/2026.2/ai_modify_prompt.png "Select the action")
 
     > ### note
     >
@@ -80,11 +80,11 @@ If you want to save a prompt you have written in AI Chat, do the following:
 
 2.  Select the ! Save Current Prompt option from the menu.
 
-    ![Save Current Prompt](https://resources.jetbrains.com/help/img/idea/2026.1/ai_save_prompt_from_chat.png "Save Current Prompt")
+    ![Save Current Prompt](https://resources.jetbrains.com/help/img/idea/2026.2/ai_save_prompt_from_chat.png "Save Current Prompt")
 
 3.  In the Prompt Library dialog, configure the [prompt settings](/help/ai-assistant/prompt-library.html#configuring-prompt-settings).
 
-    ![Configure prompt settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_prompt_library_dialog.png "Configure prompt settings")
+    ![Configure prompt settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_prompt_library_dialog.png "Configure prompt settings")
 
 4.  Click OK.
 

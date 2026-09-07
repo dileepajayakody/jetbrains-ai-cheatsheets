@@ -12,7 +12,7 @@ The **Recap** feature automatically generates a summary of your recent work to s
 
 2.  Scroll through the log and review the summary of your actions.
 
-    [![Review Recap](https://resources.jetbrains.com/help/img/idea/2026.1/ai_review_recap.png "Review Recap")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_review_recap.png)
+    [![Review Recap](https://resources.jetbrains.com/help/img/idea/2026.2/ai_review_recap.png "Review Recap")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_review_recap.png)
 
     You can click the referenced items to navigate to the corresponding file or line.
 
@@ -26,7 +26,7 @@ By default, Recap is set to update automatically after **5 minutes** of inactivi
 
 2.  In the Recap section, set the desired time interval for the Update Recap after setting.
 
-    [![AI Workflows settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_ai_workflows.png "AI Workflows settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_ai_workflows.png)
+    [![AI Workflows settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_ai_workflows.png "AI Workflows settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_ai_workflows.png)
 
 3.  Click OK to save changes.
 

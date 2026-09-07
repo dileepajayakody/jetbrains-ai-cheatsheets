@@ -1,41 +1,21 @@
-1.  [Tools](tools.html)
+1.  [Work with code](#0)
 
 2.  [Git](git.html)
 
-3.  [Set up a Git repository](#0)
+3.  [Clone repositories](#0)
 
-# Set up a Git repository
+# Clone Git repositories
 
-Last modified: 16 March 2026
+Last modified: 17 August 2026
 
-You can clone projects using the Clone from Git option on the welcome screen.
-
-If you already work on a project and want to clone another one, choose File | New Window in the main menu to open the welcome screen with the cloning option.
+You can clone a project at any time, without closing the one you're working on. JetBrains Air keeps every project you open in the same window.
 
 ### Clone a repository
 
-1.  From the Workspaces screen, click Clone from Git.
+1.  In the main menu, select Git | Clone. Alternatively, open the workspace selector in the task header and select Clone from Git.
 
-2.  In Source URL and Location fields, specify the repository URL and the desired location.
+2.  In Source URL and Location, specify the repository URL and where to store the cloned repository.
 
 3.  Click Clone.
 
-JetBrains Air opens the cloned project in a new window.
-
-## Customize Git settings
-
-To customize Git-related project settings, press ⌘Cmd0, to open Preferences, then open Git section.
-
-### Global settings
-
-The Global settings section contains general Git settings.
-
-Check the necessary options to switch them on:
-
--   Show changes in the gutter: indicate the lines with the local changes.
-
--   Auto-fetch repositories: fetch changes from the remote repository in the set time interval.
-
--   Show confirmation on push: enable notifications that inform whether push was successful.
-
--   Show confirmation1 on revert: enable notification that informs whether revert was successful.
+JetBrains Air opens a workspace for the cloned project, adds it to the Tasks tool, and switches Chat to a new task for it. See [Open projects](open-projects.html).

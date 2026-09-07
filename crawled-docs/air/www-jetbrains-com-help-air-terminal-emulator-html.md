@@ -28,7 +28,7 @@ Use Terminal to run command-line tasks inside JetBrains Air. You can run Git com
 
 ### Search in a terminal session
 
-1.  In the Terminal tool, press ⌘Cmd0F.
+1.  In the Terminal tool, press Ctrl0F.
 
 2.  Type the text to search for.
 
@@ -48,7 +48,7 @@ You can configure the terminal shell and appearance in settings.
 
 ### Open Terminal settings
 
--   Press ⌘Cmd0, to open settings and select Tools | Terminal.
+-   Press Ctrl0, to open settings and select Tools | Terminal.
 
 Common settings include the terminal font, font size, line height, caret shape, and the default shell profile.
 

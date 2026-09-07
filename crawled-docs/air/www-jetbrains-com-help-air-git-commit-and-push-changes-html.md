@@ -1,4 +1,4 @@
-1.  [Tools](tools.html)
+1.  [Work with code](#0)
 
 2.  [Git](git.html)
 
@@ -6,47 +6,41 @@
 
 # Commit and push changes
 
-Last modified: 17 June 2026
+Last modified: 17 August 2026
 
-Push ⌃Ctrl0G⌃Ctrl0P
+Push CtrlShift0G,CtrlShift0P
 
-After you've added new files to the local Git repository, or modified files that are already under Git version control and you are happy with their current state, you can share the results of your work. This involves committing them locally to record the snapshot of your repository to the project history, and then pushing them to the remote repository so that they become available to others.
+After you've added new files to the local Git repository, or modified files that are already under Git version control, you can share the results of your work. This involves committing them locally and then pushing them to the remote repository.
 
-### Generating a GitHub token in JetBrains Air
+## Commit changes
 
--   When a user attempts to perform an operation with a GitHub repository, such as push, pull, or fetch. The token input field appears, the user needs to click the provided link to generate a GitHub token. JetBrains Air pre-fills suggested scopes for the token.
-
-## Work with commits
+You commit in the Changes tool, which lists every file that changed in the current project. For the rest of what the tool does, see [Changes](changes.html).
 
 ### Commit changes locally
 
-1.  Navigate to View | Tools in the main menu and select Git.
+1.  Navigate to View | Tools in the main menu and select Changes.
 
-2.  In the Changed files list, select the files you want to commit.
-
-    If you want to group the list of changed files by directory, click the Settings icon and select Group by | Directory.
-
-    ![Git commit group by directory](https://resources.jetbrains.com/help/img/air/aird_git_commit_group_by_directory.png "Git commit group by directory")
+2.  Select the checkboxes next to the files you want to commit. The counter at the top of the list shows how many of the changed files you selected, for example 3/7 files.
 
 3.  Enter the commit message and click Commit.
 
     To have JetBrains Air draft the message for you, click Generate Commit Message ![Generate commit message](https://resources.jetbrains.com/help/img/air/generate-commit-message-icon.png "Generate commit message") next to Commit. Review and edit the suggested message before you commit.
 
-### Amend commits
+    ![The Changes tool with a few files selected, the commit message field, and the Commit button
+    with its drop-down open on the Amend item](https://resources.jetbrains.com/help/img/air/changes-commit-amend.png "The Changes tool with a few files selected, the commit message field, and the Commit button
+    with its drop-down open on the Amend item")
 
-If you want to modify the latest commit, use the Amend Commit option.
+### Amend the latest commit
 
-1.  Navigate to View | Tools in the main menu and select Git.
+Amend a commit when you want to fold new changes into the commit you just made instead of adding another one.
 
-2.  In the Git tool, select the modified files containing the changes you want to add to the previous commit.
+1.  Navigate to View | Tools in the main menu and select Changes.
 
-3.  Click the Settings icon and select Amend Commit.
+2.  Select the files with the changes you want to add to the previous commit.
 
-    ![Git amend commit](https://resources.jetbrains.com/help/img/air/aird_git_amend_commit.png "Git amend commit")
+3.  Next to Commit, open the drop-down and select Amend.
 
-4.  Modify the pre-filled commit message of the previous commit if necessary.
-
-5.  Click the Amend commit button.
+4.  Edit the pre-filled commit message if you need to, then confirm the amend.
 
 ## Push changes to a remote repository
 
@@ -54,7 +48,7 @@ Before pushing your changes, [sync with the remote](git-sync-with-a-remote-repos
 
 ### Push your changes
 
-1.  From the main menu, choose Git | Push or press ⌃Ctrl0G⌃Ctrl0P.
+1.  From the main menu, choose Git | Push or press CtrlShift0G,CtrlShift0P.
 
 2.  In the Git Push dialog that opens, click Push.
 

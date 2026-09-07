@@ -1,6 +1,6 @@
 # Define tasks
 
-Last modified: 05 May 2026
+Last modified: 14 August 2026
 
 To start the agentic workflow in JetBrains Air, define a task. The quality of the result depends on how clearly you define the goal, what context you provide, and how you configure the agent run.
 
@@ -64,7 +64,7 @@ You define tasks in the Chat tool. This is where you describe the goal, add cont
 
 9.  Run the task.
 
-    Press ↩Enter or click Send.
+    Press Enter or click Send.
 
     After the task completes, review the result and continue iterating if needed. The exact follow-up workflow depends on the selected execution environment.
 

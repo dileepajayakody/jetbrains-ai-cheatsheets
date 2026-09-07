@@ -12,11 +12,11 @@ AI Assistant provides Django-specific support in PyCharm, offering context-awar
 
 1.  Select a code fragment and right-click it to open the context menu.
 
-    Alternatively, select a code fragment and press ⌥ Option↩Enter.
+    Alternatively, select a code fragment and press AltEnter.
 
 2.  Select AI Actions and choose the Django intention.
 
-    ![Choosing the Django intention](https://resources.jetbrains.com/help/img/idea/2026.1/py_ai_choose_django_intention.png "Choosing the Django intention")
+    ![Choosing the Django intention](https://resources.jetbrains.com/help/img/idea/2026.2/py_ai_choose_django_intention.png "Choosing the Django intention")
 
     Create Django View For Model
 
@@ -28,7 +28,7 @@ AI Assistant provides Django-specific support in PyCharm, offering context-awar
 
     AI Assistant provides the possible actions for the selected entity.
 
-    ![AI Assistant suggests Django intentions](https://resources.jetbrains.com/help/img/idea/2026.1/py_ai_custom_django.png "AI Assistant suggests Django intentions")
+    ![AI Assistant suggests Django intentions](https://resources.jetbrains.com/help/img/idea/2026.2/py_ai_custom_django.png "AI Assistant suggests Django intentions")
 
     Create Django Admin For Model
 
@@ -42,4 +42,4 @@ AI Assistant provides Django-specific support in PyCharm, offering context-awar
 
     AI Assistant provides the possible actions for the selected entity taking into account the context of your project provided as attached elements in the chat.
 
-    ![AI Assistant suggests Django intentions with context](https://resources.jetbrains.com/help/img/idea/2026.1/py_ai_custom_django_context.png "AI Assistant suggests Django intentions with context")
+    ![AI Assistant suggests Django intentions with context](https://resources.jetbrains.com/help/img/idea/2026.2/py_ai_custom_django_context.png "AI Assistant suggests Django intentions with context")

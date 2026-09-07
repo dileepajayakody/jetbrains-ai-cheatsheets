@@ -4,9 +4,9 @@
 
 # Junie by JetBrains
 
-Last modified: 03 July 2026
+Last modified: 05 August 2026
 
-![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.1/junie-logo.svg "Junie logo") **Junie** is an AI coding agent developed by JetBrains whose primary task is to autonomously plan and execute complex, multi-step actions based on your prompt. It can introduce large-scale edits to your project, run tests or terminal commands, and use external tools when needed, while reporting progress to you.
+![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.2/junie-logo.svg "Junie logo") **Junie** is an AI coding agent developed by JetBrains whose primary task is to autonomously plan and execute complex, multi-step actions based on your prompt. It can introduce large-scale edits to your project, run tests or terminal commands, and use external tools when needed, while reporting progress to you.
 
 > ### tip
 >
@@ -18,7 +18,7 @@ To use Junie, you need to install and activate it with a [JetBrains AI subscript
 
 After setup, select ! Junie in AI Chat to start using it.
 
-![Select Junie](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Select Junie")
+![Select Junie](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Select Junie")
 
 ## Collect IDE context
 
@@ -34,7 +34,7 @@ An indicator in the chat input field shows the current state of automatic contex
 
 -   ! IDE context disabled – no editor context is attached automatically.
 
-![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
+![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
 
 > ### note
 >
@@ -44,15 +44,15 @@ An indicator in the chat input field shows the current state of automatic contex
 
 To select a model that Junie uses to process your requests, click ! and select the model from the list.
 
-![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_junie_model_selection.png "Select the model")
+![Select the model](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_junie_model_selection.png "Select the model")
 
 You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
 
 ## Enable Brave mode
 
-You can allow Junie to execute commands or modify files without asking for [confirmation](/help/ai-assistant/junie-agent.html#junie-approve-operations). To enable this behavior, turn on Brave Mode in the chat input field.
+You can allow Junie to execute commands or modify files without asking for [confirmation](/help/ai-assistant/junie-agent.html#junie-approve-operations). To enable this behavior, click ! in the chat input field and turn on the Brave Mode. Alternatively, you can set it to Auto to let Junie decide on its own.
 
-![Enable Brave mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_brave_mode.png "Enable Brave mode")
+![Enable Brave mode](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_brave_mode.png "Enable Brave mode")
 
 > ### warning
 >
@@ -66,7 +66,7 @@ Specific IDEs
 
 In Debug mode, Junie works as an AI-powered debugging assistant. Instead of editing code, it launches or attaches to a running program through the IDE debugger to manage breakpoints, inspect the runtime state, and evaluate expressions in the paused execution frame.
 
-![The Debug mode](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_debug_mode.png "The Debug mode")
+![The Debug mode](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_debug_mode.png "The Debug mode")
 
 > ### tip
 >
@@ -136,7 +136,7 @@ Once the debugger MCP tools are set up, ask Junie to debug your code in plain la
 
 By default, Junie requests your permission to run suggested bash commands, introduce changes, perform file operations, or use [external tools](mcp.html). In this case, you can either approve or reject the operation.
 
-![Junie requests an approval](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_approve_request.png "Junie requests an approval")
+![Junie requests an approval](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_approve_request.png "Junie requests an approval")
 
 -   Yes – allows Junie to execute the command. You will be asked again if the command is requested later.
 
@@ -152,11 +152,11 @@ Before you decide, you can review what the agent is about to do:
 
 -   For a suggested file change, click the modified file to review the changes the agent introduces.
 
-    ![Open the diff to review the file changes Junie suggests](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_agent_review_suggested_changes.png "Open the diff to review the file changes Junie suggests")
+    ![Open the diff to review the file changes Junie suggests](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_agent_review_suggested_changes.png "Open the diff to review the file changes Junie suggests")
 
 -   For a suggested command, click Open in editor in the top-right corner of the widget to review the complete command the agent suggests to run.
 
-    ![Open the suggested command in the editor to review it before running](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_agent_terminal_command_review.png "Open the suggested command in the editor to review it before running")
+    ![Open the suggested command in the editor to review it before running](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_agent_terminal_command_review.png "Open the suggested command in the editor to review it before running")
 
 ## Rollback operations
 
@@ -168,11 +168,11 @@ If the changes introduced by Junie do not suit you, you can roll them back. To d
 
     -   To roll back changes in a specific file, hover over it and click !.
 
-        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
+        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
 
     -   To roll back changes in all files, click Rollback.
 
-        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_all_changes.png "Rollback changes in all files")
+        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_all_changes.png "Rollback changes in all files")
 
 ## Use /commands
 
@@ -180,15 +180,9 @@ Junie supports a subset of `/commands` that you can type directly in the chat to
 
 To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
-The following `/commands` are currently supported:
+![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_agent_commands.png "List of / commands")
 
--   `/ide` – shows the current JetBrains IDE connection status and the JetBrains IDE features available to the current session.
-
--   `/usage` – shows the cost breakdown for the current session, including token usage and used models.
-
--   `/remote` – starts a remote session that lets you control Junie from a web UI in your browser. When you run the command, Junie posts a message in AI Chat confirming that the remote session has started, along with a link to connect to it. Open the link, log in with your JetBrains account, and you will see the remote session. Click Open Chat to start working with the agent from the web UI.
-
-    The remote session lives as long as the IDE is running. Run `/remote` again to display the Remote Session Status.
+For details on specific commands, refer to the [official Junie documentation](https://junie.jetbrains.com/docs/slash-commands.html#built-in-slash-commands).
 
 > ### note
 >
@@ -198,15 +192,15 @@ The following `/commands` are currently supported:
 
 You can enable Junie to use tools provided by configured [Model Context Protocol (MCP) servers](mcp.html), extending its capabilities to perform a wider range of tasks. The available tools can be invoked automatically when the agent considers them necessary, or you can call them manually when writing a request.
 
-![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_junie_run_mcp_command.png "Run MCP command")
+![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_junie_run_mcp_command.png "Run MCP command")
 
 To enable Junie to use tools:
 
 1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
 
-2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+2.  In the IDE settings (CtrlAlt0S), go to Tools | AI Assistant | Agents.
 
-    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "the Agents settings page")
 
 3.  Enable the Pass custom MCP servers setting.
 
@@ -224,4 +218,4 @@ For more information about instruction files and their format, refer to [Agent i
 
 Junie respects the existing .aiignore file, so if you have one [configured](disable-ai-assistant.html#restrict-ai-assistant-usage-in-specific-files-or-folders) in your project, it will not process any files or directories listed there unless you explicitly permit it to do so.
 
-![.aiignore support](https://resources.jetbrains.com/help/img/idea/2026.1/ai_junie_aiignore_support.png ".aiignore support")
+![.aiignore support](https://resources.jetbrains.com/help/img/idea/2026.2/ai_junie_aiignore_support.png ".aiignore support")

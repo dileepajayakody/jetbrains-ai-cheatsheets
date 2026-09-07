@@ -6,7 +6,7 @@ Settings | Tools | AI Assistant
 
 Use this page to configure the general behavior of AI Assistant.
 
-[![AI Assistant settings reference](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference.png "AI Assistant settings reference")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference.png)
+[![AI Assistant settings reference](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference.png "AI Assistant settings reference")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference.png)
 
 ## Features
 
@@ -24,7 +24,7 @@ Suggest converting pasted code to the language of the target file
 
 Suggests converting the pasted code to the language of the target file.
 
-![Convert Pasted Code](https://resources.jetbrains.com/help/img/idea/2026.1/ai_convert_pasted_code.png "Convert Pasted Code")
+![Convert Pasted Code](https://resources.jetbrains.com/help/img/idea/2026.2/ai_convert_pasted_code.png "Convert Pasted Code")
 
 For additional information, refer to [Convert code to another language](convert-files-to-another-language-with-ai.html).
 

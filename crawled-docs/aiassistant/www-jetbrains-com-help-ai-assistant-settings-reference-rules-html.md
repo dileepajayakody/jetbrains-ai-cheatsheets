@@ -10,7 +10,7 @@ Settings | Tools | AI Assistant | Rules
 
 Use this page to [create](configure-project-rules.html) project-specific guidelines that can be used by AI Assistant to improve the relevance of its responses.
 
-[![AI Assistant rules settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_project_rules_settings.png "AI Assistant rules settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_project_rules_settings.png)
+[![AI Assistant rules settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_project_rules_settings.png "AI Assistant rules settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_project_rules_settings.png)
 
 Item
 

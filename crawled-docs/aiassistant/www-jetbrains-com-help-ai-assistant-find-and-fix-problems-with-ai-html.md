@@ -14,11 +14,11 @@ AI Assistant helps you find and fix problems in your code by analyzing the prov
 
 2.  In the menu, click Find Problems.
 
-    ![Find Problems](https://resources.jetbrains.com/help/img/idea/2026.1/ai_popup_find_problems.png "Find Problems")
+    ![Find Problems](https://resources.jetbrains.com/help/img/idea/2026.2/ai_popup_find_problems.png "Find Problems")
 
     The AI Chat will open, where the model will analyze the selected code fragment, identifying potential issues and suggesting possible solutions.
 
-    ![AI Assistant finds potential problems in the selected code](https://resources.jetbrains.com/help/img/idea/2026.1/ai-find-potential-problems.png "AI Assistant finds potential problems in the selected code")
+    ![AI Assistant finds potential problems in the selected code](https://resources.jetbrains.com/help/img/idea/2026.2/ai-find-potential-problems.png "AI Assistant finds potential problems in the selected code")
 
 Specific IDEs
 
@@ -30,25 +30,25 @@ This feature may require [attaching the database schema](ai-chat.html) to sugges
 
 For any problems higher than [weak warning](https://www.jetbrains.com/help/datagrip/configuring-inspection-severities.html), the assistant suggests a fix. To use it, do the following:
 
-1.  In the editor, invoke the intention actions by placing the caret at the highlighted code and pressing ⌥ Option↩Enter, then select AI Actions.
+1.  In the editor, invoke the intention actions by placing the caret at the highlighted code and pressing AltEnter, then select AI Actions.
 
 2.  In the AI Actions dialog, select Fix SQL problem under caret.
 
-![AI Assistant suggests a fix for the problems of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_fix_problems.png "AI Assistant suggests a fix for the problems of selected SQL code")
+![AI Assistant suggests a fix for the problems of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_fix_problems.png "AI Assistant suggests a fix for the problems of selected SQL code")
 
 AI Assistant will provide its fix in editor.
 
-![AI Assistant suggests a fix for the problems of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_fix_problems_result.png "AI Assistant suggests a fix for the problems of selected SQL code")
+![AI Assistant suggests a fix for the problems of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_fix_problems_result.png "AI Assistant suggests a fix for the problems of selected SQL code")
 
 AI Assistant can also suggest fixes for syntax errors. To use them, do the following:
 
--   In the editor, invoke the intention actions by placing the caret at the highlighted code and pressing ⌥ Option↩Enter, then select Fix with AI Assistant.
+-   In the editor, invoke the intention actions by placing the caret at the highlighted code and pressing AltEnter, then select Fix with AI Assistant.
 
-![AI Assistant suggests a fix for the syntax errors of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_fix_syntax_problems.png "AI Assistant suggests a fix for the syntax errors of selected SQL code")
+![AI Assistant suggests a fix for the syntax errors of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_fix_syntax_problems.png "AI Assistant suggests a fix for the syntax errors of selected SQL code")
 
 AI Assistant will provide its fix in editor.
 
-![AI Assistant suggests a fix for the syntax errors of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_fix_syntax_problems_result.png "AI Assistant suggests a fix for the syntax errors of selected SQL code")
+![AI Assistant suggests a fix for the syntax errors of selected SQL code](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_fix_syntax_problems_result.png "AI Assistant suggests a fix for the syntax errors of selected SQL code")
 
 Specific IDEs
 
@@ -66,11 +66,11 @@ This feature may require [attaching the database schema](ai-chat.html) to sugges
 
 1.  After running an SQL query and encountering a query execution error, click Explain with AI in the error message area.
 
-    ![SQL query execution error handling actions](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_err_handling_actions.png "SQL query execution error handling actions")
+    ![SQL query execution error handling actions](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_err_handling_actions.png "SQL query execution error handling actions")
 
 2.  AI Assistant opens AI chat with an automatically sent prompt and AI Assistant’s response, providing an explanation of the error.
 
-    [![SQL query error explained by AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_err_handling_explained.png "SQL query error explained by AI Assistant")](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_err_handling_explained.png)
+    [![SQL query error explained by AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_err_handling_explained.png "SQL query error explained by AI Assistant")](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_err_handling_explained.png)
 
 ### Fix SQL errors
 
@@ -80,11 +80,11 @@ This feature may require [attaching the database schema](ai-chat.html) to sugges
 
 1.  After running an SQL query and encountering a query execution error, click Fix with AI in the error message area.
 
-    ![SQL query execution error handling actions](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_err_handling_actions.png "SQL query execution error handling actions")
+    ![SQL query execution error handling actions](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_err_handling_actions.png "SQL query execution error handling actions")
 
 2.  AI Assistant generates a fix for the query execution error in the editor.
 
-    ![SQL query error fixed by AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.1/db_ai_err_handling_fixed.png "SQL query error fixed by AI Assistant")
+    ![SQL query error fixed by AI Assistant](https://resources.jetbrains.com/help/img/idea/2026.2/db_ai_err_handling_fixed.png "SQL query error fixed by AI Assistant")
 
     > ### tip
     >

@@ -9,9 +9,9 @@ The plugin offers the following functionality:
 -   **Recap**
     Quickly retrace your steps after a period of inactivity to rebuild context and continue where you left off. This feature provides a summary of your recent work, reminding you what was done before the break.
 
--   [![Recap](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_recap_preview.png "Recap")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_recap_preview.png)
+-   [![Recap](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_recap_preview.png "Recap")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_recap_preview.png)
 
--   [![Insights](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_insights_preview.png "Insights")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_insights_preview.png)
+-   [![Insights](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_insights_preview.png "Insights")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_insights_preview.png)
 
 -   **Insights**
     Get brief and concise summaries for pieces of code that are hard to interpret at first glance. This feature allows you to better understand the intent of the code, making your next edits more predictable and safe.
@@ -19,7 +19,7 @@ The plugin offers the following functionality:
 -   **Group with AI**
     Organize raw diffs into groups based on the importance of introduced changes to review the edits faster. This feature allows you to focus on the highest-impact changes first, filtering out smaller, less important updates.
 
--   [![Group with AI](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_group_with_ai_preview.png "Group with AI")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_group_with_ai_preview.png)
+-   [![Group with AI](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_group_with_ai_preview.png "Group with AI")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_group_with_ai_preview.png)
 
 ## What "Experimental" means?
 
@@ -59,7 +59,7 @@ To install the plugin:
 
 2.  Click Install.
 
-    ![AI Assistant Experimental Features in the list of available plugins in the marketplace](https://resources.jetbrains.com/help/img/idea/2026.1/ai_install_experimental_plugin.png "AI Assistant Experimental Features in the list of available plugins in the marketplace")
+    ![AI Assistant Experimental Features in the list of available plugins in the marketplace](https://resources.jetbrains.com/help/img/idea/2026.2/ai_install_experimental_plugin.png "AI Assistant Experimental Features in the list of available plugins in the marketplace")
 
 3.  If prompted, restart the IDE.
 
@@ -79,8 +79,8 @@ Insights
 
 Group with AI
 
-![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.1/ai_provide_feedback_recap.png "Provide feedback")
+![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.2/ai_provide_feedback_recap.png "Provide feedback")
 
-![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.1/ai_provide_feedback_insights.png "Provide feedback")
+![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.2/ai_provide_feedback_insights.png "Provide feedback")
 
-![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.1/ai_provide_feedback_group_with_ai.png "Provide feedback")
+![Provide feedback](https://resources.jetbrains.com/help/img/idea/2026.2/ai_provide_feedback_group_with_ai.png "Provide feedback")

@@ -1,66 +1,58 @@
-1.  [Tools](tools.html)
+1.  [Work with code](#0)
 
 2.  [Git](#0)
 
 # Git
 
-Last modified: 23 June 2026
+Last modified: 17 August 2026
 
-Use the Git tool to manage version control in JetBrains Air.
+JetBrains Air has no single Git panel. Git operations sit next to the work they belong to: the Git menu for repository-wide commands, the branch selector for branches, the Changes tool for commits, and the History tool for the commit log.
 
-You can use it to:
+## Where to find Git operations
 
--   Review changed files.
+Surface
 
--   Create commits and amend the latest commit.
+What you do there
 
--   Pull and push your local branch with the remote repository.
+[The Git menu](/help/air/git.html#git-menu-options)
 
--   Review local and remote differences in Unsynced commits and run Pull and Push.
+Sync, push, pull, and fetch. Show the commit history, work with the current file, and clone a repository.
 
-### Open the Git tool
+[The branch selector](git-manage-branches.html)
 
--   Navigate to View | Tools in the main menu and select Git.
+See the branch that is currently checked out, check out another one, create a branch, and browse remote branches.
 
--   On the tool panel, click Git.
+[The Changes tool](changes.html)
 
-![Tools to work with your Git repository](https://resources.jetbrains.com/help/img/air/air_tools_to_work_with_your_git_repository.png "Tools to work with your Git repository")
+Review changed files, choose what goes into the next commit, [commit](git-commit-and-push-changes.html#commit-changes), and [revert changes](git-undo-changes.html#revert_changes).
 
-## Tools to work with your Git repository
+[The History tool](history.html)
 
-To commit and manage your Git repository, use Git, History, and Files tools, as well as the Branches menu:
+[Browse commits and task snapshots](git-browse-history.html), view diffs, pull and push, and [roll back to a commit](git-undo-changes.html#history_rollback).
 
--   Git tool helps you [commit changes locally](git-commit-and-push-changes.html#commit-changes-locally) and [synchronize local and remote tracked branches](git-sync-with-a-remote-repository.html#pull-and-push).
+[The Files tool](files.html)
 
--   History tool shows selected branch history, commit details and diffs.
+Run Git actions on one file from its right-click menu, such as [file history](git-browse-history.html#history_file_history) or reverting its changes.
 
--   Files tool shows the contents of the repository.
-
--   Branches menu shows the name of the branch that is currently checked out, contains the list of local and remote branches, as well as options to [create a new branch](git-manage-branches.html#create-new-branch) or [fetch changes from the upstream](git-sync-with-a-remote-repository.html#fetch-changes).
-
-Most of these options are also available in the Git section of the [main menu](/help/air/git.html#git-menu-options).
+You can also run any Git action by name: press CtrlShift0K and type `git`.
 
 ## Git menu options
 
 To see the list of options, choose Git in the main menu.
 
-[Commit…](git-commit-and-push-changes.html#commit-changes-locally)
+[Sync](git-sync-with-a-remote-repository.html#pull-and-push)
 
-Commit changes locally
-
-[Pull and Push](git-sync-with-a-remote-repository.html#pull-and-push)
-
-Synchronize the local branch with the remote tracked branch
+Pull the remote changes into the current branch, then push your local commits
 
 [Push](git-commit-and-push-changes.html#push-changes-to-a-remote-repository)
 
-⌃Ctrl0G⌃Ctrl0P
+CtrlShift0G,CtrlShift0P
 
 Push local changes to the remote tracked branch
 
 [Pull](git-sync-with-a-remote-repository.html#pull-changes)
 
-⌃Ctrl0G⌃Ctrl0U
+CtrlShift0G,CtrlShift0U
 
 Get changes into the current branch from the remote tracked branch
 
@@ -68,25 +60,19 @@ Get changes into the current branch from the remote tracked branch
 
 Download changes from the remote repository
 
-Show History
+[Show History](history.html)
 
-Show the list of commits of the currently checked out branch
-
-New Branch…
-
-Set the name of a new branch and then check out this new branch
-
-[Branches](git-manage-branches.html#create-new-branch)
-
-Open the Branches menu
+Open the History tool on the currently checked out branch
 
 Current File | File History
 
-Show history of the file that is selected in the Files tool
+CtrlShift0G,CtrlShift0H
+
+Show the history of the file that is open in the editor
 
 Current File | Toggle Git Blame
 
-⌃Ctrl0G⌃Ctrl0A
+CtrlShift0G,CtrlShift0A
 
 Open the gutter and show what revision and author last modified each line of a file
 
@@ -95,3 +81,21 @@ Open the gutter and show what revision and author last modified each line of a f
 Clone a repository from Git
 
 \>
+
+## Git settings
+
+To customize Git-related project settings, press Ctrl0, to open Settings, then open Git section.
+
+### Global settings
+
+The Global settings section contains general Git settings.
+
+Check the necessary options to switch them on:
+
+-   Show changes in the gutter: indicate the lines with the local changes.
+
+-   Auto-fetch repositories: fetch changes from the remote repository in the set time interval.
+
+-   Show confirmation on push: enable notifications that inform whether push was successful.
+
+-   Show confirmation on revert: enable notification that informs whether revert was successful.

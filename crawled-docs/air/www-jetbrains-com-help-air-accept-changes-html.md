@@ -4,7 +4,7 @@
 
 # Accept changes
 
-Last modified: 17 June 2026
+Last modified: 17 August 2026
 
 Accepting changes means moving the result of an agent task into the place where you continue normal development. In most workflows, this means applying the changes to a local branch, committing, and pushing them to a remote repository (either directly or through a pull request).
 
@@ -16,7 +16,7 @@ If the task ran in Local Workspace, the agent applied changes directly to your w
 
 ### Commit changes
 
-1.  Open the Task Changes editor tab and review the staged files.
+1.  Open the changes editor tab and review the staged files.
 
 2.  Enter a commit message and click Commit.
 
@@ -26,7 +26,7 @@ If the task ran in Local Workspace, the agent applied changes directly to your w
 
 3.  Push the commit to the remote repository.
 
-Alternatively, commit and push from the Changes tool.
+You can also commit and push from the [Changes](changes.html) tool. For the full workflow, including how to amend a commit and what each provider asks for on push, see [Commit and push changes](git-commit-and-push-changes.html).
 
 ## Accept changes from isolated environments
 
@@ -34,7 +34,7 @@ If the task ran in Git Worktree or Docker, JetBrains Air kept the agent isolated
 
 -   Apply Locally: copies the uncommitted changes from the task branch to your local workspace.
 
--   Checkout Branch Locally: creates a new local branch and adds a commit with the message Auto-committed changes. The commit can include one file or all changed files, depending on where you run the action.
+-   Check Out Branch Locally: creates a new local branch and adds a commit with the message Auto-committed changes. The commit can include one file or all changed files, depending on where you run the action.
 
 How isolation works
 
@@ -54,7 +54,7 @@ Example structure:
 
 ### Apply changes locally
 
-1.  In the Task Changes editor tab, click Apply Locally.
+1.  In the changes editor tab, click Apply Locally.
 
     ![Apply locally](https://resources.jetbrains.com/help/img/air/review-diff-apply-changes.png "Apply locally")
 
@@ -64,9 +64,9 @@ Example structure:
 
 ### Check out branch locally
 
-1.  In the Task Changes editor tab, open the Apply Locally drop-down menu.
+1.  In the changes editor tab, open the Apply Locally drop-down menu.
 
-2.  Click Checkout Branch Locally.
+2.  Click Check Out Branch Locally.
 
 3.  JetBrains Air checks out the task branch in your local working copy. The branch typically has the same name as the task branch, with a suffix `-copy`, e.g., `air/add-new-feature-copy`.
 
@@ -74,7 +74,7 @@ Example structure:
 
 ## Revert changes
 
-Revert changes when you do not want to keep the result.
+Revert changes when you do not want to keep the result. You can do this straight from the Task Changes tab, file by file or all at once.
 
 ### Revert a single file
 
@@ -100,62 +100,4 @@ Revert changes when you do not want to keep the result.
 
     ![Revert all changes](https://resources.jetbrains.com/help/img/air/revert_all_changes.png "Revert all changes")
 
-## Stage and commit changes
-
-Stage the files you want to include, then commit the result. Staging means selecting which changes will go into the next commit. Only staged changes are included in a commit. Changes that are not staged stay in your working copy.
-
-### Stage files
-
-1.  Open the Changes tool. You can use the following options:
-
-    -   Navigate to View | Changes in the main menu.
-
-    -   On the tool panel, click Changes.
-
-2.  In the Changes tool, select the files you want to stage.
-
-    You can click the file and select changes inside the file that you want to include.
-
-    ![Stage files](https://resources.jetbrains.com/help/img/air/stage_files.png "Stage files")
-
-### Commit staged changes
-
-1.  Open the Changes tool. You can use the following options:
-
-    -   Navigate to View | Changes in the main menu.
-
-    -   On the tool panel, click Changes.
-
-2.  In the Changes tool, enter a commit message in the commit message field.
-
-    To have JetBrains Air draft the message for you, click Generate Commit Message ![Generate commit message](https://resources.jetbrains.com/help/img/air/generate-commit-message-icon.png "Generate commit message") next to Commit.
-
-3.  Click Commit.
-
-    ![Commit changes](https://resources.jetbrains.com/help/img/air/commit_changes.png "Commit changes")
-
-## Roll back to a commit
-
-To roll back to a specific commit, use the History tool.
-
-### Open the History tool
-
--   Navigate to View | Tools in the main menu and select History.
-
--   On the tool panel, click History.
-
-### Reset the current branch to a commit
-
-1.  In the History tool, right-click the commit you want to roll back to.
-
-2.  Select Reset Current Branch To Here.
-
-3.  Select the reset mode:
-
-    -   Mixed — Keep All Changes
-
-    -   Keep — Keep Only Uncommitted Changes
-
-    -   Hard — Discard All Changes
-
-    ![Reset branch to commit](https://resources.jetbrains.com/help/img/air/reset_branch_to_commit.png "Reset branch to commit")
+If you already committed the changes, reverting no longer helps – roll the branch back instead. See [Undo changes](git-undo-changes.html).

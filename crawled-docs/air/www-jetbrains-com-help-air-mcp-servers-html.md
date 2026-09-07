@@ -4,11 +4,15 @@
 
 # MCP servers
 
-Last modified: 20 May 2026
+Last modified: 29 July 2026
 
 MCP servers extend agents with additional tools. They are commonly used in agentic workflows to fetch data and perform actions in external systems. For example, you can paste a YouTrack issue link into a task and let the agent fetch the issue details through a YouTrack MCP server.
 
 MCP servers are configured with an `msp.json` file.
+
+> ### note
+>
+> In [the web version of JetBrains Air](https://air.jetbrains.cloud), you can also connect to MCP servers through [connectors](connectors.html) without writing a configuration file. MCP servers added through connectors and through `mcp.json` work together in cloud tasks and automations.
 
 ### Add an MCP server
 

@@ -4,9 +4,11 @@
 
 # Multitasking
 
-Last modified: 23 June 2026
+Last modified: 18 August 2026
 
-Multitasking means running several tasks in the same workspace. You can run tasks in parallel, switch between them when input is required, and group tasks to keep work organized.
+Multitasking means running several tasks at the same time, in one project or across all the projects you have open. You can run tasks in parallel, switch between them when input is required, and group tasks to keep work organized.
+
+Each project you open gets its own workspace, and they all share one window: the Tasks tool lists your workspaces with their tasks. For how to open a project and switch between workspaces, see [Open projects](open-projects.html).
 
 ## Run tasks in parallel
 
@@ -20,7 +22,7 @@ You can run multiple tasks at the same time. Each task has its own state and pro
 
     ![New Task](https://resources.jetbrains.com/help/img/air/aird_multitasking_new_task.png "New Task")
 
--   Click the New Task icon or press ⌘Cmd⇧Shift0N.
+-   Click the New Task icon or press Ctrl0N.
 
     ![New Task](https://resources.jetbrains.com/help/img/air/aird_multitasking_new_task_2.png "New Task")
 
@@ -56,11 +58,9 @@ A task can pause with the Input required state when it needs additional informat
 
 ### Open a task that requires input
 
-1.  Select View | Tasks from the main menu. Alternatively, press ⌘Cmd01
+1.  Select View | Tasks from the main menu. Alternatively, press Alt01
 
 2.  Select the task with the Input required label. Alternatively, if a notification appears, click Open Task.
-
-    ![Input Required](https://resources.jetbrains.com/help/img/air/aird_multitasking_input_required.png "Input Required")
 
 ## Group tasks
 
@@ -68,6 +68,6 @@ You can group tasks in the task list to keep work organized. You can group by da
 
 ### Change task grouping
 
-1.  Select View | Tasks from the main menu. Alternatively, press ⌘Cmd01
+1.  Select View | Tasks from the main menu. Alternatively, press Alt01
 
 2.  Click the settings icon next to the search field and select the grouping option: Date, Status, or Target.

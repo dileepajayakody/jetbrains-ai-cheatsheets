@@ -1,6 +1,6 @@
 # Agents
 
-Last modified: 03 July 2026
+Last modified: 03 August 2026
 
 Coding agents are AI systems that can autonomously plan and execute multi-step development tasks in your project. They edit files, run commands and tests, use external tools, and report progress as they work. You can review the proposed changes and keep or roll them back as needed.
 
@@ -18,7 +18,7 @@ Working with an agent generally follows this pattern:
 
 -   **Review the results** – keep the changes you want, roll them back, or send a follow-up prompt to refine.
 
-![Select an agent](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Select an agent")
+![Select an agent](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Select an agent")
 
 ## Available agents
 
@@ -34,7 +34,7 @@ Project instructions
 
 `.aiignore`
 
-![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.1/junie-logo.svg "Junie logo") [Junie](junie-agent.html)
+![Junie logo](https://resources.jetbrains.com/help/img/idea/2026.2/junie-logo.svg "Junie logo") [Junie](junie-agent.html)
 
 Brave mode, Debug mode
 

@@ -12,13 +12,13 @@ The **Insights** feature analyzes the currently opened file and generates brief 
 
 ### Process Insights
 
-1.  In the editor, hover over the Insight that you want to process. The Insights are marked with an ![Insight](https://resources.jetbrains.com/help/img/idea/2026.1/insightIconColored.svg "Insight") icon.
+1.  In the editor, hover over the Insight that you want to process. The Insights are marked with an ![Insight](https://resources.jetbrains.com/help/img/idea/2026.2/insightIconColored.svg "Insight") icon.
 
-    [![Insight](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_insights_overview.png "Insight")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_exp_insights_overview.png)
+    [![Insight](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_insights_overview.png "Insight")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_exp_insights_overview.png)
 
 2.  Click More and select what you want to do:
 
-    ![Process the insight](https://resources.jetbrains.com/help/img/idea/2026.1/ai_workflows_process_insight.png "Process the insight")
+    ![Process the insight](https://resources.jetbrains.com/help/img/idea/2026.2/ai_workflows_process_insight.png "Process the insight")
 
     -   Copy Insight – copy the insight to the clipboard.
 

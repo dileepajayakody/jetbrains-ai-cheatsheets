@@ -10,7 +10,7 @@ Settings | Tools | AI Assistant | Project Settings
 
 Use this page to [restrict](disable-ai-assistant.html) the usage of AI Assistant in the current project or in specific folders and files and to set up guidelines for the [Self-Review with AI](ai-in-vcs-integration.html#ai-self-review) feature.
 
-[![AI Assistant project settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_project_settings.png "AI Assistant project settings")](https://resources.jetbrains.com/help/img/idea/2026.1/ai_settings_reference_project_settings.png)
+[![AI Assistant project settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_project_settings.png "AI Assistant project settings")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_settings_reference_project_settings.png)
 
 Item
 

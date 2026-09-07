@@ -1,8 +1,14 @@
 # Model Context Protocol (MCP)
 
-Last modified: 18 December 2025
+Last modified: 14 August 2026
 
-AI Assistant can interact with external tools and data sources via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction). By connecting to MCP servers, AI Assistant gains access to a range of tools that significantly extend its capabilities.
+AI Assistant can interact with external tools and data sources through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction). By connecting to MCP servers, AI Assistant gains access to a range of tools that significantly extend its capabilities.
+
+> ### note
+>
+> If your organization manages AI centrally through JetBrains IDE Services or JetBrains Central, an administrator can preconfigure the MCP servers available to you and control whether you can add your own. As a result, some MCP servers might already be set up, and you might not be able to connect additional servers.
+>
+> For details, refer to the [JetBrains IDE Services](https://www.jetbrains.com/help/ide-services/configure-profiles.html#ai_profile) or [JetBrains Central](https://www.jetbrains.com/help/jetbrains-console/eap/ai-policies.html) documentation.
 
 Supported transport mechanisms
 
@@ -32,7 +38,7 @@ To connect to an MCP server:
 
     Alternatively, you can open the screen with the MCP settings by typing `/` in the chat and selecting the Add Command option.
 
-    ![Add Command](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_add_command.png "Add Command")
+    ![Add Command](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_add_command.png "Add Command")
 
 2.  On the Model Context Protocol (MCP) settings page, click ! Add to add a new MCP server configuration.
 
@@ -40,7 +46,7 @@ To connect to an MCP server:
     >
     > Alternatively, if you use [Claude Desktop](https://claude.ai/download) and already have an MCP server configuration, you can reuse it. To do this, click ! Import from Claude. All configured MCP servers will be added to the table.
     >
-    > ![Import from Claude](https://resources.jetbrains.com/help/img/idea/2026.1/ai_import_from_claude.png "Import from Claude")
+    > ![Import from Claude](https://resources.jetbrains.com/help/img/idea/2026.2/ai_import_from_claude.png "Import from Claude")
 
 3.  In the New MCP Server dialog, select how you want to connect to the MCP server and provide a JSON configuration:
 
@@ -48,9 +54,9 @@ To connect to an MCP server:
 
     HTTP
 
-    ![Connect to the server over STDIO](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_parameters_stdio.png "Connect to the server over STDIO")
+    ![Connect to the server over STDIO](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_parameters_stdio.png "Connect to the server over STDIO")
 
-    -   JSON configuration – provide a JSON snippet with the parameters required to start the MCP server. The configuration must follow this format:
+    -   JSON configuration – provide a JSON snippet with the parameters required to start the MCP server. The configuration needs to follow this format:
 
         ```
         {
@@ -67,11 +73,11 @@ To connect to an MCP server:
 
     -   Working directory – specify the path to the folder from which the server is launched. This allows you to use relative paths in arguments instead of absolute paths.
 
-    -   Server level – specify whether the configured server must be available globally or only in the current project.
+    -   Server level – specify whether the configured server should be available globally or only in the current project.
 
-    ![Connect to the server over HTTP](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_parameters_http.png "Connect to the server over HTTP")
+    ![Connect to the server over HTTP](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_parameters_http.png "Connect to the server over HTTP")
 
-    -   JSON configuration – provide a JSON snippet with the parameters required to start the MCP server. The configuration must follow this format:
+    -   JSON configuration – provide a JSON snippet with the parameters required to start the MCP server. The configuration needs to follow this format:
 
         ```
         {
@@ -83,7 +89,7 @@ To connect to an MCP server:
         }
         ```
 
-    -   Server level – specify whether the configured server must be available globally or only in the current project.
+    -   Server level – specify whether the configured server should be available globally or only in the current project.
 
     > ### tip
     >
@@ -99,19 +105,19 @@ To connect to an MCP server:
 
 As a result, the tools provided by the MCP server become available to AI Assistant. It can trigger them automatically when processing your request, or you can invoke them manually by typing the appropriate `/` command in the chat:
 
-![List of commands available on the MCP server](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_list_of_commands.png "List of commands available on the MCP server")
+![List of commands available on the MCP server](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_list_of_commands.png "List of commands available on the MCP server")
 
 ### Review available tools
 
 Once the connection to the MCP server is successfully established, you can review the list of available tools by clicking the icon in the Status column.
 
-![List of available tools](https://resources.jetbrains.com/help/img/idea/2026.1/ai_configured_mcp_server.png "List of available tools")
+![List of available tools](https://resources.jetbrains.com/help/img/idea/2026.2/ai_configured_mcp_server.png "List of available tools")
 
 ### Change the server level
 
-If you want to change the level at which the MCP server is available, click the ! buton in the Level column, and select whether the setup must be available globally or only in the current project.
+If you want to change the level at which the MCP server is available, click the ! buton in the Level column, and select whether the setup should be available globally or only in the current project.
 
-![Change the MCP server level](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_change_level.png "Change the MCP server level")
+![Change the MCP server level](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_change_level.png "Change the MCP server level")
 
 ### Stop the MCP server
 
@@ -119,7 +125,7 @@ To stop the MCP server:
 
 1.  Deselect the checkbox for the MCP server you want to stop.
 
-    ![Stop MCP server](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_stop_server.png "Stop MCP server")
+    ![Stop MCP server](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_stop_server.png "Stop MCP server")
 
 2.  Click Apply.
 
@@ -310,7 +316,7 @@ If the MCP server is hosted remotely and accessible over HTTP, you can connect t
 
 > ### note
 >
-> AI Assistant also supports the **SSE** transport mechanism. In this case, the configuration must follow this format:
+> AI Assistant also supports the **SSE** transport mechanism. In this case, the configuration needs to follow this format:
 >
 > ```
 > {
@@ -338,7 +344,7 @@ Here, AI Assistant connects to the MCP server over HTTP using the Streamable HT
 
 ## Use your IDE as an MCP server
 
-Starting with version 2025.2, JetBrains IDEs come with an integrated [MCP server](https://plugins.jetbrains.com/plugin/26071-mcp-server), allowing external clients such as Claude Desktop, Cursor, Codex, VS Code, and others to access tools provided by the IDE. This provides users with the ability to control and interact with JetBrains IDEs without leaving their application of choice.
+Starting with version 2025.2, JetBrains IDEs come with an integrated [MCP Server](https://plugins.jetbrains.com/plugin/26071-mcp-server), allowing external clients such as Claude Code, Codex, VS Code, and others to access tools provided by the IDE. This gives users the ability to control and interact with JetBrains IDEs without leaving their application of choice.
 
 > ### tip
 >
@@ -348,37 +354,76 @@ Starting with version 2025.2, JetBrains IDEs come with an integrated [MCP server
 
 This functionality relies on the MCP Server plugin, which is bundled and enabled in JetBrains IDEs by default. If the relevant features are not available, make sure that you did not disable the plugin.
 
-1.  Press ⌘Cmd0, to open settings and then select Plugins.
+1.  Press CtrlAlt0S to open settings and then select Plugins.
 
 2.  Open the Installed tab, find the MCP Server plugin, and select the checkbox next to the plugin name.
 
+### Enable MCP Server
+
+To enable the MCP server, do the following:
+
+1.  Go to Settings | Tools | MCP Server.
+
+2.  Select the Enable MCP Server checkbox.
+
+    ![Select the Enable MCP Server checkbox](https://resources.jetbrains.com/help/img/idea/2026.2/aia_enabling_mcp_server.png "Select the Enable MCP Server checkbox")
+
+3.  In the Enable MCP Server? dialog, review what access third-party applications will get to the projects opened in the IDE, and click Enable to continue.
+
+4.  Click Apply.
+
+Once the MCP server is enabled, you can proceed to configure external clients.
+
 ### External client setup
 
-For external clients like Claude Code, Claude Desktop, Cursor, VS Code, Codex, and Windsurf, configuration can be performed automatically:
+For detected external clients like Junie, VS Code, Claude Code, Codex, Air, and GitHub Copilot CLI, configuration can be performed automatically. Setting up a client means adding the address of the IDE MCP server to that client's configuration file.
 
-1.  In the main menu, go to Settings | Tools | MCP Server.
+To do this:
 
-2.  Click Enable MCP Server.
+1.  Go to Settings | Tools | MCP Server.
 
-3.  In the Clients Auto-Configuration section, click Auto-Configure for each client you want to set up for use with the MCP server. This will automatically update their JSON configuration.
+2.  In the Clients Auto-Configuration section, click Auto-Configure for each client you want to set up for use with the MCP server. This updates the client's configuration file automatically. The set of configured transports depends on the client.
 
-    ![MCP Server settings](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_settings.png "MCP Server settings")
+    ![MCP Server settings](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_settings.png "MCP Server settings")
+
+    To configure a specific transport yourself, click ! next to Auto-Configure and select the required option from the list.
+
+    ![Configuration options](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_config_options.png "Configuration options")
 
     > ### tip
     >
-    > To check if the configuration was updated, click !, then select the Open Client Settings File option. This will open the client's JSON configuration file in the editor.
+    > The same menu provides two more options:
     >
-    > ![Configuration options](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_config_options.png "Configuration options")
+    > -   Open Client Settings File opens the client's configuration file in the editor.
     >
-    > You can also copy the configuration to the clipboard if you want to perform the update manually by clicking Copy Config.
+    > -   Copy Config copies the configuration to the clipboard so that you can apply it manually.
+    >
 
-4.  Restart your client for the configuration to take effect.
+3.  Restart your client for the configuration to take effect.
 
-If you want to connect to the MCP server from any other client, you will need to perform manual configuration:
+### Project-level client setup
+
+Some clients also read a configuration file from the project's working directory. For these clients, the IDE can write the connection settings directly to the configuration file in the currently opened project, so the MCP server is available only while you work on that project.
+
+Use this option if you work with several projects and do not want the MCP server registered for every client session.
+
+1.  Go to Settings | Tools | MCP Server.
+
+2.  In the Project Clients Auto-Configuration section, click Auto-Configure for each client you want to set up. This updates the client's project-level configuration file automatically.
+
+    ![Autoconfigure client's project-level configuration](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_project_level_setup.png "Autoconfigure client's project-level configuration")
+
+    If you want to configure a specific transport mechanism, click ! next to Auto-Configure and select the required option from the list.
+
+3.  Restart your client for the configuration to take effect.
+
+### Manual client setup
+
+If the client you want to connect is not on the list, configure it manually.
 
 1.  In the Manual Client Configuration section, click either Copy SSE Config, Copy Stdio Config, or Copy HTTP Stream Config depending on the connection type.
 
-    ![MCP Server manual configuration](https://resources.jetbrains.com/help/img/idea/2026.1/ai_mcp_server_manual_config.png "MCP Server manual configuration")
+    ![MCP Server manual configuration](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_manual_config.png "MCP Server manual configuration")
 
 2.  Paste the copied configuration into your client's settings or configuration file.
 
@@ -390,9 +435,23 @@ The MCP server allows connected external clients to execute terminal commands or
 
 To enable this mode:
 
-1.  In the main menu, go to Settings | Tools | MCP Server.
+1.  Go to Settings | Tools | MCP Server.
 
 2.  In the Command execution section, enable the Run shell commands or run configurations without confirmation (brave mode) setting.
+
+3.  Click Apply.
+
+### Show setup suggestions in terminal sessions
+
+When Codex or Claude starts in a terminal session without a matching MCP server setup, the IDE can show a banner that suggests configuring the connection.
+
+![A suggestion to update the MCP Server configuration in terminal](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_terminal_suggestions.png "A suggestion to update the MCP Server configuration in terminal")
+
+To control this behavior:
+
+1.  Go to Settings | Tools | MCP Server.
+
+2.  In the Terminal Sessions section, select or clear the Show setup suggestions for Codex and Claude terminal sessions checkbox.
 
 3.  Click Apply.
 
@@ -400,11 +459,49 @@ To enable this mode:
 
 The MCP Server exposes a set of tools that allow external clients to interact with your IDE and project – for example, to analyze code, modify files, run configurations, or execute terminal commands.
 
-You can view and manage the full list of available tools in Settings | Tools | MCP Server | Exposed Tools. From this page, you can enable or disable specific tools depending on your workflow and preferences.
+You can view and manage the full list of available tools in Settings | Tools | MCP Server | Exposed Tools. For each tool, select or clear the Enabled checkbox to control whether the tool is exposed to external clients.
+
+[![The Exposed Tools settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_exposed_tools.png "The Exposed Tools settings page")](https://resources.jetbrains.com/help/img/idea/2026.2/ai_mcp_server_exposed_tools.png)
+
+You can also select the Router-only checkbox for a tool. Router-only tools are hidden from the direct MCP tool list and remain available only through the dedicated router [tool](/help/ai-assistant/mcp.html#universal-toolset). This keeps unnecessary tool descriptions out of the tool list and saves context. Use the Enable router-only mode for setting to specify when router-only mode applies, for example, for All agents, or ACP agents only.
+
+> ### tip
+>
+> When a tool is available only through the router, describe it in skills or other agent documentation so that agents know when to use it.
 
 Below you can find the list of tools provided by the MCP server.
 
 #### Analysis tools
+
+analyze\_calls
+
+Builds the IDE Call Hierarchy tree for a method, function, constructor, or supported type target. Use it to see who calls a symbol (`INCOMING_CALLS`) or what the symbol calls (`OUTGOING_CALLS`).
+
+Prefer this tool over usage search, text search, or regex search when evaluating dependencies by actual calls. It uses IDE call hierarchy data, so it provides more precise call relationships with less noise and fewer follow-up calls than primitive searches.
+
+Pass `symbolFqn` as a fully qualified name, for example `com.example.Service.run`. If the name is ambiguous, the tool returns exact signatures; pass one of them back as `symbolFqn`. If you only know a short name or fragment, use `search_symbol` first to find the target.
+
+The result is an expandable text tree. Each node includes `filePath` and `treePath`; `filePath` is project-relative when possible. Pass `treePath` back to render the subtree. Use `childOffset` to continue after a truncated _… and n more_ line. `depth`, `maxChildren`, and `maxNodes` bound the rendered tree. Symbols can come from project sources, source jars, or decompiled binary jar dependencies when the IDE can resolve them.
+
+**Parameters:**
+
+-   `symbolFqn` (required): Plain fully qualified symbol name, or an exact signature returned by an ambiguity error or copied from a rendered child node. If you only know a short name or fragment, use `search_symbol` first and pass the best fully qualified callable name here. Examples: `com.example.Service.run`, `com.example.Service.run(String)`, or `org.assertj.core.api.Assertions.assertThat(String)`. Do not pass a file path, line, column, or a separate target signature.
+
+-   `analysisKind` (required): Call analysis direction. Use `INCOMING_CALLS` to show callers of `symbolFqn`, or `OUTGOING_CALLS` to show symbols called from `symbolFqn`.
+
+-   `depth`: Maximum number of call levels to render below the requested subtree root. Defaults to 5. Use 0 to render only the subtree root.
+
+-   `maxChildren`: Maximum number of direct children rendered for each node. Defaults to 50.
+
+-   `maxNodes`: Maximum total number of rendered call nodes. Defaults to 1000.
+
+-   `treePath`: Optional path to a subtree root, copied exactly from a previous `analyze_calls` result. Null or omitted means the root path `[]`. Each component is an exact signature, not a display name.
+
+-   `childOffset`: Offset for paging direct children of the node addressed by `treePath`. Defaults to 0.
+
+-   `timeout`: Timeout in milliseconds.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
 build\_project
 
@@ -463,7 +560,32 @@ Returns a list of all modules in the project with their types. Provides structur
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-#### Code insight tools
+lint\_files
+
+Analyzes the specified files for errors and warnings using IntelliJ inspections. Use this tool to lint several files after editing them. Returns per-file problems with severity, description, and location information.
+
+Batch responses may include file entries with `timedOut: true` and empty `problems` when individual files exceed the available budget. File entries with a `notAnalyzedReason` indicate files that could not be analyzed, for example files outside project content roots, excluded files, or unsupported file types. A top-level `more: true` means the batch is incomplete.
+
+> ### note
+>
+> Notes
+>
+> -   Only files within the project directory are analyzed.
+>
+> -   Line and column numbers are 1-based.
+>
+
+**Parameters:**
+
+-   `files` (required): List of project-relative files to analyze. Duplicate paths are ignored after normalization.
+
+-   `min_severity`: Minimum severity to include: `warning` or `error`. Defaults to `warning`.
+
+-   `timeout`: Timeout in milliseconds.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+#### Code Insight tools
 
 get\_symbol\_info
 
@@ -489,6 +611,78 @@ Specific IDEs
 
 To guarantee strictly read-only access for an AI agent, use a database user with properly restricted (read-only) privileges and configure the data source to use that user.
 
+cancel\_sql\_query
+
+Cancel a running query using its unique ID.
+
+**Parameters:**
+
+-   `sessionId`: Query session ID.
+
+create\_database\_connection
+
+Creates a new database connection (data source) by name, DBMS (`dbms`), JDBC URL (`url`), and a flag to check the connection (`needToCheckDs`). All parameters are required. Returns connection diagnostic information.
+
+**Parameters:**
+
+-   `name` (required): Unique name of the database connection.
+
+-   `dbms`: Name of the database management system (DBMS).
+
+-   `url`: Fully formed JDBC URL of the database connection, for example `jdbc:postgresql://<host>:<port>/<database>`.
+
+-   `needToCheckDs`: Whether to test the connection right after the data source is created or edited. Set to `false` when configuring multiple connections in a batch — the per-connection probe is expensive, and `test_database_connection` can be called explicitly for the connections that matter.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+edit\_database\_connection
+
+Edits an existing database connection (data source) identified by `connectionId`. Updates the connection's DBMS driver and JDBC URL; the connection `name` is preserved. Returns connection diagnostic information.
+
+> ### note
+>
+> Do not use this tool for DDL data sources, as they have no underlying DBMS connection.
+
+**Parameters:**
+
+-   `connectionId`: Unique connection ID.
+
+-   `dbms`: Name of the database management system (DBMS).
+
+-   `url`: Fully formed JDBC URL of the database connection, for example `jdbc:postgresql://<host>:<port>/<database>`.
+
+-   `needToCheckDs`: Whether to test the connection right after the data source is created or edited. Set to `false` when configuring multiple connections in a batch — the per-connection probe is expensive, and `test_database_connection` can be called explicitly for the connections that matter.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+execute\_sql\_query
+
+Execute a SQL query against the given database connection.
+
+The tool reports execution status: success or error. For errors, it also provides an error description.
+
+If the query returns data, it is appended to the tool response in CSV format.
+
+**Parameters:**
+
+-   `connectionId`: Unique connection ID.
+
+-   `queryText`: SQL query to be executed.
+
+fetch\_query\_result
+
+Fetches rows from an already executed query by its ID, starting at the given row offset. Returns the same shape as `execute_sql_query`: the `resultSetId` and the rendered result in CSV format.
+
+Use this tool to paginate over a `resultSetId` previously returned by `execute_sql_query` or `preview_table_data`.
+
+**Parameters:**
+
+-   `resultSetId` (required): The opaque result-set ID returned by a previous `execute_sql_query` or `preview_table_data` call.
+
+-   `offset` (required): Row offset to start fetching from. Defaults to 0.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
 get\_database\_object\_description
 
 Retrieves the structure of a database object (columns, types, keys, indexes) within a particular schema as a hierarchical text representation.
@@ -509,23 +703,23 @@ In case of ambiguity returns definitions of all applicable objects.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-list\_database\_connections
+introspect\_schema
 
-Retrieves a list of configured database connections or data sources in the project. For each connection returns its unique ID, name, DBMS, and driver name.
-
-test\_database\_connection
-
-Returns connection diagnostic info:
-
--   Flag indicating if the connection is problematic: yes, no, or unknown.
-
--   Detailed information about the database connection such as DBMS type, version, and JDBC driver.
-
--   Summary of the connection attempt result. In case of a failure, contains a DBMS-provided error description.
+Introspects a database schema, loading its metadata (tables, columns, and indexes) into the local model. Use this when a schema's `isIntrospected` flag is false and you need to investigate the schema's structure, or to refresh stale metadata. Returns the schema identifier with the updated introspection status.
 
 **Parameters:**
 
--   `id`: Unique connection ID.
+-   `connectionId`: Unique connection ID.
+
+-   `databaseName`: Name of the database the schema belongs to. Can be empty if the DBMS has no databases but only schemas.
+
+-   `schemaName`: Name of the schema.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+list\_database\_connections
+
+Retrieves a list of configured database connections or data sources in the project. For each connection returns its unique ID, name, DBMS, and driver name.
 
 list\_database\_schemas
 
@@ -538,28 +732,6 @@ For each schema, the tool returns the schema's own name as well as the database 
 -   `connectionId`: Unique connection ID.
 
 -   `selectedOnly`: True if only the schemas selected in the database tree should be listed; false if all schemas should be listed.
-
-list\_schema\_object\_kinds
-
-Retrieves a list of supported schema object kinds for the given database connection. For each object kind, returns the object kind unique code and human-readable name.
-
-**Parameters:**
-
--   `connectionId`: Unique connection ID.
-
-list\_schema\_objects
-
-Retrieves a list of database objects within the given schema. For each object, returns the object name within the schema and its kind.
-
-**Parameters:**
-
--   `connectionId`: Unique connection ID.
-
--   `schemaName`: Name of the schema.
-
--   `databaseName`: Name of the database the schema belongs to. Can be empty if the DBMS has no databases but only schemas.
-
--   `kind`: Set this parameter to a particular object kind code to list only objects of that kind. Set it to null to retrieve all objects in the schema.
 
 list\_recent\_sql\_queries
 
@@ -583,27 +755,27 @@ For each query returns:
 
 -   `connectionId`: Unique connection ID.
 
-cancel\_sql\_query
+list\_schema\_object\_kinds
 
-Cancel a running query using its unique ID.
-
-**Parameters:**
-
--   `sessionId`: Query session ID.
-
-execute\_sql\_query
-
-Execute a SQL query against the given database connection.
-
-The tool reports execution status: success or error. For errors, it also provides an error description.
-
-If the query returns data, it is appended to the tool response in CSV format.
+Retrieves a list of supported schema object kinds for the given database connection. For each object kind, returns the object kind unique code and human-readable name.
 
 **Parameters:**
 
 -   `connectionId`: Unique connection ID.
 
--   `queryText`: SQL query to be executed.
+list\_schema\_objects
+
+Retrieves a list of database objects within the given schema. For each object, returns the object name within the schema and its kind.
+
+**Parameters:**
+
+-   `connectionId`: Unique connection ID.
+
+-   `schemaName`: Name of the schema.
+
+-   `databaseName`: Name of the database the schema belongs to. Can be empty if the DBMS has no databases but only schemas.
+
+-   `kind`: Set this parameter to a particular object kind code to list only objects of that kind. Set it to null to retrieve all objects in the schema.
 
 preview\_table\_data
 
@@ -623,23 +795,47 @@ The tool returns table content in CSV format.
 
 -   `maxRowCount`: Maximum number of rows to return. Default is `100`.
 
+test\_database\_connection
+
+Returns connection diagnostic info:
+
+-   Flag indicating if the connection is problematic: yes, no, or unknown.
+
+-   Detailed information about the database connection such as DBMS type, version, and JDBC driver.
+
+-   Summary of the connection attempt result. In case of a failure, contains a DBMS-provided error description.
+
+**Parameters:**
+
+-   `id`: Unique connection ID.
+
 Specific IDEs
 
 #### Debugger tools
 
-**Available in:** IntelliJ IDEA Ultimate
+**Available in:** IntelliJ IDEA Ultimate, CLion, RubyMine
 
 > ### note
 >
-> These tools are provided by the **Debugger MCP toolset** plugin. This plugin comes bundled in IntelliJ IDEA Ultimate by default. If the toolset is not available, make sure the plugin is enabled.
+> These tools are provided by the **Debugger MCP toolset** plugin. This plugin comes bundled in multiple IDEs by default. If the toolset is not available, make sure the plugin is enabled.
 
-To improve how external clients use the IDE's debugger tools, you can copy the `/ij-debugger` skill into their skills folders. To do this:
+These tools give an external client control over the IDE's debugger: it can set, list, and remove breakpoints, start a debug session and step through it, and inspect the call stack, threads, and variable values at runtime.
 
-1.  In the main menu, go to Navigate | Search Everywhere or press ⇧Shift twice to open the search window.
+To improve how external clients use the IDE's debugger tools, you can install a specific skill for them. This skill comes bundled with the IDE and guides an external client on when to apply the debugger tools.
 
-2.  Type Copy Debugger Skills to Agents and press ↩Enter.
+To install the skill for an external client:
 
-The skill is copied into the following folders:
+1.  Go to Settings | Tools | AI Assistant | Skills.
+
+2.  Navigate to the Bundled skills section and locate the corresponding skill. It is enabled by default, but is available only to the agents inside the IDE.
+
+    ![The ij-debugger skill](https://resources.jetbrains.com/help/img/idea/2026.2/ai_bundled_skills_debugger.png "The ij-debugger skill")
+
+3.  To use the skill in Claude Code or Codex outside the IDE, you need to install it for those clients explicitly. To do this, click ! and select Claude Agent (Global) or Codex (Global), depending on which client you want to use.
+
+    ![Install the ij-debugger skill for an external client](https://resources.jetbrains.com/help/img/idea/2026.2/ai_installing_debugger_skill.png "Install the ij-debugger skill for an external client")
+
+Depending on the target you select, the skill is installed into the following folders:
 
 -   **Claude Code**:
 
@@ -669,9 +865,20 @@ The skill is copied into the following folders:
 
     ~/.codex/skills/ij-debugger/
 
-The skill is a behavior guide that instructs an external client on when to apply the debugger tools, which runtime evidence to collect, and how to manage breakpoint and session state.
-
 To invoke the skill in the external client, use `/ij-debugger`, or let it activate automatically when relevant.
+
+> ### tip
+>
+> For more information about installing and managing skills, refer to [Skills](agent-skills.html#install-skills).
+>
+> For detailed instructions on how to use this toolset, refer to the documentation for the relevant IDE:
+>
+> -   ![IntelliJ IDEA](https://resources.jetbrains.com/help/img/idea/2026.2/IntelliJ_IDEA_icon.png "IntelliJ IDEA") [IntelliJ IDEA](https://www.jetbrains.com/help/idea/agentic-debugging.html)
+>
+> -   ![CLion](https://resources.jetbrains.com/help/img/idea/2026.2/CLion_icon.png "CLion") [CLion](https://www.jetbrains.com/help/clion/agentic-debugging.html)
+>
+> -   ![RubyMine](https://resources.jetbrains.com/help/img/idea/2026.2/RubyMine_icon.png "RubyMine") [RubyMine](https://www.jetbrains.com/help/ruby/use-agentic-debugging.html)
+>
 
 xdebug\_control\_session
 
@@ -1267,70 +1474,6 @@ Returns a flat result with debugger session metadata plus the execution snapshot
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-#### Developer kit MCP tools
-
-find\_lock\_requirement\_usages
-
-Analyzes the usage of the Read/Write lock for the method under the caret. Also analyzes call paths to some depth. Use this tool to identify possible usages of Read/Write lock requirements. Returns a list of lock requirements with the call path to them.
-
-> ### note
->
-> Important:
->
-> The information is neither complete nor reliable: this is merely a heuristic. Each returned call path may not be reachable, and there could be undetected call paths.
-
-> ### note
->
-> Notes:
->
-> -   Only analyzes files within the project directory.
->
-> -   Lines and Columns are 1-based.
->
-
-**Parameters:**
-
--   `filePath`: Path relative to the project root.
-
--   `line`: Line where cursor is located.
-
--   `column`: Column where cursor is located.
-
--   `timeout`: Timeout in milliseconds.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-find\_threading\_requirements\_usages
-
-Analyzes the usage of threading constraints (i.e., whether the method needs to run on the UI thread or on the background thread) for the method under the caret. Also analyzes call paths to some depth. Use this tool to identify possible usages of threading requirements. Returns a list of threading requirements with the call path to them.
-
-> ### note
->
-> Important:
->
-> The information is neither complete nor reliable: this is merely a heuristic. Each returned call path may not be reachable, and there could be undetected call paths.
-
-> ### note
->
-> Notes:
->
-> -   Only analyzes files within the project directory.
->
-> -   Lines and Columns are 1-based.
->
-
-**Parameters:**
-
--   `filePath`: Path relative to the project root.
-
--   `line`: Line where cursor is located.
-
--   `column`: Column where cursor is located.
-
--   `timeout`: Timeout in milliseconds.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
 #### Execution tools
 
 execute\_run\_configuration
@@ -1377,7 +1520,7 @@ Returns either project run configurations or executable code locations, dependin
 
 Without `filePath`, this tool lists the project's existing run configurations. The result includes configuration names and, when available, launch details such as program arguments, working directory, environment variables, and `supportsDynamicLaunchOverrides`.
 
-`supportsDynamicLaunchOverrides` is the source-of-truth capability flag for one-time launch overrides (`programArguments`, `workingDirectory`, `envs`) in `[execute_run_configuration](/help/ai-assistant/mcp.html#execute_run_configuration)`. Only pass those override parameters when this flag is `true` for the selected configuration.
+`supportsDynamicLaunchOverrides` is the source-of-truth capability flag for one-time launch overrides (`programArguments`, `workingDirectory`, `envs`) in `[execute_run_configuration](/help/ai-assistant/mcp.html#execute_run_configuration)` and `[xdebug_start_debugger_session](/help/ai-assistant/mcp.html#xdebug_start_debugger_session)`. Only pass those override parameters when this flag is `true` for the selected configuration.
 
 With `filePath`, this tool discovers executable entry points (run points) in that file, such as test methods, main methods, or other executable entry points where the IDE shows a Run gutter icon. The result contains `filePath` and `runPoints`; use the returned line numbers with `[execute_run_configuration](/help/ai-assistant/mcp.html#execute_run_configuration)` to run from code.
 
@@ -1404,49 +1547,6 @@ Creates a new file at the specified path within the project directory. Optionall
 -   `text` (optional): Content to write into the new file.
 
 -   `overwrite`: Whether to overwrite an existing file. If set to `false`, an exception is thrown in case of a conflict.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-find\_files\_by\_glob
-
-Searches for all files in the project whose relative paths match the specified glob pattern. The search is performed recursively in all subdirectories of the project directory or a specified subdirectory. Use this tool to find files by a glob pattern (for example, `**/*.txt`).
-
-**Parameters:**
-
--   `globPattern`: Glob pattern to search for. The pattern must be relative to the project root. Example: `src/**/*.java`.
-
--   `subDirectoryRelativePath` (optional): Subdirectory relative to the project to search in.
-
--   `addExcluded`: Whether to add excluded/ignored files to the search results. Files can be excluded by the user or by ignore rules.
-
--   `fileCountLimit`: Maximum number of files to return.
-
--   `timeout`: Timeout in milliseconds.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-find\_files\_by\_name\_keyword
-
-Searches for all files in the project whose names contain the specified keyword (case-sensitive). Use this tool to locate files when you know part of the file name.
-
-> ### note
->
-> Notes:
->
-> -   Matches only names, not paths, as the search works via indexes.
->
-> -   Searches only files within the project directory, excluding libraries and external dependencies.
->
-> -   Prefer this tool over other `find` tools because it is much faster, but note that it searches only names, not paths, and does not support glob patterns.
->
-
-**Parameters:**
-
--   `nameKeyword`: Substring to search for in the file names.
-
--   `fileCountLimit`: Maximum number of files to return.
-
--   `timeout`: Timeout in milliseconds.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
@@ -1494,7 +1594,177 @@ Reformats the specified file in the JetBrains IDE. Use this tool to apply code f
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-#### Inspection generator MCP Tools
+Specific IDEs
+
+#### Jupyter Notebooks tools
+
+**Available in:** PyCharm
+
+To improve how external clients work with Jupyter notebooks, you can use the bundled `jupyter` skill. The skill provides guidance on when and how to use the corresponding notebook tools.
+
+> ### note
+>
+> For more information about skills, refer to the official [AI Assistant documentation](https://www.jetbrains.com/help/ai-assistant/agent-skills.html).
+
+create\_notebook
+
+Creates an empty Jupyter notebook file with the `.ipynb` extension. The notebook uses the `nbformat` 4.5 schema.
+
+Use `edit_notebook` to add cells after the notebook is created.
+
+The tool returns the path to the new file.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root where the notebook should be created.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+edit\_notebook
+
+Edits a cell in a Jupyter notebook and saves the updated notebook file.
+
+You can replace, insert, or delete a cell. If the specified cell cannot be found, the tool returns a validation error with the available cell IDs.
+
+Examples:
+
+-   `{"file_path": "/abs/path/demo.ipynb", "cell_id": "abc123", "new_source": "print('hello')", "edit_mode": "replace"}`
+
+-   `{"file_path": "/abs/path/demo.ipynb", "cell_id": "abc123", "new_source": "# Title", "cell_type": "markdown", "edit_mode": "insert"}`
+
+-   `{"file_path": "/abs/path/demo.ipynb", "cell_id": "abc123", "edit_mode": "delete"}`
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `cell_id`: Cell ID to replace or delete. For insertion, the new cell is added after this cell. If omitted in insert mode, the new cell is appended to the end of the notebook.
+
+-   `new_source`: Source text for the new or replacement cell. Omit it only to create or replace a cell with empty content.
+
+-   `cell_type`: Cell type, either `code` or `markdown`. Required for insertion and ignored for replacement and deletion.
+
+-   `edit_mode`: Editing operation to perform: `replace`, `insert`, or `delete`. The default value is `replace`.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+execute\_code\_on\_kernel
+
+Runs a short code snippet in the active kernel of a Jupyter notebook without modifying the notebook.
+
+Use this tool for quick checks, such as inspecting variables, metrics, data shapes, or the execution environment. For longer operations that should remain in the notebook, add or edit a cell and use `run_notebook_cell`.
+
+The tool requires an existing Jupyter kernel session. It returns compact text from the last textual output or an error message.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `code`: Code snippet to run in the notebook kernel.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+get\_notebook\_state
+
+Checks the current execution state of a Jupyter notebook kernel without starting a new kernel session.
+
+The tool reports whether the kernel is unavailable, idle, or busy. When this information is available, it also includes the ID of the currently executing cell and the IDs of queued cells.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+interrupt\_notebook
+
+Interrupts the current execution in a Jupyter notebook while keeping the kernel session available.
+
+Use this tool to stop a cell that is stuck or no longer needed. If no active notebook execution manager is available, the tool reports that the kernel has already been stopped.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+kill\_notebook
+
+Terminates the Jupyter kernel session associated with a notebook.
+
+Use this tool when the kernel state, imports, variables, or memory need to be reset, or when the notebook should be rerun from a clean state. The next cell execution starts a new kernel session, so initialization and import cells must be run again.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+read\_notebook
+
+Reads the contents of a Jupyter notebook without executing any cells.
+
+The tool returns the notebook cells in their original order, including each cell's ID, type, execution status when available, source code, and rendered outputs. Supported outputs include text, Markdown, JSON, errors, images, browser content, and tables.
+
+Images are saved as temporary PNG files, and tables are rendered as simple HTML. Because the notebook-level response is limited in size, use `read_notebook_cell` to inspect an individual large cell.
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+read\_notebook\_cell
+
+Reads a specific cell in a Jupyter notebook without executing it.
+
+The tool can return the cell source, its output, or both. It formats the result as a compact XML-like block.
+
+Large outputs are returned as a preview together with a temporary text file that contains the complete output. Image outputs are saved as temporary PNG files. For dynamic tables, the tool attempts to load the first 100 rows and statistics within 10 seconds, then falls back to the static table representation.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `cell_id`: ID of the notebook cell to read.
+
+-   `read_mode`: Content to return, `all` for the source and output, `source` for the source only, or `output` for the output only.
+
+-   `output_mode`: Output scope to return. Use `delta` to return only output added since the previous call for this cell, or `full` to return the complete output. The default value is `delta`.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+run\_notebook\_cell
+
+Runs one or more cells in a Jupyter notebook using the notebook kernel.
+
+Use this tool when the notebook execution must produce side effects or updated cell outputs. For a short check in an already running kernel, use `execute_code_on_kernel` instead.
+
+The tool waits for the requested cells to finish and returns their rendered outputs. Large outputs are returned as a preview together with a temporary text file containing the complete output. Image outputs are saved as temporary PNG files.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `cell_ids`: Optional list of cell IDs to run. If omitted, all cells are executed in order.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+wait\_cell\_execution
+
+Waits for a Jupyter notebook cell to finish execution or reach another terminal state.
+
+Use this tool for long-running cells that produce little or no useful output while they are running. For cells with incremental logs or other useful live output, use `read_notebook_cell` with `output_mode` set to `delta`.
+
+If the cell is still running when the wait period ends, the tool returns a normal status indicating that execution is still in progress. Call the tool again to continue waiting.
+
+Parameters:
+
+-   `file_path`: Absolute path or path relative to the project root to the `.ipynb` file.
+
+-   `cell_id`: ID of the notebook cell whose execution state to wait for.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+#### Inspection Generator MCP Tools
 
 validate\_inspection\_kts
 
@@ -1564,13 +1834,61 @@ Compiles an inspection.kts script and runs it against a target file. Returns com
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-#### Monorepo developer kit MCP tools
+#### Patch tools
 
-get\_project\_status
+apply\_patch
 
-Check if the project is ready for code analysis operations. Returns indexing and scanning status. Use before heavy operations like `lint_files` or `[get_file_problems](/help/ai-assistant/mcp.html#get_file_problems)` to avoid timeouts.
+Applies a patch in the Codex `apply_patch` format or the unified Git diff format. Supports Add, Delete, and Update operations, with an optional move-to path for updates. Paths must stay inside the project directory.
 
 **Parameters:**
+
+-   `input`: Patch text in the `apply_patch` format or the unified Git diff format.
+
+-   `patch`: Alias of `input` for compatibility with clients that send `{patch: ...}`.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+Specific IDEs
+
+#### Python Environment MCP
+
+**Available in:** PyCharm
+
+To improve how external clients work with Python environments, you can use the bundled `python-tools` skill. The skill provides guidance on when and how to use the corresponding environment tools.
+
+> ### note
+>
+> For more information about skills, refer to the official [AI Assistant documentation](https://www.jetbrains.com/help/ai-assistant/agent-skills.html).
+
+configure\_python\_interpreter
+
+Configures a local Python interpreter for the module that contains the specified file.
+
+AI Assistant can attach an existing virtual environment, inherit an interpreter from a parent module, or create a new environment using an available environment manager.
+
+Call this tool only when the response from `get_python_environment` indicates that AI Assistant can configure an interpreter. After configuration, call `get_python_environment` again to verify the environment.
+
+> ### note
+>
+> Remote, WSL, and Docker interpreters are not supported.
+
+Parameters:
+
+-   `filePath`: Absolute path or path relative to the project root to a Python file in the module whose interpreter should be configured.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+get\_python\_environment
+
+Returns information about the Python environment configured for the specified file.
+
+Use this tool before running Python commands to determine the interpreter version, environment type, executable path, environment location, and package manager used by AI Assistant. The tool does not modify the project configuration.
+
+If no interpreter is configured, the response includes a hint about the next action. If the response indicates that AI Assistant can configure an interpreter, call `configure_python_interpreter` with the same file path.
+
+Parameters:
+
+-   `filePath`: Absolute path or path relative to the project root to a Python file in the target module.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
@@ -1653,35 +1971,6 @@ The tool returns a success message if the rename operation was successful, or an
 -   `symbolName`: Name of the symbol to rename.
 
 -   `newName`: New name for the symbol.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-#### Run notebook tools
-
-runNotebookCell
-
-Execute one or all cells of a Jupyter notebook.
-
-> ### note
->
-> Notes
->
-> -   This action runs inside the IDE on the file specified by `file_path`.
->
-> -   If the file cannot be found, the action returns an error.
->
-
-Examples:
-
--   `{"file_path": "/abs/path/demo.ipynb", "cell_id": "13c5cec416369e19"}`
-
--   `{"file_path": "/abs/path/demo.ipynb"}`
-
-**Parameters:**
-
--   `file_path`: Absolute path to the .ipynb notebook.
-
--   `cell_id`: Optional Jupyter cell ID. If omitted, all cells are executed.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
@@ -1783,6 +2072,38 @@ Examples:
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
+#### Skill Search tools
+
+skill\_search
+
+Performs a unified project search with an explicit mode:
+
+-   `file`: glob path search.
+
+-   `text`: literal content search.
+
+-   `regex`: regex content search.
+
+-   `symbol`: semantic symbol lookup.
+
+Symbol search is project-focused by default. If you do not find a suitable symbol, try again with `include_external=true` to search SDK and library symbols too.
+
+**Parameters:**
+
+-   `mode` (required): Search mode: `file`, `text`, `regex`, or `symbol`.
+
+-   `q` (required): Search query. For `mode=file` this is a glob pattern.
+
+-   `paths`: Optional project-relative glob filters. Supports `!`\-excludes and a trailing `/`.
+
+-   `include_external`: Whether to include SDK and library symbols for `mode=symbol`. Disabled by default; if nothing suitable is found, try again with `include_external=true`.
+
+-   `includeExcluded`: Whether to include excluded or ignored files. Supported only for `mode=file`.
+
+-   `limit`: Maximum number of results to return.
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
 #### Terminal tools
 
 execute\_terminal\_command
@@ -1823,106 +2144,15 @@ Returns possible responses:
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
-#### Text tools
+#### Universal tools
 
-get\_file\_text\_by\_path
+execute\_tool
 
-Retrieves the text content of a file using its path relative to the project root. Use this tool to read file contents when you have the file's project-relative path.
-
-> ### note
->
-> Notes
->
-> -   For binary files, the tool returns an error.
->
-> -   If the file is too large, the text will be truncated according to the `truncateMode` parameter, with a `<<<...content truncated...>>>` marker.
->
+Universal tool executor that dynamically invokes a specific IDE MCP tool from a command-line string.
 
 **Parameters:**
 
--   `pathInProject`: Path where the file should be created relative to the project root.
-
--   `truncateMode`: How to truncate the text: from the start, in the middle, at the end, or do not truncate at all.
-
--   `maxLinesCount`: Maximum number of lines to return.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-replace\_text\_in\_file
-
-Replaces text in a file with flexible options for find-and-replace operations. Use this tool to make targeted changes without replacing the entire file content. This is the most efficient tool for file modifications when you know the exact text to replace.
-
-Returns one of the following responses:
-
--   `ok` – replacement was successful.
-
--   `project dir not found` – the project directory cannot be determined.
-
--   `file not found` – the specified file does not exist.
-
--   `could not get document` – the file content cannot be accessed.
-
--   `no occurrences found` – the text to replace was not found in the file.
-
-> ### note
->
-> The file is automatically saved after modification.
-
-**Parameters:**
-
--   `pathInProject`: Path to target file relative to the project root.
-
--   `oldText`: Text to be replaced.
-
--   `newText`: Replacement text.
-
--   `replaceAll`: Whether to replace all occurrences.
-
--   `caseSensitive`: Whether the search is case-sensitive.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-search\_in\_files\_by\_regex
-
-Searches for a regex pattern within all files in the project using IntelliJ's search engine. Prefer this tool over reading files with command-line tools because it is much faster.
-
-Occurrences in the results are surrounded with `||` characters. For example: `some text ||substring|| text`.
-
-**Parameters:**
-
--   `regexPattern`: Regex pattern to search for.
-
--   `directoryToSearch`: Directory to search in, relative to project root. If not specified, searches the entire project.
-
--   `fileMask`: File mask to search for. If not specified, searches for all files. Example: `*.java`.
-
--   `caseSensitive`: Whether the search is case-sensitive.
-
--   `maxUsageCount`: Maximum number of entries to return.
-
--   `timeout`: Timeout in milliseconds.
-
--   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
-
-search\_in\_files\_by\_text
-
-Searches for a text substring within all files in the project using IntelliJ's search engine. Prefer this tool over reading files with command-line tools because it is much faster.
-
-Occurrences in the results are surrounded with `||` characters. For example `some text ||substring|| text`.
-
-**Parameters:**
-
--   `searchText`: Text substring to search for.
-
--   `directoryToSearch`: Directory to search in, relative to project root. If not specified, searches the entire project.
-
--   `fileMask`: File mask to search for. If not specified, searches for all files. Example: `*.java`.
-
--   `caseSensitive`: Whether the search is case-sensitive.
-
--   `maxUsageCount`: Maximum number of entries to return.
-
--   `timeout`: Timeout in milliseconds.
+-   `command` (required): Command-line string with the tool name and arguments.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 
@@ -1933,6 +2163,22 @@ get\_repositories
 Retrieves the list of VCS roots in the project. Use this tool to identify all repositories in a multi-repository project.
 
 **Parameters:**
+
+-   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
+
+git\_status
+
+Retrieves the Git status for one or more repositories in the current project. Returns porcelain-style index and worktree status codes and summary counters. By default, all Git repositories are returned.
+
+**Parameters:**
+
+-   `repositoryPathRelativeToProject`: Optional path relative to the project root used to select a single containing repository.
+
+-   `includeUntracked`: Whether to include untracked files.
+
+-   `includeIgnored`: Whether to include ignored files.
+
+-   `limit`: Maximum number of entries returned per repository.
 
 -   `projectPath`: The project path. Always provide this value if known to reduce ambiguous calls. If only the current working directory is known, you can use it as the project path.
 

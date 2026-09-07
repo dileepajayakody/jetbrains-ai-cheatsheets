@@ -4,7 +4,7 @@
 
 # Codex
 
-Last modified: 03 July 2026
+Last modified: 05 August 2026
 
 ! **Codex** is a third-party [coding agent](https://developers.openai.com/codex) by OpenAI available for use in AI Assistant. It can help you to design and implement features, fix bugs, answer questions, review code, and assist with a wide range of development tasks.
 
@@ -31,7 +31,7 @@ To use Codex, you need to install and activate it using one of the supported aut
 
 After setup, select ! Codex in AI Chat to start using it.
 
-![Select Codex](https://resources.jetbrains.com/help/img/idea/2026.1/ai_switch_chat_mode.png "Select Codex")
+![Select Codex](https://resources.jetbrains.com/help/img/idea/2026.2/ai_switch_chat_mode_intro.png "Select Codex")
 
 ## Collect IDE context
 
@@ -47,11 +47,25 @@ An indicator in the chat input field shows the current state of automatic contex
 
 -   ! IDE context disabled – no editor context is attached automatically.
 
-![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
+![Automatic context indicator in the chat input field](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_auto_context.png "Automatic context indicator in the chat input field")
 
 > ### note
 >
 > Other open files, recently edited files, and broader project context are not added automatically. Use `@` in the chat input to attach additional files when needed.
+
+## Monitor context usage
+
+Each language model has a context window – the maximum amount of information it can process at once. As you exchange messages with Codex, your prompts, attached context, and the agent's responses fill this window. Once it becomes full, the agent may lose track of earlier parts of the session.
+
+To help you monitor context usage, AI Assistant displays a context indicator showing how much of the model's context window has been used.
+
+![Context indicator showing how much of the model's context window the current session has used](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_context_indicator.png "Context indicator showing how much of the model's context window the current session has used")
+
+The indicator displays the percentage of the context window used by the current session, along with the corresponding token count. It appears after the first response, updates as the session continues, and retains the last known value when you reopen the session.
+
+> ### note
+>
+> Switching the model can update the values in the indicator because different models can have different context window sizes.
 
 ## Select operation mode
 
@@ -67,23 +81,52 @@ Codex has several operation modes that you can use:
     >
     > Certain sensitive actions may still require explicit approval.
 
-To switch between modes, use the mode picker dropdown in the prompt window.
+To select an operation mode, click ! and select a mode from the list.
 
-![Mode picker](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_mode_picker.png "Mode picker")
+![Mode picker](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_codex_mode_picker.png "Mode picker")
+
+## Select collaboration mode
+
+The Collaboration mode selector controls how Codex approaches a task:
+
+-   Default – Codex works on the task following the selected [operation mode](/help/ai-assistant/codex-agent.html#codex-select-operation-mode).
+
+-   Plan – Codex analyzes the task and proposes an implementation plan without making any changes, so you can review it before Codex proceeds.
+
+To select a collaboration mode, click ! next to the operation mode and select a mode from the list.
+
+![Collaboration mode selector](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_agent_collaborative_mode.png "Collaboration mode selector")
 
 ## Select a model and reasoning level
 
 To select a model that Codex uses to process your requests, click ! and select the model from the list.
 
-![Select the model](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_model_selection.png "Select the model")
+![Select the model](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_codex_model_selection.png "Select the model")
 
 You can also select the Reasoning level for the model. Model reasoning refers to a model's ability to perform multi-step analysis and solve complex tasks. Higher levels increase the amount of reasoning the model applies before it responds, which can lead to higher-quality results on complex or critical tasks but may take longer.
+
+## Speed up responses
+
+When you need quicker responses during interactive work, enable Fast mode. It makes a model generate its output faster without switching to a smaller or less capable model.
+
+To turn Fast mode on or off, use the Fast mode toggle next to the operation mode selector.
+
+![Fast mode toggle](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_agent_fast_mode.png "Fast mode toggle")
+
+> ### note
+>
+> Notes
+>
+> -   Fast mode increases the cost of each response, so consider enabling it only when responsiveness matters more than cost.
+>
+> -   Not all models support Fast mode. See the [OpenAI documentation](https://developers.openai.com/codex/speed) for information about supported models.
+>
 
 ## Approve operations
 
 In the Read-only mode, Codex requests your permission to run suggested bash commands, introduce changes, perform file operations, or use [external tools](mcp.html). In this case, you can either approve or reject the operation.
 
-![Codex requests an approval](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_approve_request.png "Codex requests an approval")
+![Codex requests an approval](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_approve_request.png "Codex requests an approval")
 
 -   Allow Once – allows Codex to execute the command this time only. You will be asked again if the command is requested later.
 
@@ -99,13 +142,9 @@ In the Read-only mode, Codex requests your permission to run suggested bash comm
 
 Before you decide, you can review what the agent is about to do:
 
--   For a suggested file change, click ![the Show Diff button](https://resources.jetbrains.com/help/img/idea/2026.1/app-client.expui.vcs.diff.svg "the Show Diff button") to review the changes the agent introduces.
+-   For a suggested file change, click ![the Show Diff button](https://resources.jetbrains.com/help/img/idea/2026.2/app-client.expui.vcs.diff.svg "the Show Diff button") to review the changes the agent introduces.
 
-    ![Open the diff to review the file changes Codex suggests before you approve them](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_review_suggested_changes.png "Open the diff to review the file changes Codex suggests before you approve them")
-
--   For a suggested command, click Open in editor in the top-right corner of the widget to review the complete command the agent suggests to run.
-
-    ![Open the suggested command in the editor to review it before running](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_terminal_command_review.png "Open the suggested command in the editor to review it before running")
+    ![Open the diff to review the file changes Codex suggests before you approve them](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_agent_review_suggested_changes.png "Open the diff to review the file changes Codex suggests before you approve them")
 
 ## Rollback operations
 
@@ -117,11 +156,11 @@ If the changes introduced by Codex do not suit you, you can roll them back. To d
 
     -   To roll back changes in a specific file, hover over it and click !.
 
-        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
+        ![Rollback changes in a specific file](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_specific_file.png "Rollback changes in a specific file")
 
     -   To roll back changes in all files, click Rollback.
 
-        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.1/ai_agents_rollback_all_changes.png "Rollback changes in all files")
+        ![Rollback changes in all files](https://resources.jetbrains.com/help/img/idea/2026.2/ai_agents_rollback_all_changes.png "Rollback changes in all files")
 
 ## Use /commands
 
@@ -129,7 +168,7 @@ Codex supports a subset of `/commands` that you can type directly in the chat to
 
 To see the commands available in the current session, type `/` in the chat input field and select a command from the list.
 
-![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.1/ai_codex_agent_commands.png "List of / commands")
+![List of / commands](https://resources.jetbrains.com/help/img/idea/2026.2/ai_codex_agent_commands.png "List of / commands")
 
 For details on specific commands, refer to the [official Codex documentation](https://developers.openai.com/codex/cli/slash-commands).
 
@@ -163,15 +202,15 @@ To view the skills currently available to Codex, use the `/skills` command.
 
 You can enable Codex to use tools provided by configured [Model Context Protocol (MCP) servers](mcp.html), extending its capabilities to perform a wider range of tasks. The available tools can be invoked automatically when the agent considers them necessary, or you can call them manually when writing a request.
 
-![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.1/ai_chat_codex_run_mcp_command.png "Run MCP command")
+![Run MCP command](https://resources.jetbrains.com/help/img/idea/2026.2/ai_chat_codex_run_mcp_command.png "Run MCP command")
 
 To enable Codex to use tools:
 
 1.  Make sure the MCP servers you want to expose to the agent are already configured in Settings | Tools | AI Assistant | Model Context Protocol (MCP). For details on adding and configuring MCP servers, refer to [Model Context Protocol (MCP)](mcp.html).
 
-2.  In the IDE settings (⌘Cmd0,), go to Tools | AI Assistant | Agents.
+2.  In the IDE settings (CtrlAlt0S), go to Tools | AI Assistant | Agents.
 
-    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.1/ai_acp_agents_settings.png "the Agents settings page")
+    ![the Agents settings page](https://resources.jetbrains.com/help/img/idea/2026.2/ai_acp_agents_settings.png "the Agents settings page")
 
 3.  Enable the Pass custom MCP servers setting.
 

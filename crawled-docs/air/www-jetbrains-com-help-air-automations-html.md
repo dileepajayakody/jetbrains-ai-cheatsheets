@@ -1,12 +1,16 @@
-Limited EAP
+EAP
 
 # Automations
 
-Last modified: 29 May 2026
+Last modified: 13 August 2026
 
-Automations are tasks that JetBrains Air runs automatically when a trigger fires. They run in cloud environments, so you can use them for background work that does not require a person to start or supervise every run manually.
+Automations are [cloud tasks](cloud-tasks.html) that JetBrains Air runs automatically when a trigger fires. They run in cloud environments, so you can use them for background work that does not require a person to start or supervise every run manually.
 
-You manage automations in the the web version of JetBrains Air UI at [https://air.jetbrains.cloud](https://air.jetbrains.cloud), on the Automations page.
+Each automation run is a cloud task – see [What is different from local execution](cloud-tasks.html#cloud-vs-local-execution). What starts a run and what it does with any changes are set by the automation's [triggers](create-automation.html#automation_triggers).
+
+Once a run finishes, you can work with its result from the Automations page – see [Work with automation run results](automation-run-results.html).
+
+You manage automations in the the web version of JetBrains Air UI at [https://air.jetbrains.cloud](https://air.jetbrains.cloud), on the Automations page. See [Manage automations](manage-automations.html).
 
 ![The Automations page in the web version of JetBrains Air UI](https://resources.jetbrains.com/help/img/air/air-web-automations-page.png "The Automations page in the web version of JetBrains Air UI")
 

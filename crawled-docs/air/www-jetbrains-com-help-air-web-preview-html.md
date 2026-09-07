@@ -16,7 +16,7 @@ If the preview does not appear, try running it manually.
 
 ### Run the preview manually
 
-Press ⌘Cmd⇧Shift0K and start typing `New Preview Tool`. Select New Preview Tool.
+Press CtrlShift0K and start typing `New Preview Tool`. Select New Preview Tool.
 
 You can switch from the preview to the source code view to inspect the underlying HTML source. The code is read-only, indicated by a lock icon. You cannot edit the code in this mode.
 
