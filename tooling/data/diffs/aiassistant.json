@@ -1,0 +1,439 @@
+{
+  "productId": "aiassistant",
+  "previousSnapshot": "none",
+  "currentSnapshot": "AI Assistant documentation – initial baseline crawl (57 pages, last modified up to 20 July 2026)",
+  "generatedAt": "2026-07-20T12:00:00Z",
+  "newFeatures": [
+    {
+      "name": "AI Chat",
+      "description": "Main entry point for interacting with AI models and agents. Supports Chat mode for Q&A and code generation, and Agent mode for multi-step autonomous development tasks. Accessible via the AI Chat tool window on the right toolbar.",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-chat-html.md"
+    },
+    {
+      "name": "Junie Agent (/ide, /usage, /remote)",
+      "description": "JetBrains' own coding agent that autonomously plans and executes complex multi-step tasks. Supports Brave mode (no confirmation prompts) and Debug mode (IntelliJ IDEA Ultimate only). Use /ide to check IDE connection, /usage for token cost breakdown, /remote to start a browser-accessible remote session.",
+      "commandOrFlag": "/ide",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "Claude Agent (third-party)",
+      "description": "Anthropic's Claude coding agent integrated into AI Assistant. Supports operation modes: Auto, Default, Accept Edits, Plan, Don't Ask, Bypass Permissions. Supports skills, Fast mode, and configurable reasoning level. Uses CLAUDE.md for instructions.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-claude-agent-html.md"
+    },
+    {
+      "name": "Codex Agent (third-party)",
+      "description": "OpenAI's Codex coding agent integrated into AI Assistant. Operation modes: Read-only, Agent, Agent (full access). Supports skills ($skill-installer, $skill-creator), /skills command, configurable reasoning level, and MCP tools.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-codex-agent-html.md"
+    },
+    {
+      "name": "GitHub Copilot Agent (third-party)",
+      "description": "GitHub Copilot coding agent integrated into AI Assistant. Operation modes: Agent, Plan, Autopilot. Activated via GitHub OAuth. Supports Allow All permission setting. Reads AGENTS.md and CLAUDE.md for instructions.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-copilot-agent-html.md"
+    },
+    {
+      "name": "Agent Client Protocol (ACP)",
+      "description": "Standard protocol to connect external AI agents to AI Assistant without custom integration. Agents can be installed from a curated registry or added manually via ~/.jetbrains/acp.json. No JetBrains AI subscription required to use ACP agents.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-acp-html.md"
+    },
+    {
+      "name": "Agent Skills (/skills)",
+      "description": "Reusable units of functionality that extend Claude Agent's and Codex's capabilities. Skills can be installed from local directories or external GitHub registries at IDE, Project, or agent-specific levels. Invoked automatically or explicitly with the $ prefix (e.g., $skill-name).",
+      "commandOrFlag": "/skills",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-agent-skills-html.md"
+    },
+    {
+      "name": "Agent Instructions (AGENTS.md / CLAUDE.md)",
+      "description": "Instruction files that define persistent agent behavior per repository. AGENTS.md is used by Junie, Codex, and GitHub Copilot; CLAUDE.md is used by Claude Agent and GitHub Copilot. Stored in the project root for version control and team reuse.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-configure-agent-behavior-html.md"
+    },
+    {
+      "name": "Cloud Agents (JetBrains Central)",
+      "description": "Run coding agents in an isolated cloud environment for long-running or resource-heavy tasks. Agent writes results to a separate branch; results can be reviewed and merged from within the IDE. Available to JetBrains Central organizations only.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-cloud-agents-html.md"
+    },
+    {
+      "name": "Model Context Protocol (MCP)",
+      "description": "Connect AI Assistant to external tools and data sources via MCP servers. Supports STDIO, Streamable HTTP, and SSE transports. Tools exposed by MCP servers appear as / commands in chat and can be invoked automatically or manually.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-mcp-html.md"
+    },
+    {
+      "name": "Use IDE as MCP Server",
+      "description": "JetBrains IDEs (2025.2+) include a built-in MCP Server plugin exposing IDE tools (analysis, code insight, execution, file, terminal, VCS, refactoring, database, debugger, etc.) to external clients like Claude Desktop, Cursor, Codex, and VS Code.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-mcp-html.md"
+    },
+    {
+      "name": "Debugger MCP Tools (/ij-debugger)",
+      "description": "Specialized MCP toolset for AI-powered debugging in IntelliJ IDEA Ultimate. Provides session control, breakpoint management, state inspection, and expression evaluation. Enable via the Debugger MCP Toolset plugin. Copy skill with 'Copy Debugger Skills to Agents' action.",
+      "commandOrFlag": "/ij-debugger",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-mcp-html.md"
+    },
+    {
+      "name": "Junie Debug Mode",
+      "description": "AI-powered debugging mode for Junie in IntelliJ IDEA Ultimate. Instead of editing code, Junie connects to the IDE debugger, manages breakpoints, inspects runtime state, and evaluates expressions in paused frames. Requires MCP Server and Debugger MCP Toolset plugins.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "Junie Brave Mode",
+      "description": "Allow Junie to execute commands and modify files without confirmation prompts. Toggle via the Brave Mode switch in the chat input field. Use with caution as it can lead to data loss.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "Bring Your Own Key (BYOK)",
+      "description": "Configure AI Assistant with your own API keys from supported third-party providers (Anthropic, Google, OpenAI, OpenAI-compatible, Ollama, LM Studio, Google Vertex AI) without a JetBrains AI subscription.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-bring-your-own-key-byok-html.md"
+    },
+    {
+      "name": "Next Edit Suggestions",
+      "description": "AI predicts which parts of the code you might want to change next and suggests likely edits. Press Tab to jump to suggestion and Tab again to apply. Supports chain suggestions, formatting-only edits, and refactoring-based suggestions. Not available on AI Free tier.",
+      "sectionHint": "Write & Edit Code",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-next-edit-suggestions-html.md"
+    },
+    {
+      "name": "Cloud Code Completion",
+      "description": "AI-powered inline code completion for single lines, blocks, or entire functions. Uses JetBrains Mellum model by default. Configurable completion policy (Creative, Balanced, Focused), multi-line suggestions, and language-specific settings.",
+      "sectionHint": "Write & Edit Code",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-code-completion-html.md"
+    },
+    {
+      "name": "Project Rules",
+      "description": "Define project-specific guidelines that AI Assistant follows in chat mode. Stored as .md files in .aiassistant/rules. Rule types: Always, Manually, By model decision, By file patterns, Off. Reference with @rule: in chat.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-configure-project-rules-html.md"
+    },
+    {
+      "name": "Prompt Library",
+      "description": "Create and manage custom prompts or modify built-in AI action prompts. Custom prompts appear in the AI Actions menu. Access via Settings | Tools | AI Assistant | Prompt Library or the AI Actions context menu.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-prompt-library-html.md"
+    },
+    {
+      "name": "AI in Version Control (VCS)",
+      "description": "AI-powered VCS features: generate commit messages, self-review changes before committing, improve existing commit messages, explain commits, generate PR/MR titles and descriptions, resolve Git conflicts, generate PR summaries, generate shelf titles, configure Perforce MCP server.",
+      "sectionHint": "VCS & Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-in-vcs-integration-html.md"
+    },
+    {
+      "name": "Perforce MCP Server Integration",
+      "description": "Configure a Perforce MCP server in the IDE to give AI Assistant access to Perforce tools (changelist details, workspace data, server info). Configure via Settings | Version Control | Perforce | Perforce MCP.",
+      "sectionHint": "VCS & Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-in-vcs-integration-html.md"
+    },
+    {
+      "name": "Group with AI (Experimental)",
+      "description": "Groups and prioritizes committed or uncommitted changes by impact (high/medium/low) using the AI Assistant Experimental Features plugin. Available in the Commit tool window and VCS log. Requires the AI Assistant Experimental Features plugin.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-group-with-ai-html.md"
+    },
+    {
+      "name": "Insights (Experimental)",
+      "description": "Automatically generates brief, concise summaries for hard-to-interpret code segments. Marked with an insight icon in the editor. Provided by the AI Assistant Experimental Features plugin. Available in IntelliJ IDEA, PyCharm, and IDEs with the Python plugin.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-insights-html.md"
+    },
+    {
+      "name": "Recap (Experimental)",
+      "description": "Automatically generates a summary of recent work to restore context after a break. Auto-updates after a configurable inactivity period (default 5 min). Available via the Recap tool window. Requires the AI Assistant Experimental Features plugin.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-recap-html.md"
+    },
+    {
+      "name": "AI in Jupyter Notebooks (/plot)",
+      "description": "Jupyter-specific AI features in PyCharm Professional and DataSpell: explain cells and DataFrames, create AI cells, generate data visualizations (use /plot #df in chat), edit cells, and fix errors. Supports Accept and Run workflow.",
+      "commandOrFlag": "/plot",
+      "sectionHint": "Specialized Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-in-jupyter-notebooks-html.md"
+    },
+    {
+      "name": "Database AI Features (DataGrip)",
+      "description": "AI-powered database workflows including Text-to-SQL, query plan explanation, query optimization, data source management, database exploration/querying via agent skills (database-tools, database-connection-management, database-text-to-sql). Available in DataGrip and IDEs with Database Tools and SQL plugin.",
+      "sectionHint": "Specialized Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-use-ai-with-databases-html.md"
+    },
+    {
+      "name": "Codebase Mode",
+      "description": "AI Assistant automatically gathers relevant context from the project for each chat request. Can be disabled to add context manually. Respects .gitignore and .aiignore. Toggle via the Enable Codebase Mode setting in the chat.",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "AI Free License Tier",
+      "description": "Free license tier providing 3 AI Credits per 30-day period. Available in most JetBrains IDEs from version 2025.1. Does not include next edit suggestions. No top-up capability.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-licensing-and-subscriptions-html.md"
+    },
+    {
+      "name": "AI Ultimate License Tier",
+      "description": "Premium license tier at $30 USD/month for individuals (or $60 USD/month per user for organizations), providing 35 AI Credits per 30-day period (individual) or 70 AI Credits (organizations). Top-up credits supported.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-licensing-and-subscriptions-html.md"
+    },
+    {
+      "name": "Top-up AI Credits",
+      "description": "Additional AI Credits purchasable to continue using AI features after monthly quota is exhausted. Valid for 12 months. Purchasable via JetBrains AI widget in IDE or JetBrains Account. Available for AI Pro, AI Ultimate, and AI Trial tiers.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-licensing-and-subscriptions-html.md"
+    },
+    {
+      "name": "JetBrains Central Shared Credit Pool",
+      "description": "Organizations migrated to JetBrains Central use a shared pool of AI Credits instead of per-user licenses. Admins control access and per-user limits. Monthly AI Credits accumulate into the pool and expire after one year.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-licensing-and-subscriptions-html.md"
+    },
+    {
+      "name": ".aiignore File Support",
+      "description": "Restrict AI Assistant from processing specific files or folders using an .aiignore file (same syntax as .gitignore). Also supports .cursorignore, .codeiumignore, and .aiexclude. Respected by Junie; NOT respected by Claude Agent, Codex, or GitHub Copilot.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-disable-ai-assistant-html.md"
+    },
+    {
+      "name": "Custom AI Completion Provider",
+      "description": "Configure an OpenAI-compatible endpoint as the provider for inline code completion and next edit suggestions (instead of JetBrains Mellum). Supports FIM models for completion and edit-prediction models for next edit suggestions. Configure in Settings | Tools | AI Assistant | Providers & API keys | AI Completion.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-use-custom-models-html.md"
+    },
+    {
+      "name": "Junie Remote Session (/remote)",
+      "description": "Start a remote session that lets you control Junie from a web browser UI at air.jetbrains.cloud. Run /remote in Junie chat to initiate; the session lives as long as the IDE is running. Log in with your JetBrains account to access the remote UI.",
+      "commandOrFlag": "/remote",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "IDE Usage Command (/usage)",
+      "description": "Junie slash command that shows the cost breakdown for the current session, including token usage and models used.",
+      "commandOrFlag": "/usage",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "IDE Connection Command (/ide)",
+      "description": "Junie slash command that shows the current JetBrains IDE connection status and the IDE features available to the current session.",
+      "commandOrFlag": "/ide",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "Web Search Command (/web)",
+      "description": "Chat slash command that searches for information on the internet and returns an answer with a set of relevant source links.",
+      "commandOrFlag": "/web",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Explain Command (/explain)",
+      "description": "Chat slash command that explains a mentioned entity (file, symbol, selection, etc.).",
+      "commandOrFlag": "/explain",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Refactor Command (/refactor)",
+      "description": "Chat slash command that suggests refactoring for the code selected in the editor.",
+      "commandOrFlag": "/refactor",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Plot Command (/plot)",
+      "description": "Jupyter-specific chat slash command to generate data visualization code for a dataframe. Usage: /plot #df histogram of x column with legend.",
+      "commandOrFlag": "/plot",
+      "sectionHint": "Specialized Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-in-jupyter-notebooks-html.md"
+    },
+    {
+      "name": "Projects Command (/projects)",
+      "description": "Slash command detected across agent documentation for project-level navigation and management.",
+      "commandOrFlag": "/projects",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-codex-agent-html.md"
+    },
+    {
+      "name": "Search Command (/search)",
+      "description": "Slash command for searching within the IDE or project context, exposed via connected MCP servers or agent capabilities.",
+      "commandOrFlag": "/search",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-mcp-html.md"
+    },
+    {
+      "name": "Commands Help (/commands)",
+      "description": "Lists available slash commands in the current AI Chat session or agent context.",
+      "commandOrFlag": "/commands",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Debugger Skill Command (/ij-debugger)",
+      "description": "Skill command for external agents (Claude Code, Codex) to invoke IntelliJ IDEA's debugger MCP tools. Copy to agent skills folders using 'Copy Debugger Skills to Agents' action in Search Everywhere.",
+      "commandOrFlag": "/ij-debugger",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-mcp-html.md"
+    },
+    {
+      "name": "Skills Management (/skills)",
+      "description": "Codex agent slash command to view the skills currently available to Codex in the current session.",
+      "commandOrFlag": "/skills",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-codex-agent-html.md"
+    },
+    {
+      "name": "Self-Review with AI",
+      "description": "Review uncommitted or committed changes with AI before committing. Detects potential issues and suggests quick fixes. Configure review guidelines via a Markdown file in Settings | Tools | AI Assistant | Project Settings.",
+      "sectionHint": "VCS & Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-ai-in-vcs-integration-html.md"
+    },
+    {
+      "name": "Apply Suggestion to Current File",
+      "description": "Apply AI-generated code snippets from Chat mode directly to the currently open file. Changes are shown in a diff view with Next/Previous Change navigation and Accept All / Discard All actions.",
+      "sectionHint": "Core Features",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Message Trimming Threshold",
+      "description": "Configure the percentage of the model's context window beyond which AI Assistant starts trimming attached files to ensure requests stay within capacity. Configure in Settings | Tools | AI Assistant.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "Database Object Context (@dbObject)",
+      "description": "Attach database objects (tables, schemas, etc.) to AI chat requests via @dbObject: mention to improve SQL generation quality. Available in DataGrip and IDEs with Database Tools and SQL plugin from version 2025.2.",
+      "sectionHint": "Specialized Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-chat-mode-html.md"
+    },
+    {
+      "name": "ACP Registry (Install From ACP Registry)",
+      "description": "Curated registry of ACP-compatible agents installable directly from the IDE. Agents from the registry include authentication flow and require no manual configuration. Access via the chat mode selector > Install From ACP Registry.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-acp-html.md"
+    },
+    {
+      "name": "Collect IDE Context (Auto-context for Agents)",
+      "description": "Agents (Junie, Claude Agent, Codex, GitHub Copilot) can automatically attach the currently open file and selected text to each prompt. Toggle via the IDE context indicator in the chat input field.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-junie-agent-html.md"
+    },
+    {
+      "name": "Reasoning Level Selection",
+      "description": "Select the reasoning depth for supported agents (Junie, Claude Agent, Codex, GitHub Copilot) and models. Higher levels increase multi-step analysis quality for complex tasks but may take longer.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-claude-agent-html.md"
+    },
+    {
+      "name": "Claude Agent Fast Mode",
+      "description": "Toggle Fast mode in Claude Agent to get faster responses without switching to a smaller model. Higher cost per token. Toggle via the Fast mode switch next to the operation mode selector.",
+      "sectionHint": "Agents",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-claude-agent-html.md"
+    },
+    {
+      "name": "Django-specific AI Features",
+      "description": "PyCharm-only AI actions for Django development: Create Django View For Model, Create Django Admin For Model, Create Django Serializer For Model, Custom Django Intention, Custom Django Smart Chat Intention.",
+      "sectionHint": "Specialized Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-django-specific-ai-features-html.md"
+    },
+    {
+      "name": "Generate Terminal Commands",
+      "description": "Generate shell commands from natural language in the New Terminal (experimental, deprecated in 2026.x). Type a query or press Cmd+\\ in the Terminal tool window and AI Assistant generates the appropriate command for your shell and context.",
+      "sectionHint": "VCS & Workflows",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-generate-terminal-commands-html.md"
+    },
+    {
+      "name": "Trusted Domains for AI Links",
+      "description": "Configure a list of trusted domains so that links provided by AI Assistant in chat responses open directly without a confirmation dialog. Configure in Settings | Tools | AI Assistant | Trusted Domains.",
+      "sectionHint": "Advanced Configuration",
+      "sourceFile": "www-jetbrains-com-help-ai-assistant-settings-reference-trusted-domains-html.md"
+    }
+  ],
+  "updatedFeatures": [],
+  "deprecatedFeatures": [
+    {
+      "name": "New Terminal (Experimental Terminal Engine)",
+      "reason": "The experimental terminal engine (New Terminal) used for AI-powered terminal command generation was available in IDEs of version 2024.x and is now deprecated. Only users who enabled it in 2024.x versions can still use it."
+    },
+    {
+      "name": "Claude 3.7 Sonnet",
+      "reason": "Deprecated by Anthropic provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Claude 3.5 Sonnet",
+      "reason": "Deprecated by Anthropic provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Claude 3.5 Haiku",
+      "reason": "Deprecated by Anthropic provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Claude 4 Sonnet",
+      "reason": "Deprecated by Anthropic provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Gemini 2.0 Flash",
+      "reason": "Deprecated by Google provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Gemini 1.5 Pro",
+      "reason": "Deprecated by Google provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Gemini 1.5 Flash",
+      "reason": "Deprecated by Google provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Gemini 3 Pro",
+      "reason": "Deprecated by Google provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "GPT-4o mini",
+      "reason": "Deprecated by OpenAI provider (replaced by newer GPT-4.1 nano/mini models)."
+    },
+    {
+      "name": "o1-mini",
+      "reason": "Deprecated by OpenAI provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Grok-4.1 Fast",
+      "reason": "Deprecated by xAI provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Grok-4.1 Fast (Non-Reasoning)",
+      "reason": "Deprecated by xAI provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Grok-4",
+      "reason": "Deprecated by xAI provider, no longer available in AI Assistant."
+    },
+    {
+      "name": "Grok Code Fast 1",
+      "reason": "Deprecated by xAI provider, no longer available in AI Assistant."
+    }
+  ],
+  "allDetectedCommands": [
+    "/commands",
+    "/explain",
+    "/ide",
+    "/ij-debugger",
+    "/plot",
+    "/projects",
+    "/refactor",
+    "/remote",
+    "/search",
+    "/skills",
+    "/usage",
+    "/web",
+    "/docs",
+    "/help"
+  ]
+}

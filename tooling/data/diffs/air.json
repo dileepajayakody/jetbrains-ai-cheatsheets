@@ -1,0 +1,255 @@
+{
+  "productId": "air",
+  "previousSnapshot": "none",
+  "currentSnapshot": "Initial baseline crawl — 48 new documentation pages (latest snapshot ~01 July 2026)",
+  "generatedAt": "2026-07-01T00:00:00Z",
+  "newFeatures": [
+    {
+      "name": "JetBrains Air — Agentic Development Environment",
+      "description": "JetBrains Air is a standalone Agentic Development Environment (ADE) where developers delegate coding tasks to AI agents (Claude Agent, OpenAI Codex, Gemini CLI, Junie) and stay in control of the workflow. Available for macOS (air.dev) and Linux (via JetBrains Toolbox); Windows support planned for 2026.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-quick-start-with-air-html.md"
+    },
+    {
+      "name": "Chat Tool",
+      "description": "Primary interface for creating and iterating on tasks. Supports task descriptions, context attachment via @ mentions, model/agent selection, thinking level, and follow-up messages. Always available in the workspace.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-chat-html.md"
+    },
+    {
+      "name": "Task Run Environments",
+      "description": "Four selectable environments per task: Local Workspace (direct edits, fast startup), Git Worktree (isolated branch on local machine), Docker (fully containerised, requires Docker Desktop), and Cloud (remote environment, auto-commits to task branch and pushes to remote). Selected via the environment selector in the task header.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-execution-environments-html.md"
+    },
+    {
+      "name": "Permission Modes",
+      "description": "Controls agent autonomy: Plan (draft plan before coding), Ask/Ask Permission/Chat (approve before each action), Edit/Auto-Edit/Agent (auto-edit files with some limits), Full Access (fewest restrictions). Select via the permission mode selector in the task toolbar; Shift+Tab cycles through modes.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-permission-modes-html.md"
+    },
+    {
+      "name": "Plan Mode",
+      "description": "Agent analyses the task and writes a Markdown plan to `.air/plans/` before any code changes. After the plan is ready, an Implement dialog lets you choose the agent, model, and environment for implementation. Available for all agents even if their standalone versions lack this mode.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-plan-mode-html.md"
+    },
+    {
+      "name": "Review with Agent (/review)",
+      "description": "Automated agentic review pass run as a separate agent session. Triggered via the 'Review with Agent' button after a task, the Task Changes tab, the Changes tool, or by typing `/` and selecting 'Review with Agent'. Supports reviewing task changes, all local changes, files, folders, Git commits, or branches. Generated comments can be accepted and sent back to the main task as follow-up instructions.",
+      "commandOrFlag": "/review",
+      "sectionHint": "Review & Integrate",
+      "sourceFile": "www-jetbrains-com-help-air-agentic-review-html.md"
+    },
+    {
+      "name": "Slash Commands Menu",
+      "description": "Type `/` in the Chat task input to open a slash menu exposing predefined Air commands, agent-specific commands, custom project commands, and skills.",
+      "commandOrFlag": "/",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-commands-html.md"
+    },
+    {
+      "name": "Init Command (/init)",
+      "description": "Agent-provided predefined command (e.g. available in Junie, Claude Agent) that initialises project instructions or scaffolding. Appears in the slash menu without additional configuration.",
+      "commandOrFlag": "/init",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-commands-html.md"
+    },
+    {
+      "name": "Upload File from Computer Command",
+      "description": "Slash-menu command that uploads a file from the local computer and attaches it to the current task as context. Useful for logs, screenshots, sample data, or specification documents not in the repository.",
+      "commandOrFlag": "/upload",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-task-context-html.md"
+    },
+    {
+      "name": "Custom Commands per Agent",
+      "description": "Project-level custom slash commands stored in agent-specific directories: `.claude/commands/*.md` (Claude Agent), `.gemini/commands/*.toml` (Gemini CLI), `.junie/commands/*.md` (Junie). Appear alongside built-in commands in the slash menu.",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-commands-html.md"
+    },
+    {
+      "name": "Skills",
+      "description": "Reusable workflow modules stored as `SKILL.md` files. Shared skills live in `.agents/skills/`; agent-specific skills live in `.claude/skills/`, `.codex/skills/`, `.gemini/skills/`, `.junie/skills/`. Skills appear in the slash menu after commands and are loaded by the agent when they match the task, enabling progressive context disclosure to reduce token usage.",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-skills-html.md"
+    },
+    {
+      "name": "Task Context (@-mentions)",
+      "description": "Type `@` in the Chat input to attach files, folders, symbols, Git branches, Git commits, local changes, terminals, or documentation sources as task context. Symbols are available only for currently open files. Terminal context references open terminal sessions.",
+      "commandOrFlag": "@",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-task-context-html.md"
+    },
+    {
+      "name": "MCP Servers",
+      "description": "Extend agents with external tools via the Model Context Protocol. Configured through Settings > AI > MCP Servers. Supports Global (all projects), Local (`.air/mcp.json`), and Workspace (`.mcp.json`) scopes. Supports no-auth, bearer token, and OAuth authentication.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-air-mcp-servers-html.md"
+    },
+    {
+      "name": "Cloud Agents (Limited EAP)",
+      "description": "Run tasks in remote containerised cloud environments instead of locally. Accessible from the Air desktop app (select Cloud as run environment) or from air.jetbrains.cloud in a browser. Results are committed to a task branch and pushed to the remote repo. Billed at the organisation level.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-cloud-agents-html.md"
+    },
+    {
+      "name": "Automations (Limited EAP)",
+      "description": "Trigger-based agentic workflows managed at air.jetbrains.cloud. Triggers include schedule (At time), repetitive interval (Repeat every), GitHub events (PR opened/updated/merged/labeled, issue opened/labeled), and incoming webhooks. Supports outgoing webhooks for notifications in JSON or Slack workflow format.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-automations-html.md"
+    },
+    {
+      "name": "Cloud Environment Configuration",
+      "description": "Per-repository cloud environment settings (VM size, internet access policy, environment variables, personal secrets) created in Settings > Environments on air.jetbrains.cloud. Configurations are personal and not shared with other users. Supports a startup script at `.air/cloud/startup.sh` that runs after repo clone but before the agent session.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-configure-environments-html.md"
+    },
+    {
+      "name": "Cloud VM Sizes",
+      "description": "Four predefined VM sizes for cloud environments: Small (2 CPU/8 GB/20 GB), Medium (4 CPU/16 GB/30 GB), Large (8 CPU/32 GB/50 GB), Extra Large (16 CPU/64 GB/100 GB). Custom VM sizes are planned.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-configure-resources-html.md"
+    },
+    {
+      "name": "Connect Repositories (VCS Integration)",
+      "description": "GitHub and GitLab repository access via the JetBrains Air app installed in the VCS provider. Managed from Settings > Integrations on air.jetbrains.cloud. Organisation repositories require an administrator to install the app first. Supports personal, organisation, internal, and private repository types with granular access rules.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-air-connect-repositories-html.md"
+    },
+    {
+      "name": "Git Worktree Configuration (worktree.json)",
+      "description": "Configure environment variables and setup/cleanup scripts for Git Worktree task runs via `.air/worktree.json`. Supports `env` and `envFile` entry types, and per-OS `setup` and `cleanup` command sections (linux/macos/windows).",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-execution-environments-html.md"
+    },
+    {
+      "name": "Docker Configuration (docker.json)",
+      "description": "Configure Docker task runs via `.air/docker.json`. Supports prebuilt images (`image`), Dockerfile builds (`build` with `dockerfile`, `context`, `buildArgs`), custom container users (`user`), environment variables (`environment` with `env`/`envFile`), and `setup` commands run before the agent session.",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-air-execution-environments-html.md"
+    },
+    {
+      "name": "Project Instructions (CLAUDE.md / AGENTS.md)",
+      "description": "JetBrains Air picks up existing agent instruction files (`CLAUDE.md`, `.claude/`, `AGENTS.md`) and passes them to the selected agent. No separate instruction format is introduced. Shared settings are stored in `.claude/settings.json`; personal settings in `.claude/settings.local.json`.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-project-instructions-html.md"
+    },
+    {
+      "name": "Accept Changes Workflow",
+      "description": "After task completion, changes are reviewed in the Task Changes editor tab. From Local Workspace: commit and push directly. From Git Worktree/Docker: use 'Apply Locally' (copies uncommitted changes) or 'Checkout Branch Locally' (creates a `-copy` branch). Supports file-level revert, full revert, staging, and rolling back to a commit via the History tool.",
+      "sectionHint": "Review & Integrate",
+      "sourceFile": "www-jetbrains-com-help-air-accept-changes-html.md"
+    },
+    {
+      "name": "Multitasking",
+      "description": "Run multiple tasks in parallel. Create new tasks with Cmd+Shift+N or via View > Tasks > New Task. Tasks that ran in isolated environments can be suspended and resumed. Tasks can be grouped by date, status, or target. Tasks requiring input show an 'Input required' state.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-multitasking-html.md"
+    },
+    {
+      "name": "Voice Input",
+      "description": "Dictate task prompts using a local Whisper model (no audio sent to cloud). Configured in Settings > Voice Input by downloading a Whisper model. Activated via the microphone button in the Chat task input.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-define-tasks-html.md"
+    },
+    {
+      "name": "Generate Commit Message",
+      "description": "AI-assisted commit message generation available in the Changes tool and Git tool. Click the Generate Commit Message icon next to the Commit button to have JetBrains Air draft the message automatically.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-changes-html.md"
+    },
+    {
+      "name": "History Tool",
+      "description": "Combined timeline of Git commits and task-related snapshots (Before Request, Auto-committed changes, Uncommitted changes). Supports search, branch/author filtering, diff viewing, Compare with Current Branch, Show Diff with Working Tree, and Reset Current Branch To Here (Mixed/Keep/Hard modes).",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-history-html.md"
+    },
+    {
+      "name": "Changes Tool",
+      "description": "Review changed files in the workspace. Select files for staging, view diffs in the Task Changes editor tab, write commit messages, and commit. Supports Current Task and All tabs for scoping review.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-changes-html.md"
+    },
+    {
+      "name": "Comments Tool",
+      "description": "Manage inline review comments added in code or generated during agentic review. Select comments to navigate to the related code location. Send selected comments as a new task for the agent to address.",
+      "sectionHint": "Review & Integrate",
+      "sourceFile": "www-jetbrains-com-help-air-comments-html.md"
+    },
+    {
+      "name": "Review Tool (Diff Viewer)",
+      "description": "Inspect agent-produced changes in unified or side-by-side diff view. Add line/selection comments from the gutter. Comments are added to the chat for the next task iteration.",
+      "sectionHint": "Review & Integrate",
+      "sourceFile": "www-jetbrains-com-help-air-review-html.md"
+    },
+    {
+      "name": "Go to All (Search Everywhere)",
+      "description": "Unified search entry point for files, symbols, actions, tools, and text. Open with Cmd+K or Shift+Shift. Tabs: Goto (files+symbols), Actions (Cmd+Shift+K), Tools (Cmd+T), Text Search (Cmd+Shift+F). Similar to IntelliJ IDEA's Search Everywhere.",
+      "sectionHint": "Navigation",
+      "sourceFile": "www-jetbrains-com-help-air-explore-projects-html.md"
+    },
+    {
+      "name": "Language Support (LSP-backed)",
+      "description": "LSP-backed code insight (navigation, completion, semantic highlighting, quick-fixes, rename, formatting) for: Kotlin (kotlin-lsp), Go (gopls), Rust (rust-analyzer), Python (basedpyright), C/C++/CUDA (clangd), TypeScript/JavaScript family, HTML, CSS family, Svelte. Java not yet supported. TextMate syntax highlighting for 50+ additional languages.",
+      "sectionHint": "Navigation",
+      "sourceFile": "www-jetbrains-com-help-air-supported-languages-html.md"
+    },
+    {
+      "name": "Supported Agents",
+      "description": "JetBrains Air supports: Claude Agent (Anthropic Console API billing; Claude Pro/Max/Team not permitted by ToS), OpenAI Codex (ChatGPT Plus/Pro/Team or OpenAI Platform API billing), Gemini CLI (Google Account or Google AI Studio API billing), Junie (JetBrains account). All agents accessible via JetBrains AI subscription (AI Pro/AI Ultimate) using credits.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-air-supported-agents-html.md"
+    },
+    {
+      "name": "Web Preview Tool",
+      "description": "Instant in-workspace browser preview for web projects. Opens automatically when a dev server starts or an HTML file is detected. Supports Responsive mode and switching between preview and source code (read-only) views.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-web-preview-html.md"
+    },
+    {
+      "name": "Settings (Global & Workspace)",
+      "description": "Two-tier settings: Global (all workspaces — theme, editor, accounts, keymap) and workspace-specific (stored in `.air/` directory, version-controllable). Workspace settings include `.air/settings.json`, `worktree.json`, `docker.json`, `mcp.json`, `review/review-prompt.md`, and `cloud/startup.sh`.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-air-settings-html.md"
+    },
+    {
+      "name": "Automation Incoming Webhooks",
+      "description": "Start automations from external systems via HTTP POST to a generated webhook URL with `Authorization: ApiKey <token>` header. Optional JSON payload becomes part of the task context. URL format: `.../api/v1/events/automations/<automation-id>`.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-create-automation-html.md"
+    },
+    {
+      "name": "Automation Outgoing Webhooks (Notifications)",
+      "description": "Send automation run results to external systems after completion. Supports JSON format (with `output.result` or `error` object) and Slack workflow format (flattened `outputText`/`errorText`). Headers include `X-Air-Webhook-Id`, `X-Air-Webhook-Event`, and `X-Air-Webhook-Format`.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-create-automation-html.md"
+    },
+    {
+      "name": "Run Cloud Tasks from IntelliJ-based IDEs",
+      "description": "Start cloud tasks directly from AI Assistant in IntelliJ IDEA, PyCharm, WebStorm, etc. by selecting 'JetBrains Cloud' from the agent list. Monitor task state in the Air Tasks tool or at air.jetbrains.cloud.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-air-run-tasks-in-cloud-html.md"
+    },
+    {
+      "name": "Project-specific Review Prompt",
+      "description": "Override the global agentic review prompt per repository by storing a custom prompt in `.air/review/review-prompt.md`. Configured in Settings > (Project tab) > AI > Review. When present, this file takes precedence over the global review prompt.",
+      "sectionHint": "Review & Integrate",
+      "sourceFile": "www-jetbrains-com-help-air-agentic-review-html.md"
+    },
+    {
+      "name": "Documentation Context Sources",
+      "description": "Attach external documentation URLs (e.g. library API references) as task context via `@` > Documentation > Add Documentation. Sources are stored per workspace and can be managed in Settings > (Project tab) > Documentation.",
+      "sectionHint": "Core Workflow",
+      "sourceFile": "www-jetbrains-com-help-air-task-context-html.md"
+    }
+  ],
+  "updatedFeatures": [],
+  "deprecatedFeatures": [],
+  "allDetectedCommands": [
+    "/init",
+    "/review",
+    "/",
+    "@"
+  ]
+}
