@@ -113,7 +113,7 @@
             position: relative;
             z-index: 1;
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 18px;
             padding: 0 34px 36px;
         }
@@ -149,6 +149,7 @@
         .card.junie { --glow: rgba(72, 224, 84, .22); }
         .card.aiassistant { --glow: rgba(149, 90, 224, .26); }
         .card.air { --glow: rgba(0, 178, 214, .26); }
+        .card.centralconsole { --glow: rgba(245, 158, 11, .24); }
         .logo-wrap {
             position: relative;
             z-index: 1;
@@ -164,6 +165,10 @@
             width: 46px;
             height: 46px;
             object-fit: contain;
+        }
+        .product-icon {
+            font-size: 38px;
+            line-height: 1;
         }
         .name {
             position: relative;
@@ -223,7 +228,7 @@
             </div>
             <section class="hero">
                 <h1><span>JetBrains AI</span> cheat sheets for agentic coding.</h1>
-                <p class="sub">Fast references generated from official JetBrains docs for Junie, JetBrains Air, and AI Assistant.</p>
+                <p class="sub">Fast references generated from official JetBrains docs for coding agents, AI assistance, agentic development, and organization-wide governance.</p>
             </section>
             <div class="grid">
 {%- for product in products %}
@@ -235,6 +240,8 @@
                         <img class="logo" src="https://resources.jetbrains.com/storage/logos/web/air/air.svg" alt="JetBrains Air logo">
 {%- elif product.id == 'aiassistant' %}
                         <img class="logo" src="https://resources.jetbrains.com/storage/logos/web/ai/ai.svg" alt="JetBrains AI Assistant logo">
+{%- else %}
+                        <span class="product-icon" aria-hidden="true">{{ product.icon }}</span>
 {%- endif %}
                     </div>
                     <div class="name">{{ product.displayName }}</div>

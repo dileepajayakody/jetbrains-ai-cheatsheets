@@ -1,8 +1,8 @@
 # JetBrains AI Cheat Sheets
 
 Automated pipeline that generates dense, printable HTML cheat sheets for the
-JetBrains AI tools — **Junie**, **AI Assistant**, and **JetBrains Air** — from
-their official documentation.
+JetBrains AI products and services — **Junie**, **AI Assistant**, **JetBrains
+Air**, and **JetBrains Central Console** — from their official documentation.
 
 Each cheat sheet is built in three stages:
 
