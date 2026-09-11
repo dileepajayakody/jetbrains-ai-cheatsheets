@@ -134,3 +134,43 @@ test('CheatSheetSchema validates full cheat sheets including isNew badges', () =
     assert.equal(parsed.data.sections[1].rows[0].isNew, true);
   }
 });
+
+test('CheatSheetRowSchema rejects a non-boolean isNew flag', () => {
+  const parsed = CheatSheetRowSchema.safeParse({ label: '/local', value: 'desc', isNew: 'true' });
+  assert.equal(parsed.success, false);
+});
+
+test('DocDiffNewFeatureSchema rejects features without a name or description', () => {
+  assert.equal(DocDiffNewFeatureSchema.safeParse({ name: '', description: 'd' }).success, false);
+  assert.equal(DocDiffNewFeatureSchema.safeParse({ name: 'Feature' }).success, false);
+});
+
+test('DocDiffChangelogSchema rejects incomplete or mistyped changelogs', () => {
+  const valid = {
+    productId: 'junie',
+    previousSnapshot: 'previous',
+    currentSnapshot: 'current',
+    generatedAt: '2026-09-01T12:00:00Z',
+    newFeatures: [],
+    updatedFeatures: [],
+    deprecatedFeatures: [],
+    allDetectedCommands: ['/local'],
+  };
+  assert.equal(DocDiffChangelogSchema.safeParse(valid).success, true);
+
+  const { allDetectedCommands: _dropped, ...missingCommands } = valid;
+  assert.equal(DocDiffChangelogSchema.safeParse(missingCommands).success, false);
+
+  assert.equal(
+    DocDiffChangelogSchema.safeParse({ ...valid, allDetectedCommands: ['/local', 42] }).success,
+    false,
+  );
+  assert.equal(
+    DocDiffChangelogSchema.safeParse({
+      ...valid,
+      updatedFeatures: [{ name: 'Model selection' }], // `changes` is required
+    }).success,
+    false,
+  );
+  assert.equal(DocDiffChangelogSchema.safeParse({ ...valid, productId: '' }).success, false);
+});

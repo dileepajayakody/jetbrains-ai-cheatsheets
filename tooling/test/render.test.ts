@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import nunjucks from 'nunjucks';
 import { TEMPLATES_DIR } from '../src/paths.js';
+import { getProduct } from '../src/config/products.js';
 import type { CheatSheet } from '../src/schema.js';
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(TEMPLATES_DIR), {
@@ -84,4 +85,30 @@ test('cheatsheet.njk applies theme classes properly for different products', () 
   });
   assert.ok(aiHtml.includes('class="theme-aiassistant"'));
   assert.ok(aiHtml.includes('.theme-aiassistant .badge-new'));
+});
+
+test('index.njk falls back to the emoji icon for products without a hosted logo', () => {
+  const html = env.render('index.njk', {
+    products: [getProduct('junie'), getProduct('centralconsole')],
+    generatedNote: 'Built 2026-09-11',
+  });
+
+  const junieStart = html.indexOf('class="card junie"');
+  const consoleStart = html.indexOf('class="card centralconsole"');
+  assert.ok(junieStart >= 0, 'junie card is rendered');
+  assert.ok(consoleStart > junieStart, 'centralconsole card is rendered after junie');
+
+  const junieCard = html.slice(junieStart, consoleStart);
+  const consoleCard = html.slice(consoleStart);
+
+  assert.ok(junieCard.includes('<img class="logo"'));
+  assert.ok(!junieCard.includes('product-icon'));
+
+  assert.ok(consoleCard.includes('<span class="product-icon" aria-hidden="true">🏢</span>'));
+  assert.ok(!consoleCard.includes('<img class="logo"'));
+  assert.ok(consoleCard.includes('href="centralconsole.html"'));
+  assert.ok(consoleCard.includes('JetBrains Central Console'));
+
+  assert.ok(html.includes('.card.centralconsole'), 'glow color for the new card is defined');
+  assert.ok(html.includes('Built 2026-09-11'));
 });
