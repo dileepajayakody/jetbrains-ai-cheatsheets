@@ -31,7 +31,7 @@ export const products: ProductConfig[] = [
     icon: '🚀',
     tagline: 'The JetBrains coding agent — IDE, CLI, headless, GitHub & GitLab.',
     crawlSeeds: ['https://junie.jetbrains.com/docs/get-started-with-junie.html'],
-    includePaths: ['/docs/junie-*', '/docs/get-started-with-junie*'],
+    includePaths: ['/docs/junie-*', '/docs/get-started-with-junie*', '/docs/*'],
     docsHubUrl: 'https://junie.jetbrains.com/docs/get-started-with-junie.html',
     accent: {
       hl: '#dbeafe',
@@ -45,7 +45,10 @@ export const products: ProductConfig[] = [
     displayName: 'AI Assistant',
     icon: '🧠',
     tagline: 'In-IDE AI chat, completion & code-aware help across JetBrains IDEs.',
-    crawlSeeds: ['https://www.jetbrains.com/help/ai-assistant/about-ai-assistant.html'],
+    crawlSeeds: [
+      'https://www.jetbrains.com/help/ai-assistant/about-ai-assistant.html',
+      'https://www.jetbrains.com/help/ai-assistant/ai-chat.html',
+    ],
     includePaths: ['/help/ai-assistant/*'],
     docsHubUrl: 'https://www.jetbrains.com/help/ai-assistant/ai-chat.html',
     accent: {
@@ -69,6 +72,24 @@ export const products: ProductConfig[] = [
     },
     outputFile: 'air.html',
     editorialSeedPath: 'data/editorial/air.md',
+  },
+  {
+    id: 'centralconsole',
+    displayName: 'JetBrains Central Console',
+    icon: '🏢',
+    tagline: 'Organization-wide access, policy, usage, and billing controls for JetBrains AI.',
+    crawlSeeds: [
+      'https://www.jetbrains.com/help/jetbrains-console/eap',
+      'https://www.jetbrains.com/help/jetbrains-console/',
+    ],
+    includePaths: ['/help/jetbrains-console/eap/*', '/help/jetbrains-console/*'],
+    docsHubUrl: 'https://www.jetbrains.com/help/jetbrains-console/eap',
+    accent: {
+      hl: '#fef3c7', // amber-100
+      hl2: '#fed7aa', // orange-200
+    },
+    outputFile: 'centralconsole.html',
+    editorialSeedPath: 'data/editorial/centralconsole.md',
   },
 ];
 

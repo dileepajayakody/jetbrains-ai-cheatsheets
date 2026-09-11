@@ -58,6 +58,21 @@
         td { padding: 4px 11px; vertical-align: top; font-family: var(--font-mono); font-size: 11px; line-height: 1.5; color: #26262b; border-bottom: 1px solid #F1F1ED; overflow-wrap: anywhere; word-break: break-word; }
         tr:last-child td { border-bottom: none; }
         td.k { color: #0B7D29; font-weight: 600; width: 34%; font-size: 10.5px; letter-spacing: .01em; }
+        .badge-new {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 8.5px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            background: #0B7D29;
+            color: #fff;
+            padding: 2px 4.5px;
+            border-radius: 3px;
+            margin-right: 5px;
+            vertical-align: 1px;
+        }
         code { font-family: var(--font-mono); font-size: 10px; background: #ECFBEE; color: #0B7A26; padding: 1px 4px; overflow-wrap: anywhere; word-break: break-word; }
         a { color: #0B7A26; overflow-wrap: anywhere; }
 
@@ -196,6 +211,11 @@
         .theme-air td.k {
             color: var(--air-mint);
         }
+        .theme-air .badge-new {
+            background: var(--air-cyan);
+            color: #000;
+            box-shadow: 0 0 10px rgba(0, 178, 214, .6);
+        }
         .theme-air code {
             color: #9af6df;
             background: rgba(0, 178, 214, .14);
@@ -326,6 +346,11 @@
             border-bottom-color: rgba(216, 140, 255, .1);
         }
         .theme-aiassistant td.k { color: #d9c2ff; }
+        .theme-aiassistant .badge-new {
+            background: linear-gradient(90deg, var(--ai-violet), var(--ai-blue));
+            color: #fff;
+            box-shadow: 0 0 12px rgba(149, 90, 224, .5);
+        }
         .theme-aiassistant code {
             color: #eadfff;
             background: rgba(149, 90, 224, .18);
@@ -380,7 +405,7 @@
                         <table>
                             <tbody>
 {%- for row in section.rows %}
-                            <tr><td class="k">{{ row.label | safe }}</td><td>{{ row.value | safe }}</td></tr>
+                            <tr><td class="k">{% if row.isNew %}<span class="badge-new">NEW</span>{% endif %}{{ row.label | safe }}</td><td>{{ row.value | safe }}</td></tr>
 {%- endfor %}
                             </tbody>
                         </table>

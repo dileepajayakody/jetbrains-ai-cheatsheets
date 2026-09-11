@@ -1,0 +1,635 @@
+{
+  "title": "<span class=\"hl\">JetBrains Central Console</span> — <span class=\"hl2\">Admin</span> Cheat Sheet",
+  "brandName": "JetBrains Central Console",
+  "brandSub": "AI Governance · Usage Analytics · Centralized Billing · Policy Control",
+  "badge": "JETBRAINS",
+  "docsUrl": "https://www.jetbrains.com/help/jetbrains-console/eap",
+  "docsLabel": "Central Console Docs",
+  "generatedNote": "Built from docs scraped on 2026-07-20",
+  "sections": [
+    {
+      "title": "Getting Started",
+      "colorClass": "s1",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Console URL",
+          "value": "<code>console.jetbrains.cloud/org/&lt;org-UUID&gt;</code> — unique per org"
+        },
+        {
+          "label": "Login",
+          "value": "Use existing <code>account.jetbrains.com</code> credentials; no separate account needed"
+        },
+        {
+          "label": "Target audience",
+          "value": "Team leads, CTOs, engineering managers — not individual developers"
+        },
+        {
+          "label": "EAP status",
+          "value": "Product is in Early Access Program; all orgs on Basic plan with free Business preview"
+        },
+        {
+          "label": "First-time setup",
+          "value": "Accept Terms and Conditions, assign licenses to users, then enable AI"
+        },
+        {
+          "label": "Enable AI",
+          "value": "AI governance → Settings → click <code>On</code>, accept JetBrains AI Platform Terms"
+        },
+        {
+          "label": "Propagation delay",
+          "value": "Settings changes may take up to one hour to take effect org-wide"
+        },
+        {
+          "label": "Help center",
+          "value": "Sidebar <code>?</code> icon → Read documentation, Share feedback, or Contact support"
+        }
+      ]
+    },
+    {
+      "title": "Latest &amp; EAP",
+      "colorClass": "s11",
+      "column": 1,
+      "rows": [
+        {
+          "label": "AI Policies (EAP)",
+          "value": "Business plan preview — control tools, agents, &amp; BYOK providers per policy"
+        },
+        {
+          "label": "AI Providers (EAP)",
+          "value": "Business plan preview — centrally configure OpenAI, Amazon Bedrock, Google Vertex AI"
+        },
+        {
+          "label": "Agents page (EAP)",
+          "value": "Business plan preview — manage ACP-compatible agents from global registry or add custom ones"
+        },
+        {
+          "label": "Analytics API v2 (EAP)",
+          "value": "Business plan preview — POST-body requests, <code>principalType</code> filter, token-usage endpoints"
+        },
+        {
+          "label": "AI token usage segment",
+          "value": "New analytics segment: token consumption by provider &amp; model (v2 API only)"
+        },
+        {
+          "label": "Shared AI credit pool",
+          "value": "Replaces per-user quota; org pool with monthly per-user limit; trial credits consumed first"
+        },
+        {
+          "label": "Corporate trials",
+          "value": "Eligible orgs can activate one-time trial that adds credits to shared pool"
+        },
+        {
+          "label": "Cloud runs policy flag",
+          "value": "New General tab toggle on default policy to allow/deny remote cloud agent execution"
+        }
+      ]
+    },
+    {
+      "title": "Organizations &amp; Teams",
+      "colorClass": "s2",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Teams sidebar",
+          "value": "Licensing → Teams; subdivisions of licenses within an org"
+        },
+        {
+          "label": "Create team",
+          "value": "Teams → <code>Create New Team</code>; creator becomes team admin automatically"
+        },
+        {
+          "label": "Merge teams",
+          "value": "Team Administration → <code>Merge</code>; licenses &amp; admins transfer, AI settings of target team kept"
+        },
+        {
+          "label": "Delete team",
+          "value": "Only empty teams can be deleted; teams tied to License Vault cannot be deleted"
+        },
+        {
+          "label": "Invite team admin",
+          "value": "Team → Administration → <code>Invite Administrator</code> → copy or email invitation link"
+        },
+        {
+          "label": "Transfer licenses",
+          "value": "Licensing → Licenses → select → Manage → <code>Transfer X licenses to another team</code>"
+        },
+        {
+          "label": "Org admin role",
+          "value": "<code>Manage organization</code> permission — full read/write access to all Console sections"
+        },
+        {
+          "label": "Merge organizations",
+          "value": "Submit Sales request; licenses, teams, org admins, and contacts are transferred"
+        }
+      ]
+    },
+    {
+      "title": "Users &amp; Access",
+      "colorClass": "s5",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Add user",
+          "value": "Users and access → Users → <code>Add user</code> (name + email required)"
+        },
+        {
+          "label": "Remove user",
+          "value": "User <code>...</code> menu → <code>Remove user from organization</code>; loses all licenses &amp; AI access"
+        },
+        {
+          "label": "Assign license (manual)",
+          "value": "Licensing → Licenses → filter available → <code>Assign</code> → enter email &amp; name"
+        },
+        {
+          "label": "Bulk invitation",
+          "value": "Licensing → Teams → team → Invitations → <code>Create Invitation</code> → share link"
+        },
+        {
+          "label": "Revoke license",
+          "value": "Products and services → Active subscriptions → select → Manage → <code>Revoke X licenses</code>"
+        },
+        {
+          "label": "Grant AI access",
+          "value": "AI governance → Access → <code>Grant access</code> → select users or service accounts"
+        },
+        {
+          "label": "Revoke AI access",
+          "value": "AI governance → Access → row <code>⋯</code> → <code>Revoke access</code>"
+        },
+        {
+          "label": "Groups",
+          "value": "Users and access → Groups; local groups manageable; synced groups come from IdP"
+        }
+      ]
+    },
+    {
+      "title": "Products &amp; Services",
+      "colorClass": "s6",
+      "column": 2,
+      "rows": [
+        {
+          "label": "AI Assistant",
+          "value": "IDE plugin: context-aware chat, code completion, next edit suggestions, commit messages"
+        },
+        {
+          "label": "Junie",
+          "value": "JetBrains coding agent; Code and Ask modes; data included in activity analytics"
+        },
+        {
+          "label": "Claude Agent",
+          "value": "Anthropic agent in AI Assistant; credit consumption tracked only via JetBrains AI path"
+        },
+        {
+          "label": "OpenAI Codex",
+          "value": "OpenAI agent in AI Assistant; add supported model to OpenAI provider card to enable"
+        },
+        {
+          "label": "JetBrains Air",
+          "value": "Agentic development environment (ADE) — delegates tasks to multiple agents concurrently"
+        },
+        {
+          "label": "Central CLI",
+          "value": "<code>wire</code> IDE filter value in API; routes CLI agents through JetBrains Central for unified billing"
+        },
+        {
+          "label": "ACP agents",
+          "value": "Agent Client Protocol — global registry agents auto-added; cannot be deleted from list"
+        },
+        {
+          "label": "View products",
+          "value": "Licensing → Products and services; click <code>Active subscriptions</code> per product"
+        }
+      ]
+    },
+    {
+      "title": "AI Policies",
+      "colorClass": "s7",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Default policy",
+          "value": "Auto-created for every org; all principals with AI access assigned; cannot be deleted"
+        },
+        {
+          "label": "Save policy changes",
+          "value": "Blue dot = unsaved; click <code>Save</code> upper-right, then confirm; propagation takes minutes"
+        },
+        {
+          "label": "Provider setting",
+          "value": "General tab → Provider dropdown; agents unsupported by selected provider appear greyed out"
+        },
+        {
+          "label": "Cloud runs toggle",
+          "value": "General tab → <code>Cloud runs</code>; enables/disables remote cloud agent sessions for principals"
+        },
+        {
+          "label": "Restrict agents",
+          "value": "Agents tab → toggle off <code>All available agents</code> → <code>Add agent</code> to allow specific ones"
+        },
+        {
+          "label": "BYOK per-user",
+          "value": "Tools tab → AI Assistant card → <code>Third-party AI providers</code> toggle (default: enabled)"
+        },
+        {
+          "label": "Custom ACP agents",
+          "value": "Tools tab → AI Assistant card → <code>Custom ACP agents</code> toggle (default: enabled)"
+        },
+        {
+          "label": "Custom agent JSON",
+          "value": "Agents → <code>New custom agent</code>; only <code>name</code> field validated; verify ACP format manually"
+        }
+      ]
+    },
+    {
+      "title": "AI Credit Management",
+      "colorClass": "s8",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Default limit",
+          "value": "AI governance → Settings → JetBrains Central tab → <code>AI credits per user per month</code>"
+        },
+        {
+          "label": "Per-user limit",
+          "value": "AI governance → Access → Credit limit column → click value → set or reset to default"
+        },
+        {
+          "label": "Bulk limit change",
+          "value": "Select multiple users via checkboxes → <code>Change credit limit</code> toolbar button"
+        },
+        {
+          "label": "Auto-purchase",
+          "value": "AI settings → <code>Configure auto-purchase</code>; monthly or yearly; min 5 credits per period"
+        },
+        {
+          "label": "Credit priority order",
+          "value": "Trial/compensation → license-included → regular → postpaid; earliest expiry consumed first"
+        },
+        {
+          "label": "Credit expiry",
+          "value": "Regular credits: 12 months; license-included: last day of license expiry month"
+        },
+        {
+          "label": "Near-limit alert",
+          "value": "<code>Balance used</code> ≥ 80% triggers <code>Users almost out of AI credits</code> link in info card"
+        },
+        {
+          "label": "Buy credits",
+          "value": "AI governance → Access → AI credits available card → <code>+</code> icon → checkout"
+        }
+      ]
+    },
+    {
+      "title": "Usage &amp; Analytics",
+      "colorClass": "s9",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Analytics sections",
+          "value": "Usage → AI Analytics: Adoption &amp; usage, Activity &amp; impact, Credit consumption, Providers &amp; models"
+        },
+        {
+          "label": "AI contribution rate",
+          "value": "AI-generated committed LOC ÷ (AI + human LOC); IntelliJ IDEA only, via VCS integration"
+        },
+        {
+          "label": "Code acceptance rate",
+          "value": "Accepted suggestions ÷ total generated lines; chat agents and in-editor features combined"
+        },
+        {
+          "label": "Active consumers chart",
+          "value": "Unique principals making ≥1 credit-spending request per period; each counted once per bar"
+        },
+        {
+          "label": "Limit-hits table",
+          "value": "Lists consumer name/email and date each hit monthly credit limit; daily aggregation"
+        },
+        {
+          "label": "IDE version requirements",
+          "value": "IDE 2025.3.0+, AI Assistant 2025.3.0+, Junie 253.487.77+ for activity &amp; impact data"
+        },
+        {
+          "label": "Download CSV",
+          "value": "Click download icon next to any chart; credit consumption includes all pages of data"
+        },
+        {
+          "label": "Share feedback",
+          "value": "Bottom of any analytics page → <code>Share feedback</code> form to request additional metrics"
+        }
+      ]
+    },
+    {
+      "title": "Analytics API",
+      "colorClass": "s4",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Base URL",
+          "value": "<code>https://api.jetbrains.cloud/metrics/</code>"
+        },
+        {
+          "label": "Auth flow",
+          "value": "OAuth 2.0 Client Credentials; POST to <code>oauth.account.jetbrains.com/api/rest/oauth2/token</code>"
+        },
+        {
+          "label": "Token request",
+          "value": "<code>grant_type=client_credentials&amp;scope=jcp-public</code>; token valid 60 minutes"
+        },
+        {
+          "label": "Auth header",
+          "value": "<code>Authorization: Basic base64(client_id:client_secret)</code>"
+        },
+        {
+          "label": "v2 adoption endpoint",
+          "value": "<code>POST /api/v2/adoption/users-adoption/group-by/date</code> — supports <code>principalType</code>"
+        },
+        {
+          "label": "v2 token usage",
+          "value": "<code>POST /api/v2/token-usage/group-by/date-provider</code> — new in v2; not in v1"
+        },
+        {
+          "label": "v1 deprecation",
+          "value": "<code>/api/v1/adoption/limit-hits/group-by/date-principal.cursor</code> deprecated; use v2 equivalent"
+        },
+        {
+          "label": "Required permission",
+          "value": "Service account must have <code>View AI Analytics</code> role to access any Analytics API endpoint"
+        }
+      ]
+    },
+    {
+      "title": "BYOK Providers",
+      "colorClass": "s3",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Supported BYOK",
+          "value": "OpenAI, Google Vertex AI, Amazon Bedrock; JetBrains AI always available as default"
+        },
+        {
+          "label": "Add provider",
+          "value": "AI governance → Providers → <code>Add provider</code> → fill credentials → <code>Connect</code>"
+        },
+        {
+          "label": "OpenAI endpoint",
+          "value": "Default <code>https://api.openai.com</code>; use regional endpoint for data residency"
+        },
+        {
+          "label": "Vertex AI key",
+          "value": "Paste full JSON service account key; requires <code>Vertex AI Service Agent</code> IAM role"
+        },
+        {
+          "label": "Bedrock model ID",
+          "value": "Exact regional ID required; base = in-region, <code>us.</code> prefix = geo, <code>global.</code> = worldwide"
+        },
+        {
+          "label": "Test connection",
+          "value": "Provider card → <code>Test connection</code>; tests auth only — use <code>Check connection</code> per model"
+        },
+        {
+          "label": "Delete provider",
+          "value": "Cannot delete while selected in default policy; switch policy provider first"
+        },
+        {
+          "label": "Activate via policy",
+          "value": "Providers alone do nothing — specify provider in an AI policy General tab to apply it"
+        }
+      ]
+    },
+    {
+      "title": "Central CLI",
+      "colorClass": "s10",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Purpose",
+          "value": "Local CLI proxy routing agent requests through JetBrains Central — no per-provider API keys"
+        },
+        {
+          "label": "Supported agents",
+          "value": "Claude Code, Codex CLI, Gemini CLI, and other ACP-compatible CLI agents"
+        },
+        {
+          "label": "Billing",
+          "value": "Usage attributed to the user; deducted from org shared AI credit pool like IDE usage"
+        },
+        {
+          "label": "IDE filter value",
+          "value": "Use <code>wire</code> in <code>ide</code> filter of Analytics API to isolate Central CLI consumption"
+        },
+        {
+          "label": "Docs",
+          "value": "Full setup guide at <a href=\"https://www.jetbrains.com/help/central-cli/\">jetbrains.com/help/central-cli/</a>"
+        },
+        {
+          "label": "Auth",
+          "value": "Users authenticate via JetBrains Account; org AI access must be enabled in Console first"
+        },
+        {
+          "label": "No BYOK needed",
+          "value": "Replaces provider-specific API keys; billing consolidated in Console Usage section"
+        },
+        {
+          "label": "Air integration",
+          "value": "JetBrains Air users authenticate the same way; cloud execution uses service account credits"
+        }
+      ]
+    },
+    {
+      "title": "Billing &amp; Subscriptions",
+      "colorClass": "s12",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Subscription packs",
+          "value": "Billing → Subscription packs; group with shared billing cycle, payment method, &amp; renewal date"
+        },
+        {
+          "label": "Co-terming",
+          "value": "All pack subscriptions aligned to earliest renewal date; auto on renewal or manual anytime"
+        },
+        {
+          "label": "Move subscriptions",
+          "value": "Pack Overview → select licenses → Pay → <code>Change Subscription Pack for X licenses</code>"
+        },
+        {
+          "label": "Auto-renewal",
+          "value": "Subscription packs → <code>Setup payment</code>; disable via <code>Disable auto-renewal</code> button"
+        },
+        {
+          "label": "Cancel subscription",
+          "value": "Licensing → Licenses → select → Pay → <code>Stop payments for X licenses</code>; active until expiry"
+        },
+        {
+          "label": "Upgrade/downgrade",
+          "value": "Licensing → Licenses → select → <code>Upgrade</code> → switch product; unused days credited at checkout"
+        },
+        {
+          "label": "Plans",
+          "value": "Basic (free), Business ($20/seat/month), Enterprise (on request); EAP = free Business preview"
+        },
+        {
+          "label": "Model pricing",
+          "value": "1 AI credit = $1 USD spent on provider side; e.g., Claude 4.6 Sonnet: $3 input/$15 output per 1M tokens"
+        }
+      ]
+    },
+    {
+      "title": "JetBrains Account Transition",
+      "colorClass": "s2",
+      "column": 4,
+      "rows": [
+        {
+          "label": "Org management",
+          "value": "JetBrains Account org pages migrated to Console; individual licenses stay in JetBrains Account"
+        },
+        {
+          "label": "Auth method",
+          "value": "Console uses JetBrains Account for SSO — no separate credentials created"
+        },
+        {
+          "label": "Admin roles sync",
+          "value": "All JetBrains Account admin roles &amp; contacts auto-transferred to Console on migration"
+        },
+        {
+          "label": "AI settings mapping",
+          "value": "JetBrains Account → AI Settings → now at AI governance → Settings in Console"
+        },
+        {
+          "label": "AI access mapping",
+          "value": "JetBrains Account → JetBrains AI Settings → now at AI governance → Access"
+        },
+        {
+          "label": "Teams mapping",
+          "value": "JetBrains Account → Org → Teams → now Licensing → Teams (same data)"
+        },
+        {
+          "label": "New in Console only",
+          "value": "Dashboard, Users &amp; access section, Usage → Analytics, Groups, Service accounts"
+        },
+        {
+          "label": "Verified domains",
+          "value": "Not transferred during org merge; re-add manually under Organization → Administration"
+        }
+      ]
+    },
+    {
+      "title": "Governance Tips",
+      "colorClass": "s3",
+      "column": 1,
+      "rows": [
+        {
+          "label": "Pilot rollout",
+          "value": "Enable AI for a single team first; use <code>Grant access</code> per user rather than org-wide toggle"
+        },
+        {
+          "label": "Least-privilege roles",
+          "value": "Assign <code>AI viewer</code> or <code>AI analytics viewer</code> before promoting to <code>AI admin</code>"
+        },
+        {
+          "label": "Set budgets first",
+          "value": "Configure default &amp; per-user credit limits before broad AI enablement to prevent runaway spend"
+        },
+        {
+          "label": "Staged policy changes",
+          "value": "EAP policies can change before GA; test on default policy; blue dot warns of unsaved edits"
+        },
+        {
+          "label": "Monitor limit hits",
+          "value": "Check <code>Number of AI consumers who hit their limit</code> chart weekly; raise limits proactively"
+        },
+        {
+          "label": "Compare adoption vs cost",
+          "value": "Cross-reference Active AI consumers chart with AI credit consumption chart monthly"
+        },
+        {
+          "label": "Service account hygiene",
+          "value": "Rotate client secrets regularly; deleting a service account immediately revokes its access"
+        },
+        {
+          "label": "2FA enforcement",
+          "value": "Organization → Administration → <code>Require 2FA</code>; users have 7 days to comply before lockout"
+        }
+      ]
+    },
+    {
+      "title": "Roles &amp; Permissions",
+      "colorClass": "s5",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Org admin",
+          "value": "<code>Manage organization</code> — full access to all Console sections"
+        },
+        {
+          "label": "AI admin",
+          "value": "<code>Manage AI settings</code> + <code>Manage AI access</code> + <code>View AI analytics</code>"
+        },
+        {
+          "label": "AI viewer",
+          "value": "<code>View AI settings</code> + <code>View AI access</code> + <code>View AI analytics</code>"
+        },
+        {
+          "label": "AI analytics viewer",
+          "value": "<code>View AI analytics</code> only — narrowest role for BI/reporting consumers"
+        },
+        {
+          "label": "Licensing &amp; billing manager",
+          "value": "<code>Manage licensing and billing</code> + <code>Manage purchases</code> + <code>View licenses</code>"
+        },
+        {
+          "label": "Group-scoped roles",
+          "value": "Scope = Groups; only AI access &amp; AI analytics permissions supported at group scope"
+        },
+        {
+          "label": "Create custom role",
+          "value": "Users and access → Roles → <code>New role</code>; scope cannot be changed after creation"
+        },
+        {
+          "label": "Team admin (special)",
+          "value": "Manages only one team's licenses; granted by purchase or invitation; no org-wide visibility"
+        }
+      ]
+    },
+    {
+      "title": "Service Accounts &amp; API Auth",
+      "colorClass": "s6",
+      "column": 3,
+      "rows": [
+        {
+          "label": "Create service account",
+          "value": "Users and access → Service accounts → <code>Add service account</code>; copy secret immediately"
+        },
+        {
+          "label": "Rotate secret",
+          "value": "Service account <code>⋯</code> → View credentials → <code>Rotate secret</code>; old tokens valid until expiry"
+        },
+        {
+          "label": "Get access token",
+          "value": "POST <code>oauth.account.jetbrains.com/api/rest/oauth2/token</code> with <code>scope=jcp-public</code>"
+        },
+        {
+          "label": "Token lifetime",
+          "value": "Access tokens expire after 3600 seconds; refresh tokens not supported"
+        },
+        {
+          "label": "AI credit attribution",
+          "value": "User-initiated actions billed to user; background service account tasks billed to account"
+        },
+        {
+          "label": "JetBrains Account API",
+          "value": "Separate REST API at <code>account.jetbrains.com/api-doc</code>; headers: <code>X-Customer-Code</code> + <code>X-Api-Key</code>"
+        },
+        {
+          "label": "Revoke user token",
+          "value": "Organization → Administration → Users with access → Revoke in <code>API Token</code> column"
+        },
+        {
+          "label": "System service accounts",
+          "value": "Auto-created by external integrations; cannot be modified but can be deleted by org admin"
+        }
+      ]
+    }
+  ]
+}

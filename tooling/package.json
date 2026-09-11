@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "crawl": "tsx src/stages/crawl.ts",
+    "diff": "tsx src/stages/diff.ts",
     "extract": "tsx src/stages/extract.ts",
     "render": "tsx src/stages/render.ts",
+    "audit:commands": "tsx src/audit.ts",
+    "test": "tsx --test test/*.test.ts",
     "build": "tsx src/index.ts",
     "build:one": "tsx src/index.ts --product"
   },

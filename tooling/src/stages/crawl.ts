@@ -1,16 +1,23 @@
 import '../env.js'; // load tooling/.env (harmless for crawl; keeps entrypoints uniform)
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { chromium, type Browser, type Page } from 'playwright';
 import TurndownService from 'turndown';
 import { getProduct, products, type ProductConfig } from '../config/products.js';
-import { CRAWL_DIR } from '../paths.js';
+import {
+  CRAWL_DIR,
+  getProductCrawlDir,
+  getProductCurrentDir,
+  getProductPreviousDir,
+  getProductSnapshotsDir,
+} from '../paths.js';
 
 /**
  * Keyless docs crawler built on Playwright. JetBrains docs are Writerside sites:
  * junie.jetbrains.com is server-rendered, but www.jetbrains.com/help/* render
  * content client-side, so a real browser is required (no API key, unlike
- * Firecrawl). Writes one markdown file per page to `crawled-docs/<id>/`.
+ * Firecrawl). Writes markdown snapshots to `crawled-docs/<id>/snapshots/<timestamp>/`,
+ * maintaining `crawled-docs/<id>/current/` and `crawled-docs/<id>/previous/`.
  */
 
 const MAX_PAGES = 60;
@@ -157,13 +164,79 @@ async function loadPage(page: Page, url: string): Promise<PageResult | null> {
 }
 
 /**
- * Crawl a product's docs and write markdown to `crawled-docs/<product>/`.
+ * Prepare snapshot directory rotation: rotates current files to previous,
+ * creates a new timestamped snapshot directory, and returns directory paths.
+ */
+export async function prepareSnapshotRotation(productId: string): Promise<{
+  productDir: string;
+  snapshotDir: string;
+  currentDir: string;
+  previousDir: string;
+  timestamp: string;
+}> {
+  const productDir = getProductCrawlDir(productId);
+  const currentDir = getProductCurrentDir(productId);
+  const previousDir = getProductPreviousDir(productId);
+  const snapshotsBaseDir = getProductSnapshotsDir(productId);
+
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const snapshotDir = resolve(snapshotsBaseDir, timestamp);
+
+  await mkdir(productDir, { recursive: true });
+  await mkdir(snapshotDir, { recursive: true });
+  await mkdir(currentDir, { recursive: true });
+  await mkdir(previousDir, { recursive: true });
+
+  // Rotate existing current (or root markdown files) to previous
+  let currentFiles: string[] = [];
+  try {
+    currentFiles = (await readdir(currentDir)).filter((f) => f.endsWith('.md'));
+  } catch {
+    currentFiles = [];
+  }
+
+  if (currentFiles.length > 0) {
+    await rm(previousDir, { recursive: true, force: true });
+    await mkdir(previousDir, { recursive: true });
+    for (const f of currentFiles) {
+      const content = await readFile(resolve(currentDir, f), 'utf8');
+      await writeFile(resolve(previousDir, f), content, 'utf8');
+    }
+  } else {
+    // If currentDir was empty, check if flat markdown files exist in productDir
+    try {
+      const rootFiles = (await readdir(productDir)).filter((f) => f.endsWith('.md'));
+      if (rootFiles.length > 0) {
+        await rm(previousDir, { recursive: true, force: true });
+        await mkdir(previousDir, { recursive: true });
+        for (const f of rootFiles) {
+          const content = await readFile(resolve(productDir, f), 'utf8');
+          await writeFile(resolve(previousDir, f), content, 'utf8');
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // Clear currentDir for the upcoming crawl
+  await rm(currentDir, { recursive: true, force: true });
+  await mkdir(currentDir, { recursive: true });
+
+  return { productDir, snapshotDir, currentDir, previousDir, timestamp };
+}
+
+/**
+ * Crawl a product's docs and write markdown snapshots to:
+ * 1. `crawled-docs/<product>/snapshots/<timestamp>/`
+ * 2. `crawled-docs/<product>/current/`
+ * 3. `crawled-docs/<product>/` (for flat backward-compatibility)
+ *
  * Per-page failures are logged and skipped; throws only if nothing was written
  * so the orchestrator can fall back to the last committed snapshot.
  */
 export async function crawl(product: ProductConfig): Promise<number> {
-  const outDir = resolve(CRAWL_DIR, product.id);
-  await mkdir(outDir, { recursive: true });
+  const { productDir, snapshotDir, currentDir } = await prepareSnapshotRotation(product.id);
 
   const matchesInclude = pathMatcher(product.includePaths);
   const seeds = product.crawlSeeds.map(canonical);
@@ -205,7 +278,11 @@ export async function crawl(product: ProductConfig): Promise<number> {
         .replace(/\n{3,}/g, '\n\n')
         .trim();
       if (markdown && !looksLikeError(markdown)) {
-        await writeFile(resolve(outDir, fileNameFor(url)), `${markdown}\n`, 'utf8');
+        const fname = fileNameFor(url);
+        const mdWithNewline = `${markdown}\n`;
+        await writeFile(resolve(snapshotDir, fname), mdWithNewline, 'utf8');
+        await writeFile(resolve(currentDir, fname), mdWithNewline, 'utf8');
+        await writeFile(resolve(productDir, fname), mdWithNewline, 'utf8');
         written += 1;
       } else {
         // Empty or soft-error content — do not overwrite the good snapshot.

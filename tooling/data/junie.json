@@ -1,11 +1,11 @@
 {
-  "title": "<span class=\"hl\">Junie</span> — Agentic <span class=\"hl2\">Coding</span> Cheat Sheet",
-  "brandName": "JetBrains Agentic Coding",
-  "brandSub": "IDE · CLI · Headless CI/CD · GitHub Actions · GitLab CI",
+  "title": "<span class=\"hl\">Junie</span> — Agentic Coding <span class=\"hl2\">Cheat Sheet</span>",
+  "brandName": "JetBrains Junie",
+  "brandSub": "Coding Agent · IDE · CLI · Headless CI/CD",
   "badge": "JETBRAINS",
   "docsUrl": "https://junie.jetbrains.com/docs/get-started-with-junie.html",
   "docsLabel": "Junie Docs",
-  "generatedNote": "Built from docs scraped on 2026-07-10",
+  "generatedNote": "Built from docs scraped on 2026-09-01",
   "sections": [
     {
       "title": "Getting Started",
@@ -13,75 +13,92 @@
       "column": 1,
       "rows": [
         {
-          "label": "What it is",
-          "value": "Coding <em>agent</em> for delegated engineering work — not just AI chat"
-        },
-        {
-          "label": "Runs in",
-          "value": "JetBrains IDEs, interactive terminal (CLI), headless CI/CD"
-        },
-        {
-          "label": "Install (Linux/macOS)",
-          "value": "<code>curl -fsSL https://junie.jetbrains.com/install.sh | bash</code>"
+          "label": "Install (macOS/Linux)",
+          "value": "Run <code>curl -fsSL https://junie.jetbrains.com/install.sh | bash</code>"
         },
         {
           "label": "Install (Windows)",
-          "value": "<code>iex (irm 'https://junie.jetbrains.com/install.ps1')</code> via PowerShell"
+          "value": "Run <code>iex (irm 'https://junie.jetbrains.com/install.ps1')</code> in PowerShell"
+        },
+        {
+          "label": "Install (npm)",
+          "value": "<code>npm install -g @jetbrains/junie</code>"
+        },
+        {
+          "label": "Install (Homebrew)",
+          "value": "<code>brew install jetbrains/junie/junie</code>"
         },
         {
           "label": "Launch",
-          "value": "Run <code>junie</code> from the project root directory"
+          "value": "Run <code>junie</code> from your project root — starts interactive TUI"
         },
         {
-          "label": "Verify version",
+          "label": "Check version",
           "value": "<code>junie --version</code>"
         },
         {
           "label": "Auth options",
-          "value": "JetBrains Account, <code>JUNIE_API_KEY</code> token, or BYOK provider key"
+          "value": "JetBrains Account · Junie API key (<code>JUNIE_API_KEY</code>) · BYOK · Custom LLM"
         },
         {
           "label": "Generate API key",
-          "value": "Visit <code>junie.jetbrains.com/cli</code> to generate your <code>JUNIE_API_KEY</code>"
+          "value": "Visit <a href=\"https://junie.jetbrains.com/cli\">junie.jetbrains.com/cli</a> to create a <code>JUNIE_API_KEY</code>"
+        },
+        {
+          "label": "First prompt",
+          "value": "Type a task in the TUI; use <code>@</code> to attach files, <code>/</code> for commands"
         }
       ]
     },
     {
-      "title": "Latest &amp; EAP",
+      "title": "Latest and EAP",
       "colorClass": "s11",
       "column": 1,
       "rows": [
         {
-          "label": "Plan Mode",
-          "value": "Read-only codebase analysis → design doc before any edits; see <strong>Plan Mode</strong> section"
+          "label": "/local",
+          "value": "Junie Local: on-device Apple Silicon inference (Qwen3.6-27B-4bit); no cloud needed",
+          "isNew": true
+        },
+        {
+          "label": "/demo",
+          "value": "EAP: launch disposable Docker VM, drive UI via Computer Use, export MP4 + HTML report",
+          "isNew": true
+        },
+        {
+          "label": "/goal",
+          "value": "Orchestrated step-by-step mode; <code>/goal stop</code> to exit; optional <code>[message]</code> to start",
+          "isNew": true
+        },
+        {
+          "label": "/loops",
+          "value": "Manage recurring scheduled tasks; aliases <code>/crons</code>, <code>/cron-jobs</code>",
+          "isNew": true
+        },
+        {
+          "label": "/agent-mode",
+          "value": "Choose <code>Classic</code> or <code>Chat</code> mode; locked after first prompt; also <code>--agent-mode</code> flag",
+          "isNew": true
+        },
+        {
+          "label": "/voice",
+          "value": "Record microphone input as a prompt; aliases <code>/mic</code>, <code>/record</code>",
+          "isNew": true
+        },
+        {
+          "label": "Android (EAP)",
+          "value": "Install <code>android-engineer</code> extension via <code>/extensions</code> for emulator, Compose preview &amp; QA subagent",
+          "isNew": true
+        },
+        {
+          "label": "Custom Proxies",
+          "value": "Nightly: <code>proxies</code> array in <code>config.json</code>; select active proxy with <code>--provider</code> flag",
+          "isNew": true
         },
         {
           "label": "Hooks (EAP)",
-          "value": "Shell commands on session lifecycle events (<code>SessionStart</code>, <code>PreToolUse</code>, <code>Stop</code>…); see <strong>Project Guidelines</strong>"
-        },
-        {
-          "label": "Git Worktrees",
-          "value": "Isolate parallel sessions in separate checkouts via <code>/worktree</code>; see <strong>Sessions &amp; Worktrees</strong>"
-        },
-        {
-          "label": "Remote Mode",
-          "value": "Continue CLI session in browser via <code>/remote</code>; see <strong>Sessions &amp; Worktrees</strong>"
-        },
-        {
-          "label": "Brave Mode levels",
-          "value": "Off / Auto / On — cycle with <code>/brave</code> or <code>Ctrl+B</code>; see <strong>Privacy &amp; Security</strong>"
-        },
-        {
-          "label": "Model &amp; Effort",
-          "value": "Runtime model + reasoning effort selection via <code>/model</code> and <code>/effort</code>; see <strong>Models &amp; Auth</strong>"
-        },
-        {
-          "label": "ACP support",
-          "value": "Run Junie CLI as an Agent Client Protocol server with <code>--acp true</code>"
-        },
-        {
-          "label": "Debug Mode",
-          "value": "Live debugger assistant via <code>/debug</code> (IDE connection required); see <strong>IDE Integration</strong>"
+          "value": "Shell hooks on <code>SessionStart</code>, <code>PreToolUse</code>, <code>Stop</code>, <code>PermissionRequest</code>, <code>SessionEnd</code>",
+          "isNew": true
         }
       ]
     },
@@ -92,109 +109,155 @@
       "rows": [
         {
           "label": "Agent loop",
-          "value": "Prompt → plan → multi-file edits → commands → verification → summary"
+          "value": "Prompt → Plan → Edits → Commands → Verification → Summary — fully autonomous"
+        },
+        {
+          "label": "@-attach files",
+          "value": "Type <code>@filename</code> or drag-drop a file/image into the TUI to add it to prompt context"
+        },
+        {
+          "label": "Image inputs",
+          "value": "Drag-drop or reference PNG/JPEG screenshots or design specs; Junie reads image content"
         },
         {
           "label": "Good task shape",
-          "value": "Bounded, self-contained work with a clear success condition"
+          "value": "Bounded, single-concern tasks with explicit acceptance criteria produce best results"
         },
         {
-          "label": "@ attach",
-          "value": "Type <code>@</code> in the prompt to attach the smallest useful file, folder, or symbol"
-        },
-        {
-          "label": "Image input",
-          "value": "Drag-and-drop PNG/JPEG screenshots or design specs directly into the terminal prompt"
-        },
-        {
-          "label": "Real-time follow-up",
-          "value": "Type clarifications while Junie is working — appended immediately to the in-flight task"
-        },
-        {
-          "label": "Review changes",
-          "value": "After task completes, selectively accept or roll back file-by-file in the Done panel"
+          "label": "Follow-ups",
+          "value": "Type follow-ups while Junie is working; clarifications are appended and actioned immediately"
         },
         {
           "label": "Shell passthrough",
-          "value": "Prefix with <code>!</code> to run a shell command without leaving Junie CLI (e.g. <code>!git log</code>)"
+          "value": "Prefix <code>!</code> to run a shell command without leaving the TUI, e.g. <code>!git log --oneline</code>"
+        },
+        {
+          "label": "Rollback",
+          "value": "Decline changes in the Done panel to revert all edits from the completed task"
+        },
+        {
+          "label": "Symbol @-complete",
+          "value": "With JetBrains IDE connected, <code>@</code> suggests classes &amp; symbols from IDE project index"
         }
       ]
     },
     {
-      "title": "Project Guidelines",
-      "colorClass": "s6",
-      "column": 1,
+      "title": "Plan and Goal Mode",
+      "colorClass": "s3",
+      "column": 2,
       "rows": [
         {
-          "label": "Primary file",
-          "value": "<code>.junie/AGENTS.md</code> — persistent project context read on every task"
+          "label": "Toggle Plan mode",
+          "value": "<code>Shift+Tab</code> cycles default → Plan → Debug; or run <code>/plan</code>"
         },
         {
-          "label": "Fallback path",
-          "value": "<code>AGENTS.md</code> in project root if no <code>.junie/AGENTS.md</code> exists"
+          "label": "/plan &lt;prompt&gt;",
+          "value": "Enable Plan mode and submit prompt immediately, e.g. <code>/plan refactor commands</code>"
         },
         {
-          "label": "Custom path",
-          "value": "Override via IDE Settings → Tools → Junie → Project Settings"
+          "label": "--plan flag",
+          "value": "<code>junie --plan</code> or <code>junie --prompt \"…\" --plan</code> to start directly in Plan mode"
         },
         {
-          "label": "config.json (user)",
-          "value": "<code>~/.junie/config.json</code> — personal defaults (model, brave, hooks…)"
+          "label": "Plan view",
+          "value": "Press <code>Ctrl+P</code> to open tabbed plan view: Requirements, Technical Design, Testing, Delivery"
         },
         {
-          "label": "config.json (project)",
-          "value": "<code>.junie/config.json</code> — shared team defaults checked into VCS"
+          "label": "Confirm &amp; implement",
+          "value": "After reviewing the plan, choose <strong>Confirm and implement</strong> to let Junie proceed"
         },
         {
-          "label": "Hooks config",
-          "value": "Add <code>hooks</code> key to <code>~/.junie/config.json</code>; project-scope hooks ignored by default"
+          "label": "Save plan",
+          "value": "Choose <strong>Save the plan and stop</strong> to write plan Markdown to disk without implementing"
         },
         {
-          "label": "Hooks events",
-          "value": "<code>SessionStart</code>, <code>UserPromptSubmit</code>, <code>PreToolUse</code>, <code>Stop</code>, <code>StopFailure</code>, <code>PermissionRequest</code>, <code>SessionEnd</code>"
+          "label": "Iterate plan",
+          "value": "Push back in the chat before confirming; plan is updated as a living design document"
         },
         {
-          "label": "Extra config files",
-          "value": "<code>--config-location /path/to/config.json</code> — stack multiple files"
+          "label": "/goal [message]",
+          "value": "Orchestrated mode: Junie auto-plans milestones; <code>/goal stop</code> leaves orchestrated mode"
         }
       ]
     },
     {
-      "title": "Autonomous Agent",
+      "title": "Project Guidelines and Config",
+      "colorClass": "s6",
+      "column": 2,
+      "rows": [
+        {
+          "label": "Discovery order",
+          "value": "1) <code>.junie/AGENTS.md</code> (exclusive) 2) root <code>AGENTS.md</code> + <code>.junie/playbook.md</code> + <code>.junie/rules/*.md</code> 3) <code>.junie/guidelines.md</code>"
+        },
+        {
+          "label": "Global guidelines",
+          "value": "<code>~/.junie/AGENTS.md</code> applies to all projects; project guidelines take precedence on conflict"
+        },
+        {
+          "label": "config.json location",
+          "value": "User: <code>~/.junie/config.json</code> · Project: <code>&lt;root&gt;/.junie/config.json</code>"
+        },
+        {
+          "label": "--config-location",
+          "value": "Load extra config files: <code>junie --config-location /path/cfg.json</code> (can repeat)"
+        },
+        {
+          "label": "Key config fields",
+          "value": "<code>model</code>, <code>effort</code>, <code>provider</code>, <code>brave</code>, <code>proxies</code>, <code>skill-locations</code>, <code>hooks</code>"
+        },
+        {
+          "label": "JUNIE_GUIDELINES_FILENAME",
+          "value": "Env var or <code>--guidelines-filename</code> to override the default guidelines file"
+        },
+        {
+          "label": ".aiignore",
+          "value": "Create <code>.aiignore</code> in project root (gitignore syntax) to require approval before accessing listed files"
+        },
+        {
+          "label": "/project-onboarding",
+          "value": "Analyze project and suggest improvements to help the agent work more effectively",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "title": "Agent Skills and Customization",
       "colorClass": "s9",
       "column": 2,
       "rows": [
         {
-          "label": "Multi-file edits",
-          "value": "Reads, creates, and modifies files across the project in a single task"
+          "label": "Skills location",
+          "value": "Project: <code>.junie/skills/&lt;name&gt;/SKILL.md</code> · User: <code>~/.junie/skills/&lt;name&gt;/</code>",
+          "isNew": true
         },
         {
-          "label": "Runs commands",
-          "value": "Executes shell commands (build, test, lint) as part of the task loop"
+          "label": "SKILL.md format",
+          "value": "YAML frontmatter with <code>name</code> (required) &amp; <code>description</code> + Markdown body instructions"
         },
         {
-          "label": "Verification",
-          "value": "Runs tests and inspections to confirm changes before finishing"
+          "label": "Invoke a skill",
+          "value": "Auto-selected by relevance; explicit: <code>/&lt;skill-name&gt;</code> or <code>$&lt;skill-name&gt;</code> in prompt"
         },
         {
-          "label": "IDE-backed search",
-          "value": "Symbol-aware search, class/method completions when JetBrains IDE is connected"
+          "label": "/skills",
+          "value": "List, enable, or disable skills; <code>/skills &lt;name&gt; enable|disable</code> in ACP mode"
         },
         {
-          "label": "Code mode",
-          "value": "Default — full edits, commands, test execution with progress reporting"
+          "label": "Custom slash commands",
+          "value": "Create in <code>.junie/commands/</code> (project) or <code>~/.junie/commands/</code> (user) as Markdown + YAML"
         },
         {
-          "label": "Ask mode",
-          "value": "Read-only: explore, analyze, brainstorm without modifying files"
+          "label": "$argumentName",
+          "value": "Use <code>$arg</code> in command prompt template; Tab autocompletes missing args on invocation"
         },
         {
-          "label": "Subagents",
-          "value": "Main agent auto-delegates to specialized subagents stored in <code>.junie/agents/*.md</code>"
+          "label": "/import",
+          "value": "Import guidelines, skills, commands, or MCP configs from Claude Code, Cursor, Codex",
+          "isNew": true
         },
         {
-          "label": "Custom commands",
-          "value": "Extend Junie CLI with custom slash commands for repetitive prompts"
+          "label": "Custom subagents",
+          "value": "Add <code>.junie/agents/&lt;name&gt;.md</code> with YAML frontmatter (<code>tools</code>, <code>model</code>, <code>skills</code>, etc.)"
         }
       ]
     },
@@ -204,262 +267,240 @@
       "column": 2,
       "rows": [
         {
-          "label": "Command menu",
-          "value": "Type <code>/</code> in the prompt to browse all slash commands"
+          "label": "Slash commands",
+          "value": "Type <code>/</code> in the TUI to open the full command suggestion menu"
         },
         {
-          "label": "Shortcut help",
-          "value": "Type <code>?</code> to list all keyboard shortcuts"
+          "label": "Shortcuts help",
+          "value": "Type <code>?</code> in the TUI to see all available keyboard shortcuts"
         },
         {
           "label": "Prompt history",
-          "value": "<code>Ctrl+R</code> to search history; Up/Down to navigate results"
+          "value": "<code>Ctrl+R</code> to search history; navigate results with Up/Down arrow keys"
         },
         {
           "label": "Transcript view",
-          "value": "<code>Ctrl+O</code> to open full session transcript; <code>Ctrl+N</code> for older entries"
+          "value": "<code>Ctrl+O</code> opens the session transcript (continuously updated <code>transcript.md</code>)"
         },
         {
-          "label": "Run headless",
-          "value": "<code>junie --auth=\"$JUNIE_API_KEY\" \"Fix failing tests\"</code>"
+          "label": "Subagent tasks",
+          "value": "<code>Ctrl+T</code> opens the subagent tasks panel during a multi-agent session"
         },
         {
-          "label": "All options",
-          "value": "<code>junie --help</code> lists every flag and environment variable"
+          "label": "Scroll to bottom",
+          "value": "<code>Ctrl+S</code> scrolls to the latest output in the conversation"
         },
         {
-          "label": "ACP mode",
-          "value": "<code>junie --acp true</code> to serve ACP-compatible editors (e.g. VS Code with ACP)"
+          "label": "/compress",
+          "value": "Compress context before the next task to reduce token use; alias <code>/compact</code>",
+          "isNew": true
         },
         {
-          "label": "Auto-update",
-          "value": "Set <code>\"auto-update\": true</code> in <code>config.json</code> to enable automatic update checks"
+          "label": "/logs",
+          "value": "Export session logs as a ZIP archive for bug reports; alias <code>/export-logs</code>",
+          "isNew": true
         }
       ]
     },
     {
-      "title": "Plan Mode",
-      "colorClass": "s3",
-      "column": 2,
-      "rows": [
-        {
-          "label": "Toggle",
-          "value": "<code>Shift+Tab</code> shortcut or <code>/plan</code> slash command"
-        },
-        {
-          "label": "Inline prompt",
-          "value": "<code>/plan refactor commands</code> — enables Plan Mode and submits immediately"
-        },
-        {
-          "label": "CLI flag",
-          "value": "<code>junie --plan</code> or <code>junie --prompt \"…\" --plan</code>"
-        },
-        {
-          "label": "Plan view",
-          "value": "<code>Ctrl+P</code> to open full design doc split into Requirements / Technical design / Testing / Delivery steps tabs"
-        },
-        {
-          "label": "Iterate",
-          "value": "Adjust scope and push back before confirming — plan is a living doc"
-        },
-        {
-          "label": "Confirm &amp; implement",
-          "value": "Choose <em>Confirm and implement</em> to hand off plan to the coding agent"
-        },
-        {
-          "label": "Save &amp; stop",
-          "value": "Choose <em>Save the plan and stop</em> to keep Markdown plan on disk without implementing"
-        }
-      ]
-    },
-    {
-      "title": "AI Chat + Junie (IDE)",
-      "colorClass": "s4",
-      "column": 2,
-      "rows": [
-        {
-          "label": "Open AI Chat",
-          "value": "AI Chat tool window is part of the AI Assistant plugin in JetBrains IDEs"
-        },
-        {
-          "label": "Select Junie",
-          "value": "Choose <em>Junie by JetBrains</em> from the coding agents list in AI Chat"
-        },
-        {
-          "label": "Agents mode",
-          "value": "Full agentic execution — edits, commands, verification — inside the IDE"
-        },
-        {
-          "label": "Ask mode (IDE)",
-          "value": "Read-only chat; use mode picker dropdown, or select <em>Auto</em> for automatic mode choice"
-        },
-        {
-          "label": "Context attach",
-          "value": "Click the <code>+</code> button on the prompt panel to attach files or create <code>.aiignore</code>"
-        },
-        {
-          "label": "Diff viewer",
-          "value": "Click file links in Junie's task window to open code changes in the IDE diff viewer"
-        },
-        {
-          "label": "Done panel",
-          "value": "Review changed files and selectively revert before accepting the result"
-        }
-      ]
-    },
-    {
-      "title": "Review &amp; Apply",
+      "title": "Review and Apply",
       "colorClass": "s5",
       "column": 3,
       "rows": [
         {
           "label": "/review",
-          "value": "Opens wizard: <em>From Main</em> / <em>Last Commit</em> / <em>Unstaged Changes</em>"
+          "value": "Local code review wizard: <strong>From Main</strong>, <strong>Last Commit</strong>, or <strong>Unstaged Changes</strong>"
         },
         {
-          "label": "Custom scope",
-          "value": "<code>/review focusing on performance and memory leaks</code> — free-text instructions"
+          "label": "/review &lt;instructions&gt;",
+          "value": "Add custom scope: <code>/review focusing on performance and memory leaks</code>"
         },
         {
-          "label": "[CRITICAL]",
-          "value": "Security vulnerabilities, crashes, data-loss issues are prefixed <code>[CRITICAL]</code>"
+          "label": "--review flag",
+          "value": "Headless review: <code>junie --review</code> or <code>junie --review \"Check for null pointers\"</code>"
         },
         {
-          "label": "Apply suggestion",
-          "value": "Accept or dismiss findings one-by-one or in bulk from the review results screen"
+          "label": "[CRITICAL] label",
+          "value": "Security, crashes, data-loss findings are prefixed <code>[CRITICAL]</code>; accept or dismiss per finding"
         },
         {
-          "label": "Headless review",
-          "value": "<code>junie --auth=\"$KEY\" --review \"Check for null pointer exceptions\"</code>"
+          "label": "Inline suggestions",
+          "value": "When a fix is safe, Junie includes a ready-to-apply code suggestion alongside each finding"
         },
         {
-          "label": "Requires git",
-          "value": "<code>/review</code> only starts when a <code>.git</code> directory is detected in the project"
+          "label": "/pull-request",
+          "value": "Review a GitHub/GitLab PR from the CLI; alias <code>/pr</code>; optional <code>[pr]</code> argument",
+          "isNew": true
         },
         {
-          "label": "Follow-ups",
-          "value": "Review runs as its own session — ask follow-ups without re-explaining context"
+          "label": "Diff viewer (IDE)",
+          "value": "File links in the IDE tool window open side-by-side diff viewer for every changed file"
         },
         {
-          "label": "Human gate",
-          "value": "Always keep humans in the PR/MR approval path for production changes"
+          "label": "Human sign-off",
+          "value": "Keep humans in the PR/MR approval path for production changes — Junie helps, not decides"
         }
       ]
     },
     {
-      "title": "Models &amp; Auth",
+      "title": "Models and Local Inference",
       "colorClass": "s8",
       "column": 3,
       "rows": [
         {
           "label": "/model",
-          "value": "Interactive model picker — also sets reasoning effort level for the session"
+          "value": "Pick primary LLM and reasoning effort; <code>Default</code> = best price-quality ratio, dynamically set"
         },
         {
           "label": "/effort",
-          "value": "Change only the effort level: <code>minimal</code> / <code>low</code> / <code>medium</code> / <code>high</code> / <code>xhigh</code> / <code>max</code>"
+          "value": "Change only the effort level for the current model: <code>minimal</code> · <code>low</code> · <code>medium</code> · <code>high</code> · <code>max</code>"
         },
         {
-          "label": "Env vars",
-          "value": "<code>JUNIE_MODEL</code>, <code>JUNIE_EFFORT</code>, <code>JUNIE_LLM_PROVIDER</code> set defaults for new sessions"
-        },
-        {
-          "label": "Model aliases",
-          "value": "<code>sonnet</code>, <code>opus</code>, <code>gpt</code>, <code>gemini-pro</code>, <code>gemini-flash</code>, <code>grok</code>, <code>gpt-codex</code>"
+          "label": "/local",
+          "value": "Install Junie Local (Apple Silicon, macOS 26+, M5+, 64 GB RAM, ~21 GB disk)",
+          "isNew": true
         },
         {
           "label": "BYOK providers",
-          "value": "<code>anthropic</code>, <code>openai</code>, <code>google</code>, <code>xai</code>, <code>openrouter</code> — set in <code>/account</code> or <code>config.json</code>"
+          "value": "OpenAI, Anthropic, Google, xAI, OpenRouter, GitHub Copilot — configure via <code>/account</code>",
+          "isNew": true
         },
         {
-          "label": "BYOK + JB account",
-          "value": "BYOK can stack with JetBrains Account; BYOK provider is billed directly for that model"
+          "label": "GitHub Copilot BYOK",
+          "value": "Reuses local Copilot CLI sign-in (v1.0.65+); no separate API key required",
+          "isNew": true
         },
         {
-          "label": "/usage",
-          "value": "Shows token cost breakdown, model used, and remaining balance for the session"
+          "label": "LiteLLM / Ollama / LM Studio",
+          "value": "<code>/account</code> → Custom models and endpoints; Junie auto-discovers models from the proxy",
+          "isNew": true
         },
         {
-          "label": "Default model",
-          "value": "Keep <code>Default</code> for best price-quality; raise effort only when a task clearly benefits"
+          "label": "Custom JSON profiles",
+          "value": "Place <code>*.json</code> in <code>$JUNIE_HOME/models/</code>; select with <code>--model custom:&lt;profile-name&gt;</code>",
+          "isNew": true
+        },
+        {
+          "label": "/stats",
+          "value": "Session token usage, model costs, code changes &amp; remaining balance; aliases <code>/usage</code> <code>/cost</code>"
         }
       ]
     },
     {
-      "title": "MCP for Junie",
+      "title": "MCP and Extensions",
       "colorClass": "s7",
       "column": 3,
       "rows": [
         {
           "label": "/mcp",
-          "value": "Opens MCP server list with status; press <code>Ctrl+A</code> to launch MCP Installation Assistant"
+          "value": "List, add, enable/disable, and OAuth-authorize MCP servers; config in <code>mcp.json</code>"
         },
         {
-          "label": "Project config",
-          "value": "<code>.junie/mcp/mcp.json</code> — shared with team via VCS (avoid secrets in this file)"
+          "label": "mcp.json locations",
+          "value": "Project: <code>.junie/mcp/mcp.json</code> · User: <code>~/.junie/mcp/mcp.json</code>"
         },
         {
-          "label": "User config",
-          "value": "<code>~/.junie/mcp/mcp.json</code> — available across all projects, private to your account"
+          "label": "--mcp-location",
+          "value": "Add extra MCP discovery folder: <code>junie --mcp-location /path/to/mcp</code>"
         },
         {
-          "label": "Max tools",
-          "value": "Junie supports up to <strong>100 tools</strong> across all configured MCP servers"
+          "label": "MCP tool limit",
+          "value": "Junie supports a maximum of 100 tools across all configured MCP servers"
         },
         {
-          "label": "OAuth servers",
-          "value": "Remote MCP servers with OAuth show <em>Authorization required</em>; authorize via <code>/mcp</code> menu"
+          "label": "/extensions",
+          "value": "Browse JetBrains marketplace; install bundles of skills + MCP + subagents + commands"
         },
         {
-          "label": "Extensions",
-          "value": "<code>/extensions</code> installs bundles of skills + MCP + subagents from marketplace"
-        },
-        {
-          "label": "Built-in marketplace",
-          "value": "<a href=\"https://github.com/JetBrains/junie-extensions\">github.com/JetBrains/junie-extensions</a> — Java, Kotlin, Android, Spring Boot, SQL…"
+          "label": "Extension scopes",
+          "value": "Project: stored in <code>.junie/extensions.json</code> · User: <code>~/.junie/extensions/extensions.json</code>"
         },
         {
           "label": "Custom marketplace",
-          "value": "Register any git repo or <code>marketplace.json</code> URL via Extensions → Marketplaces tab"
+          "value": "<code>/extensions marketplace add &lt;github-owner/repo&gt;</code> to register a custom extension source"
+        },
+        {
+          "label": "IDE MCP Settings",
+          "value": "<strong>Settings | Tools | Junie | MCP Settings</strong> to add servers and check connection status",
+          "isNew": true
+        }
+      ]
+    },
+    {
+      "title": "Demo Agent and Testing",
+      "colorClass": "s11",
+      "column": 3,
+      "rows": [
+        {
+          "label": "/demo",
+          "value": "EAP: prompts for scope (branch diff, last commit, session changes, smoke test, or custom)"
+        },
+        {
+          "label": "Prerequisites",
+          "value": "Docker running + Computer Use model (GPT-5.4/5.5/5.6 SOL) + <code>.junie/vms/Dockerfile</code>"
+        },
+        {
+          "label": "demo.md",
+          "value": "Create <code>.junie/demo.md</code> with <code>vm: &lt;name&gt;</code> and build/launch commands for the VM"
+        },
+        {
+          "label": "Base image",
+          "value": "<code>FROM registry.jetbrains.team/p/junie-cli/containers/demo-base:2</code> — ships Chromium, xvfb, ffmpeg"
+        },
+        {
+          "label": "Output artifacts",
+          "value": "Saved to <code>~/.junie/sessions/&lt;id&gt;/demo/</code>: screenshots, <code>demo.mp4</code>, <code>report.html</code>"
+        },
+        {
+          "label": "First-run setup",
+          "value": "If <code>demo.md</code> or VM Dockerfile missing, Junie seeds starters and offers to fill them in"
+        },
+        {
+          "label": "Stop demo",
+          "value": "Press <code>Esc</code> while <code>Working…</code> is visible; VM shuts down cleanly"
+        },
+        {
+          "label": "Mounts file",
+          "value": "Optional <code>.junie/vms/&lt;name&gt;/mounts</code> for extra bind mounts: <code>$HOME/.config/app:/root/.config:ro</code>"
         }
       ]
     },
     {
       "title": "Headless Mode",
       "colorClass": "s4",
-      "column": 3,
+      "column": 4,
       "rows": [
         {
-          "label": "Auth flag",
-          "value": "<code>--auth=\"$JUNIE_API_KEY\"</code> — required for non-interactive runs"
+          "label": "Basic headless run",
+          "value": "<code>junie --auth=\"$JUNIE_API_KEY\" \"Fix failing tests\"</code>"
         },
         {
-          "label": "Positional prompt",
-          "value": "<code>junie --auth=\"$KEY\" \"Fix any failing tests\"</code>"
+          "label": "--task flag",
+          "value": "<code>junie --task \"Review and fix code quality\"</code> — alternative to positional argument"
+        },
+        {
+          "label": "--prompt flag",
+          "value": "Open interactive TUI with prompt pre-submitted; session stays interactive after completion"
         },
         {
           "label": "--review flag",
-          "value": "<code>junie --auth=\"$KEY\" --review</code> reviews latest changes without the TUI wizard"
+          "value": "Headless code review; combinable with a natural-language description"
         },
         {
           "label": "--plan flag",
-          "value": "<code>junie --plan --prompt \"Refactor commands module\"</code> outputs a plan, no edits"
+          "value": "Start directly in Plan mode; combine with <code>--prompt</code> to auto-submit"
         },
         {
-          "label": "Extra config",
-          "value": "<code>--config-location /opt/company/junie.json</code> for CI-specific settings"
+          "label": "JUNIE_TASK env var",
+          "value": "Set <code>JUNIE_TASK</code> instead of passing the positional argument for CI pipelines"
         },
         {
-          "label": "Disable defaults",
-          "value": "<code>--config-default-locations false</code> to skip user &amp; project <code>config.json</code>"
+          "label": "Project trust",
+          "value": "Non-interactive runs are auto-trusted and load project config, MCP, skills, &amp; hooks"
         },
         {
-          "label": "Time limit",
-          "value": "Set <code>\"time-limit\": 3600</code> in <code>config.json</code> to cap task duration in seconds"
-        },
-        {
-          "label": "Env var auth",
-          "value": "<code>JUNIE_API_KEY</code> env var is equivalent to <code>--auth</code> for CI pipelines"
+          "label": "--help",
+          "value": "Run <code>junie --help</code> for the full list of flags and options"
         }
       ]
     },
@@ -469,36 +510,42 @@
       "column": 4,
       "rows": [
         {
-          "label": "Action ref",
-          "value": "<code>JetBrains/junie-github-action@v0</code> — runs entirely on your GitHub runners"
+          "label": "Action reference",
+          "value": "<code>uses: JetBrains/junie-github-action@v1</code> — runs entirely on your GitHub runners"
         },
         {
           "label": "@junie-agent trigger",
-          "value": "Comment <code>@junie-agent &lt;task&gt;</code> in any issue or PR to invoke the agent"
+          "value": "Mention <code>@junie-agent</code> in an issue/PR comment or PR review to start a task"
         },
         {
-          "label": "Required permissions",
-          "value": "<code>contents: write</code>, <code>pull-requests: write</code>, <code>issues: write</code>"
+          "label": "code-review prompt",
+          "value": "Set <code>prompt: \"code-review\"</code> to auto-review PRs and post inline suggestions",
+          "isNew": true
         },
         {
-          "label": "BYOK in Actions",
-          "value": "Use <code>anthropic_api_key</code>, <code>openai_api_key</code>, etc. instead of <code>junie_api_key</code>"
+          "label": "use_single_comment",
+          "value": "<code>use_single_comment: true</code> updates the same comment on each subsequent run",
+          "isNew": true
         },
         {
-          "label": "Custom guidelines",
-          "value": "<code>junie_guidelines_filename</code> input overrides default <code>AGENTS.md</code> for GitHub runs"
+          "label": "resolve_conflicts",
+          "value": "<code>resolve_conflicts: true</code> auto-detects and resolves merge conflicts in open PRs",
+          "isNew": true
         },
         {
-          "label": "MCP in Actions",
-          "value": "<code>allowed_mcp_servers: \"mcp_github_checks_server\"</code> to analyze failed CI checks"
+          "label": "silent_mode",
+          "value": "<code>silent_mode: true</code> suppresses comments; fails CI if issues found (secret audit use-case)",
+          "isNew": true
         },
         {
-          "label": "Output: pr_url",
-          "value": "<code>steps.junie.outputs.pr_url</code> — URL of the PR created by the agent"
+          "label": "allowed_mcp_servers",
+          "value": "Comma-separated list: e.g. <code>allowed_mcp_servers: \"mcp_github_checks_server\"</code>",
+          "isNew": true
         },
         {
-          "label": "Silent mode",
-          "value": "<code>silent_mode: true</code> — dry run with no commits, branches, or comments posted"
+          "label": "YouTrack integration",
+          "value": "Install Junie YouTrack app; set <code>youtrack_token</code> secret; triggers from issue widget or <code>@junie</code>",
+          "isNew": true
         }
       ]
     },
@@ -509,35 +556,35 @@
       "rows": [
         {
           "label": "#junie trigger",
-          "value": "Comment <code>#junie &lt;task&gt;</code> in an issue or MR to trigger a CI pipeline run"
-        },
-        {
-          "label": "MR review",
-          "value": "Tag <code>#junie code-review</code> on an existing MR to request a targeted review"
-        },
-        {
-          "label": "Auto-review",
-          "value": "Junie reviews every opened MR automatically; disable by unchecking MR events in webhook"
+          "value": "Tag <code>#junie</code> in an issue or MR comment to invoke Junie in that project"
         },
         {
           "label": "GITLAB_TOKEN_FOR_JUNIE",
-          "value": "Personal or group access token with Maintainer role + <code>api</code> scope"
+          "value": "Personal or group access token with Maintainer role &amp; <code>api</code> scope required"
         },
         {
-          "label": "Custom prompt",
-          "value": "Set <code>JUNIE_CUSTOM_PROMPT</code> in <code>.gitlab-ci.yml</code> to override auto-review instructions"
+          "label": "JUNIE_API_KEY (GitLab)",
+          "value": "Add to CI/CD Variables; or use BYOK keys like <code>JUNIE_ANTHROPIC_API_KEY</code>"
         },
         {
-          "label": "Parallel tasks",
-          "value": "Multiple issues/MRs can be worked simultaneously; same-branch parallel runs are excluded"
+          "label": "Init pipeline",
+          "value": "Run init pipeline with <code>PROJECTS_TO_INIT</code> var to wire webhooks &amp; access tokens per project"
         },
         {
-          "label": "Webhook setup",
-          "value": "Init pipeline in Junie's container project creates webhooks and access tokens automatically"
+          "label": "Auto MR review",
+          "value": "Junie reviews every opened MR automatically using the default or custom <code>JUNIE_CUSTOM_PROMPT</code>"
         },
         {
-          "label": "Self-managed",
-          "value": "Works with both GitLab.com (SaaS) and self-managed GitLab instances"
+          "label": "Disable auto-review",
+          "value": "Uncheck <strong>Merge request events</strong> in the Junie webhook settings to disable automatic reviews"
+        },
+        {
+          "label": "Follow-up iterations",
+          "value": "Tag <code>#junie</code> in a comment to a Junie-created MR to have it iterate on the task"
+        },
+        {
+          "label": "Self-managed support",
+          "value": "Works with GitLab.com SaaS and self-managed GitLab instances — same setup steps"
         }
       ]
     },
@@ -547,153 +594,159 @@
       "column": 4,
       "rows": [
         {
+          "label": "Plugin ID",
+          "value": "Install plugin <code>26104</code> (JetBrains Junie) from Marketplace; min IDE version 2024.3.2"
+        },
+        {
+          "label": "Recommended path",
+          "value": "Open AI Chat → select <strong>Junie by JetBrains</strong>; plugin downloaded automatically"
+        },
+        {
           "label": "Supported IDEs",
-          "value": "IntelliJ IDEA, PyCharm, WebStorm, GoLand, PhpStorm, RubyMine, RustRover, CLion, Rider"
+          "value": "IDEA, PyCharm, WebStorm, GoLand, PhpStorm, Rider, CLion, RustRover, RubyMine, Android Studio"
         },
         {
-          "label": "Min version",
-          "value": "<code>2024.3.2</code>+ for IDEA Ultimate/PyCharm Pro/WebStorm/GoLand; <code>2025.1</code>+ for others"
-        },
-        {
-          "label": "Install plugin",
-          "value": "Search <em>Junie</em> in IDE Marketplace, or select it from AI Chat agent list"
-        },
-        {
-          "label": "/ide",
-          "value": "Inspect IDE connection state, switch between projects, install missing plugin"
-        },
-        {
-          "label": "IDE states",
-          "value": "<code>Connected</code> / <code>Connecting</code> / <code>Auth required</code> / <code>Missing</code> / <code>Unsupported</code>"
+          "label": "Code / Ask modes",
+          "value": "<strong>Code</strong>: edits files &amp; runs commands. <strong>Ask</strong>: read-only analysis &amp; planning. <strong>Auto</strong>: self-selects"
         },
         {
           "label": "/debug",
-          "value": "Toggle Debug Mode: <code>Shift+Tab+Tab</code> or <code>/debug</code> — requires active JetBrains IDE debug session"
+          "value": "Toggle Debug mode: breakpoints, runtime state, expression eval against live JetBrains debugger"
         },
         {
-          "label": "Debug actions",
-          "value": "Set breakpoints, inspect variables, evaluate expressions, step through code via live debugger"
+          "label": "/ide",
+          "value": "Inspect JetBrains IDE connection state; lists running IDEs, statuses, and lets you switch"
         },
         {
-          "label": ".aiignore",
-          "value": "Create <code>.aiignore</code> (gitignore syntax) to require approval before Junie reads sensitive files"
+          "label": "IDE Models page",
+          "value": "<strong>Settings | Tools | Junie | Models</strong> to pick the primary LLM in the IDE plugin",
+          "isNew": true
+        },
+        {
+          "label": "IDE min version (CLion/Rider)",
+          "value": "CLion &amp; Rider require IDE version 2025.2.1 or later for the Junie plugin"
         }
       ]
     },
     {
-      "title": "Sessions &amp; Worktrees",
+      "title": "Sessions and Worktrees",
       "colorClass": "s2",
-      "column": 4,
+      "column": 1,
       "rows": [
         {
-          "label": "/new",
-          "value": "Start another live session; current session keeps running in background"
-        },
-        {
-          "label": "/new &lt;prompt&gt;",
-          "value": "<code>/new update the tests for payment flow</code> — opens session with prompt prefilled"
+          "label": "/new [prompt]",
+          "value": "Start another live session; current session stays in background. <code>/new fix tests</code> pre-fills prompt"
         },
         {
           "label": "/history",
-          "value": "Switch between live sessions or resume saved sessions; press <code>Tab</code> to filter by project"
+          "value": "Search &amp; switch sessions; press <code>Tab</code> to filter to current project directory only"
         },
         {
-          "label": "Session storage",
-          "value": "Last 10 sessions stored with full LLM usage data and prompt/response history"
+          "label": "Session resume",
+          "value": "<code>junie --resume</code> or <code>junie --session-id &lt;id&gt;</code> to reload a saved session"
+        },
+        {
+          "label": "/branch [name]",
+          "value": "Copy current conversation into a new session and switch to it with an optional title",
+          "isNew": true
+        },
+        {
+          "label": "/title [name]",
+          "value": "Set session title; persists across reloads; shown in <code>/history</code> &amp; terminal window title; alias <code>/rename</code>",
+          "isNew": true
         },
         {
           "label": "/worktree",
-          "value": "Create or switch to a Git worktree so parallel sessions don't overwrite each other"
-        },
-        {
-          "label": "Worktree naming",
-          "value": "Auto-named <code>&lt;project&gt;-junie-wt-01</code>, <code>-wt-02</code>… as siblings of the project directory"
+          "value": "Create or switch to a Git worktree for parallel isolated file changes per session"
         },
         {
           "label": "/remote",
-          "value": "Open current CLI session in browser at <code>junie.jetbrains.com/remote</code>"
+          "value": "Share the running CLI session via tunnel to <a href=\"https://junie.jetbrains.com/remote\">junie.jetbrains.com/remote</a>; requires JB Account or API key"
         },
         {
-          "label": "Remote limits",
-          "value": "Slash commands, <code>!</code> shell prefix, and <code>@</code> picker are terminal-only; BYOK-only auth not supported"
+          "label": "/copy [N]",
+          "value": "Copy latest (or Nth-latest) assistant response to clipboard; useful for sharing output",
+          "isNew": true
         }
       ]
     },
     {
-      "title": "Privacy &amp; Security",
+      "title": "Privacy and Security",
       "colorClass": "s5",
-      "column": 4,
+      "column": 2,
       "rows": [
         {
-          "label": "Approval model",
-          "value": "Sensitive actions (terminal commands, MCP tools, files outside project) require explicit approval"
+          "label": "Action Allowlist (IDE)",
+          "value": "<strong>Settings | Tools | Junie | Action Allowlist</strong>: manage terminal, MCP, build, read/write rules",
+          "isNew": true
         },
         {
-          "label": "Action Allowlist",
-          "value": "Select <em>Always allow</em> at an approval prompt; stored in <code>~/.junie/allowlist.json</code>"
+          "label": "allowlist.json (CLI)",
+          "value": "Edit <code>~/.junie/allowlist.json</code> with <code>executables</code>, <code>fileEditing</code>, <code>mcpTools</code>, <code>readOutsideProject</code> rules",
+          "isNew": true
         },
         {
-          "label": "Brave Off",
-          "value": "Approves only Allowlisted commands; most conservative — recommended default"
+          "label": "Rule syntax",
+          "value": "Each rule: <code>prefix</code> (literal start) or <code>pattern</code> (glob) + <code>action: allow|ask</code>; first match wins"
         },
         {
-          "label": "Brave Auto",
-          "value": "Classifies terminal commands; auto-approves safe ones, prompts for risky or unrecognized"
+          "label": "Check Command",
+          "value": "Use the <strong>Check Command</strong> button in IDE Allowlist settings to test if a command is covered"
         },
         {
-          "label": "Brave On",
-          "value": "Executes all potentially sensitive actions without approval — <strong>use with caution</strong>"
+          "label": "Brave mode (CLI)",
+          "value": "<code>/brave</code> or <code>Ctrl+B</code> cycles: <strong>Off</strong> (ask all) → <strong>Auto</strong> (smart classify) → <strong>On</strong> (no asks)"
         },
         {
-          "label": "Toggle brave",
-          "value": "<code>/brave</code> slash command or <code>Ctrl+B</code> shortcut to cycle through levels"
+          "label": "Brave mode (IDE)",
+          "value": "Enable <strong>Brave Mode</strong> checkbox in the task window; prefer Allowlist rules over Brave mode"
         },
         {
-          "label": "Hooks safety",
-          "value": "Project-scope <code>hooks</code> in <code>.junie/config.json</code> are ignored unless passed via <code>--config-location</code>"
+          "label": "Project trust",
+          "value": "Untrusted projects skip config, MCP, hooks, agents, &amp; skills; always review external skills"
         },
         {
           "label": "BYOK privacy",
-          "value": "BYOK keys route requests directly to your provider; no JetBrains AI credits consumed"
+          "value": "BYOK keys send requests directly to the provider; all billing goes to the provider, not JetBrains"
         }
       ]
     },
     {
       "title": "Pro Tips",
       "colorClass": "s6",
-      "column": 4,
+      "column": 3,
       "rows": [
         {
           "label": "Start bounded",
-          "value": "Give Junie a single, verifiable outcome; break large features into sequential tasks"
+          "value": "Delegate single-concern tasks with explicit outputs — broad tasks need explicit sub-goals"
         },
         {
-          "label": "Plan first",
-          "value": "Use Plan Mode on complex work to align on scope before any code is written"
+          "label": "Ask for a plan first",
+          "value": "For complex work, use <code>Shift+Tab</code> to enter Plan mode before the first implementation prompt"
         },
         {
-          "label": "Smallest context",
-          "value": "Attach only the files directly relevant — noise in context degrades output quality"
+          "label": "Validate explicitly",
+          "value": "Include expected test commands and outcomes in your prompt so Junie can verify its own work"
         },
         {
-          "label": "Explicit validation",
-          "value": "Include the exact test command and expected output in your prompt for clear success criteria"
+          "label": "Use skills for patterns",
+          "value": "Codify naming conventions, test structure, and review rules as <code>.junie/skills/</code> so they apply automatically"
         },
         {
-          "label": "Prompt history",
-          "value": "Reuse successful prompts via <code>Ctrl+R</code> — prompt history persists across all sessions"
+          "label": "Pin model versions",
+          "value": "Use specific model aliases like <code>sonnet</code> or <code>opus</code> in CI to avoid behavior drift from <code>Default</code>"
         },
         {
-          "label": "Subagent tip",
-          "value": "Keep delegated work items independent; ask for specific outputs (file paths, symbol names)"
+          "label": "Scope guidelines per env",
+          "value": "Use <code>junie_guidelines_filename</code> in GitHub Action to override guidelines for CI without touching local config"
         },
         {
-          "label": "Version-sensitive",
-          "value": "CLI flags and Action inputs are version-sensitive — pin action ref when possible"
+          "label": "Pre-create worktrees",
+          "value": "Create worktrees before parallel tasks so build caches are warm and ready to go"
         },
         {
-          "label": "Human in the loop",
-          "value": "Delegate execution to Junie; keep humans in the PR/MR approval gate for production"
+          "label": "Updated",
+          "value": "Docs scraped 2026-09-01 — CLI &amp; action details are version-sensitive; always check the latest docs"
         }
       ]
     }

@@ -1,0 +1,402 @@
+{
+  "productId": "junie",
+  "previousSnapshot": "pre-September-2026 snapshot",
+  "currentSnapshot": "01 September 2026 snapshot",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "newFeatures": [
+    {
+      "name": "Action Allowlist (IDE Plugin)",
+      "description": "New IDE settings page (Settings | Tools | Junie | Action Allowlist) to manage which terminal commands, MCP tools, build/test/read/write actions Junie can execute without user approval. Supports exact commands, Java Regex, and wildcard patterns. Includes a 'Check Command' button to validate coverage.",
+      "commandOrFlag": "/action-allowlist",
+      "sectionHint": "Security & Permissions",
+      "sourceFile": "junie-jetbrains-com-docs-action-allowlist-html.md"
+    },
+    {
+      "name": "Action Allowlist (Junie CLI via allowlist.json)",
+      "description": "Manually configure allowed commands for Junie CLI by editing `~/.junie/allowlist.json`. Supports five action categories: fileEditing, executables, mcpTools, readOutsideProject, readSecretFile. Rules use prefix or glob-pattern matching with allow/ask actions evaluated top-to-bottom.",
+      "commandOrFlag": "--brave",
+      "sectionHint": "Security & Permissions",
+      "sourceFile": "junie-jetbrains-com-docs-action-allowlist-junie-cli-html.md"
+    },
+    {
+      "name": "Agent Skills (/skills)",
+      "description": "New system for codifying project-specific patterns as portable skill folders (SKILL.md + supporting files) under `.junie/skills/`. Skills are auto-selected by relevance or invoked explicitly via `/<skill-name>` slash commands or `$<skill-name>` prompt references. Managed with `/skills` command; configurable via `--skill-location` and `--skill-default-locations` flags.",
+      "commandOrFlag": "/skills",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-agent-skills-html.md"
+    },
+    {
+      "name": "Android Development with Junie (EAP)",
+      "description": "First-class Android support via built-in IDE actions (emulator/device control, Compose preview rendering, logcat, device state) plus the `android-engineer` Junie CLI extension (adds skills, `android-qa-agent` subagent, and Mobile MCP server). Requires Android Studio or IntelliJ IDEA Ultimate 2026.1 with Junie IDE plugin.",
+      "commandOrFlag": "/extensions",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "junie-jetbrains-com-docs-android-development-with-junie-html.md"
+    },
+    {
+      "name": "Automated Code Reviews (GitHub Action)",
+      "description": "New built-in `code-review` prompt value for the Junie GitHub Action. Automatically reviews opened/updated PRs, posts inline comments with suggestions, and adds a PR summary comment. Supports `use_single_comment: true` to update the same comment on subsequent runs.",
+      "commandOrFlag": "prompt: \"code-review\"",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-automated-code-reviews-html.md"
+    },
+    {
+      "name": "Basic GitHub Actions Workflow",
+      "description": "Reference workflow for triggering Junie CLI via `@junie-agent` mentions in GitHub issue/PR comments, PR reviews, and issue titles. Creates a new PR with code changes when done; supports `use_single_comment`, `create_new_branch_for_pr`, and custom `trigger_phrase` options.",
+      "commandOrFlag": "@junie-agent",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-basic-workflow-html.md"
+    },
+    {
+      "name": "BYOK – GitHub Copilot",
+      "description": "New BYOK provider: connect Junie CLI to GitHub Copilot by reusing the locally installed GitHub Copilot CLI sign-in (requires CLI v1.0.65+). No separate API key needed. Models enabled at github.com/settings/copilot are available via `/model`.",
+      "commandOrFlag": "/account",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-byok-github-copilot-html.md"
+    },
+    {
+      "name": "Bring Your Own Key (BYOK) Overview",
+      "description": "New dedicated BYOK documentation covering all supported providers (OpenAI, Anthropic, Google, xAI, OpenRouter, GitHub Copilot). BYOK keys take priority over JetBrains subscription for shared models. Configure via `/account` or the welcome screen's 'Use your own API key' option.",
+      "commandOrFlag": "/account",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-byok-html.md"
+    },
+    {
+      "name": "BYOK – OpenRouter",
+      "description": "Step-by-step guide to connect Junie CLI to OpenRouter (unified API for Anthropic, OpenAI, Google, xAI, and others). Paste OpenRouter API key via `/account`, then use `/model` to pick from available models with pricing info.",
+      "commandOrFlag": "/account",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-byok-openrouter-html.md"
+    },
+    {
+      "name": "Secret Audit GitHub Action Workflow",
+      "description": "New GitHub Actions workflow that scans PR diffs for accidentally committed secrets (API keys, private keys, passwords, tokens). Runs in `silent_mode: true` to suppress GitHub comments; fails the CI build if secrets are detected via the `junie_summary` output.",
+      "commandOrFlag": "silent_mode: true",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-check-for-secrets-in-commits-html.md"
+    },
+    {
+      "name": "Custom LLM – LiteLLM",
+      "description": "New interactive setup flow for LiteLLM proxy: connect via `/account` → Custom models and endpoints → LiteLLM with URL and optional API key. Junie auto-discovers all proxy models. Also supports `--litellm-url` / `--litellm-api-key` CLI flags and manual JSON profiles.",
+      "commandOrFlag": "--litellm-url",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-custom-llm-litellm-html.md"
+    },
+    {
+      "name": "Custom LLM – LM Studio",
+      "description": "New interactive setup flow for LM Studio local server: connect via `/account` → Custom models and endpoints → LM Studio. Junie probes `<baseUrl>/v1/models` and adds discovered models to the picker. Supports manual JSON profiles with `apiType: OpenAICompletion`.",
+      "commandOrFlag": "--model",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-custom-llm-lm-studio-html.md"
+    },
+    {
+      "name": "Custom LLM Models (JSON Profiles)",
+      "description": "New comprehensive custom LLM profile system. Define JSON profiles in `$JUNIE_HOME/models/*.json` or `.junie/models/*.json` with `id`, `baseUrl`, `apiType` (OpenAICompletion, OpenAIResponses, Google, Anthropic), optional `primaryModel`/`fasterModel` role overrides, `temperature`, `extraHeaders`, `extraBody`, and environment variable references (`${VAR_NAME}`). Select with `--model custom:<profile-name>`.",
+      "commandOrFlag": "--model",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-custom-llm-models-html.md"
+    },
+    {
+      "name": "Custom LLM – Ollama",
+      "description": "New interactive setup flow for Ollama local server: connect via `/account` → Custom models and endpoints → Ollama. Junie probes the endpoint and adds discovered models to the picker. Supports manual JSON profiles with `apiType: OpenAICompletion` and `fasterModel` override.",
+      "commandOrFlag": "--model",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-custom-llm-ollama-html.md"
+    },
+    {
+      "name": "Custom Proxies / Ingrazzio (Nightly/EAP)",
+      "description": "New `proxies` array in `config.json` to route Junie's LLM traffic through named proxy endpoints. Supports Ingrazzio, Bedrock, OpenAI, Google, and Anthropic proxy kinds. Select active proxy with `provider` field or `--provider` CLI flag. Legacy `INGRAZZIO_URL` env var still supported.",
+      "commandOrFlag": "--provider",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "junie-jetbrains-com-docs-custom-proxies-html.md"
+    },
+    {
+      "name": "Custom Slash Commands (/commands)",
+      "description": "New system for user-defined slash commands stored as Markdown files with YAML frontmatter in `.junie/commands/` (project) or `~/.junie/commands/` (user). Supports `$argumentName` template parameters, optional `allowPromptArgument: true` for free-form text, and Tab autocomplete for missing arguments. Managed via `/commands` → Create New Command.",
+      "commandOrFlag": "/commands",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-custom-slash-commands-html.md"
+    },
+    {
+      "name": "Environment Variables Reference",
+      "description": "New comprehensive reference page for all Junie CLI environment variables covering authentication (JUNIE_API_KEY, provider API keys), project/task (JUNIE_TASK, JUNIE_PROMPT), model selection (JUNIE_MODEL, JUNIE_LLM_PROVIDER, JUNIE_EFFORT), custom models, config files, guidelines, MCP, skills, custom slash commands, custom agents, extensions, and usage statistics.",
+      "commandOrFlag": "--task",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-environment-variables-html.md"
+    },
+    {
+      "name": "Fix CI Failures GitHub Action Workflow",
+      "description": "New GitHub Actions workflow using the `mcp_github_checks_server` MCP server to analyze failed GitHub Actions checks, identify root causes, and propose fixes. Requires additional `checks: read` and `actions: read` permissions. Triggered on `workflow_run` completion with `failure` conclusion.",
+      "commandOrFlag": "allowed_mcp_servers",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-fix-ci-failures-html.md"
+    },
+    {
+      "name": "Guidelines and Memory (AGENTS.md)",
+      "description": "New dedicated documentation for guidelines using the open AGENTS.md format. Covers discovery order: `.junie/AGENTS.md` → project-root `AGENTS.md` + `.junie/playbook.md` + `.junie/rules/*.md` → legacy `.junie/guidelines.md`. Introduces global guidelines at `~/.junie/AGENTS.md` applying across all projects, with automatic deduplication when both global and project guidelines exist.",
+      "commandOrFlag": "--guidelines-filename",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-guidelines-and-memory-html.md"
+    },
+    {
+      "name": "MCP Settings (IDE Plugin)",
+      "description": "New IDE settings page (Settings | Tools | Junie | MCP Settings) to add and manage MCP server configurations via `mcp.json`. Shows connection status, available tools, and configuration scope (global or project-level) for each server.",
+      "commandOrFlag": "/mcp",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-junie-plugin-mcp-settings-html.md"
+    },
+    {
+      "name": "Models Settings (IDE Plugin)",
+      "description": "New IDE settings page (Settings | Tools | Junie | Models) for selecting the primary LLM used by the Junie IDE plugin. Covers all major providers (OpenAI, Anthropic, Google, xAI). Notes that BYOK is not supported via the IDE plugin but is available through AI Assistant's AI chat.",
+      "commandOrFlag": "/model",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-junie-plugin-models-html.md"
+    },
+    {
+      "name": "Project Settings (IDE Plugin)",
+      "description": "New IDE settings page (Settings | Tools | Junie | Project Settings) documenting project path, guidelines path (with new AGENTS.md resolution logic), enabled technologies, question frequency, and semantic indexing options.",
+      "commandOrFlag": "/settings",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-junie-plugin-project-settings-html.md"
+    },
+    {
+      "name": "CLI Reference (parameters.html)",
+      "description": "New comprehensive CLI reference page documenting all `junie` command-line flags: authorization options (BYOK provider API keys), core options (--prompt, --plan, --task, --resume, --brave, --effort, --provider, --use-local-cache), system options (--acp, --agent-mode), config/MCP/model/skill/command/agent/extension discovery options, and version control options (--merge, --rebase, --review).",
+      "commandOrFlag": "--plan",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-parameters-html.md"
+    },
+    {
+      "name": "Resolve Merge Conflicts GitHub Action Workflow",
+      "description": "New GitHub Actions workflow using the `resolve_conflicts: true` parameter to automatically detect and resolve merge conflicts in open PRs when the base branch is updated. Triggered on push to main or via `workflow_dispatch` with a PR number.",
+      "commandOrFlag": "resolve_conflicts: true",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-resolve-conflicts-html.md"
+    },
+    {
+      "name": "Slash Commands Reference",
+      "description": "New comprehensive reference page for all built-in Junie CLI slash commands, keyboard shortcuts (Shift+Tab, Ctrl+B, Ctrl+R, Ctrl+T, Ctrl+O, Ctrl+S), and text editing shortcuts. Documents all commands including /account, /branch, /brave, /commands, /copy, /debug, /demo, /effort, /extensions, /feedback, /history, /ide, /import, /install-github-action, /mcp, /model, /new, /plan, /remote, /review, /settings, /quit, /title, /update, /stats, /worktree, /agent-mode, /compress, /goal, /logs, /loops, /project-onboarding, /promo, /pull-request, /skills, /voice.",
+      "commandOrFlag": "/",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Update Docs GitHub Action Workflow",
+      "description": "New GitHub Actions workflow triggered on merged PRs to main. Analyzes code changes, finds outdated documentation, and opens a new PR with documentation updates using `create_new_branch_for_pr: true`. Only modifies documentation files (README.md, docs/**).",
+      "commandOrFlag": "create_new_branch_for_pr: true",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-update-docs-html.md"
+    },
+    {
+      "name": "YouTrack Integration (GitHub Action)",
+      "description": "New integration enabling Junie GitHub Action to be triggered from JetBrains YouTrack issues. Install the Junie YouTrack app, configure a dedicated YouTrack user/token, add `YOUTRACK_TOKEN` secret to GitHub, and deploy `junie-youtrack.yml` workflow. Junie posts progress comments back to the YouTrack issue and creates a GitHub PR on completion.",
+      "commandOrFlag": "youtrack_token",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-youtrack-integration-html.md"
+    },
+    {
+      "name": "Junie Local (/local)",
+      "description": "JetBrains inference engine for macOS on Apple Silicon. Installer writes the model profile automatically for local model usage without manual setup. Referenced in custom LLM docs as the easiest path to running models locally.",
+      "commandOrFlag": "/local",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-junie-local-html.md"
+    },
+    {
+      "name": "Import configs from other agents (/import)",
+      "description": "New slash command that detects and suggests importing guidelines, agent skills, slash commands, or MCP server configurations from other coding agents such as Claude Code, Codex, or Cursor into Junie's configuration.",
+      "commandOrFlag": "/import",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Install GitHub Action wizard (/install-github-action)",
+      "description": "New slash command that launches an interactive wizard for installing and configuring the Junie GitHub Action in the current GitHub repository directly from the Junie CLI TUI.",
+      "commandOrFlag": "/install-github-action",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Orchestrated goal mode (/goal)",
+      "description": "New slash command to run a task in orchestrated, step-by-step mode where Junie auto-plans. Use `/goal stop` to leave orchestrated mode. Accepts an optional `[message]` to start working immediately.",
+      "commandOrFlag": "/goal",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Recurring scheduled tasks (/loops)",
+      "description": "New slash command to open the loops view for managing recurring scheduled tasks. Accepts an optional `[prompt]` to schedule a new recurring task. Aliases: `/crons`, `/cron-jobs`.",
+      "commandOrFlag": "/loops",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Project onboarding analysis (/project-onboarding)",
+      "description": "New slash command that analyzes your project and suggests improvements to help the agent work more effectively.",
+      "commandOrFlag": "/project-onboarding",
+      "sectionHint": "Agent Skills & Customization",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Pull request review (/pull-request)",
+      "description": "New slash command to review a pull request or merge request. Accepts an optional `[pr]` argument. Alias: `/pr`.",
+      "commandOrFlag": "/pull-request",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Voice input (/voice)",
+      "description": "New slash command to record voice input from the microphone as a prompt. Aliases: `/mic`, `/record`.",
+      "commandOrFlag": "/voice",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Session branching (/branch)",
+      "description": "New slash command to copy the current conversation into a new session and switch to it. Accepts an optional `[name]` to set the new session's title.",
+      "commandOrFlag": "/branch",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Copy response to clipboard (/copy)",
+      "description": "New slash command to copy an assistant response to the clipboard. Without an argument copies the most recent response; `/copy N` copies the Nth-latest response.",
+      "commandOrFlag": "/copy",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Promo code activation (/promo)",
+      "description": "New slash command to activate a promo code for trial tokens.",
+      "commandOrFlag": "/promo",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Context compression (/compress)",
+      "description": "New slash command to compress the conversation context before the next task, which may discard some information. Alias: `/compact`.",
+      "commandOrFlag": "/compress",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Session logs export (/logs)",
+      "description": "New slash command to export current session logs as a ZIP archive for bug reports. Alias: `/export-logs`.",
+      "commandOrFlag": "/logs",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    },
+    {
+      "name": "Agent mode selection (/agent-mode)",
+      "description": "New slash command to choose the session mode: Classic or Chat. Mode is locked after the first prompt of a session. Also available as `--agent-mode` CLI flag.",
+      "commandOrFlag": "/agent-mode",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "junie-jetbrains-com-docs-slash-commands-html.md"
+    }
+  ],
+  "updatedFeatures": [
+    {
+      "name": "Guidelines Discovery Order",
+      "changes": "Updated resolution order: (1) `.junie/AGENTS.md` used exclusively if present; (2) project-root `AGENTS.md` combined with `.junie/playbook.md` and `.junie/rules/*.md`; (3) legacy `.junie/guidelines.md`. New global guidelines at `~/.junie/AGENTS.md` apply across all projects. Custom file override via `JUNIE_GUIDELINES_FILENAME` env var or `--guidelines-filename` flag. Project guidelines take precedence over global when both exist; identical content is auto-deduplicated.",
+      "commandOrFlag": "--guidelines-filename"
+    },
+    {
+      "name": "BYOK / Model Selection",
+      "changes": "Expanded BYOK support to include GitHub Copilot (OAuth via local Copilot CLI), LiteLLM proxy, LM Studio, and Ollama in addition to existing OpenAI, Anthropic, Google, xAI, and OpenRouter. New interactive discovery flow for local/proxy providers. New provider API key CLI flags: --anthropic-api-key, --google-api-key, --grok-api-key, --openai-api-key, --openrouter-api-key, --litellm-url, --litellm-api-key.",
+      "commandOrFlag": "/account"
+    },
+    {
+      "name": "Junie GitHub Action",
+      "changes": "New parameters added: `resolve_conflicts` (auto-detect and resolve merge conflicts), `silent_mode` (suppress comments/changes, fail CI if issues found), `allowed_mcp_servers` (whitelist MCP servers for the run), `create_new_branch_for_pr` (always create new branch), `use_single_comment` (update single comment across runs), `youtrack_token` (YouTrack integration). Built-in `code-review` prompt value added for automated PR reviews.",
+      "commandOrFlag": "@junie-agent"
+    },
+    {
+      "name": "/stats command",
+      "changes": "Now documents aliases: /usage, /cost, /quota, /balance, /credits — all pointing to the same usage statistics screen showing token usage, models used, code changes, and remaining JetBrains AI balance.",
+      "commandOrFlag": "/stats"
+    },
+    {
+      "name": "/title command",
+      "changes": "Now documented with alias /rename. Clarified that a manually set title persists across session reloads, appears in /history and terminal window title, and is not overwritten by the agent's automatic naming.",
+      "commandOrFlag": "/title"
+    },
+    {
+      "name": "/mcp command",
+      "changes": "Behavior clarified for ACP clients: over ACP, /mcp prints a read-only Markdown listing of local servers (with runtime status) and session servers provided by the ACP client, plus guidance on where to edit local configs. Full management screen (add/edit/enable/OAuth) remains available in the interactive TUI.",
+      "commandOrFlag": "/mcp"
+    },
+    {
+      "name": "/commands command",
+      "changes": "Expanded to support ACP clients: over ACP, /commands prints a Markdown listing with sources and edit paths. Create/edit still happens via Markdown files or the TUI /commands screen.",
+      "commandOrFlag": "/commands"
+    },
+    {
+      "name": "Junie CLI configuration (config.json)",
+      "changes": "New config.json fields documented: `proxies` array (custom proxy endpoints), `provider` (active proxy/provider selector), `skill-locations`, `skill-default-locations`, `model-locations`, `model-default-locations`. New CLI flags: --config-default-locations, --agent-location, --agent-default-location, --extensions-default-location, --command-location, --command-default-location.",
+      "commandOrFlag": "--config-location"
+    }
+  ],
+  "deprecatedFeatures": [],
+  "allDetectedCommands": [
+    "/account",
+    "/agent-mode",
+    "/balance",
+    "/branch",
+    "/brave",
+    "/commands",
+    "/compact",
+    "/compress",
+    "/copy",
+    "/cost",
+    "/credits",
+    "/cron-jobs",
+    "/crons",
+    "/debug",
+    "/demo",
+    "/dockerfile",
+    "/effort",
+    "/exit",
+    "/explain",
+    "/export-logs",
+    "/extensions",
+    "/extract",
+    "/feedback",
+    "/goal",
+    "/history",
+    "/ide",
+    "/import",
+    "/install-github-action",
+    "/invoke",
+    "/junie",
+    "/local",
+    "/logs",
+    "/loops",
+    "/mcp",
+    "/mic",
+    "/model",
+    "/mounts",
+    "/name",
+    "/new",
+    "/plan",
+    "/plugin",
+    "/plugins",
+    "/pr",
+    "/project-onboarding",
+    "/promo",
+    "/pull-request",
+    "/quit",
+    "/quota",
+    "/record",
+    "/remote",
+    "/rename",
+    "/review",
+    "/search",
+    "/settings",
+    "/skills",
+    "/stats",
+    "/title",
+    "/trust",
+    "/update",
+    "/usage",
+    "/voice",
+    "/worktree"
+  ]
+}

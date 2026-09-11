@@ -20,6 +20,11 @@ export const CheatSheetRowSchema = z.object({
    * (e.g. `&amp;`); sanitized before it reaches the `| safe` template.
    */
   value: inlineHtml,
+  /**
+   * Optional flag indicating if this feature/command is newly introduced or highlighted.
+   * Rendered as a visual "NEW" badge next to the label.
+   */
+  isNew: z.boolean().optional(),
 });
 
 export const CheatSheetSectionSchema = z.object({
@@ -117,11 +122,139 @@ export const cheatSheetJsonSchema = {
                   description:
                     'Explanation. Only these inline tags are kept: <code>, <a href="https://…">, <strong>, <em>, <br>. Anything else is stripped. Escape & as &amp;.',
                 },
+                isNew: {
+                  type: 'boolean',
+                  description:
+                    'Set to true if this feature or slash command is newly introduced or highlighted in the latest version.',
+                },
               },
             },
           },
         },
       },
+    },
+  },
+} as const;
+
+/**
+ * Zod schemas for the LLM documentation semantic diff changelog.
+ * Compares two documentation snapshots to extract newly introduced commands,
+ * updated features, deprecations, and all detected commands.
+ */
+
+export const DocDiffNewFeatureSchema = z.object({
+  name: z.string().min(1),
+  description: z.string().min(1),
+  commandOrFlag: z.string().nullish().transform((v) => v ?? undefined),
+  sectionHint: z.string().nullish().transform((v) => v ?? undefined),
+  sourceFile: z.string().nullish().transform((v) => v ?? undefined),
+});
+
+export const DocDiffUpdatedFeatureSchema = z.object({
+  name: z.string().min(1),
+  changes: z.string().min(1),
+  commandOrFlag: z.string().nullish().transform((v) => v ?? undefined),
+});
+
+export const DocDiffDeprecatedFeatureSchema = z.object({
+  name: z.string().min(1),
+  reason: z.string().nullish().transform((v) => v ?? undefined),
+});
+
+export const DocDiffChangelogSchema = z.object({
+  productId: z.string().min(1),
+  previousSnapshot: z.string(),
+  currentSnapshot: z.string(),
+  generatedAt: z.string(),
+  newFeatures: z.array(DocDiffNewFeatureSchema),
+  updatedFeatures: z.array(DocDiffUpdatedFeatureSchema),
+  deprecatedFeatures: z.array(DocDiffDeprecatedFeatureSchema),
+  allDetectedCommands: z.array(z.string()),
+});
+
+export type DocDiffNewFeature = z.infer<typeof DocDiffNewFeatureSchema>;
+export type DocDiffUpdatedFeature = z.infer<typeof DocDiffUpdatedFeatureSchema>;
+export type DocDiffDeprecatedFeature = z.infer<typeof DocDiffDeprecatedFeatureSchema>;
+export type DocDiffChangelog = z.infer<typeof DocDiffChangelogSchema>;
+
+/**
+ * JSON Schema handed to Claude for the emit_doc_diff tool call.
+ */
+export const docDiffJsonSchema = {
+  type: 'object',
+  required: [
+    'productId',
+    'previousSnapshot',
+    'currentSnapshot',
+    'generatedAt',
+    'newFeatures',
+    'updatedFeatures',
+    'deprecatedFeatures',
+    'allDetectedCommands',
+  ],
+  properties: {
+    productId: { type: 'string', description: 'Product identifier (e.g. "junie").' },
+    previousSnapshot: {
+      type: 'string',
+      description: 'Identifier, timestamp, or description of the previous snapshot ("none" if first crawl).',
+    },
+    currentSnapshot: {
+      type: 'string',
+      description: 'Identifier, timestamp, or description of current snapshot.',
+    },
+    generatedAt: {
+      type: 'string',
+      description: 'ISO-8601 timestamp when this diff was generated.',
+    },
+    newFeatures: {
+      type: 'array',
+      description:
+        'Newly introduced features, slash commands (e.g. /local, /goal), flags, or subagents found in current docs.',
+      items: {
+        type: 'object',
+        required: ['name', 'description'],
+        properties: {
+          name: { type: 'string', description: 'Feature or command name, e.g. "Junie Local (/local)".' },
+          description: { type: 'string', description: 'Short summary of the capability and how to use it.' },
+          commandOrFlag: { type: 'string', description: 'Associated slash command or CLI flag (e.g. "/local").' },
+          sectionHint: {
+            type: 'string',
+            description: 'Recommended cheat sheet section title (e.g. "Latest and EAP", "Models & Auth").',
+          },
+          sourceFile: { type: 'string', description: 'Documentation filename where this was introduced.' },
+        },
+      },
+    },
+    updatedFeatures: {
+      type: 'array',
+      description: 'Existing features or commands with notable updates, new flags, or modified behaviors.',
+      items: {
+        type: 'object',
+        required: ['name', 'changes'],
+        properties: {
+          name: { type: 'string', description: 'Feature name.' },
+          changes: { type: 'string', description: 'Description of the updates or behavioral changes.' },
+          commandOrFlag: { type: 'string', description: 'Associated slash command or CLI flag if applicable.' },
+        },
+      },
+    },
+    deprecatedFeatures: {
+      type: 'array',
+      description: 'Features or commands removed or marked as deprecated.',
+      items: {
+        type: 'object',
+        required: ['name'],
+        properties: {
+          name: { type: 'string', description: 'Feature name.' },
+          reason: { type: 'string', description: 'Deprecation rationale if mentioned.' },
+        },
+      },
+    },
+    allDetectedCommands: {
+      type: 'array',
+      description:
+        'Comprehensive list of all slash commands (e.g. "/local", "/goal", "/plan", "/debug") detected across the documentation.',
+      items: { type: 'string' },
     },
   },
 } as const;

@@ -1,0 +1,350 @@
+{
+  "productId": "centralconsole",
+  "previousSnapshot": "none",
+  "currentSnapshot": "Initial baseline crawl – 60 new documentation pages, last modified up to 20 July 2026",
+  "generatedAt": "2026-07-20T00:00:00Z",
+  "newFeatures": [
+    {
+      "name": "JetBrains Central Console (Platform Introduction)",
+      "description": "Cloud-based governance and management console for JetBrains products, AI tools, and agents. Enables centralized license management, usage-based billing, AI credit governance, and organizational policy controls for teams. Access at console.jetbrains.cloud.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-about-jetbrains-console-html.md"
+    },
+    {
+      "name": "AI Governance (AI Settings)",
+      "description": "Enable or disable AI for the entire organization or per user/service account, set default AI credit limits, manage AI credits (add, auto-purchase), activate corporate trials, and configure data collection policies. Navigate to AI governance > Settings.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-settings-html.md"
+    },
+    {
+      "name": "AI Access Management",
+      "description": "Grant or revoke AI access to individual users and service accounts. View AI access counts and credit limits from AI governance > Access.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-access-html.md"
+    },
+    {
+      "name": "AI Credit Management",
+      "description": "Set custom monthly AI credit limits per user or service account, reset limits to org default, monitor balance usage, identify users near their limit, and buy additional AI credit packs. Available under AI governance > Access.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-manage-ai-credits-html.md"
+    },
+    {
+      "name": "AI Policies (EAP – Business Plan)",
+      "description": "Create and manage AI policies that control which AI tools, agents, and BYOK providers are available to users and service accounts. Configure cloud runs, AI provider selection, ACP agent access, and third-party BYOK per policy. Currently only the default policy is editable. Navigate to AI governance > Policies.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-policies-html.md"
+    },
+    {
+      "name": "AI Providers – BYOK (EAP – Business Plan)",
+      "description": "Configure Bring Your Own Key connections to external AI providers (OpenAI, Google Vertex AI, Amazon Bedrock) for organization-wide use. Manage model availability and test connectivity. Navigate to AI governance > Providers.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-html.md"
+    },
+    {
+      "name": "AI Provider – OpenAI",
+      "description": "Add OpenAI as a BYOK provider by specifying an endpoint URL and API key. Supports regional endpoints for data residency. Models can be added manually. Navigate to AI governance > Providers > Add provider > OpenAI.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-openai-html.md"
+    },
+    {
+      "name": "AI Provider – Google Vertex AI",
+      "description": "Add Google Vertex AI as a BYOK provider using a service account JSON key. Specify Google Cloud project and region. Navigate to AI governance > Providers > Add provider > Google Vertex AI.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-vertex-ai-html.md"
+    },
+    {
+      "name": "AI Provider – Amazon Bedrock",
+      "description": "Add Amazon Bedrock as a BYOK provider using IAM access keys. Supports In-Region, Geo, and Global inference profile IDs. Navigate to AI governance > Providers > Add provider > Amazon Bedrock.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-amazon-bedrock-html.md"
+    },
+    {
+      "name": "AI Provider – JetBrains AI (Default)",
+      "description": "JetBrains AI is the always-available default provider integrating multiple LLMs (Claude, Gemini, GPT family, proprietary JetBrains models). No configuration required. Cannot be deleted or have models managed. Navigate to AI governance > Providers.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-jetbrains-ai-html.md"
+    },
+    {
+      "name": "AI Provider Model Management (EAP – Business Plan)",
+      "description": "Add, edit, remove, and check connectivity of models for each configured BYOK provider. Specify exact provider model IDs (including region-specific Bedrock IDs). Navigate to AI governance > Providers and manage models in each provider card.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-manage-models-html.md"
+    },
+    {
+      "name": "Agents Management (EAP – Business Plan)",
+      "description": "View and manage ACP-compatible AI agents available in the organization, sourced from the global ACP registry (Junie, Claude Agent, Codex, Gemini CLI) or added as custom agents via JSON configuration. Custom agents can be added, edited, or deleted. Navigate to AI governance > Agents.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-agents-html.md"
+    },
+    {
+      "name": "AI Analytics Hub",
+      "description": "Centralized AI analytics dashboard with four segments: AI adoption and usage, AI activity and impact, AI credit consumption, and AI providers and models. Supports CSV download and Analytics API access. Navigate to Usage > AI Analytics.",
+      "sectionHint": "Analytics & Usage",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-analytics-html.md"
+    },
+    {
+      "name": "AI Adoption and Usage Analytics",
+      "description": "Track active AI consumers, AI credit consumption by tool, and the number of consumers who hit their monthly credit limit. Filterable by time period, IDE, and specific users/service accounts. Navigate to Usage > AI Analytics > AI adoption and usage.",
+      "sectionHint": "Analytics & Usage",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-adoption-and-usage-html.md"
+    },
+    {
+      "name": "AI Activity and Impact Analytics",
+      "description": "Monitor AI contribution rate, code acceptance rates, lines of code generated by chat-based agents and in-editor features (Code Completion, NES), messages sent to AI chats, and suggestions shown. Requires IDE 2025.3+, AI Assistant 2025.3+, Junie 253.487.77+. Navigate to Usage > AI Analytics > AI activity and impact.",
+      "sectionHint": "Analytics & Usage",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-activity-and-impact-html.md"
+    },
+    {
+      "name": "AI Credit Consumption Analytics",
+      "description": "Per-consumer breakdown of AI credit spending by tool, filterable by date range, IDE, tool, and specific users or service accounts. Supports CSV export. Navigate to Usage > AI Analytics > AI credit consumption.",
+      "sectionHint": "Analytics & Usage",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-credits-consumption-html.md"
+    },
+    {
+      "name": "AI Providers and Models Analytics",
+      "description": "Track token consumption by AI provider and model across the organization. Includes trend indicators (increase/decrease/equal) compared to the previous period. Navigate to Usage > AI Analytics > AI providers and models.",
+      "sectionHint": "Analytics & Usage",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-providers-and-models-html.md"
+    },
+    {
+      "name": "Analytics API v1 (EAP – Business Plan)",
+      "description": "Programmatic REST API (v1) for AI usage metrics: adoption, quota consumption, limit hits, activity/impact, credit consumption, and code provenance. Bearer token auth via service account. Base URL: https://api.jetbrains.cloud/metrics/api/v1/. Note: being superseded by v2.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-analytics-api-v1-html.md"
+    },
+    {
+      "name": "Analytics API v2 / Latest (EAP – Business Plan)",
+      "description": "Latest REST API (v2) for AI usage data with POST-based endpoints, principal-aware filtering, per-tool breakdowns, code provenance, and new AI token usage endpoints. Base URL: https://api.jetbrains.cloud/metrics/api/v2/. Recommended over v1.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-analytics-api-v2-html.md"
+    },
+    {
+      "name": "Analytics API – AI Token Usage Endpoints (v2)",
+      "description": "New v2 API endpoints to retrieve token usage grouped by date+provider (/api/v2/token-usage/group-by/date-provider) and by model (/api/v2/token-usage/group-by/model.cursor). Supports filtering by provider, principal, and principal type.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-analytics-api-v2-html.md"
+    },
+    {
+      "name": "Service Accounts",
+      "description": "Create non-user machine identities (service accounts) with client ID + client secret for M2M integrations (e.g., Analytics API). Supports role assignment, secret rotation, and deletion. Navigate to Users and access > Service accounts.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-service-accounts-html.md"
+    },
+    {
+      "name": "OAuth 2.0 Client Credentials Token Exchange",
+      "description": "Exchange a service account's client ID and client secret for a bearer access token (valid 60 min) using the OAuth 2.0 Client Credentials flow. Token endpoint: https://oauth.account.jetbrains.com/api/rest/oauth2/token with scope=jcp-public.",
+      "sectionHint": "Models & Auth",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-exchange-client-id-and-secret-for-an-access-token-html.md"
+    },
+    {
+      "name": "Roles and Permissions System",
+      "description": "Role-based access control with predefined roles (Org admin, Org viewer, AI admin, AI viewer, AI analytics viewer, Licensing and billing manager, Purchase manager, License viewer) and custom role creation. Supports organization-scoped and group-scoped roles. Navigate to Users and access > Roles.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-roles-html.md"
+    },
+    {
+      "name": "User Management",
+      "description": "Add, remove, search, edit, and manage permissions for users in the organization. Assign roles individually or in bulk. Navigate to Users and access > Users.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-users-html.md"
+    },
+    {
+      "name": "Groups Management",
+      "description": "Create local groups or use synced groups from an external identity provider. Manage group members and assign group-scoped or org-scoped roles to groups. Navigate to Users and access > Groups.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-groups-html.md"
+    },
+    {
+      "name": "Plans and Pricing",
+      "description": "Three-tier plans: Basic (free), Business ($20/seat/month), Enterprise (on request). AI credits are bought separately (1 credit = 1 USD of LLM spend). Detailed model pricing table for Claude, Gemini, GPT families. Navigate to Introduction > Plans and pricing.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-plans-and-pricing-html.md"
+    },
+    {
+      "name": "Early Access Program (EAP) Opt-in",
+      "description": "Opt your organization in to EAP to preview upcoming paid Business-plan features: AI policies, AI providers (BYOK), Agents, and Analytics API. EAP features are free during the preview period. Opt in via AI governance > Settings > EAP.",
+      "sectionHint": "Latest and EAP",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-settings-html.md"
+    },
+    {
+      "name": "Auto-purchase AI Credits",
+      "description": "Configure a recurring (monthly or yearly) automated AI credit purchase for the organization's shared pool. Set frequency, start date, payment method, and purchase amount (min 5 credits). Manage via AI governance > Settings > JetBrains Central tab > Configure auto-purchase.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-settings-html.md"
+    },
+    {
+      "name": "Corporate AI Trial",
+      "description": "Eligible organizations can activate a one-time corporate trial that adds a limited pool of AI credits for a trial period. Trial credits are consumed first before other credit types. Activate via AI governance > Settings > See trial details.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-settings-html.md"
+    },
+    {
+      "name": "Migration to Shared AI Credit Pool",
+      "description": "Documents the transition from per-user license-tied AI quotas (AI Ultimate, AI Pro, AI Free, APP, dotUltimate) to an organization-wide shared AI credit pool. Describes conversion rates, credit limit migration, and AI access setting preservation. See Introduction > Converting to a shared pool of AI credits.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-migrating-from-licenses-to-ai-seats-html.md"
+    },
+    {
+      "name": "Subscription Packs",
+      "description": "Group and manage multiple JetBrains product subscriptions under shared billing cycles, payment methods, and renewal dates. Supports co-terming (automatic and manual) and moving subscriptions between packs. Navigate to Billing > Subscription packs.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-about-subscription-packs-html.md"
+    },
+    {
+      "name": "Co-terming Subscription Packs",
+      "description": "Align renewal dates across subscriptions in a pack. Automatic co-terming happens at each renewal; manual co-terming lets you align ahead of time to the latest expiry date. Navigate to Billing > Subscription packs > Co-term to a single license validity.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-co-term-a-subscription-pack-html.md"
+    },
+    {
+      "name": "Teams Management",
+      "description": "Create, edit, merge, and delete organizational teams to partition and delegate license management. Assign team admins per team. Navigate to Licensing > Teams.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-about-teams-html.md"
+    },
+    {
+      "name": "License Assignment (Manual and Bulk Invitation)",
+      "description": "Assign licenses to users manually one-by-one, or create bulk invitation links for self-service license claiming. Supports assignment from the license certificate email for recent purchases. Navigate to Licensing > Licenses.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-assigning-licenses-to-users-html.md"
+    },
+    {
+      "name": "License Revocation",
+      "description": "Revoke product licenses from users immediately, making licenses available for reassignment. Navigate to Licensing > Products and services > Active subscriptions, then select licenses and choose Revoke.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-revoke-licenses-from-users-html.md"
+    },
+    {
+      "name": "License Transfer Between Teams",
+      "description": "Transfer licenses from one team to another (existing or new). Org admins can transfer any licenses; team admins can only transfer their own team's licenses to a new team. Navigate to Licensing > Teams > [Team] > View licenses > Transfer.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-transfer-licenses-between-teams-html.md"
+    },
+    {
+      "name": "Subscription Upgrade/Downgrade",
+      "description": "Upgrade individual IDE subscriptions to All Products Pack or dotUltimate bundle, or downgrade from bundle to single tool. Credits for unused time on the current subscription are applied. Navigate to Licensing > Licenses > Upgrade.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-upgrade-or-downgrade-commercial-subscriptions-html.md"
+    },
+    {
+      "name": "Automatic Subscription Renewal",
+      "description": "Enable or disable automatic renewal for subscription packs by attaching a saved payment method. Navigate to Billing > Subscription packs > Setup payment / Disable auto-renewal.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-enable-or-disable-automatic-renewal-for-commercial-subscriptions-html.md"
+    },
+    {
+      "name": "Cancel Subscription",
+      "description": "Cancel commercial subscriptions so they remain active until end of billing period and do not renew. Navigate to Licensing > Licenses > select licenses > Pay > Stop payments.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-cancel-a-commercial-subscription-html.md"
+    },
+    {
+      "name": "Move Subscriptions Between Packs",
+      "description": "Move selected subscriptions from one subscription pack to another (existing or new). Also allows resuming payment on canceled subscriptions by moving them to an active pack. Navigate to Billing > Subscription packs > Overview > Change Subscription Pack.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-move-subscriptions-to-a-different-subscription-pack-html.md"
+    },
+    {
+      "name": "Contacts and Email Notifications",
+      "description": "Manage organization member and external contacts who receive notifications (licensing, billing, technical updates, security, etc.). Add contacts manually, disable/enable notifications, and reassign order-specific contacts. Navigate to Organization > Contacts.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-contacts-html.md"
+    },
+    {
+      "name": "Two-Factor Authentication (2FA) Enforcement",
+      "description": "Require all organization members to use 2FA (TOTP) when logging in via JetBrains Account. Users have 7 days to comply after the requirement is enabled. Navigate to Organization > Administration > Require 2FA.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-two-factor-authentication-html.md"
+    },
+    {
+      "name": "Verified Domains",
+      "description": "Add and verify company domains via DNS TXT record to enable contact management and JetBrains Account API access for the domain. Navigate to Organization > Administration > Add and verify your company domain.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-verified-domains-html.md"
+    },
+    {
+      "name": "JetBrains Account API",
+      "description": "REST API for automating license assignment/revocation, team transfers, and user account management. Requires org-admin-level permissions and a personal API token. API base: https://account.jetbrains.com/api-doc. Navigate to Organization > Administration > API section.",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-jetbrains-account-api-html.md"
+    },
+    {
+      "name": "Merge Organizations",
+      "description": "Request a Sales-assisted merge of multiple JetBrains Central Console organizations into one primary organization. Transfers all licenses, teams, admins, and contacts. Submit via the Sales request form.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-merge-organizations-html.md"
+    },
+    {
+      "name": "Merge Teams",
+      "description": "Merge two teams so one inherits all licenses, admins, and bulk invitations from the other (deleted) team. Navigate to Licensing > Teams > [Team] > Administration > Merge.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-merge-teams-html.md"
+    },
+    {
+      "name": "Quickstart for Partnership Program Organizations",
+      "description": "Step-by-step guide for organizations in JetBrains partnership program to enable AI, assign APP licenses, and configure JetBrains Air (desktop and web), JetBrains Central CLI, and AI Assistant with JetBrains Central activation and cloud agent enablement.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-quickstart-for-organizations-enrolled-in-the-partnership-program-html.md"
+    },
+    {
+      "name": "JetBrains Central CLI Integration",
+      "description": "JetBrains Central CLI is a local command-line proxy routing requests from CLI coding agents (Claude Code, Codex, Gemini CLI, etc.) through JetBrains Central for unified billing and authentication. Documented as a supported tool within the platform.",
+      "sectionHint": "CLI & Workflows",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-about-jetbrains-console-html.md"
+    },
+    {
+      "name": "JetBrains Air Integration",
+      "description": "JetBrains Air (air.dev) is an agentic development environment (ADE) manageable through JetBrains Central Console. Supports desktop and web app modes, cloud task execution, and multi-agent workflows. Governed by AI policies in JetBrains Central Console.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-about-jetbrains-console-html.md"
+    },
+    {
+      "name": "Transition Guide: JetBrains Account to JetBrains Central Console",
+      "description": "Feature mapping table comparing JetBrains Account organization management sections to their equivalents in JetBrains Central Console, including new sections not present in JetBrains Account (Dashboard, Groups, Users, Analytics, Help center). See Introduction > Transitioning organization management.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-migrating-from-jetbrains-account-html.md"
+    },
+    {
+      "name": "AI Governance Concepts (Principal, AI Credits, Limits)",
+      "description": "Reference page explaining key AI governance terms: principal (user or service account), AI credits (consumption units), AI credit limit (monthly cap per principal), and how they interact within JetBrains Central Console. See AI governance overview page.",
+      "sectionHint": "AI Governance",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-ai-governance-html.md"
+    },
+    {
+      "name": "Team Admin Role",
+      "description": "Special team-scoped role allowing license assignment, revocation, purchase, and team admin invitation within a specific team only. Granted automatically on new license purchase or by invitation from an org admin or existing team admin.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-roles-html.md"
+    },
+    {
+      "name": "Group-Scoped Roles",
+      "description": "Roles can be scoped to specific groups (in addition to organization-wide scope), allowing permissions like Manage AI access, View AI access, and View AI analytics to apply only within designated groups. Useful for team leads managing their own group's AI usage.",
+      "sectionHint": "Users & Access",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-roles-html.md"
+    },
+    {
+      "name": "Help Center and Support",
+      "description": "In-app Help center provides access to documentation, feedback form, support contact form, keyboard shortcut management, cookie settings, and support information copy. Access via the Help icon in the sidebar.",
+      "sectionHint": "Overview & Getting Started",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-getting-help-html.md"
+    },
+    {
+      "name": "On-Premises Team Tool License Activation Permissions",
+      "description": "Documentation for requesting or delegating permissions required to activate JetBrains on-premises tools (e.g., TeamCity) through JetBrains Central Console. Two options: org-wide license management role or team admin invitation.",
+      "sectionHint": "Billing & Licensing",
+      "sourceFile": "www-jetbrains-com-help-jetbrains-console-eap-required-permissions-to-activate-on-premises-team-tools-html.md"
+    }
+  ],
+  "updatedFeatures": [],
+  "deprecatedFeatures": [
+    {
+      "name": "Analytics API v1 endpoint: /api/v1/adoption/limit-hits/group-by/date-principal.cursor",
+      "reason": "Explicitly marked as deprecated in v1 documentation. The equivalent v2 endpoint (/api/v2/adoption/limit-hits/group-by/date-principal.cursor) should be used instead."
+    },
+    {
+      "name": "Legacy per-user AI quota (license-tied AI credits: AI Ultimate, AI Pro, AI Free, APP, dotUltimate quotas)",
+      "reason": "Replaced by a shared organization-level AI credit pool model. Organizations are being migrated from license-tied per-user quotas to the new shared pool with configurable per-principal limits."
+    }
+  ],
+  "allDetectedCommands": []
+}
